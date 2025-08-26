@@ -1,0 +1,26 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "001_Aug27_syntax.html",
+    "href": "001_Aug27_syntax.html",
+    "title": "Math 557 August 27",
+    "section": "",
+    "text": "Problems\n\n\n\n\n\n\n\nExercise 1 \nThe set of \\(\\cal{L}\\)-terms \\(\\mathcal{T}^{\\mathcal{L}}\\) is defined as the smallest set (with respect to \\(\\subseteq\\)) containing variables and constant symbols and that is closed under function symbol application.\n\nWhy do this set exist?\nDoes a similar argument work for the set of \\(\\mathcal{L}\\)-formulas?\nFind an example of a (non-empty) family of sets and a property \\(P\\) (applicable to the sets in the family) such that a \\(\\subseteq\\)-smallest set with property \\(P\\) does not exist.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nProve the Readbility Lemma: For any term \\(t\\), exactly one of the following holds.\n\nThere exists a \\(v \\in \\mathcal{V}\\) such that \\(t \\equiv v\\).\nThere exists a \\(c \\in \\mathcal{C}^{\\mathcal{L}}\\) such that \\(t \\equiv c\\).\nThere exists a number \\(n \\in \\mathbb{N}\\), a function symbol \\(f\n\\in F_n^{\\mathcal{L}}\\), and terms \\(t_1,\n\\dots, t_n\\) such that \\(t \\equiv ft_1\\dots t_n\\).\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that no proper initial segment of a term is a term. (Use induction on the length of a term.)\nDeduce unique readability: The decomposition in (3.) above is unique.\n\n\n\n\n\n\n\n\n\n\nTake-home Problem\n\n\n\n\nProve unique readability for the set of \\(\\mathcal{L}\\)-formulas.\n\n\n\n\n\n\n\n\n\nExercise 4 \nThe set \\(C\\) is defined as the smallest set of finite strings over the alphabet \\(\\{\\times, \\circ\\}\\) such that\n\n(C1) \\(\\times \\in  C\\),\n(C2) \\(\\circ \\in C\\),\n(C3) if \\(s , t \\in C\\) and the last symbol in \\(s\\) differs from the the first symbol in \\(t\\), then \\(s t \\in C\\) (where \\(st\\) is the concatenation of \\(s\\) and \\(t\\)).\n\nFormulate the property of unique readability for the system (C1)-(C3) and argue that it does not hold for this system.\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nLet \\(\\mathcal{L} = (0,&lt;)\\) be a language with one constant symbol \\(0\\) and one binary relation symbol \\(&lt;\\). In the following, for sake of (human) readability, we write \\(0 &lt; v_1\\) instead of \\(&lt; 0 v_1\\).\nConsider the expression\n\\[\\phi \\equiv  (\\exists v_2 \\; v_1 &lt; v_2 \\wedge \\exists v_1 \\;v_2 &lt; 0).\\]\n\nIs this a correct \\(\\mathcal{L}\\)-formula?\nCharacterize every variable occurrence in \\(\\phi\\) as free or bound.",
+    "crumbs": [
+      "August 27"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "557",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
