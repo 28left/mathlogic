@@ -1,0 +1,68 @@
+---
+title: "Math 557 August 27"
+---
+
+# Problems
+
+::: {#exr-}
+\
+The set of $\cal{L}$-terms $\mathcal{T}^{\mathcal{L}}$ is defined as the *smallest* set (with respect to $\subseteq$) containing variables and constant symbols and that is closed under function symbol application.
+
+- Why do this set exist?
+
+- Does a similar argument work for the set of $\mathcal{L}$-formulas?
+
+- Find an example of a (non-empty) family of sets and a property $P$ (applicable to the sets in the family) such that a $\subseteq$-smallest set with property $P$ does not exist.
+:::
+
+:::{#exr-}
+\
+Prove the **Readbility Lemma**: For any term $t$, exactly one of the following holds.
+
+1. There exists a $v \in \mathcal{V}$ such that $t \equiv v$.
+
+2. There exists a $c \in \mathcal{C}^{\mathcal{L}}$ such that $t \equiv c$.
+
+3. There exists a number $n \in \mathbb{N}$, a function symbol $f
+   \in F_n^{\mathcal{L}}$, and terms $t_1,
+   \dots, t_n$ such that $t \equiv ft_1\dots t_n$.
+:::
+
+
+:::{#exr-}
+\
+Show that no proper initial segment of a term is a term.
+(*Use induction on the length of a term.*)
+
+Deduce **unique readability**: The decomposition in (3.) above is unique.
+:::
+
+:::{.callout-important}
+## Take-home Problem
+\
+Prove **unique readability** for the set of $\mathcal{L}$-formulas.
+:::
+
+
+:::{#exr-}
+\
+The set $C$ is defined as the smallest set of finite strings over the alphabet $\{\times, \circ\}$ such that
+
+- (C1)   $\times \in  C$,
+- (C2)   $\circ \in C$,
+- (C3) if $s , t \in C$ and the last symbol in  $s$  differs from the the first symbol in $t$, then  $s t \in C$ (where $st$ is the concatenation of $s$ and $t$).
+
+Formulate the property of unique readability for the system (C1)-(C3) and argue that it does not hold for this system.
+:::
+
+:::{#exr-}
+\
+Let $\mathcal{L} = (0,<)$ be a language with one constant symbol $0$ and one binary relation symbol $<$. In the following, for sake of (human) readability, we write $0 < v_1$ instead of $< 0 v_1$. 
+
+Consider the expression 
+
+$$\phi \equiv  (\exists v_2 \; v_1 < v_2 \wedge \exists v_1 \;v_2 < 0).$$ 
+
+- Is this a correct $\mathcal{L}$-formula?
+- Characterize every variable occurrence in $\phi$ as free or bound.
+:::

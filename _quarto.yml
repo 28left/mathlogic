@@ -1,0 +1,35 @@
+project:
+  type: website
+  
+website:
+  title: "Math 557 Fall 2025"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: 001_Aug27_syntax.qmd
+        text: August 27
+
+format:
+  html:
+    page-navigation: true
+    callout-appearance: simple
+    callout-icon: false
+    filters:
+      - callouty-theorem
+
+    theme:
+      - cosmos
+      - brand
+    css: styles.css
+    toc: true
+  pdf: 
+    documentclass: article
+
+callouty-theorem:
+  exr:
+    override-title: false
+    callout:
+      type: tip
+      appearance: minimal
+
