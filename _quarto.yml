@@ -9,6 +9,8 @@ website:
     contents:
       - href: 001_Aug27_syntax.qmd
         text: August 27
+      - href: 002_Aug29_semantics.qmd
+        text: August 29
 
 format:
   html:
@@ -17,6 +19,7 @@ format:
     callout-icon: false
     filters:
       - callouty-theorem
+      - search-replace
 
     theme:
       - cosmos
@@ -33,3 +36,5 @@ callouty-theorem:
       type: tip
       appearance: minimal
 
+search-replace:
+  +L : $\mathcal{L}$

@@ -1,0 +1,84 @@
+---
+title: "Math 557 August 29"
+---
+
+## Key Concepts
+
+- **$\mathcal{L}$-structures**: Provide a realm to interpret $\mathcal{L}$-formulas over. 
+    - non-empty universe $M$,
+    - interpretation of all constant, function, and relation symbols over $M$.
+
+- **structure isomorphism**: bijection $\pi$ between the universes of two $\mathcal{L}$-structures that preserves interpretations of symbols. General version of the well-known idea of isomorphism of mathematical structures.
+
+- **assignment**: function $\alpha: \mathcal{V} \to M$ that assigns all variables values in the universe of a structure. Recursively extends to terms.
+
+- **satisfaction**: $\mathcal{M} \models \varphi[\alpha]$ means the $\mathcal{L}$-formula $\varphi$ is true when interpreted in the $\mathcal{L}$-structure $\mathcal{M}$ and all variables are assigned values according to assignment $\alpha$. This is defined recursively over the structure of a formula.
+
+
+
+
+
+# Problems
+
+::: {#exr-}
+\
+The set of $\cal{L}$-terms $\mathcal{T}^{\mathcal{L}}$ is defined as the *smallest* set (with respect to $\subseteq$) containing variables and constant symbols and that is closed under function symbol application.
+
+- Why do this set exist?
+
+- Does a similar argument work for the set of $\mathcal{L}$-formulas?
+
+- Find an example of a (non-empty) family of sets and a property $P$ (applicable to the sets in the family) such that a $\subseteq$-smallest set with property $P$ does not exist.
+:::
+
+:::{#exr-}
+\
+Prove the **Readbility Lemma**: For any term $t$, exactly one of the following holds.
+
+1. There exists a $v \in \mathcal{V}$ such that $t \equiv v$.
+
+2. There exists a $c \in \mathcal{C}^{\mathcal{L}}$ such that $t \equiv c$.
+
+3. There exists a number $n \in \mathbb{N}$, a function symbol $f
+   \in F_n^{\mathcal{L}}$, and terms $t_1,
+   \dots, t_n$ such that $t \equiv ft_1\dots t_n$.
+:::
+
+
+:::{#exr-}
+\
+Show that no proper initial segment of a term is a term.
+(*Use induction on the length of a term.*)
+
+Deduce **unique readability**: The decomposition in (3.) above is unique.
+:::
+
+
+
+:::{#exr-}
+\
+Let $n$ be a natural number and let +L be any language. Find formulas $, \psi^{\geq}, \psi^{\leq}, \psi^=$ such that, for any +L-structure $\mathcal{M}$,
+
+\begin{align}
+\mathcal{M} \models \psi^{\geq} & \iff \; |M| \geq n \\
+\mathcal{M} \models \psi^{\leq} & \iff \; |M| \leq n \\
+\mathcal{M} \models \psi^{=} & \iff \; |M| = n \\
+\end{align}
+:::
+
+Infinite/finite models?
+
+
+:::{#exr-}
+\
+Let $\mathcal{L} = \{\cdot , e\}$ be the language of groups. Show that
+there is a sentence $\varphi$ such that $\mathcal{M} \models \varphi$ if and only if $M \cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$.
+:::
+
+
+
+:::{.callout-important}
+## Take-home Problem
+\
+Scott sentences for finite languages.
+:::
