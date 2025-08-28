@@ -12,52 +12,42 @@ title: "Math 557 August 29"
 
 - **assignment**: function $\alpha: \mathcal{V} \to M$ that assigns all variables values in the universe of a structure. Recursively extends to terms.
 
-- **satisfaction**: $\mathcal{M} \models \varphi[\alpha]$ means the $\mathcal{L}$-formula $\varphi$ is true when interpreted in the $\mathcal{L}$-structure $\mathcal{M}$ and all variables are assigned values according to assignment $\alpha$. This is defined recursively over the structure of a formula.
+- **satisfaction relation**: $\mathcal{M} \models \varphi[\alpha]$ means the $\mathcal{L}$-formula $\varphi$ is true when interpreted in the $\mathcal{L}$-structure $\mathcal{M}$ and all variables are assigned values according to assignment $\alpha$. This is defined recursively over the structure of a formula.
 
 
 
 
 
-# Problems
+## Problems
+
+We warm up with a quote often attributed to Lincoln.
 
 ::: {#exr-}
 \
-The set of $\cal{L}$-terms $\mathcal{T}^{\mathcal{L}}$ is defined as the *smallest* set (with respect to $\subseteq$) containing variables and constant symbols and that is closed under function symbol application.
+> You can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.
 
-- Why do this set exist?
-
-- Does a similar argument work for the set of $\mathcal{L}$-formulas?
-
-- Find an example of a (non-empty) family of sets and a property $P$ (applicable to the sets in the family) such that a $\subseteq$-smallest set with property $P$ does not exist.
+Define a suitable language and formalize this statement in first-order logic.
 :::
+
+Next, a couple of problems to see the definition of structures and the satisfaction relation $\models$ at work.
+
+::: {#exr-}
+\
+Let $\mathcal{L} = \{ \Box, \triangle, c\}$, where $\Box$ is a binary relation symbol, $\triangle$ is a binary function symbol, and $c$ is a constant symbol.
+
+For each of the following formulas, find two $\mathcal{L}$-structures and (if necessary) assignments to the free variable(s) such that the formula holds in one structure but fails in the other.
+
+\begin{align}
+\varphi & \equiv \forall x \exists y \: \Box \, \triangle x y \, c \\
+\psi & \equiv \exists x \forall y ( x = c \: \wedge \: \Box \, \Delta zc \, y )
+\end{align}
+:::
+
+Next, let's see some general properties of structures we can describe through first-order formulas.  
 
 :::{#exr-}
 \
-Prove the **Readbility Lemma**: For any term $t$, exactly one of the following holds.
-
-1. There exists a $v \in \mathcal{V}$ such that $t \equiv v$.
-
-2. There exists a $c \in \mathcal{C}^{\mathcal{L}}$ such that $t \equiv c$.
-
-3. There exists a number $n \in \mathbb{N}$, a function symbol $f
-   \in F_n^{\mathcal{L}}$, and terms $t_1,
-   \dots, t_n$ such that $t \equiv ft_1\dots t_n$.
-:::
-
-
-:::{#exr-}
-\
-Show that no proper initial segment of a term is a term.
-(*Use induction on the length of a term.*)
-
-Deduce **unique readability**: The decomposition in (3.) above is unique.
-:::
-
-
-
-:::{#exr-}
-\
-Let $n$ be a natural number and let +L be any language. Find formulas $, \psi^{\geq}, \psi^{\leq}, \psi^=$ such that, for any +L-structure $\mathcal{M}$,
+Let $n$ be a natural number and let $\mathcal{L}$ be any language. Find formulas $, \psi^{\geq}, \psi^{\leq}, \psi^=$ such that, for any $\mathcal{L}$-structure $\mathcal{M}$,
 
 \begin{align}
 \mathcal{M} \models \psi^{\geq} & \iff \; |M| \geq n \\
@@ -66,19 +56,42 @@ Let $n$ be a natural number and let +L be any language. Find formulas $, \psi^{\
 \end{align}
 :::
 
-Infinite/finite models?
+::: {.callout-note}
+## Question
+\
+Can we find a formula $\theta$ such that 
+
+$$
+\mathcal{M} \models \theta \; \iff \; |M| \text{ is finite}?
+$$
+:::
+
+We will answer this question in a few weeks...
+
 
 
 :::{#exr-}
 \
 Let $\mathcal{L} = \{\cdot , e\}$ be the language of groups. Show that
-there is a sentence $\varphi$ such that $\mathcal{M} \models \varphi$ if and only if $M \cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$.
+there is a sentence $\varphi$ such that $\mathcal{M} \models \varphi$ if and only if 
+
+$$M \cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}.$$
 :::
 
 
 
 :::{.callout-important}
-## Take-home Problem
-\
-Scott sentences for finite languages.
+## Take-home Problems
+<br>
+
+1. Let $\mathcal{L}$ be any finite language and let $\mathcal{M}$ be a finite $\mathcal{L}$-structure. Show
+that there is an $\mathcal{L}$-sentence $\varphi$ such that 
+
+$$
+\mathcal{N} \models \varphi \; \iff \; \mathcal{N} \cong \mathcal{M}.
+$$
+
+2. Give an example of a language $\mathcal{L}$ and an $\mathcal{L}$-sentence $\psi$ such that
+    - there is at least one $\mathcal{L}$-structure $\cal A$ such that $\cal A \models \psi$,
+	- for all $\cal L$-structures $\cal A$, if $\cal A \models \psi$, then the universe $A$ of $\cal A$ is infinite.
 :::
