@@ -2,6 +2,4 @@
 title: "557"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This site collect course material for Math 557, Mathematical Logic, at Penn State.
