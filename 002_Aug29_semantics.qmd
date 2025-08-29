@@ -39,7 +39,7 @@ For each of the following formulas, find two $\mathcal{L}$-structures and (if ne
 
 \begin{align}
 \varphi & \equiv \forall x \exists y \: \Box \, \triangle x y \, c \\
-\psi & \equiv \exists x \forall y ( x = c \: \wedge \: \Box \, \Delta zc \, y )
+\psi & \equiv \exists x \forall y ( x = c \: \wedge \: \Box \, \triangle zc \, y )
 \end{align}
 :::
 
