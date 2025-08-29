@@ -23,7 +23,7 @@ title: "Math 557 August 29"
 We warm up with a quote often attributed to Lincoln.
 
 ::: {#exr-}
-\
+
 > You can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.
 
 Define a suitable language and formalize this statement in first-order logic.
