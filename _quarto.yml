@@ -11,6 +11,8 @@ website:
         text: August 27
       - href: 002_Aug29_semantics.qmd
         text: August 29
+      - href: 003_Sep03_validities
+        text: September 3
 
 format:
   html:
