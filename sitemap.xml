@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://28left.github.io/mathlogic/002_Aug29_semantics.html</loc>
-    <lastmod>2025-08-29T14:31:16.267Z</lastmod>
+    <loc>https://28left.github.io/mathlogic/003_Sep03_validities.html</loc>
+    <lastmod>2025-09-01T23:12:44.687Z</lastmod>
   </url>
   <url>
-    <loc>https://28left.github.io/mathlogic/index.html</loc>
-    <lastmod>2025-08-28T18:41:20.140Z</lastmod>
+    <loc>https://28left.github.io/mathlogic/about.html</loc>
+    <lastmod>2025-08-26T23:15:41.855Z</lastmod>
   </url>
   <url>
     <loc>https://28left.github.io/mathlogic/001_Aug27_syntax.html</loc>
     <lastmod>2025-08-26T23:15:41.854Z</lastmod>
   </url>
   <url>
-    <loc>https://28left.github.io/mathlogic/about.html</loc>
-    <lastmod>2025-08-26T23:15:41.855Z</lastmod>
+    <loc>https://28left.github.io/mathlogic/index.html</loc>
+    <lastmod>2025-08-28T18:41:20.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://28left.github.io/mathlogic/002_Aug29_semantics.html</loc>
+    <lastmod>2025-08-29T14:31:16.267Z</lastmod>
   </url>
 </urlset>
