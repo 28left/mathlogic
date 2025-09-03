@@ -33,7 +33,7 @@ $$\mathcal{M} \models \psi[\alpha] \quad \text{ for any } \mathcal{M}, \alpha.$$
 Determine whether the following formulas are validitites.
 
 - $((\varphi_1 \, \to \, (\varphi_2 \, \to \, \varphi_3)) \, \to \, ((\varphi_1 \, \to \, \varphi_2) \, \to \, (\varphi_1 \, \to \, \varphi_3)))$
-- $\forall x (\varphi \wedge \psi) \: \leftrightarrow \: (\forall x \varphi \wedge \forall y \psi)$ 
+- $\exists x (\varphi \wedge \psi) \: \leftrightarrow \: (\exists x \varphi \wedge \exists y \psi)$ 
 :::
 
 
