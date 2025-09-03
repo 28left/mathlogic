@@ -1,0 +1,66 @@
+---
+title: "Math 557 Sep 5"
+---
+
+# Substitution
+
+## Key Concepts
+
+- **Validity**: An $\mathcal{L}$-formula $\psi$ that is valid in *any* $\mathcal{L}$-structure under *any* assignment $\alpha$, i.e.
+
+$$\mathcal{M} \models \psi[\alpha] \quad \text{ for any } \mathcal{M}, \alpha.$$
+
+
+- **Sources of validities**: 
+    - *Propositional tautologies* – e.g. formulas of the form $\psi \to \psi$ or $\psi \vee \neg \psi$
+    - *Equality* - the way $=$ is interpreted implies formulas like $\forall x \; x=x$ are validities.  
+    - *Quantifiers* 
+
+- **Fundamental questions**: 
+
+    - Can we characterize the set of validities *syntactically*?
+    - In particular, is there an algorithm that, on input $\varphi$, determines whether $\varphi$ is a validity or not?
+
+
+
+
+## Problems
+
+
+::: {#exr-}
+## Carry-over from Sep 3
+\
+Verify, using the definition of the satisfaction relation $\models$, that
+
+$$\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})$$
+
+is a validity.
+:::
+
+
+::: {#exr-}
+\
+Let $g ∶ \{0, 1\}^n → \{0, 1\}$ be a Boolean function. Show that there exists a propositional formula $F(p_1, \dots, p_n)$ such that, for any assignment $\delta$ to the variables $p_1, \dots, p_n$, 
+
+$$\delta^*(F) = g(\delta(p_1), \dots, \delta(p_n)).$$
+:::
+
+
+:::{#exr-}
+\
+Formally verify that every propositional tautology is a validity.
+:::
+
+
+
+:::{#exr-}
+\
+Verify, using the definition of the satisfaction relation $\models$, that
+
+$$\forall x,y (x = y \: \to \: f(x)=f(y)) \quad (\text{$f$ unary function symbol})$$
+
+and
+$$\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})$$
+
+are validities.
+:::
