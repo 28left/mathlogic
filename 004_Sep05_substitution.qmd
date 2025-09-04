@@ -30,7 +30,9 @@ $$\mathcal{M} \models \psi[\alpha] \quad \text{ for any } \mathcal{M}, \alpha.$$
 ::: {#exr-}
 ## Carry-over from Sep 3
 \
-Verify, using the definition of the satisfaction relation $\models$, that
+Show that if $x$ is not free in $\varphi$, $\mathcal{M} \models \varphi[\alpha]$ implies $\mathcal{M} \models \forall x \, \varphi [\alpha]$.
+
+Then verify that
 
 $$\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})$$
 
@@ -40,9 +42,7 @@ is a validity.
 
 ::: {#exr-}
 \
-Let $g ∶ \{0, 1\}^n → \{0, 1\}$ be a Boolean function. Show that there exists a propositional formula $F(p_1, \dots, p_n)$ such that, for any assignment $\delta$ to the variables $p_1, \dots, p_n$, 
 
-$$\delta^*(F) = g(\delta(p_1), \dots, \delta(p_n)).$$
 :::
 
 
