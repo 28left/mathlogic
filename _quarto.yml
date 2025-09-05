@@ -13,6 +13,9 @@ website:
         text: August 29
       - href: 003_Sep03_validities.qmd
         text: September 3
+      - href: 004_Sep05_substitution.qmd
+        text: September 5
+
 
 format:
   html:

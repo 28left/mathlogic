@@ -6,20 +6,17 @@ title: "Math 557 Sep 5"
 
 ## Key Concepts
 
-- **Validity**: An $\mathcal{L}$-formula $\psi$ that is valid in *any* $\mathcal{L}$-structure under *any* assignment $\alpha$, i.e.
+- **Substitution**: 
 
-$$\mathcal{M} \models \psi[\alpha] \quad \text{ for any } \mathcal{M}, \alpha.$$
+  - Basic idea: $\varphi_{\bar{s}/\bar{x}}$ is obtained by replacing all occurrences of the variable $x_i$ by the term $s_i$.
+  - Uncontrolled substitution may cause issues with quantifiers. If we try to substitute a variable into the range of a quantifier, we rename the quantified variable to an unused variable ($\exists x \dots$ becomes $\exists u \dots$).
 
 
-- **Sources of validities**: 
-    - *Propositional tautologies* – e.g. formulas of the form $\psi \to \psi$ or $\psi \vee \neg \psi$
-    - *Equality* - the way $=$ is interpreted implies formulas like $\forall x \; x=x$ are validities.  
-    - *Quantifiers* 
+- **Substitution Lemma**: 
 
-- **Fundamental questions**: 
-
-    - Can we characterize the set of validities *syntactically*?
-    - In particular, is there an algorithm that, on input $\varphi$, determines whether $\varphi$ is a validity or not?
+    - Substitution behaves "as expected" with respect to evaluation and satisfaction.
+    - Evaluating a substituted term yields the same value as evaluating the original term under the "substituted" assignment (i.e. the assignment in which we replace the assignment to $x$ by the value of $s$ under $\alpha$).
+    - A substituted formula holds in $\mathcal{M}$ under assignment $\alpha$ iff the original formula holds in $\mathcal{M}$ under the "substituted" assignment.
 
 
 
@@ -41,26 +38,27 @@ is a validity.
 
 
 ::: {#exr-}
-\
 
+- Show that if $t$ is a term, then $t_{\bar{s}/\bar{x}}$ is a term.
+
+- Show that if $\varphi$ is a formula, $\varphi_{\bar{s}/\bar{x}}$ is a formula of the same height.
 :::
 
 
 :::{#exr-}
 \
-Formally verify that every propositional tautology is a validity.
+Use the Substitution Lemma to verify that $$\varphi_{t/x} \: \to \: \exists x \, \varphi$$ is a validity.
 :::
 
 
 
 :::{#exr-}
 \
-Verify, using the definition of the satisfaction relation $\models$, that
+Show that if $y$ does not occur in $\psi$,
 
-$$\forall x,y (x = y \: \to \: f(x)=f(y)) \quad (\text{$f$ unary function symbol})$$
+$$
+[\psi_{y/x}]_{x/y} \equiv \psi
+$$
 
-and
-$$\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})$$
-
-are validities.
+Find a counterexample that shows this no longer holds if $y$ *does* occur in $\psi$.
 :::

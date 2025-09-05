@@ -2,4 +2,4 @@
 title: "557"
 ---
 
-This site collect course material for Math 557, Mathematical Logic, at Penn State.
+This site collects course material for Math 557, Mathematical Logic, at Penn State.
