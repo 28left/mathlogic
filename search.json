@@ -47,11 +47,41 @@
     ]
   },
   {
+    "objectID": "004_Sep05_substitution.html",
+    "href": "004_Sep05_substitution.html",
+    "title": "Math 557 Sep 5",
+    "section": "",
+    "text": "Substitution:\n\nBasic idea: \\(\\varphi_{\\bar{s}/\\bar{x}}\\) is obtained by replacing all occurrences of the variable \\(x_i\\) by the term \\(s_i\\).\nUncontrolled substitution may cause issues with quantifiers. If we try to substitute a variable into the range of a quantifier, we rename the quantified variable to an unused variable (\\(\\exists x \\dots\\) becomes \\(\\exists u \\dots\\)).\n\nSubstitution Lemma:\n\nSubstitution behaves “as expected” with respect to evaluation and satisfaction.\nEvaluating a substituted term yields the same value as evaluating the original term under the “substituted” assignment (i.e. the assignment in which we replace the assignment to \\(x\\) by the value of \\(s\\) under \\(\\alpha\\)).\nA substituted formula holds in \\(\\mathcal{M}\\) under assignment \\(\\alpha\\) iff the original formula holds in \\(\\mathcal{M}\\) under the “substituted” assignment.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 1 (Carry-over from Sep 3) \nShow that if \\(x\\) is not free in \\(\\varphi\\), \\(\\mathcal{M} \\models \\varphi[\\alpha]\\) implies \\(\\mathcal{M} \\models \\forall x \\, \\varphi [\\alpha]\\).\nThen verify that\n\\[\\forall x ( \\varphi \\to \\psi) \\; \\to \\; (\\varphi \\to \\forall x \\psi) \\quad (\\text{$x$ not free in $\\varphi$})\\]\nis a validity.\n\n\n\n\n\n\n\n\n\n\n\nExercise 2  \n\nShow that if \\(t\\) is a term, then \\(t_{\\bar{s}/\\bar{x}}\\) is a term.\nShow that if \\(\\varphi\\) is a formula, \\(\\varphi_{\\bar{s}/\\bar{x}}\\) is a formula of the same height.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nUse the Substitution Lemma to verify that \\[\\varphi_{t/x} \\: \\to \\: \\exists x \\, \\varphi\\] is a validity.\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 \nShow that if \\(y\\) does not occur in \\(\\psi\\),\n\\[\n[\\psi_{y/x}]_{x/y} \\equiv \\psi\n\\]\nFind a counterexample that shows this no longer holds if \\(y\\) does occur in \\(\\psi\\).",
+    "crumbs": [
+      "September 5"
+    ]
+  },
+  {
+    "objectID": "004_Sep05_substitution.html#key-concepts",
+    "href": "004_Sep05_substitution.html#key-concepts",
+    "title": "Math 557 Sep 5",
+    "section": "",
+    "text": "Substitution:\n\nBasic idea: \\(\\varphi_{\\bar{s}/\\bar{x}}\\) is obtained by replacing all occurrences of the variable \\(x_i\\) by the term \\(s_i\\).\nUncontrolled substitution may cause issues with quantifiers. If we try to substitute a variable into the range of a quantifier, we rename the quantified variable to an unused variable (\\(\\exists x \\dots\\) becomes \\(\\exists u \\dots\\)).\n\nSubstitution Lemma:\n\nSubstitution behaves “as expected” with respect to evaluation and satisfaction.\nEvaluating a substituted term yields the same value as evaluating the original term under the “substituted” assignment (i.e. the assignment in which we replace the assignment to \\(x\\) by the value of \\(s\\) under \\(\\alpha\\)).\nA substituted formula holds in \\(\\mathcal{M}\\) under assignment \\(\\alpha\\) iff the original formula holds in \\(\\mathcal{M}\\) under the “substituted” assignment.",
+    "crumbs": [
+      "September 5"
+    ]
+  },
+  {
+    "objectID": "004_Sep05_substitution.html#problems",
+    "href": "004_Sep05_substitution.html#problems",
+    "title": "Math 557 Sep 5",
+    "section": "",
+    "text": "Exercise 1 (Carry-over from Sep 3) \nShow that if \\(x\\) is not free in \\(\\varphi\\), \\(\\mathcal{M} \\models \\varphi[\\alpha]\\) implies \\(\\mathcal{M} \\models \\forall x \\, \\varphi [\\alpha]\\).\nThen verify that\n\\[\\forall x ( \\varphi \\to \\psi) \\; \\to \\; (\\varphi \\to \\forall x \\psi) \\quad (\\text{$x$ not free in $\\varphi$})\\]\nis a validity.\n\n\n\n\n\n\n\n\n\n\n\nExercise 2  \n\nShow that if \\(t\\) is a term, then \\(t_{\\bar{s}/\\bar{x}}\\) is a term.\nShow that if \\(\\varphi\\) is a formula, \\(\\varphi_{\\bar{s}/\\bar{x}}\\) is a formula of the same height.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nUse the Substitution Lemma to verify that \\[\\varphi_{t/x} \\: \\to \\: \\exists x \\, \\varphi\\] is a validity.\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 \nShow that if \\(y\\) does not occur in \\(\\psi\\),\n\\[\n[\\psi_{y/x}]_{x/y} \\equiv \\psi\n\\]\nFind a counterexample that shows this no longer holds if \\(y\\) does occur in \\(\\psi\\).",
+    "crumbs": [
+      "September 5"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "557",
     "section": "",
-    "text": "This site collect course material for Math 557, Mathematical Logic, at Penn State."
+    "text": "This site collects course material for Math 557, Mathematical Logic, at Penn State."
   },
   {
     "objectID": "002_Aug29_semantics.html",
