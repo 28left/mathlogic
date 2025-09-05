@@ -33,7 +33,7 @@ format:
     toc: true
   pdf: 
     documentclass: article
-    geometry: "margin=1in"
+    geometry: "margin=0.8in"
 
 callouty-theorem:
   exr:
