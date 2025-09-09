@@ -1,0 +1,93 @@
+---
+title: "Math 557 Sep 10"
+---
+
+# Logical Implication and Proof
+
+## Key Concepts
+
+- **Substitution**: 
+
+  - Basic idea: $\varphi_{\bar{s}/\bar{x}}$ is obtained by replacing all occurrences of the variable $x_i$ by the term $s_i$.
+  - Uncontrolled substitution may cause issues with quantifiers. If we try to substitute a variable into the range of a quantifier, we rename the quantified variable to an unused variable ($\exists x \dots$ becomes $\exists u \dots$).
+
+
+- **Substitution Lemma**: 
+
+    - Substitution behaves "as expected" with respect to evaluation and satisfaction.
+    - Evaluating a substituted term yields the same value as evaluating the original term under the "substituted" assignment (i.e. the assignment in which we replace the assignment to $x$ by the value of $s$ under $\alpha$).
+    - A substituted formula holds in $\mathcal{M}$ under assignment $\alpha$ iff the original formula holds in $\mathcal{M}$ under the "substituted" assignment.
+
+
+
+
+## Problems
+
+
+::: {#exr-}
+## Warmup - Logical Implication
+\
+Let $T$ be an $\mathcal{L}$-theory. We say a theory $T'$ is an **axiomatization** of $T$ if for any $\mathcal{L}$-structure $\mathcal{M}$,
+
+$$\mathcal{M} \models T \; \iff \; \mathcal{M} \models T'$$
+
+Show that for any axiomatization $T'$ of $T$, for any $\mathcal{L}$-sentence $\sigma$,
+
+$$T \models \sigma \; \iff \; T' \models \sigma$$
+:::
+
+
+::: {#exr-}
+## Warmup 2 
+\
+Recall that a *model* of a theory $T$ is a structure $\mathcal{M}$ such that for any sentence $\sigma \in T$, $\mathcal{M} \models \sigma$. In this case we write $\mathcal{M} \models T$.
+
+Argue that if $T$ does not have a model, every sentence is a logical implication of $T$.
+:::
+
+
+:::{#exr-}
+## Formal notion of proof -- Warmup
+\
+Verify that
+
+$$\{\varphi, \neg \psi\} \vdash \neg(\varphi \to \psi)$$
+:::
+
+
+
+:::{#exr-}
+\
+Argue (semantically) that if $x$ is not free in $\psi$,
+
+$$\{\varphi \to \psi\} \models \exists x \varphi \: \to \: \psi$$
+
+Then prove this *syntactically*, i.e. show (under the same assumption) that
+
+$$\{\varphi \to \psi\} \vdash \exists x \varphi \: \to \: \psi$$
+:::
+
+
+
+:::{#exr-}
+\
+Prove the *Soundness Theorem*, i.e. show that
+
+$$T \vdash \varphi \; \Rightarrow \; T \models \varphi$$
+:::
+
+
+
+:::{.callout-important}
+## Take-home problem
+\
+Show that 
+
+\begin{align*}
+\{\varphi \to \psi \} & \vdash \exists x \varphi \: \to \: \exists x \psi \\
+\{\varphi \to \psi \} & \vdash \forall x \varphi \: \to \: \forall x \psi \\
+\end{align*}
+
+:::}
+
+

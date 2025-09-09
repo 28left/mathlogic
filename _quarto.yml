@@ -15,6 +15,9 @@ website:
         text: September 3
       - href: 004_Sep05_substitution.qmd
         text: September 5
+      - href: 005_Sep10_implication.qmd
+        text: September 10
+
 
 
 format:
