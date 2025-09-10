@@ -1,0 +1,86 @@
+---
+title: "Math 557 Sep 12"
+---
+
+# Consistency and Completeness
+
+## Key Concepts
+
+- **Consistency**: \
+A theory $T$ is **consistent**  if there does not exist a formula $\psi$ such that $T \vdash \psi$ and $T \vdash \neg \psi$.
+
+- **Completeness**: \
+A theory $T$ is **complete** if it is consistent and for every sentence $\sigma$, $T \vdash \sigma$ or $T \vdash \neg \sigma$. 
+
+- In a complete theory, every statement is determined, in the sense that is either true or false in the theory.
+
+- An important example of a complete theory is the *theory of a fixed structure* $\mathcal{M}$,
+
+$$\operatorname{Th}(\mathcal{M}) = \{ \sigma \colon \mathcal{M} \models \sigma \}$$
+
+- If on the other hand, we are given a complete theory $T$, does $T$ have a model? This is the subject of the **Completeness Theorem**. It actually shows that any *consistent* theory has a model.
+
+
+
+## Problems
+
+:::{#exr-}
+## Carry-over from Sep 10
+\
+Prove the *Soundness Theorem*, i.e. show that
+
+$$T \vdash \varphi \; \Rightarrow \; T \models \varphi$$
+:::
+
+
+::: {#exr-}
+\
+Show that a theory $T$ is inconsistent iff for every formula $\psi$, $T \vdash \psi$
+:::
+
+
+::: {#exr-}
+\
+
+:::
+
+
+:::{#exr-}
+## Formal notion of proof -- Warmup
+\
+Verify that
+
+$$\{\varphi, \neg \psi\} \vdash \neg(\varphi \to \psi)$$
+:::
+
+
+
+:::{#exr-}
+\
+Argue (semantically) that if $x$ is not free in $\psi$,
+
+$$\{\varphi \to \psi\} \models \exists x \varphi \: \to \: \psi$$
+
+Then prove this *syntactically*, i.e. show (under the same assumption) that
+
+$$\{\varphi \to \psi\} \vdash \exists x \varphi \: \to \: \psi$$
+:::
+
+
+
+
+
+
+:::{.callout-important}
+## Take-home problem
+\
+Show that 
+
+\begin{align*}
+\{\varphi \to \psi \} & \vdash \exists x \varphi \: \to \: \exists x \psi \\
+\{\varphi \to \psi \} & \vdash \forall x \varphi \: \to \: \forall x \psi \\
+\end{align*}
+
+:::}
+
+
