@@ -6,17 +6,13 @@ title: "Math 557 Sep 10"
 
 ## Key Concepts
 
-- **Substitution**: 
+- **Logical consequence**: 
 
-  - Basic idea: $\varphi_{\bar{s}/\bar{x}}$ is obtained by replacing all occurrences of the variable $x_i$ by the term $s_i$.
-  - Uncontrolled substitution may cause issues with quantifiers. If we try to substitute a variable into the range of a quantifier, we rename the quantified variable to an unused variable ($\exists x \dots$ becomes $\exists u \dots$).
+  - This is the semantical implication we are often working with in mathematical practice. We say $T$ **logically implies** $\varphi$, $T \models \varphi$, if for structure $\mathcal{M}$, $\mathcal{M} \models T$ implies $\mathcal{M} \models \varphi$.
 
+- **Formal proof**: 
 
-- **Substitution Lemma**: 
-
-    - Substitution behaves "as expected" with respect to evaluation and satisfaction.
-    - Evaluating a substituted term yields the same value as evaluating the original term under the "substituted" assignment (i.e. the assignment in which we replace the assignment to $x$ by the value of $s$ under $\alpha$).
-    - A substituted formula holds in $\mathcal{M}$ under assignment $\alpha$ iff the original formula holds in $\mathcal{M}$ under the "substituted" assignment.
+  - $T \vdash \varphi$ means there is a formal (i.e. *syntactical*) derivation of $\varphi$ from $T$ using the formulas of $T$, the three kinds of *logical axioms* (propositional tautologies, equality and quantifier axioms), and the *inference rules* Modus Ponens and Generalization.
 
 
 
