@@ -30,21 +30,41 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "005_Sep10_implication.html",
+    "href": "005_Sep10_implication.html",
+    "title": "Math 557 Sep 10",
     "section": "",
-    "text": "About this site"
+    "text": "Logical consequence:\n\nThis is the semantical implication we are often working with in mathematical practice. We say \\(T\\) logically implies \\(\\varphi\\), \\(T \\models \\varphi\\), if for structure \\(\\mathcal{M}\\), \\(\\mathcal{M} \\models T\\) implies \\(\\mathcal{M} \\models \\varphi\\).\n\nFormal proof:\n\n\\(T \\vdash \\varphi\\) means there is a formal (i.e. syntactical) derivation of \\(\\varphi\\) from \\(T\\) using the formulas of \\(T\\), the three kinds of logical axioms (propositional tautologies, equality and quantifier axioms), and the inference rules Modus Ponens and Generalization.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 1 (Warmup - Logical Implication) \nLet \\(T\\) be an \\(\\mathcal{L}\\)-theory. We say a theory \\(T'\\) is an axiomatization of \\(T\\) if for any \\(\\mathcal{L}\\)-structure \\(\\mathcal{M}\\),\n\\[\\mathcal{M} \\models T \\; \\iff \\; \\mathcal{M} \\models T'\\]\nShow that for any axiomatization \\(T'\\) of \\(T\\), for any \\(\\mathcal{L}\\)-sentence \\(\\sigma\\),\n\\[T \\models \\sigma \\; \\iff \\; T' \\models \\sigma\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 (Warmup 2) \nRecall that a model of a theory \\(T\\) is a structure \\(\\mathcal{M}\\) such that for any sentence \\(\\sigma \\in T\\), \\(\\mathcal{M} \\models \\sigma\\). In this case we write \\(\\mathcal{M} \\models T\\).\nArgue that if \\(T\\) does not have a model, every sentence is a logical implication of \\(T\\).\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 (Formal notion of proof – Warmup) \nVerify that\n\\[\\{\\varphi, \\neg \\psi\\} \\vdash \\neg(\\varphi \\to \\psi)\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 \nArgue (semantically) that if \\(x\\) is not free in \\(\\psi\\),\n\\[\\{\\varphi \\to \\psi\\} \\models \\exists x \\varphi \\: \\to \\: \\psi\\]\nThen prove this syntactically, i.e. show (under the same assumption) that\n\\[\\{\\varphi \\to \\psi\\} \\vdash \\exists x \\varphi \\: \\to \\: \\psi\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nProve the Soundness Theorem, i.e. show that\n\\[T \\vdash \\varphi \\; \\Rightarrow \\; T \\models \\varphi\\]\n\n\n\n\n\n\n\n\n\n\nImportantTake-home problem\n\n\n\n\nShow that\n\\[\\begin{align*}\n\\{\\varphi \\to \\psi \\} & \\vdash \\exists x \\varphi \\: \\to \\: \\exists x \\psi \\\\\n\\{\\varphi \\to \\psi \\} & \\vdash \\forall x \\varphi \\: \\to \\: \\forall x \\psi \\\\\n\\end{align*}\\]",
+    "crumbs": [
+      "September 10"
+    ]
   },
   {
-    "objectID": "001_Aug27_syntax.html",
-    "href": "001_Aug27_syntax.html",
-    "title": "Math 557 August 27",
+    "objectID": "005_Sep10_implication.html#key-concepts",
+    "href": "005_Sep10_implication.html#key-concepts",
+    "title": "Math 557 Sep 10",
     "section": "",
-    "text": "Problems\n\n\n\n\n\n\n\nExercise 1 \nThe set of \\(\\cal{L}\\)-terms \\(\\mathcal{T}^{\\mathcal{L}}\\) is defined as the smallest set (with respect to \\(\\subseteq\\)) containing variables and constant symbols and that is closed under function symbol application.\n\nWhy do this set exist?\nDoes a similar argument work for the set of \\(\\mathcal{L}\\)-formulas?\nFind an example of a (non-empty) family of sets and a property \\(P\\) (applicable to the sets in the family) such that a \\(\\subseteq\\)-smallest set with property \\(P\\) does not exist.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nProve the Readbility Lemma: For any term \\(t\\), exactly one of the following holds.\n\nThere exists a \\(v \\in \\mathcal{V}\\) such that \\(t \\equiv v\\).\nThere exists a \\(c \\in \\mathcal{C}^{\\mathcal{L}}\\) such that \\(t \\equiv c\\).\nThere exists a number \\(n \\in \\mathbb{N}\\), a function symbol \\(f\n\\in F_n^{\\mathcal{L}}\\), and terms \\(t_1,\n\\dots, t_n\\) such that \\(t \\equiv ft_1\\dots t_n\\).\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that no proper initial segment of a term is a term. (Use induction on the length of a term.)\nDeduce unique readability: The decomposition in (3.) above is unique.\n\n\n\n\n\n\n\n\n\n\nTake-home Problem\n\n\n\n\nProve unique readability for the set of \\(\\mathcal{L}\\)-formulas.\n\n\n\n\n\n\n\n\n\nExercise 4 \nThe set \\(C\\) is defined as the smallest set of finite strings over the alphabet \\(\\{\\times, \\circ\\}\\) such that\n\n(C1) \\(\\times \\in  C\\),\n(C2) \\(\\circ \\in C\\),\n(C3) if \\(s , t \\in C\\) and the last symbol in \\(s\\) differs from the the first symbol in \\(t\\), then \\(s t \\in C\\) (where \\(st\\) is the concatenation of \\(s\\) and \\(t\\)).\n\nFormulate the property of unique readability for the system (C1)-(C3) and argue that it does not hold for this system.\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nLet \\(\\mathcal{L} = (0,&lt;)\\) be a language with one constant symbol \\(0\\) and one binary relation symbol \\(&lt;\\). In the following, for sake of (human) readability, we write \\(0 &lt; v_1\\) instead of \\(&lt; 0 v_1\\).\nConsider the expression\n\\[\\phi \\equiv  (\\exists v_2 \\; v_1 &lt; v_2 \\wedge \\exists v_1 \\;v_2 &lt; 0).\\]\n\nIs this a correct \\(\\mathcal{L}\\)-formula?\nCharacterize every variable occurrence in \\(\\phi\\) as free or bound.",
+    "text": "Logical consequence:\n\nThis is the semantical implication we are often working with in mathematical practice. We say \\(T\\) logically implies \\(\\varphi\\), \\(T \\models \\varphi\\), if for structure \\(\\mathcal{M}\\), \\(\\mathcal{M} \\models T\\) implies \\(\\mathcal{M} \\models \\varphi\\).\n\nFormal proof:\n\n\\(T \\vdash \\varphi\\) means there is a formal (i.e. syntactical) derivation of \\(\\varphi\\) from \\(T\\) using the formulas of \\(T\\), the three kinds of logical axioms (propositional tautologies, equality and quantifier axioms), and the inference rules Modus Ponens and Generalization.",
     "crumbs": [
-      "August 27"
+      "September 10"
     ]
+  },
+  {
+    "objectID": "005_Sep10_implication.html#problems",
+    "href": "005_Sep10_implication.html#problems",
+    "title": "Math 557 Sep 10",
+    "section": "",
+    "text": "Exercise 1 (Warmup - Logical Implication) \nLet \\(T\\) be an \\(\\mathcal{L}\\)-theory. We say a theory \\(T'\\) is an axiomatization of \\(T\\) if for any \\(\\mathcal{L}\\)-structure \\(\\mathcal{M}\\),\n\\[\\mathcal{M} \\models T \\; \\iff \\; \\mathcal{M} \\models T'\\]\nShow that for any axiomatization \\(T'\\) of \\(T\\), for any \\(\\mathcal{L}\\)-sentence \\(\\sigma\\),\n\\[T \\models \\sigma \\; \\iff \\; T' \\models \\sigma\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 (Warmup 2) \nRecall that a model of a theory \\(T\\) is a structure \\(\\mathcal{M}\\) such that for any sentence \\(\\sigma \\in T\\), \\(\\mathcal{M} \\models \\sigma\\). In this case we write \\(\\mathcal{M} \\models T\\).\nArgue that if \\(T\\) does not have a model, every sentence is a logical implication of \\(T\\).\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 (Formal notion of proof – Warmup) \nVerify that\n\\[\\{\\varphi, \\neg \\psi\\} \\vdash \\neg(\\varphi \\to \\psi)\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 \nArgue (semantically) that if \\(x\\) is not free in \\(\\psi\\),\n\\[\\{\\varphi \\to \\psi\\} \\models \\exists x \\varphi \\: \\to \\: \\psi\\]\nThen prove this syntactically, i.e. show (under the same assumption) that\n\\[\\{\\varphi \\to \\psi\\} \\vdash \\exists x \\varphi \\: \\to \\: \\psi\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nProve the Soundness Theorem, i.e. show that\n\\[T \\vdash \\varphi \\; \\Rightarrow \\; T \\models \\varphi\\]\n\n\n\n\n\n\n\n\n\n\nImportantTake-home problem\n\n\n\n\nShow that\n\\[\\begin{align*}\n\\{\\varphi \\to \\psi \\} & \\vdash \\exists x \\varphi \\: \\to \\: \\exists x \\psi \\\\\n\\{\\varphi \\to \\psi \\} & \\vdash \\forall x \\varphi \\: \\to \\: \\forall x \\psi \\\\\n\\end{align*}\\]",
+    "crumbs": [
+      "September 10"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "557",
+    "section": "",
+    "text": "This site collects course material for Math 557, Mathematical Logic, at Penn State."
   },
   {
     "objectID": "004_Sep05_substitution.html",
@@ -77,11 +97,21 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "557",
+    "objectID": "001_Aug27_syntax.html",
+    "href": "001_Aug27_syntax.html",
+    "title": "Math 557 August 27",
     "section": "",
-    "text": "This site collects course material for Math 557, Mathematical Logic, at Penn State."
+    "text": "Problems\n\n\n\n\n\n\n\nExercise 1 \nThe set of \\(\\cal{L}\\)-terms \\(\\mathcal{T}^{\\mathcal{L}}\\) is defined as the smallest set (with respect to \\(\\subseteq\\)) containing variables and constant symbols and that is closed under function symbol application.\n\nWhy do this set exist?\nDoes a similar argument work for the set of \\(\\mathcal{L}\\)-formulas?\nFind an example of a (non-empty) family of sets and a property \\(P\\) (applicable to the sets in the family) such that a \\(\\subseteq\\)-smallest set with property \\(P\\) does not exist.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nProve the Readbility Lemma: For any term \\(t\\), exactly one of the following holds.\n\nThere exists a \\(v \\in \\mathcal{V}\\) such that \\(t \\equiv v\\).\nThere exists a \\(c \\in \\mathcal{C}^{\\mathcal{L}}\\) such that \\(t \\equiv c\\).\nThere exists a number \\(n \\in \\mathbb{N}\\), a function symbol \\(f\n\\in F_n^{\\mathcal{L}}\\), and terms \\(t_1,\n\\dots, t_n\\) such that \\(t \\equiv ft_1\\dots t_n\\).\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that no proper initial segment of a term is a term. (Use induction on the length of a term.)\nDeduce unique readability: The decomposition in (3.) above is unique.\n\n\n\n\n\n\n\n\n\n\nImportantTake-home Problem\n\n\n\n\nProve unique readability for the set of \\(\\mathcal{L}\\)-formulas.\n\n\n\n\n\n\n\n\n\nExercise 4 \nThe set \\(C\\) is defined as the smallest set of finite strings over the alphabet \\(\\{\\times, \\circ\\}\\) such that\n\n(C1) \\(\\times \\in  C\\),\n(C2) \\(\\circ \\in C\\),\n(C3) if \\(s , t \\in C\\) and the last symbol in \\(s\\) differs from the the first symbol in \\(t\\), then \\(s t \\in C\\) (where \\(st\\) is the concatenation of \\(s\\) and \\(t\\)).\n\nFormulate the property of unique readability for the system (C1)-(C3) and argue that it does not hold for this system.\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nLet \\(\\mathcal{L} = (0,&lt;)\\) be a language with one constant symbol \\(0\\) and one binary relation symbol \\(&lt;\\). In the following, for sake of (human) readability, we write \\(0 &lt; v_1\\) instead of \\(&lt; 0 v_1\\).\nConsider the expression\n\\[\\phi \\equiv  (\\exists v_2 \\; v_1 &lt; v_2 \\wedge \\exists v_1 \\;v_2 &lt; 0).\\]\n\nIs this a correct \\(\\mathcal{L}\\)-formula?\nCharacterize every variable occurrence in \\(\\phi\\) as free or bound.",
+    "crumbs": [
+      "August 27"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "002_Aug29_semantics.html",
@@ -108,7 +138,7 @@
     "href": "002_Aug29_semantics.html#problems",
     "title": "Math 557 August 29",
     "section": "Problems",
-    "text": "Problems\nWe warm up with a quote often attributed to Lincoln.\n\n\n\n\n\n\n\nExercise 1  \n\nYou can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.\n\nDefine a suitable language and formalize this statement in first-order logic.\n\n\n\n\nNext, a couple of problems to see the definition of structures and the satisfaction relation \\(\\models\\) at work.\n\n\n\n\n\n\n\nExercise 2 \nLet \\(\\mathcal{L} = \\{ \\Box, \\triangle, c\\}\\), where \\(\\Box\\) is a binary relation symbol, \\(\\triangle\\) is a binary function symbol, and \\(c\\) is a constant symbol.\nFor each of the following formulas, find two \\(\\mathcal{L}\\)-structures and (if necessary) assignments to the free variable(s) such that the formula holds in one structure but fails in the other.\n\\[\\begin{align}\n\\varphi & \\equiv \\forall x \\exists y \\: \\Box \\, \\triangle x y \\, c \\\\\n\\psi & \\equiv \\exists x \\forall y ( x = c \\: \\wedge \\: \\Box \\, \\triangle zc \\, y )\n\\end{align}\\]\n\n\n\n\nNext, let’s see some general properties of structures we can describe through first-order formulas.\n\n\n\n\n\n\n\nExercise 3 \nLet \\(n\\) be a natural number and let \\(\\mathcal{L}\\) be any language. Find formulas \\(, \\psi^{\\geq}, \\psi^{\\leq}, \\psi^=\\) such that, for any \\(\\mathcal{L}\\)-structure \\(\\mathcal{M}\\),\n\\[\\begin{align}\n\\mathcal{M} \\models \\psi^{\\geq} & \\iff \\; |M| \\geq n \\\\\n\\mathcal{M} \\models \\psi^{\\leq} & \\iff \\; |M| \\leq n \\\\\n\\mathcal{M} \\models \\psi^{=} & \\iff \\; |M| = n \\\\\n\\end{align}\\]\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\nCan we find a formula \\(\\theta\\) such that\n\\[\n\\mathcal{M} \\models \\theta \\; \\iff \\; |M| \\text{ is finite}?\n\\]\n\n\nWe will answer this question in a few weeks…\n\n\n\n\n\n\n\nExercise 4 \nLet \\(\\mathcal{L} = \\{\\cdot , e\\}\\) be the language of groups. Show that there is a sentence \\(\\varphi\\) such that \\(\\mathcal{M} \\models \\varphi\\) if and only if\n\\[M \\cong \\mathbb{Z}/2\\mathbb{Z}\\times \\mathbb{Z}/2\\mathbb{Z}.\\]\n\n\n\n\n\n\n\n\n\n\nTake-home Problems\n\n\n\n\n\nLet \\(\\mathcal{L}\\) be any finite language and let \\(\\mathcal{M}\\) be a finite \\(\\mathcal{L}\\)-structure. Show that there is an \\(\\mathcal{L}\\)-sentence \\(\\varphi\\) such that\n\n\\[\n\\mathcal{N} \\models \\varphi \\; \\iff \\; \\mathcal{N} \\cong \\mathcal{M}.\n\\]\n\nGive an example of a language \\(\\mathcal{L}\\) and an \\(\\mathcal{L}\\)-sentence \\(\\psi\\) such that\n\nthere is at least one \\(\\mathcal{L}\\)-structure \\(\\cal A\\) such that \\(\\cal A \\models \\psi\\),\nfor all \\(\\cal L\\)-structures \\(\\cal A\\), if \\(\\cal A \\models \\psi\\), then the universe \\(A\\) of \\(\\cal A\\) is infinite.",
+    "text": "Problems\nWe warm up with a quote often attributed to Lincoln.\n\n\n\n\n\n\n\nExercise 1  \n\nYou can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.\n\nDefine a suitable language and formalize this statement in first-order logic.\n\n\n\n\nNext, a couple of problems to see the definition of structures and the satisfaction relation \\(\\models\\) at work.\n\n\n\n\n\n\n\nExercise 2 \nLet \\(\\mathcal{L} = \\{ \\Box, \\triangle, c\\}\\), where \\(\\Box\\) is a binary relation symbol, \\(\\triangle\\) is a binary function symbol, and \\(c\\) is a constant symbol.\nFor each of the following formulas, find two \\(\\mathcal{L}\\)-structures and (if necessary) assignments to the free variable(s) such that the formula holds in one structure but fails in the other.\n\\[\\begin{align}\n\\varphi & \\equiv \\forall x \\exists y \\: \\Box \\, \\triangle x y \\, c \\\\\n\\psi & \\equiv \\exists x \\forall y ( x = c \\: \\wedge \\: \\Box \\, \\triangle zc \\, y )\n\\end{align}\\]\n\n\n\n\nNext, let’s see some general properties of structures we can describe through first-order formulas.\n\n\n\n\n\n\n\nExercise 3 \nLet \\(n\\) be a natural number and let \\(\\mathcal{L}\\) be any language. Find formulas \\(, \\psi^{\\geq}, \\psi^{\\leq}, \\psi^=\\) such that, for any \\(\\mathcal{L}\\)-structure \\(\\mathcal{M}\\),\n\\[\\begin{align}\n\\mathcal{M} \\models \\psi^{\\geq} & \\iff \\; |M| \\geq n \\\\\n\\mathcal{M} \\models \\psi^{\\leq} & \\iff \\; |M| \\leq n \\\\\n\\mathcal{M} \\models \\psi^{=} & \\iff \\; |M| = n \\\\\n\\end{align}\\]\n\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\nCan we find a formula \\(\\theta\\) such that\n\\[\n\\mathcal{M} \\models \\theta \\; \\iff \\; |M| \\text{ is finite}?\n\\]\n\n\nWe will answer this question in a few weeks…\n\n\n\n\n\n\n\nExercise 4 \nLet \\(\\mathcal{L} = \\{\\cdot , e\\}\\) be the language of groups. Show that there is a sentence \\(\\varphi\\) such that \\(\\mathcal{M} \\models \\varphi\\) if and only if\n\\[M \\cong \\mathbb{Z}/2\\mathbb{Z}\\times \\mathbb{Z}/2\\mathbb{Z}.\\]\n\n\n\n\n\n\n\n\n\n\nImportantTake-home Problems\n\n\n\n\n\nLet \\(\\mathcal{L}\\) be any finite language and let \\(\\mathcal{M}\\) be a finite \\(\\mathcal{L}\\)-structure. Show that there is an \\(\\mathcal{L}\\)-sentence \\(\\varphi\\) such that\n\n\\[\n\\mathcal{N} \\models \\varphi \\; \\iff \\; \\mathcal{N} \\cong \\mathcal{M}.\n\\]\n\nGive an example of a language \\(\\mathcal{L}\\) and an \\(\\mathcal{L}\\)-sentence \\(\\psi\\) such that\n\nthere is at least one \\(\\mathcal{L}\\)-structure \\(\\cal A\\) such that \\(\\cal A \\models \\psi\\),\nfor all \\(\\cal L\\)-structures \\(\\cal A\\), if \\(\\cal A \\models \\psi\\), then the universe \\(A\\) of \\(\\cal A\\) is infinite.",
     "crumbs": [
       "August 29"
     ]
