@@ -41,7 +41,9 @@ Show that a theory $T$ is inconsistent iff for every formula $\psi$, $T \vdash \
 
 ::: {#exr-}
 \
+Which classes of structures are axiomatizable? Finitely axiomatizable? If so, is the theory complete?
 
+- fields of characteristic $p$
 :::
 
 
