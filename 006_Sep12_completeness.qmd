@@ -18,7 +18,7 @@ A theory $T$ is **complete** if it is consistent and for every sentence $\sigma$
 
 $$\operatorname{Th}(\mathcal{M}) = \{ \sigma \colon \mathcal{M} \models \sigma \}$$
 
-- If on the other hand, we are given a complete theory $T$, does $T$ have a model? This is the subject of the **Completeness Theorem**. It actually shows that any *consistent* theory has a model.
+- If, on the other hand, we are given a complete theory $T$, does $T$ have a model? This is the subject of the **Completeness Theorem**. It actually shows that any *consistent* theory has a model.
 
 
 
@@ -32,6 +32,10 @@ Prove the *Soundness Theorem*, i.e. show that
 $$T \vdash \varphi \; \Rightarrow \; T \models \varphi$$
 :::
 
+::: {#exr-}
+\
+Why is the theory of a structure, $\operatorname{Th}(\mathcal{M})$, indeed a complete theory?
+:::
 
 ::: {#exr-}
 \
@@ -41,20 +45,20 @@ Show that a theory $T$ is inconsistent iff for every formula $\psi$, $T \vdash \
 
 ::: {#exr-}
 \
-For each of the following classes $\mathbf{K}$ of structures, determine whether they are *aximoatizable*, i.e. whether there exists a theory $T$ (in the language of the structures) such that
+For each of the following classes $\mathbf{K}$ of structures, determine whether they are *axiomatizable*, i.e. whether there exists a theory $T$ (in the language of the structures) such that
 
 $$\mathbf{K} = \{ \mathcal{M} \colon \mathcal{M} \models T \}$$
 
 (In this case $K$ is also called *elementary*.)
 
-If $\mathbf{K}$ is axiomatizable, is it actually *finitely axiomatizable* (i.e. can $T$ be chosen finite)?
+If $\mathbf{K}$ is axiomatizable, discuss whether it is actually *finitely axiomatizable* (i.e. can $T$ be chosen finite).
 And is $T$ complete?
 
-- $mathbf{K} =$ Abelian groups
+- $\mathbf{K} =$ Abelian groups
 - $\mathbf{K} =$ infinite sets
-- $\mathbf{K} =$ field of characteristic $p$ ($p$ prime)
+- $\mathbf{K} =$ fields of characteristic $p$ ($p$ prime)
 - $\mathbf{K} =$ bipartite graphs
-- $\mathbf{K} =$ torsion groups
+- $\mathbf{K} =$ torsion groups  (*all elements have finite order*)
 - $\mathbf{K} =$ algebraically closed fields of characteristic $0$
 
 (*Note: We do not yet have the tools to rigorously answer all these questions, but try an "educated" guess.*)
@@ -62,41 +66,12 @@ And is $T$ complete?
 
 
 :::{#exr-}
-## Formal notion of proof -- Warmup
 \
-Verify that
+Suppose that $T \cup \{\neg\varphi\}$ is inconsistent. Show that $T \vdash \varphi$. 
 
-$$\{\varphi, \neg \psi\} \vdash \neg(\varphi \to \psi)$$
+(*This is a
+technical formulation of the legitimacy of proofs by contradiction.*)
 :::
 
-
-
-:::{#exr-}
-\
-Argue (semantically) that if $x$ is not free in $\psi$,
-
-$$\{\varphi \to \psi\} \models \exists x \varphi \: \to \: \psi$$
-
-Then prove this *syntactically*, i.e. show (under the same assumption) that
-
-$$\{\varphi \to \psi\} \vdash \exists x \varphi \: \to \: \psi$$
-:::
-
-
-
-
-
-
-:::{.callout-important}
-## Take-home problem
-\
-Show that 
-
-\begin{align*}
-\{\varphi \to \psi \} & \vdash \exists x \varphi \: \to \: \exists x \psi \\
-\{\varphi \to \psi \} & \vdash \forall x \varphi \: \to \: \forall x \psi \\
-\end{align*}
-
-:::}
 
 
