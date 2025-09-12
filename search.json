@@ -60,11 +60,21 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "557",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "This site collects course material for Math 557, Mathematical Logic, at Penn State."
+    "text": "About this site"
+  },
+  {
+    "objectID": "001_Aug27_syntax.html",
+    "href": "001_Aug27_syntax.html",
+    "title": "Math 557 August 27",
+    "section": "",
+    "text": "Problems\n\n\n\n\n\n\n\nExercise 1 \nThe set of \\(\\cal{L}\\)-terms \\(\\mathcal{T}^{\\mathcal{L}}\\) is defined as the smallest set (with respect to \\(\\subseteq\\)) containing variables and constant symbols and that is closed under function symbol application.\n\nWhy do this set exist?\nDoes a similar argument work for the set of \\(\\mathcal{L}\\)-formulas?\nFind an example of a (non-empty) family of sets and a property \\(P\\) (applicable to the sets in the family) such that a \\(\\subseteq\\)-smallest set with property \\(P\\) does not exist.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nProve the Readbility Lemma: For any term \\(t\\), exactly one of the following holds.\n\nThere exists a \\(v \\in \\mathcal{V}\\) such that \\(t \\equiv v\\).\nThere exists a \\(c \\in \\mathcal{C}^{\\mathcal{L}}\\) such that \\(t \\equiv c\\).\nThere exists a number \\(n \\in \\mathbb{N}\\), a function symbol \\(f\n\\in F_n^{\\mathcal{L}}\\), and terms \\(t_1,\n\\dots, t_n\\) such that \\(t \\equiv ft_1\\dots t_n\\).\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that no proper initial segment of a term is a term. (Use induction on the length of a term.)\nDeduce unique readability: The decomposition in (3.) above is unique.\n\n\n\n\n\n\n\n\n\n\nImportantTake-home Problem\n\n\n\n\nProve unique readability for the set of \\(\\mathcal{L}\\)-formulas.\n\n\n\n\n\n\n\n\n\nExercise 4 \nThe set \\(C\\) is defined as the smallest set of finite strings over the alphabet \\(\\{\\times, \\circ\\}\\) such that\n\n(C1) \\(\\times \\in  C\\),\n(C2) \\(\\circ \\in C\\),\n(C3) if \\(s , t \\in C\\) and the last symbol in \\(s\\) differs from the the first symbol in \\(t\\), then \\(s t \\in C\\) (where \\(st\\) is the concatenation of \\(s\\) and \\(t\\)).\n\nFormulate the property of unique readability for the system (C1)-(C3) and argue that it does not hold for this system.\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nLet \\(\\mathcal{L} = (0,&lt;)\\) be a language with one constant symbol \\(0\\) and one binary relation symbol \\(&lt;\\). In the following, for sake of (human) readability, we write \\(0 &lt; v_1\\) instead of \\(&lt; 0 v_1\\).\nConsider the expression\n\\[\\phi \\equiv  (\\exists v_2 \\; v_1 &lt; v_2 \\wedge \\exists v_1 \\;v_2 &lt; 0).\\]\n\nIs this a correct \\(\\mathcal{L}\\)-formula?\nCharacterize every variable occurrence in \\(\\phi\\) as free or bound.",
+    "crumbs": [
+      "August 27"
+    ]
   },
   {
     "objectID": "004_Sep05_substitution.html",
@@ -97,21 +107,41 @@
     ]
   },
   {
-    "objectID": "001_Aug27_syntax.html",
-    "href": "001_Aug27_syntax.html",
-    "title": "Math 557 August 27",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "557",
     "section": "",
-    "text": "Problems\n\n\n\n\n\n\n\nExercise 1 \nThe set of \\(\\cal{L}\\)-terms \\(\\mathcal{T}^{\\mathcal{L}}\\) is defined as the smallest set (with respect to \\(\\subseteq\\)) containing variables and constant symbols and that is closed under function symbol application.\n\nWhy do this set exist?\nDoes a similar argument work for the set of \\(\\mathcal{L}\\)-formulas?\nFind an example of a (non-empty) family of sets and a property \\(P\\) (applicable to the sets in the family) such that a \\(\\subseteq\\)-smallest set with property \\(P\\) does not exist.\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nProve the Readbility Lemma: For any term \\(t\\), exactly one of the following holds.\n\nThere exists a \\(v \\in \\mathcal{V}\\) such that \\(t \\equiv v\\).\nThere exists a \\(c \\in \\mathcal{C}^{\\mathcal{L}}\\) such that \\(t \\equiv c\\).\nThere exists a number \\(n \\in \\mathbb{N}\\), a function symbol \\(f\n\\in F_n^{\\mathcal{L}}\\), and terms \\(t_1,\n\\dots, t_n\\) such that \\(t \\equiv ft_1\\dots t_n\\).\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that no proper initial segment of a term is a term. (Use induction on the length of a term.)\nDeduce unique readability: The decomposition in (3.) above is unique.\n\n\n\n\n\n\n\n\n\n\nImportantTake-home Problem\n\n\n\n\nProve unique readability for the set of \\(\\mathcal{L}\\)-formulas.\n\n\n\n\n\n\n\n\n\nExercise 4 \nThe set \\(C\\) is defined as the smallest set of finite strings over the alphabet \\(\\{\\times, \\circ\\}\\) such that\n\n(C1) \\(\\times \\in  C\\),\n(C2) \\(\\circ \\in C\\),\n(C3) if \\(s , t \\in C\\) and the last symbol in \\(s\\) differs from the the first symbol in \\(t\\), then \\(s t \\in C\\) (where \\(st\\) is the concatenation of \\(s\\) and \\(t\\)).\n\nFormulate the property of unique readability for the system (C1)-(C3) and argue that it does not hold for this system.\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nLet \\(\\mathcal{L} = (0,&lt;)\\) be a language with one constant symbol \\(0\\) and one binary relation symbol \\(&lt;\\). In the following, for sake of (human) readability, we write \\(0 &lt; v_1\\) instead of \\(&lt; 0 v_1\\).\nConsider the expression\n\\[\\phi \\equiv  (\\exists v_2 \\; v_1 &lt; v_2 \\wedge \\exists v_1 \\;v_2 &lt; 0).\\]\n\nIs this a correct \\(\\mathcal{L}\\)-formula?\nCharacterize every variable occurrence in \\(\\phi\\) as free or bound.",
+    "text": "This site collects course material for Math 557, Mathematical Logic, at Penn State."
+  },
+  {
+    "objectID": "006_Sep12_completeness.html",
+    "href": "006_Sep12_completeness.html",
+    "title": "Math 557 Sep 12",
+    "section": "",
+    "text": "Consistency:\nA theory \\(T\\) is consistent if there does not exist a formula \\(\\psi\\) such that \\(T \\vdash \\psi\\) and \\(T \\vdash \\neg \\psi\\).\nCompleteness:\nA theory \\(T\\) is complete if it is consistent and for every sentence \\(\\sigma\\), \\(T \\vdash \\sigma\\) or \\(T \\vdash \\neg \\sigma\\).\nIn a complete theory, every statement is determined, in the sense that is either true or false in the theory.\nAn important example of a complete theory is the theory of a fixed structure \\(\\mathcal{M}\\),\n\n\\[\\operatorname{Th}(\\mathcal{M}) = \\{ \\sigma \\colon \\mathcal{M} \\models \\sigma \\}\\]\n\nIf, on the other hand, we are given a complete theory \\(T\\), does \\(T\\) have a model? This is the subject of the Completeness Theorem. It actually shows that any consistent theory has a model.\n\n\n\n\n\n\n\n\n\n\n\nExercise 1 (Carry-over from Sep 10) \nProve the Soundness Theorem, i.e. show that\n\\[T \\vdash \\varphi \\; \\Rightarrow \\; T \\models \\varphi\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nWhy is the theory of a structure, \\(\\operatorname{Th}(\\mathcal{M})\\), indeed a complete theory?\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that a theory \\(T\\) is inconsistent iff for every formula \\(\\psi\\), \\(T \\vdash \\psi\\)\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 \nFor each of the following classes \\(\\mathbf{K}\\) of structures, determine whether they are axiomatizable, i.e. whether there exists a theory \\(T\\) (in the language of the structures) such that\n\\[\\mathbf{K} = \\{ \\mathcal{M} \\colon \\mathcal{M} \\models T \\}\\]\n(In this case \\(K\\) is also called elementary.)\nIf \\(\\mathbf{K}\\) is axiomatizable, discuss whether it is actually finitely axiomatizable (i.e. can \\(T\\) be chosen finite). And is \\(T\\) complete?\n\n\\(\\mathbf{K} =\\) Abelian groups\n\\(\\mathbf{K} =\\) infinite sets\n\\(\\mathbf{K} =\\) fields of characteristic \\(p\\) (\\(p\\) prime)\n\\(\\mathbf{K} =\\) bipartite graphs\n\\(\\mathbf{K} =\\) torsion groups (all elements have finite order)\n\\(\\mathbf{K} =\\) algebraically closed fields of characteristic \\(0\\)\n\n(Note: We do not yet have the tools to rigorously answer all these questions, but try an “educated” guess.)\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nSuppose that \\(T \\cup \\{\\neg\\varphi\\}\\) is inconsistent. Show that \\(T \\vdash \\varphi\\).\n(This is a technical formulation of the legitimacy of proofs by contradiction.)",
     "crumbs": [
-      "August 27"
+      "September 12"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "006_Sep12_completeness.html#key-concepts",
+    "href": "006_Sep12_completeness.html#key-concepts",
+    "title": "Math 557 Sep 12",
     "section": "",
-    "text": "About this site"
+    "text": "Consistency:\nA theory \\(T\\) is consistent if there does not exist a formula \\(\\psi\\) such that \\(T \\vdash \\psi\\) and \\(T \\vdash \\neg \\psi\\).\nCompleteness:\nA theory \\(T\\) is complete if it is consistent and for every sentence \\(\\sigma\\), \\(T \\vdash \\sigma\\) or \\(T \\vdash \\neg \\sigma\\).\nIn a complete theory, every statement is determined, in the sense that is either true or false in the theory.\nAn important example of a complete theory is the theory of a fixed structure \\(\\mathcal{M}\\),\n\n\\[\\operatorname{Th}(\\mathcal{M}) = \\{ \\sigma \\colon \\mathcal{M} \\models \\sigma \\}\\]\n\nIf, on the other hand, we are given a complete theory \\(T\\), does \\(T\\) have a model? This is the subject of the Completeness Theorem. It actually shows that any consistent theory has a model.",
+    "crumbs": [
+      "September 12"
+    ]
+  },
+  {
+    "objectID": "006_Sep12_completeness.html#problems",
+    "href": "006_Sep12_completeness.html#problems",
+    "title": "Math 557 Sep 12",
+    "section": "",
+    "text": "Exercise 1 (Carry-over from Sep 10) \nProve the Soundness Theorem, i.e. show that\n\\[T \\vdash \\varphi \\; \\Rightarrow \\; T \\models \\varphi\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise 2 \nWhy is the theory of a structure, \\(\\operatorname{Th}(\\mathcal{M})\\), indeed a complete theory?\n\n\n\n\n\n\n\n\n\n\n\nExercise 3 \nShow that a theory \\(T\\) is inconsistent iff for every formula \\(\\psi\\), \\(T \\vdash \\psi\\)\n\n\n\n\n\n\n\n\n\n\n\nExercise 4 \nFor each of the following classes \\(\\mathbf{K}\\) of structures, determine whether they are axiomatizable, i.e. whether there exists a theory \\(T\\) (in the language of the structures) such that\n\\[\\mathbf{K} = \\{ \\mathcal{M} \\colon \\mathcal{M} \\models T \\}\\]\n(In this case \\(K\\) is also called elementary.)\nIf \\(\\mathbf{K}\\) is axiomatizable, discuss whether it is actually finitely axiomatizable (i.e. can \\(T\\) be chosen finite). And is \\(T\\) complete?\n\n\\(\\mathbf{K} =\\) Abelian groups\n\\(\\mathbf{K} =\\) infinite sets\n\\(\\mathbf{K} =\\) fields of characteristic \\(p\\) (\\(p\\) prime)\n\\(\\mathbf{K} =\\) bipartite graphs\n\\(\\mathbf{K} =\\) torsion groups (all elements have finite order)\n\\(\\mathbf{K} =\\) algebraically closed fields of characteristic \\(0\\)\n\n(Note: We do not yet have the tools to rigorously answer all these questions, but try an “educated” guess.)\n\n\n\n\n\n\n\n\n\n\n\nExercise 5 \nSuppose that \\(T \\cup \\{\\neg\\varphi\\}\\) is inconsistent. Show that \\(T \\vdash \\varphi\\).\n(This is a technical formulation of the legitimacy of proofs by contradiction.)",
+    "crumbs": [
+      "September 12"
+    ]
   },
   {
     "objectID": "002_Aug29_semantics.html",
