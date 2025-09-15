@@ -14,7 +14,7 @@ $$T \vdash_{\mathcal{L}} \varphi  \; \iff \; T \models \varphi$$
 
 - The $\Leftarrow$-direction is usually proved in the following form:
 
-$$\text{If $T$ is consistent, then $T$ has a model.}$$
+>  &emsp;&emsp; If $T$ is consistent, then $T$ has a model.
 
 - To construct a model of a consistent theory, we consider the **constant terms**
 $$K := \{ t \colon t \; \mathcal{L}\text{-term without variables}\}$$
@@ -25,9 +25,9 @@ $$s \sim t \; :\iff \; T \vdash_{\mathcal{L}} s = t$$
 
 - Moreover, we put
 
-  - $c^\mathcal{A} := [c]$
-  - $f^\mathcal{A}([t_1], \dots, [t_n]) := [ft_1\dots t_n]$
-  - $R^\mathcal{A}([t_1], \dots, [t_n]) \; : \iff \; T \vdash_\mathcal{L} Rt_1\dots t_n$
+  - $c^{\mathcal{A}} := [c]$
+  - $f^{\mathcal{A}}([t_1], \dots, [t_n]) := [ft_1\dots t_n]$
+  - $R^{\mathcal{A}}([t_1], \dots, [t_n]) \; : \iff \; T \vdash_{\mathcal{L}} Rt_1\dots t_n$
 
 
 - It holds that for any *atomic* sentence $\sigma$, 
@@ -51,7 +51,7 @@ Verify that $\sim$ is an equivalence relation.
 
 ::: {#exr-}
 \
-Verify that the definition of $c^\mathcal{A}, f^\mathcal{A}, R^\mathcal{A}$ does not depend on the choice of representative for $[c]$ and $[t_i]$.
+Verify that the definition of $c^{\mathcal{A}}, f^{\mathcal{A}}, R^{\mathcal{A}}$ does not depend on the choice of representative for $[c]$ and $[t_i]$.
 :::
 
 ::: {#exr-}

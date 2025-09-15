@@ -19,6 +19,8 @@ website:
         text: September 10
       - href: 006_Sep12_completeness.qmd
         text: September 12
+      - href: 007_Sep15_completeness_theorem.qmd
+        text: September 15
 
 
 
