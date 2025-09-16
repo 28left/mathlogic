@@ -22,11 +22,23 @@ $$\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma$$
 
 ::: {#exr-}
 \
-Verify that the definition of $c^{\mathcal{A}}, f^{\mathcal{A}}, R^{\mathcal{A}}$ does not depend on the choice of representative for $[c]$ and $[t_i]$.
+Recall that a theory $T$ is *maximally consistent* if it is consistent but does not have any consistent proper extensions.
+
+- Show that a maximally consistent theory is complete.
+- Show that if $T$ is complete, its *deductive closure*
+$$T^{\vdash} = \{ \sigma : T \vdash \sigma \}$$
+is maximally consistent.
 :::
 
 ::: {#exr-}
 \
-Verify the claim that for atomic sentences, 
-$$\mathcal{A}_T \models \sigma \quad \iff \quad T \vdash \sigma$$ 
+Show that the union of an increasing sequence of consistent theories is consistent. 
 :::
+
+::: {#exr-}
+\
+Extend Lindebaum's theorem on the existence of maximally consistent extension from countable to arbitrary languages.
+:::
+
+
+
