@@ -21,6 +21,8 @@ website:
         text: September 12
       - href: 007_Sep15_completeness_theorem.qmd
         text: September 15
+      - href: 008_Sep17_completing_theories.qmd
+        text: September 17
 
 
 

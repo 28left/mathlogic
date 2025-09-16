@@ -1,0 +1,32 @@
+---
+title: "Math 557 Sep 15"
+---
+
+# Completing Theories
+
+## Key Concepts
+
+- We previously defined the *term model* $\mathcal{A}$. It holds that for any *atomic* sentence $\sigma$, 
+$$\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma$$
+
+
+
+## Problems
+
+
+:::{#exr-}
+\
+Verify that indeed for all atomic sentences $\sigma$,
+$$\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma$$
+:::
+
+::: {#exr-}
+\
+Verify that the definition of $c^{\mathcal{A}}, f^{\mathcal{A}}, R^{\mathcal{A}}$ does not depend on the choice of representative for $[c]$ and $[t_i]$.
+:::
+
+::: {#exr-}
+\
+Verify the claim that for atomic sentences, 
+$$\mathcal{A}_T \models \sigma \quad \iff \quad T \vdash \sigma$$ 
+:::
