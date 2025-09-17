@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 10 – Math 557 Fall 2025</title>
+<title>Math 557 Sep 15 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./006_Sep12_completeness.html" rel="next">
-<link href="./004_Sep05_substitution.html" rel="prev">
+<link href="./007_Sep15_completeness_theorem.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./005_Sep10_implication.html">September 10</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./008_Sep17_completing_theories.html">September 17</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,7 +162,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link active">
+  <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 10</span></a>
   </div>
 </li>
@@ -181,7 +180,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./008_Sep17_completing_theories.html" class="sidebar-item-text sidebar-link">
+  <a href="./008_Sep17_completing_theories.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">September 17</span></a>
   </div>
 </li>
@@ -195,20 +194,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logical-implication-and-proof" id="toc-logical-implication-and-proof" class="nav-link active" data-scroll-target="#logical-implication-and-proof">Logical Implication and Proof</a>
+  <li><a href="#completing-theories" id="toc-completing-theories" class="nav-link active" data-scroll-target="#completing-theories">Completing Theories</a>
   <ul class="collapse">
   <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
   <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="005_Sep10_implication.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="008_Sep17_completing_theories.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 10</h1>
+<h1 class="title">Math 557 Sep 15</h1>
 </div>
 
 
@@ -225,19 +224,15 @@ window.Quarto = {
 </header>
 
 
-<section id="logical-implication-and-proof" class="level1">
-<h1>Logical Implication and Proof</h1>
+<section id="completing-theories" class="level1">
+<h1>Completing Theories</h1>
 <section id="key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
 <ul>
-<li><p><strong>Logical consequence</strong>:</p>
-<ul>
-<li>This is the semantical implication we are often working with in mathematical practice. We say <span class="math inline">\(T\)</span> <strong>logically implies</strong> <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(T \models \varphi\)</span>, if for structure <span class="math inline">\(\mathcal{M}\)</span>, <span class="math inline">\(\mathcal{M} \models T\)</span> implies <span class="math inline">\(\mathcal{M} \models \varphi\)</span>.</li>
-</ul></li>
-<li><p><strong>Formal proof</strong>:</p>
-<ul>
-<li><span class="math inline">\(T \vdash \varphi\)</span> means there is a formal (i.e.&nbsp;<em>syntactical</em>) derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(T\)</span> using the formulas of <span class="math inline">\(T\)</span>, the three kinds of <em>logical axioms</em> (propositional tautologies, equality and quantifier axioms), and the <em>inference rules</em> Modus Ponens and Generalization.</li>
-</ul></li>
+<li><p>We previously defined the <em>term model</em> <span class="math inline">\(\mathcal{A}\)</span>. It holds that for any <em>atomic</em> sentence <span class="math inline">\(\sigma\)</span>, <span class="math display">\[\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma\]</span></p></li>
+<li><p>Trying to extend this to arbitrary sentence via induction, the <em>negation case</em> looks like <span class="math display">\[\mathcal{A} \models \neg\sigma \; \iff \;  \mathcal{A} \nvDash \sigma \; \overset{\text{ind hyp}}{\iff} \; T \nvdash \sigma\]</span> We would like to show that this is equivalent to <span class="math inline">\(T \vdash \neg\sigma\)</span>.</p></li>
+<li><p>One direction follows from <span class="math inline">\(T\)</span> being consistent, but for the other direction, <span class="math inline">\(T\)</span> may not be strong enough to prove this.</p></li>
+<li><p>We therefore need to <em>extend</em> <span class="math inline">\(T\)</span> to a complete theory.</p></li>
 </ul>
 </section>
 <section id="problems" class="level2">
@@ -249,11 +244,8 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Warmup - Logical Implication)</strong></span> <br>
-Let <span class="math inline">\(T\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-theory. We say a theory <span class="math inline">\(T'\)</span> is an <strong>axiomatization</strong> of <span class="math inline">\(T\)</span> if for any <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\mathcal{M}\)</span>,</p>
-<p><span class="math display">\[\mathcal{M} \models T \; \iff \; \mathcal{M} \models T'\]</span></p>
-<p>Show that for any axiomatization <span class="math inline">\(T'\)</span> of <span class="math inline">\(T\)</span>, for any <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\sigma\)</span>,</p>
-<p><span class="math display">\[T \models \sigma \; \iff \; T' \models \sigma\]</span></p>
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
+Verify that indeed for all atomic sentences <span class="math inline">\(\sigma\)</span>, <span class="math display">\[\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma\]</span></p>
 </div>
 </div>
 </div>
@@ -265,9 +257,12 @@ Let <span class="math inline">\(T\)</span> be an <span class="math inline">\(\ma
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2 (Warmup 2)</strong></span> <br>
-Recall that a <em>model</em> of a theory <span class="math inline">\(T\)</span> is a structure <span class="math inline">\(\mathcal{M}\)</span> such that for any sentence <span class="math inline">\(\sigma \in T\)</span>, <span class="math inline">\(\mathcal{M} \models \sigma\)</span>. In this case we write <span class="math inline">\(\mathcal{M} \models T\)</span>.</p>
-<p>Argue that if <span class="math inline">\(T\)</span> does not have a model, every sentence is a logical implication of <span class="math inline">\(T\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
+Recall that a theory <span class="math inline">\(T\)</span> is <em>maximally consistent</em> if it is consistent but does not have any consistent proper extensions. <span class="math inline">\(T\)</span> is called <em>deductively closed</em> if the deductive closure of <span class="math inline">\(T\)</span>, <span class="math display">\[T^{\vdash} = \{ \sigma : T \vdash \sigma \}\]</span> is equal to <span class="math inline">\(T\)</span>.</p>
+<ul>
+<li>Show that a maximally consistent theory is complete and deductively closed.</li>
+<li>Show that if <span class="math inline">\(T\)</span> is complete, then <span class="math inline">\(T^{\vdash}\)</span> is maximally consistent.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -279,9 +274,8 @@ Recall that a <em>model</em> of a theory <span class="math inline">\(T\)</span> 
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3 (Formal notion of proof – Warmup)</strong></span> <br>
-Verify that</p>
-<p><span class="math display">\[\{\varphi, \neg \psi\} \vdash \neg(\varphi \to \psi)\]</span></p>
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
+Is every consistent, deductively closed theory complete?</p>
 </div>
 </div>
 </div>
@@ -294,10 +288,7 @@ Verify that</p>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Argue (semantically) that if <span class="math inline">\(x\)</span> is not free in <span class="math inline">\(\psi\)</span>,</p>
-<p><span class="math display">\[\{\varphi \to \psi\} \models \exists x \varphi \: \to \: \psi\]</span></p>
-<p>Then prove this <em>syntactically</em>, i.e.&nbsp;show (under the same assumption) that</p>
-<p><span class="math display">\[\{\varphi \to \psi\} \vdash \exists x \varphi \: \to \: \psi\]</span></p>
+Show that the union of an increasing sequence of consistent theories is consistent.</p>
 </div>
 </div>
 </div>
@@ -310,34 +301,49 @@ Argue (semantically) that if <span class="math inline">\(x\)</span> is not free 
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Prove the <em>Soundness Theorem</em>, i.e.&nbsp;show that</p>
-<p><span class="math display">\[T \vdash \varphi \; \Rightarrow \; T \models \varphi\]</span></p>
+Extend Lindebaum’s theorem on the existence of maximally consistent extension from countable to arbitrary languages.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Take-home problem
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> <br>
+Fix a language <span class="math inline">\(\mathcal{L}\)</span>. Let <span class="math inline">\(X\)</span> be the set of all maximally consistent <span class="math inline">\(\mathcal{L}\)</span>-theories. For an <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\sigma\)</span>, let <span class="math display">\[\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\}\]</span></p>
+<p>Show that</p>
+<ul>
+<li><span class="math inline">\(\langle \sigma \land \tau \rangle = \langle \sigma \rangle \cap \langle \tau \rangle\)</span></li>
+<li><span class="math inline">\(\langle \neg\sigma \rangle = X \setminus \langle \sigma \rangle\)</span></li>
+</ul>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p><br>
-Show that</p>
-<p><span class="math display">\[\begin{align*}
-\{\varphi \to \psi \} &amp; \vdash \exists x \varphi \: \to \: \exists x \psi \\
-\{\varphi \to \psi \} &amp; \vdash \forall x \varphi \: \to \: \forall x \psi \\
-\end{align*}\]</span></p>
-<div class="}">
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 7</strong></span> <br>
+Continuing the previous exercise, let <span class="math inline">\(\mathcal{O}\)</span> be the topology generated by the sets <span class="math inline">\(\langle \sigma \rangle\)</span>. Show that</p>
+<ul>
+<li>each <span class="math inline">\(\langle \sigma \rangle\)</span> is clopen,</li>
+<li>the <span class="math inline">\(\langle \sigma \rangle\)</span> form a basis for <span class="math inline">\(\mathcal{O}\)</span>,</li>
+<li><span class="math inline">\(\mathcal{O}\)</span> is Hausdorff.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 
 
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -743,14 +749,11 @@ Show that</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./004_Sep05_substitution.html" class="pagination-link" aria-label="September 5">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 5</span>
+      <a href="./007_Sep15_completeness_theorem.html" class="pagination-link" aria-label="September 15">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 15</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./006_Sep12_completeness.html" class="pagination-link" aria-label="September 12">
-        <span class="nav-page-text">September 12</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
