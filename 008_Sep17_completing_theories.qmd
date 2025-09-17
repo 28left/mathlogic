@@ -9,6 +9,14 @@ title: "Math 557 Sep 15"
 - We previously defined the *term model* $\mathcal{A}$. It holds that for any *atomic* sentence $\sigma$, 
 $$\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma$$
 
+- Trying to extend this to arbitrary sentence via induction, the *negation case* looks like
+$$\mathcal{A} \models \neg\sigma \; \iff \;  \mathcal{A} \nvDash \sigma \; \overset{\text{ind hyp}}{\iff} \; T \nvdash \sigma$$
+We would like to show that this is equivalent to $T \vdash \neg\sigma$.  
+
+- One direction follows from $T$ being consistent, but for the other direction, $T$ may not be strong enough to prove this. 
+
+- We therefore need to *extend* $T$ to a complete theory.
+
 
 
 ## Problems
@@ -56,7 +64,7 @@ $$\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\}$$
 Show that
 
 - $\langle \sigma \land \tau \rangle = \langle \sigma \rangle \cap \langle \tau \rangle$
-- $\langle \neg\sigma = X \setminus \langle \sigma \rangle$
+- $\langle \neg\sigma \rangle = X \setminus \langle \sigma \rangle$
 :::
 
 ::: {#exr-}
