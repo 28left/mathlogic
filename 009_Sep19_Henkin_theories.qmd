@@ -1,0 +1,53 @@
+---
+title: "Math 557 Sep 15"
+---
+
+# Completing Theories
+
+## Key Concepts
+
+- An $\mathcal{L}$-theory $T$ is a **Henkin theory** if for every sentence of the form $\exists x \psi$ there exists a constant $\mathcal{L}$-term $t$ such that 
+$$
+    T \vdash_{\mathcal{L}} \exists x \psi \; \to \; \psi_{t/x}
+$$
+
+- **Questions:**
+
+    - What are Henkin theories needed for?
+    - Do they exist? 
+    - Can we extend a given consistent theory to a Henkin theory that is still consistent?
+
+
+
+## Problems
+
+
+:::{#exr-}
+\
+As before, let $\mathcal{A}_T$ be the term model of $T$. Pinpoint exactly where we might run into difficulties when we are trying to prove
+$$
+\mathcal{A}_T \models \exists x \psi \; \iff \; T \vdash_{\mathcal{L}} \exists x \psi
+$$
+:::
+
+::: {#exr-}
+## Interlude
+\
+What if in $\exists x \psi$ the variable $x$ is not free? Does that make a difference regarding being a Henkin theory?
+:::
+
+
+::: {#exr-}
+\
+Can you find examples of a Henkin theories (without needing to extend the lenaguage)?
+:::
+
+
+The basic construction step for extending an $\mathcal{L}$-theory $T$ to a Henkin theory is for every sentence of the form $\sigma \equiv \exists x \psi$,
+
+- add a new constant symbol $c_\sigma$ to $\mathcal{L}$
+- add the formula $\exists x \psi \; \to \; \psi_{c_\sigma/x}$ to $T$.
+
+
+::: {#exr-}
+
