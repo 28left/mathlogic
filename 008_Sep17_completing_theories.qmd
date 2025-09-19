@@ -1,5 +1,5 @@
 ---
-title: "Math 557 Sep 15"
+title: "Math 557 Sep 17"
 ---
 
 # Completing Theories

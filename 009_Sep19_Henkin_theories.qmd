@@ -1,8 +1,8 @@
 ---
-title: "Math 557 Sep 15"
+title: "Math 557 Sep 19"
 ---
 
-# Completing Theories
+# Henkin Theories
 
 ## Key Concepts
 
@@ -50,4 +50,47 @@ The basic construction step for extending an $\mathcal{L}$-theory $T$ to a Henki
 
 
 ::: {#exr-}
+\
+Why could the addition of a constant theoretically lead to $T$ being inconsistent, even though $T$ itself remains unchanged?
 
+And why does $T$ actually remain consistent?
+:::
+
+
+The Henkin extension $T_H$ of $T$ is obtained by an iterative process:
+
+Single iteration step:
+
+- $\mathcal{L}' = \mathcal{L} \cup \{c_\sigma \colon \sigma \: \mathcal{L}\text{-sentence of the form } \exists x \psi \}$
+- $\Gamma = \{ \exists x \psi(x) \to \psi_{c_\sigma/x} \colon \sigma \: \mathcal{L}\text{-sentence of the form } \exists x \psi \}$ 
+- $T' = T \cup \Gamma$ (an $\mathcal{L}'$-theory)
+
+::: {#exr-}
+\
+Why is $T'$ above not necessarily a Henkin theory?
+:::
+
+
+Iteration process:
+
+- $\mathcal{L}_0 = \mathcal{L}, \; T_0 = T$
+- $\mathcal{L}_{n+1} = \mathcal{L}'_n, \; T_{n+1} = T_n'$
+- $\textstyle \mathcal{L}_H = \bigcup_{n \in \mathbb{N}} \mathcal{L}_n, \; T_H = \bigcup_{n \in \mathbb{N}} T_n$
+
+::: {#exr-}
+\
+Why is $T_H$ a Henkin theory?
+:::
+
+$T_H$ is no longer a purely symbolic extension of $T$ (in the sense that we simply extend the language), since we add new sentences to $T$ (the sentences in $\Gamma$ for each iteration step).
+
+::: {.callout-important}
+## Take-home Problem
+\
+Show that for every $\mathcal{L}$-formula $\varphi$,
+$$
+T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
+$$
+
+(*You can find some hints in the video lecture.*)
+:::
