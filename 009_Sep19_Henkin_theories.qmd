@@ -39,7 +39,7 @@ What if in $\exists x \psi$ the variable $x$ is not free? Does that make a diffe
 
 ::: {#exr-}
 \
-Can you find examples of a Henkin theories (without needing to extend the lenaguage)?
+Can you find a couple of examples of Henkin theories?
 :::
 
 

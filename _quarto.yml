@@ -23,6 +23,8 @@ website:
         text: September 15
       - href: 008_Sep17_completing_theories.qmd
         text: September 17
+      - href: 009_Sep19_Henkin_theories.qmd
+        text: September 19
 
 
 
