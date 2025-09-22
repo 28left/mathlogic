@@ -1,0 +1,41 @@
+---
+title: "Math 557 Sep 22"
+---
+
+# The Model Existence Theorem
+
+## Key Concepts
+
+- Extend $T$ to a Henkin theory $T_H$, then complete it to a theory $T'$.
+
+- $T'$ is a complete Henkin theory for the extended language $\mathcal{L}_H$.
+
+- For $T'$, its term model $\mathcal{A}_{T'}$ satisfies
+$$
+\mathcal{A}_{T'} \models \sigma \; \iff \; T' \vdash_{\mathcal{L}_H} \sigma
+$$
+for all $\mathcal{L}_H$-sentences $\sigma$.
+
+## Problems
+
+
+:::{#exr-}
+\
+How do we obtain a model for $T$ from a model for $T'$?
+:::
+
+::: {#exr-}
+\
+Why is $\mathcal{A}_{T'}$ countable if $\mathcal{L}$ is countable?
+:::
+
+
+::: {#exr-}
+\
+Let $X$ be the set of all maximally consistent $\mathcal{L}$-theories. Recall that the sets
+$$\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\} \quad (\sigma \text{ $\mathcal{L}$-sentence})$$
+generate a Hausdorff topology on $X$. 
+
+Show that the topology is compact.
+:::
+
