@@ -1,0 +1,35 @@
+---
+title: "Math 557 Sep 24"
+---
+
+# The Compactness Theorem
+
+## Key Concepts
+
+- **Theorem:** A theory $T$ has a model if and only if every finite subtheory $T_0 \subseteq T$ has a model.
+
+## Problems
+
+::: {#exr-}
+\
+Let $X$ be the set of all maximally consistent $\mathcal{L}$-theories. Recall that the sets
+$$\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\} \quad (\sigma \text{ $\mathcal{L}$-sentence})$$
+generate a Hausdorff topology on $X$. 
+
+Show that the topology is compact.
+:::
+
+
+:::{#exr-}
+\
+One can use the compactness theorem to construct non-standard models of arithmetic, i.e., models of $\operatorname{Th}(\mathbb{N}, 0, 1, +, \cdot, <)$ not isomorphic to $\mathbb{N}$.
+
+Use the same technique for $\operatorname{Th}(\mathbb{R}, \{c_a : a \in \mathbb{R}\}, +, \cdot, <)$, where for every $a \in \mathbb{R}$ we add a constant symbol $c_a$ to the language? What kind of structure do we obtain? Discuss.
+:::
+
+::: {#exr-}
+\
+Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.
+:::
+
+
