@@ -25,7 +25,10 @@ website:
         text: September 17
       - href: 009_Sep19_Henkin_theories.qmd
         text: September 19
-
+      - href: 010_Sep22_model_existence.qmd
+        text: September 22
+      - href: 011_Sep24_compactness.qmd
+        text: September 24
 
 
 

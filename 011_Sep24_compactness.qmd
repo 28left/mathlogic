@@ -30,6 +30,10 @@ Use the same technique for $\operatorname{Th}(\mathbb{R}, \{c_a : a \in \mathbb{
 ::: {#exr-}
 \
 Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.
+
+Try to trengthen this to:
+
+> Every partial order can be extended to a linear order.
 :::
 
 
