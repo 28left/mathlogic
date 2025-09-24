@@ -1,0 +1,63 @@
+---
+title: "Math 557 Sep 26"
+---
+
+# Midterm 1 Review
+
+
+:::{.callout-important}
+## Take-home Problem
+\
+Prove **unique readability** for the set of $\mathcal{L}$-formulas.
+:::
+
+:::{.callout-important}
+## Take-home Problem
+\
+Let $\mathcal{L}$ be any finite language and let $\mathcal{M}$ be a finite $\mathcal{L}$-structure. Show
+that there is an $\mathcal{L}$-sentence $\varphi$ such that 
+$$
+\mathcal{N} \models \varphi \; \iff \; \mathcal{N} \cong \mathcal{M}.
+$$
+:::
+
+:::{.callout-important}
+## Take-home Problem
+\
+Give an example of a language $\mathcal{L}$ and an $\mathcal{L}$-sentence $\psi$ such that
+    - there is at least one $\mathcal{L}$-structure $\cal A$ such that $\cal A \models \psi$,
+	- for all $\cal L$-structures $\cal A$, if $\cal A \models \psi$, then the universe $A$ of $\cal A$ is infinite.
+:::
+
+
+:::{.callout-important}
+## Take-home problem
+\
+Show that 
+
+\begin{align*}
+\{\varphi \to \psi \} & \vdash \exists x \varphi \: \to \: \exists x \psi \\
+\{\varphi \to \psi \} & \vdash \forall x \varphi \: \to \: \forall x \psi \\
+\end{align*}
+:::
+
+
+::: {.callout-important}
+## Take-home Problem
+\
+Show that for every $\mathcal{L}$-formula $\varphi$,
+$$
+T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
+$$
+:::
+
+
+::: {.callout-important}
+## Take-home Problem
+\
+Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.
+
+Try to trengthen this to:
+
+> Every partial order can be extended to a linear order.
+:::

@@ -91,6 +91,4 @@ Show that for every $\mathcal{L}$-formula $\varphi$,
 $$
 T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
 $$
-
-(*You can find some hints in the video lecture.*)
 :::

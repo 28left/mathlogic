@@ -84,6 +84,6 @@ Show that
 \{\varphi \to \psi \} & \vdash \forall x \varphi \: \to \: \forall x \psi \\
 \end{align*}
 
-:::}
+:::
 
 

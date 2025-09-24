@@ -27,7 +27,8 @@ One can use the compactness theorem to construct non-standard models of arithmet
 Use the same technique for $\operatorname{Th}(\mathbb{R}, \{c_a : a \in \mathbb{R}\}, +, \cdot, <)$, where for every $a \in \mathbb{R}$ we add a constant symbol $c_a$ to the language? What kind of structure do we obtain? Discuss.
 :::
 
-::: {#exr-}
+::: {.callout-important}
+## Take-home Problem
 \
 Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.
 
