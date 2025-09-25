@@ -8,7 +8,7 @@ title: "Math 557 Sep 26"
 :::{.callout-important}
 ## Take-home Problem
 \
-Prove **unique readability** for the set of $\mathcal{L}$-formulas.
+Prove unique readability for the set of $\mathcal{L}$-formulas.
 :::
 
 :::{.callout-important}
