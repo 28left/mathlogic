@@ -25,8 +25,9 @@ $$
 ## Take-home Problem
 \
 Give an example of a language $\mathcal{L}$ and an $\mathcal{L}$-sentence $\psi$ such that
-    - there is at least one $\mathcal{L}$-structure $\cal A$ such that $\cal A \models \psi$,
-	- for all $\cal L$-structures $\cal A$, if $\cal A \models \psi$, then the universe $A$ of $\cal A$ is infinite.
+
+- there is at least one $\mathcal{L}$-structure $\cal A$ such that $\cal A \models \psi$,
+- for all $\cal L$-structures $\cal A$, if $\cal A \models \psi$, then the universe $A$ of $\cal A$ is infinite.
 :::
 
 
