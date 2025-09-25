@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 3 – Math 557 Fall 2025</title>
+<title>Math 557 Sep 26 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./004_Sep05_substitution.html" rel="next">
-<link href="./002_Aug29_semantics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +110,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./003_Sep03_validities.html">September 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,7 +151,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./003_Sep03_validities.html" class="sidebar-item-text sidebar-link active">
+  <a href="./003_Sep03_validities.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 3</span></a>
   </div>
 </li>
@@ -205,7 +205,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./012_Sep26_midterm_review.html" class="sidebar-item-text sidebar-link">
+  <a href="./012_Sep26_midterm_review.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 26</span></a>
   </div>
 </li>
@@ -219,20 +219,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#validities" id="toc-validities" class="nav-link active" data-scroll-target="#validities">Validities</a>
-  <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
-  </ul></li>
+  <li><a href="#midterm-1-review" id="toc-midterm-1-review" class="nav-link active" data-scroll-target="#midterm-1-review">Midterm 1 Review</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="003_Sep03_validities.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="012_Sep_26_midterm_review.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 3</h1>
+<h1 class="title">Math 557 Sep 26</h1>
 </div>
 
 
@@ -249,94 +245,106 @@ window.Quarto = {
 </header>
 
 
-<section id="validities" class="level1">
-<h1>Validities</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><strong>Validity</strong>: An <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\psi\)</span> that is valid in <em>any</em> <span class="math inline">\(\mathcal{L}\)</span>-structure under <em>any</em> assignment <span class="math inline">\(\alpha\)</span>, i.e.</li>
-</ul>
-<p><span class="math display">\[\mathcal{M} \models \psi[\alpha] \quad \text{ for any } \mathcal{M}, \alpha.\]</span></p>
-<ul>
-<li><p><strong>Sources of validities</strong>:</p>
-<ul>
-<li><em>Propositional tautologies</em> – e.g.&nbsp;formulas of the form <span class="math inline">\(\psi \to \psi\)</span> or <span class="math inline">\(\psi \vee \neg \psi\)</span></li>
-<li><em>Equality</em> - the way <span class="math inline">\(=\)</span> is interpreted implies formulas like <span class="math inline">\(\forall x \; x=x\)</span> are validities.<br>
-</li>
-<li><em>Quantifiers</em></li>
-</ul></li>
-<li><p><strong>Fundamental questions</strong>:</p>
-<ul>
-<li>Can we characterize the set of validities <em>syntactically</em>?</li>
-<li>In particular, is there an algorithm that, on input <span class="math inline">\(\varphi\)</span>, determines whether <span class="math inline">\(\varphi\)</span> is a validity or not?</li>
-</ul></li>
-</ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<section id="midterm-1-review" class="level1">
+<h1>Midterm 1 Review</h1>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Warmup)</strong></span> <br>
-Determine whether the following formulas are validitites.</p>
-<ul>
-<li><span class="math inline">\(((\varphi_1 \, \to \, (\varphi_2 \, \to \, \varphi_3)) \, \to \, ((\varphi_1 \, \to \, \varphi_2) \, \to \, (\varphi_1 \, \to \, \varphi_3)))\)</span></li>
-<li><span class="math inline">\(\exists x (\varphi \wedge \psi) \: \leftrightarrow \: (\exists x \varphi \wedge \exists x \psi)\)</span></li>
-</ul>
+<div class="callout-title-container flex-fill">
+Take-home Problem
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p><br>
+Prove <strong>unique readability</strong> for the set of <span class="math inline">\(\mathcal{L}\)</span>-formulas.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-Let <span class="math inline">\(g ∶ \{0, 1\}^n → \{0, 1\}\)</span> be a Boolean function. Show that there exists a propositional formula <span class="math inline">\(F(p_1, \dots, p_n)\)</span> such that, for any assignment <span class="math inline">\(\delta\)</span> to the variables <span class="math inline">\(p_1, \dots, p_n\)</span>,</p>
-<p><span class="math display">\[\delta^*(F) = g(\delta(p_1), \dots, \delta(p_n)).\]</span></p>
+<div class="callout-title-container flex-fill">
+Take-home Problem
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p><br>
+Let <span class="math inline">\(\mathcal{L}\)</span> be any finite language and let <span class="math inline">\(\mathcal{M}\)</span> be a finite <span class="math inline">\(\mathcal{L}\)</span>-structure. Show that there is an <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\varphi\)</span> such that <span class="math display">\[
+\mathcal{N} \models \varphi \; \iff \; \mathcal{N} \cong \mathcal{M}.
+\]</span></p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Formally verify that every propositional tautology is a validity.</p>
+<div class="callout-title-container flex-fill">
+Take-home Problem
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p><br>
+Give an example of a language <span class="math inline">\(\mathcal{L}\)</span> and an <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\psi\)</span> such that - there is at least one <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\cal A\)</span> such that <span class="math inline">\(\cal A \models \psi\)</span>, - for all <span class="math inline">\(\cal L\)</span>-structures <span class="math inline">\(\cal A\)</span>, if <span class="math inline">\(\cal A \models \psi\)</span>, then the universe <span class="math inline">\(A\)</span> of <span class="math inline">\(\cal A\)</span> is infinite.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Verify, using the definition of the satisfaction relation <span class="math inline">\(\models\)</span>, that</p>
-<p><span class="math display">\[\forall x,y (x = y \: \to \: f(x)=f(y)) \quad (\text{$f$ unary function symbol})\]</span></p>
-<p>and <span class="math display">\[\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})\]</span></p>
-<p>are validities.</p>
+<div class="callout-title-container flex-fill">
+Take-home problem
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p><br>
+Show that</p>
+<p><span class="math display">\[\begin{align*}
+\{\varphi \to \psi \} &amp; \vdash \exists x \varphi \: \to \: \exists x \psi \\
+\{\varphi \to \psi \} &amp; \vdash \forall x \varphi \: \to \: \forall x \psi \\
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Take-home Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><br>
+Show that for every <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi\)</span>, <span class="math display">\[
+T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Take-home Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><br>
+Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.</p>
+<p>Try to trengthen this to:</p>
+<blockquote class="blockquote">
+<p>Every partial order can be extended to a linear order.</p>
+</blockquote>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -412,7 +420,7 @@ Verify, using the definition of the satisfaction relation <span class="math inli
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -739,18 +747,6 @@ Verify, using the definition of the satisfaction relation <span class="math inli
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./002_Aug29_semantics.html" class="pagination-link" aria-label="August 29">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">August 29</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./004_Sep05_substitution.html" class="pagination-link" aria-label="September 5">
-        <span class="nav-page-text">September 5</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
