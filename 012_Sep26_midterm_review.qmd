@@ -12,7 +12,6 @@ Prove unique readability for the set of $\mathcal{L}$-formulas.
 :::
 
 ::: {#sol-1}
-\
 **First** prove **readibility**, i.e. the statement that for any $\mathcal{L}$-formula $\varphi$, exactly one of the following cases holds:
 
 (1) There exist terms $s,t$ such that $\varphi \equiv s=t$.
@@ -40,7 +39,7 @@ Case $\varphi \equiv (\psi \land \theta)$
 
 Case $\varphi \equiv \exists x \varphi$
 : Neither '$\exists$' nor '$\exists x$' are formulas. If $\beta$ is longer than that, it is of the form $\exists x \beta'$. By inductive hypothesis, $\beta'$ is not a formula, and hence $\beta$ is not a formula (by readability).
-
+varphi
 
 **Finally**, we prove **unique readability**: The choices in (1)-(5) are unique.
 
@@ -73,7 +72,6 @@ $$
 :::
 
 ::: {#sol-2}
-\
 Suppose $\mathcal{L} = \{c_1, \cdots, c_k, f_1^{(a_1)}, \dots f_l^{(a_l)}, R_1^{(b_1)}, \dots, R_j^{(b_j)} \}$ where the $(a_i), (b_m)$ denote the arities of the respective symbols.
 
 Since $\mathcal{M}$ is finite, we may assume $M = \{1, \dots, n\}$ for some $n \in \mathbb{N}$.
@@ -81,35 +79,65 @@ Since $\mathcal{M}$ is finite, we may assume $M = \{1, \dots, n\}$ for some $n \
 The basic idea is to collect all "elementary facts" about $\mathcal{M}$ in a single formula (think of a *group multiplication table*, just for all functions and relations).
 
 Define
+
 \begin{align}
 \varphi \equiv \; \exists x_1, \dots, x_n   \biggl ( & \bigwedge_{i \neq m} x_i \neq x_l \; \land \; \forall y \bigvee_{i \leq n} y = x_i \\
 & \land \bigwedge_{i \leq k} c_i = x_{c^{\mathcal{M}}_i} \\
-& \land \bigwedge_{i\leq l} \bigwedge_{\pi \in \{1,\dots, n\}^{a_i}} f_i x_{\pi(1)} \dots x_{\pi(a_i)} = x_{f^\mathcal{M}_i(\pi(1), \dots, \pi(a_i))} \\
+& \land \bigwedge_{i\leq l} \bigwedge_{\pi \in \{1,\dots, n\}^{a_i}} f_i x_{\pi(1)} \dots x_{\pi(a_i)} = x_{f^{\mathcal{M}}_i(\pi(1), \dots, \pi(a_i))} \\
 & \land \bigwedge_{i\leq j} \bigwedge_{\pi \in \{1,\dots, n\}^{b_i}} \delta_\pi R_i x_{\pi(1)} \dots x_{\pi(b_i)} \biggr )
 \end{align}
+
 where $\delta_\pi$ is empty if $R(\pi(1), \dots, \pi(b_i))$ holds in $\mathcal{M}$, and $\neg$ if not.
 
 Assme $\mathcal{N} \models \varphi$. Due to the first line of the equation, $N$ has exactly $n$ elements, and let $r_i \in N$ be the witness to $\exists x_i$. Define a mapping $\tau: M \to N$ by letting $\tau(i) = r_i$. We claim that $\tau$ is an isomorphism.
 
-By definition we have $\tau(c_i^\mathcal{M}) = r_{c_i^\mathcal{M}}$. Moreover, by the second line of the formula, $r_{c^\mathcal{M}_i}$ is the unique element of $N$ that makes the formula $c_i = x_{c_i^\mathcal{M}}$ true. It follows that $\tau(c_i^\mathcal{M}) = c_i^\mathcal{N}$ for all $1 \leq i \leq k$.
+By definition we have $\tau(c_i^{\mathcal{M}}) = r_{c_i^{\mathcal{M}}}$. Moreover, by the second line of the formula, $r_{c^{\mathcal{M}}_i}$ is the unique element of $N$ that makes the formula $c_i = x_{c_i^{\mathcal{M}}}$ true. It follows that $\tau(c_i^{\mathcal{M}}) = c_i^{\mathcal{N}}$ for all $1 \leq i \leq k$.
 
 Using a similar argument with the third line of the formula, we obtain
 $$
-\tau(f_i^\mathcal{M}(s_1, \dots, s_{a_i})) = r_{f_i^\mathcal{M}(s_1, \dots, s_{a_i})} = f^\mathcal{N}(r_{s_1}, \dots, r_{s_{a_i}}) = f^\mathcal{N}(\tau(s_1), \dots, \tau(s_{a_i})
+\tau(f_i^{\mathcal{M}}(s_1, \dots, s_{a_i})) = r_{f_i^{\mathcal{M}}(s_1, \dots, s_{a_i})} = f^{\mathcal{N}}(r_{s_1}, \dots, r_{s_{a_i}}) = f^{\mathcal{N}}(\tau(s_1), \dots, \tau(s_{a_i})
 $$
-The argument for $R^\mathcal{M}(s_1, \dots, s_{b_i}) \iff R^\mathcal{N}(\tau(s_1), \dots, \tau(s_{b_i}))$ is similar.
+The argument for $R^{\mathcal{M}}(s_1, \dots, s_{b_i}) \iff R^{`\mathcal{N}}(\tau(s_1), \dots, \tau(s_{b_i}))$ is similar.
 
 On the other hand, if $\mathcal{M} \cong \mathcal{N}$ via $\tau$, then $\mathcal{N} \models \psi[\tau(1), \dots, \tau(n)]$, where $\psi$ is such that $\varphi \equiv \exists x_1, \dots, x_n \: \psi$,  due to the fact that $\tau$ is an isomorphism, and thus $\mathcal{N} \models \varphi$.
 :::
 
 
 :::{.callout-important}
-## Take-home Problem
+## Take-home Problem 3
 \
 Give an example of a language $\mathcal{L}$ and an $\mathcal{L}$-sentence $\psi$ such that
 
 - there is at least one $\mathcal{L}$-structure $\cal A$ such that $\cal A \models \psi$,
 - for all $\cal L$-structures $\cal A$, if $\cal A \models \psi$, then the universe $A$ of $\cal A$ is infinite.
+:::
+
+::: {#sol-3}
+Let $\mathcal{L} = \{<\}$, where $<$ is a binary relation symbol. Define
+
+\begin{align}
+\psi \equiv \;  & \forall x \; x \nless x \\
+    & \land \forall x,y \; x < y \lor x=y \lor y < x \\
+    & \land \forall x,y,z \; (x < y \land y < z) \to x < z \\
+    & \land \forall x \exists y \; x < y
+\end{align}
+
+The formula says that $<$ is a linear order with no maximal element. 
+
+Clearly, $(\mathbb{Z}, <) \models \psi$.
+
+Now suppose $\mathcal{M} \models \psi$. Due to the last line of $\psi$, there exists a function $f: M \to M$ such that $x < f(x)$ for all $x \in M$. We claim that 
+for any $x$ and for any $n \neq m$,
+$$
+f^{(n)}(x) \neq f^{(m)}(x)
+$$
+This follows from antireflexivity (line one) and transitivity (line three).
+
+Therefore, the set 
+$$
+\{x, f^{(1)}(x), f^{(2)}(x), \dots \}
+$$
+is an infinite subset of $N$.
 :::
 
 
