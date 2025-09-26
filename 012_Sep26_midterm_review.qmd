@@ -6,10 +6,65 @@ title: "Math 557 Sep 26"
 
 
 :::{.callout-important}
-## Take-home Problem
+## Take-home Problem 1
 \
 Prove unique readability for the set of $\mathcal{L}$-formulas.
 :::
+
+::: {#sol-1}
+\
+**First** prove **readibility**, i.e. the statement that for any $\mathcal{L}$-formula $\varphi$, exactly one of the following cases holds:
+
+(1) There exist terms $s,t$ such that $\varphi \equiv s=t$.
+(2) There exists a relation symbol $R$ and, if $n$ is the arity of $R$, terms $t_1, \dots, t_n$ sucht that $\varphi \equiv Rt_1\dots t_n$.
+(3) There exists a formula $\psi$ such that $\varphi \equiv \neg \psi$.
+(4) There exist formulas $\psi, \theta$ such that $\varphi \equiv (\psi \land \theta)$.
+(5) There exists a variable $x$ and a formula $\psi$ such that $\varphi \equiv \exists x \psi$.
+
+To see this, let $F$ be the subset of $\mathcal{L}^*$ such that every $\theta \in F$ satisfies exactly one of (1)-(5). Then $F$ contains all atomic formulas and is closed under $\neg, \land, \exists x$. Since the set of $\mathcal{L}$-formulas is the smallest such set, it follows that every $\mathcal{L}$-formula is contained in $F$, and therefore has the desired property.
+
+
+**Second** we argue that a proper initial segment of a formula cannot be a formula. We proceed by induction on the length $l$ of $\varphi$. For $l=1$ there is no formula of that length. Now suppose $\varphi$ is a formula of length $l+1$, and $\beta$ is a proper initial segment. We may assume $\beta$ is not empty. We consider theses (1)-(5) from readability.
+
+Case $\varphi \equiv s=t$
+: Either $\beta \equiv s = t'$ with $t \subset t'$, but this would contradict that no proper initial segment of a term is a term. Or $\beta \equiv s=$: An easy induction over the length of a formula shows that no formula ends with $=$. Or $\beta \subseteq s$. Another easy induction shows that no formula can be a term or an initial segment of a term.
+
+Case $\varphi \equiv Rt_1\dots t_n$
+: If $\beta$ were a formula, it has to be of the form $Rs_1\dots s_n$. Comparing terms, we would see that one of the $s_i$ is a proper initial segment of some $t_j$, which is impossible.
+
+Case $\varphi \equiv \neg \theta$
+: Then $\beta \equiv \neg \beta'$ with $\beta'$ a proper initial segment of $\theta$. By inductive hypothesis, $\beta'$ is not a formula, hence $\neg \beta'$ is not a formula either.
+
+Case $\varphi \equiv (\psi \land \theta)$
+: Then $\beta$ starts with $($ but does not end with $)$. Another induction shows that for any formula, the number of $($'s always equals the number of $)$'s.
+
+Case $\varphi \equiv \exists x \varphi$
+: Neither '$\exists$' nor '$\exists x$' are formulas. If $\beta$ is longer than that, it is of the form $\exists x \beta'$. By inductive hypothesis, $\beta'$ is not a formula, and hence $\beta$ is not a formula (by readability).
+
+
+**Finally**, we prove **unique readability**: The choices in (1)-(5) are unique.
+
+Case (1)
+: Suppose $\varphi \equiv s=t \equiv s'=t'$. Since no proper initial segment of a term is a term, it must hold that $s\equiv s'$ and $t \equiv t'$.
+
+Case (2)
+: Suppose $\varphi \equiv Rt_1\dots t_n \equiv S s_1\dots s_k$. Then $R \equiv S$ and $n=k$. Comparing terms inductively, using again the fact that no proper initial segment of a term is a term, we get $s_i \equiv t_i$ for all $i$.
+
+Case (3)
+: Suppose $\varphi \equiv \neg \psi \equiv \neg \theta$. Immediately, we infer $\psi \equiv \theta$.
+
+Case (4)
+: Suppose $\varphi \equiv (\psi_1 \land \theta_1) \equiv (\psi_2\land \theta_2)$. Assume $\psi_1 \nequiv \psi_2$. Then $\psi_1$ is a proper initial segment of $\psi_2$ or vice versa (since both of them are part of $\varphi$). Either case is impossible due to the fact that no proper initial segment of a formula is a formula. Hence $\psi_1 \equiv \psi_2$ and thus also $\theta_1 \equiv \theta_2$.
+
+Case (5)
+: Suppose $\varphi \equiv \exists x \psi \equiv \exists y \theta$. By comparing entries, we get $x \equiv y$ and thus \psi \equiv \theta$, as desired.
+
+
+
+
+:::
+ 
+
 
 :::{.callout-important}
 ## Take-home Problem
