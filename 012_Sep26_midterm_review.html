@@ -497,23 +497,7 @@ Show that</p>
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home Problem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><br>
-Show that for every <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi\)</span>, <span class="math display">\[
-T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
-\]</span></p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Take-home Problem
+Take-home Problem 6
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -524,6 +508,27 @@ Use the compactness theorem to show (without using the Axiom of Choice) that eve
 <p>Every partial order can be extended to a linear order.</p>
 </blockquote>
 </div>
+</div>
+<div id="sol-6" class="proof solution">
+<p><span class="proof-title"><em>Solution 5</em>. </span>We first argue that any finite partial order <span class="math inline">\((F,&lt;)\)</span> can be extended to a linear order.</p>
+<p>We proceed by induction on the cardinality of <span class="math inline">\(F\)</span>.</p>
+<p>For <span class="math inline">\(|F|=0\)</span> there is nothing to prove.</p>
+<p>Now assume <span class="math inline">\(|F|=n+1\)</span>. Pick an arbitrary <span class="math inline">\(a \in F\)</span> and consider <span class="math inline">\(F \setminus \{a\}\)</span>. By inductive hypothesis, <span class="math inline">\(F \setminus \{a\}\)</span> can be extended to a linear order <span class="math inline">\(a_1 &lt; a_2 &lt; \dots &lt; a_n\)</span>.</p>
+<p>If there does not exist <span class="math inline">\(i\)</span> such that <span class="math inline">\(a_i &lt;_F a\)</span>, we can extend to a linear order on <span class="math inline">\(F\)</span> by putting <span class="math inline">\(a &lt; a_i\)</span> for all <span class="math inline">\(i\)</span>. Otherwise let <span class="math inline">\(k\)</span> be maximal such that <span class="math inline">\(a_k &lt; a\)</span>. Then <span class="math display">\[
+    a_1 &lt; \dots &lt; a_k &lt; a &lt; a_{k+1} &lt; \dots &lt; a_n
+\]</span> defines a linear order that extends <span class="math inline">\((F,&lt;)\)</span>.</p>
+<p>Now let <span class="math inline">\((P,&lt;)\)</span> be an arbitrary partial order. We extend the language <span class="math inline">\(\mathcal{L}_&lt;\)</span> of orders to <span class="math inline">\(\mathcal{L}_P\)</span>, where we add a new constant symcol <span class="math inline">\(c_p\)</span> for every <span class="math inline">\(p \in P\)</span>.</p>
+<p>Let <span class="math inline">\(T\)</span> be the theory of linear orders (see first three lines of sentence <span class="math inline">\(\varphi\)</span> in Problem 3) together with <span class="math display">\[
+\{ c_p &lt; c_q : p &lt;_P q q \}
+\]</span> In other words, if <span class="math inline">\(p\)</span> is less than <span class="math inline">\(q\)</span> according to <span class="math inline">\(P\)</span>, we add a corresponding axiom to our theory.</p>
+<p>Any model of <span class="math inline">\(T\)</span> is a liner order that extends <span class="math inline">\(P\)</span>.</p>
+<p>Moreover, any finite subset <span class="math inline">\(T_0 \subseteq T\)</span> induces a partial order on a finite subset of <span class="math inline">\(P\)</span> (induced by those <span class="math inline">\(p\)</span> for which <span class="math inline">\(c_p\)</span> is part of a formula in <span class="math inline">\(T_0\)</span>). By our argument in the first part, this finite partial order extends to a linear order, thereby giving a model of <span class="math inline">\(T_0\)</span>.</p>
+<p>By compactness, <span class="math inline">\(T\)</span> has a model <span class="math inline">\(\mathcal{M} = (M,&lt;)\)</span>. By choice of <span class="math inline">\(T\)</span>, <span class="math inline">\((M,&lt;)\)</span> is a linear order. Furthermore, the mapping <span class="math display">\[
+  c_p \mapsto c_p^{\mathcal{M}}
+\]</span> is one-to-one since <span class="math inline">\(\mathcal{M} \models \forall x \ x \nless x\)</span>.</p>
+<p>We can “pull back” the order on <span class="math inline">\(\mathcal{M}\)</span> to <span class="math inline">\(P\)</span> by letting <span class="math display">\[
+  p &lt;' q \iff c_p^{\mathcal{M}} &lt;^{\mathcal{M}} c_q^{\mathcal{M}}
+\]</span> By definition of <span class="math inline">\(T\)</span>, <span class="math inline">\(&lt;'\)</span> is a linear order that extends <span class="math inline">\(&lt;_P\)</span>.</p>
 </div>
 
 
