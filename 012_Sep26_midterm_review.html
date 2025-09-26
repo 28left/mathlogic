@@ -393,7 +393,7 @@ f^{(n)}(x) \neq f^{(m)}(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home problem
+Take-home problem 4
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -404,6 +404,92 @@ Show that</p>
 \{\varphi \to \psi \} &amp; \vdash \forall x \varphi \: \to \: \forall x \psi \\
 \end{align*}\]</span></p>
 </div>
+</div>
+<div id="sol-4" class="proof solution">
+<p><span class="proof-title"><em>Solution 4</em>. </span>We give derivations below (with brief justifications). We collect simple substeps into a single one.</p>
+<p>For <span class="math inline">\(\{\varphi \to \psi \}  \vdash \exists x \varphi \: \to \: \exists x \psi\;\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Formula</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varphi \to \psi\)</span></td>
+<td>given</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\psi \to \exists x \psi\)</span></td>
+<td>(Q2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varphi \to \exists x \psi\)</span></td>
+<td>tautology</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\neg \exists x \psi \to \neg \varphi\)</span></td>
+<td>tautotolgy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\forall x ( \neg \exists x \psi \to \neg \varphi)\)</span></td>
+<td><span class="math inline">\(\forall\)</span>-intro</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\neg \exists x \psi \to \forall x \varphi\)</span></td>
+<td>(Q1), <span class="math inline">\(x\)</span> not free in <span class="math inline">\(\neg \exists x \psi\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\neg \forall x \neg \varphi \to \exists x \psi\)</span></td>
+<td>tautology</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\exists x \varphi \to \exists x \psi\)</span></td>
+<td>(Q3)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>For <span class="math inline">\(\{\varphi \to \psi \}  \vdash \forall x \varphi \: \to \: \forall x \psi \;\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Formula</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varphi \to \psi\)</span></td>
+<td>given</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\forall x \varphi \to \varphi\)</span></td>
+<td>Example 2.6.1 (d)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\forall x \varphi \to \psi\)</span></td>
+<td>Tautology</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\forall x (\forall x \varphi \to \psi)\)</span></td>
+<td><span class="math inline">\(\forall\)</span>-intro</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\forall x \varphi \to \forall x \psi\)</span></td>
+<td>(Q1), <span class="math inline">\(x\)</span> not free in <span class="math inline">\(\forall x \varphi\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="callout callout-style-simple callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
