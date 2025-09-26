@@ -54,20 +54,16 @@ Case (3)
 : Suppose $\varphi \equiv \neg \psi \equiv \neg \theta$. Immediately, we infer $\psi \equiv \theta$.
 
 Case (4)
-: Suppose $\varphi \equiv (\psi_1 \land \theta_1) \equiv (\psi_2\land \theta_2)$. Assume $\psi_1 \nequiv \psi_2$. Then $\psi_1$ is a proper initial segment of $\psi_2$ or vice versa (since both of them are part of $\varphi$). Either case is impossible due to the fact that no proper initial segment of a formula is a formula. Hence $\psi_1 \equiv \psi_2$ and thus also $\theta_1 \equiv \theta_2$.
+: Suppose $\varphi \equiv (\psi_1 \land \theta_1) \equiv (\psi_2\land \theta_2)$. Assume $\psi_1 \not\equiv \psi_2$. Then $\psi_1$ is a proper initial segment of $\psi_2$ or vice versa (since both of them are part of $\varphi$). Either case is impossible due to the fact that no proper initial segment of a formula is a formula. Hence $\psi_1 \equiv \psi_2$ and thus also $\theta_1 \equiv \theta_2$.
 
 Case (5)
 : Suppose $\varphi \equiv \exists x \psi \equiv \exists y \theta$. By comparing entries, we get $x \equiv y$ and thus \psi \equiv \theta$, as desired.
-
-
-
-
 :::
  
 
 
 :::{.callout-important}
-## Take-home Problem
+## Take-home Problem 2
 \
 Let $\mathcal{L}$ be any finite language and let $\mathcal{M}$ be a finite $\mathcal{L}$-structure. Show
 that there is an $\mathcal{L}$-sentence $\varphi$ such that 
@@ -75,6 +71,37 @@ $$
 \mathcal{N} \models \varphi \; \iff \; \mathcal{N} \cong \mathcal{M}.
 $$
 :::
+
+::: {#sol-2}
+\
+Suppose $\mathcal{L} = \{c_1, \cdots, c_k, f_1^{(a_1)}, \dots f_l^{(a_l)}, R_1^{(b_1)}, \dots, R_j^{(b_j)} \}$ where the $(a_i), (b_m)$ denote the arities of the respective symbols.
+
+Since $\mathcal{M}$ is finite, we may assume $M = \{1, \dots, n\}$ for some $n \in \mathbb{N}$.
+
+The basic idea is to collect all "elementary facts" about $\mathcal{M}$ in a single formula (think of a *group multiplication table*, just for all functions and relations).
+
+Define
+\begin{align}
+\varphi \equiv \; \exists x_1, \dots, x_n   \biggl ( & \bigwedge_{i \neq m} x_i \neq x_l \; \land \; \forall y \bigvee_{i \leq n} y = x_i \\
+& \land \bigwedge_{i \leq k} c_i = x_{c^{\mathcal{M}}_i} \\
+& \land \bigwedge_{i\leq l} \bigwedge_{\pi \in \{1,\dots, n\}^{a_i}} f_i x_{\pi(1)} \dots x_{\pi(a_i)} = x_{f^\mathcal{M}_i(\pi(1), \dots, \pi(a_i))} \\
+& \land \bigwedge_{i\leq j} \bigwedge_{\pi \in \{1,\dots, n\}^{b_i}} \delta_\pi R_i x_{\pi(1)} \dots x_{\pi(b_i)} \biggr )
+\end{align}
+where $\delta_\pi$ is empty if $R(\pi(1), \dots, \pi(b_i))$ holds in $\mathcal{M}$, and $\neg$ if not.
+
+Assme $\mathcal{N} \models \varphi$. Due to the first line of the equation, $N$ has exactly $n$ elements, and let $r_i \in N$ be the witness to $\exists x_i$. Define a mapping $\tau: M \to N$ by letting $\tau(i) = r_i$. We claim that $\tau$ is an isomorphism.
+
+By definition we have $\tau(c_i^\mathcal{M}) = r_{c_i^\mathcal{M}}$. Moreover, by the second line of the formula, $r_{c^\mathcal{M}_i}$ is the unique element of $N$ that makes the formula $c_i = x_{c_i^\mathcal{M}}$ true. It follows that $\tau(c_i^\mathcal{M}) = c_i^\mathcal{N}$ for all $1 \leq i \leq k$.
+
+Using a similar argument with the third line of the formula, we obtain
+$$
+\tau(f_i^\mathcal{M}(s_1, \dots, s_{a_i})) = r_{f_i^\mathcal{M}(s_1, \dots, s_{a_i})} = f^\mathcal{N}(r_{s_1}, \dots, r_{s_{a_i}}) = f^\mathcal{N}(\tau(s_1), \dots, \tau(s_{a_i})
+$$
+The argument for $R^\mathcal{M}(s_1, \dots, s_{b_i}) \iff R^\mathcal{N}(\tau(s_1), \dots, \tau(s_{b_i}))$ is similar.
+
+On the other hand, if $\mathcal{M} \cong \mathcal{N}$ via $\tau$, then $\mathcal{N} \models \psi[\tau(1), \dots, \tau(n)]$, where $\psi$ is such that $\varphi \equiv \exists x_1, \dots, x_n \: \psi$,  due to the fact that $\tau$ is an isomorphism, and thus $\mathcal{N} \models \varphi$.
+:::
+
 
 :::{.callout-important}
 ## Take-home Problem
