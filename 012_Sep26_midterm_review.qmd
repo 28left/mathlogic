@@ -142,7 +142,7 @@ is an infinite subset of $N$.
 
 
 :::{.callout-important}
-## Take-home problem
+## Take-home problem 4
 \
 Show that 
 
@@ -152,23 +152,86 @@ Show that
 \end{align*}
 :::
 
+::: {#sol-4}
 
-::: {.callout-important}
-## Take-home Problem
-\
-Show that for every $\mathcal{L}$-formula $\varphi$,
-$$
-T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
-$$
+We give derivations below (with brief justifications). We collect simple substeps into a single one.
+
+For $\{\varphi \to \psi \}  \vdash \exists x \varphi \: \to \: \exists x \psi\;$:
+
+| Formula | Justification |
+|:-------:|---------------|
+| $\varphi \to \psi$ |  given |
+| $\psi \to \exists x \psi$ |  (Q2) |
+| $\varphi \to \exists x \psi$ | tautology |
+| $\neg \exists x \psi \to \neg \varphi$ | tautotolgy |
+| $\forall x ( \neg \exists x \psi \to \neg \varphi)$ | $\forall$-intro |
+| $\neg \exists x \psi \to \forall x \varphi$ | (Q1), $x$ not free in $\neg \exists x \psi$ |
+| $\neg \forall x \neg \varphi \to \exists x \psi$ | tautology |
+| $\exists x \varphi \to \exists x \psi$ | (Q3) |
+
+<br>
+
+For $\{\varphi \to \psi \}  \vdash \forall x \varphi \: \to \: \forall x \psi \;$:
+
+| Formula | Justification |
+|:-------:|---------------|
+| $\varphi \to \psi$ |  given |
+| $\forall x \varphi \to \varphi$ | Example 2.6.1 (d) |
+| $\forall x \varphi \to \psi$ | Tautology |
+| $\forall x (\forall x \varphi \to \psi)$ | $\forall$-intro |
+| $\forall x \varphi \to \forall x \psi$ | (Q1), $x$ not free in $\forall x \varphi$ |
+
 :::
 
 
+
+
 ::: {.callout-important}
-## Take-home Problem
+## Take-home Problem 6
 \
 Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.
 
 Try to strengthen this to:
 
 > Every partial order can be extended to a linear order.
+:::
+
+::: {#sol-6}
+We first argue that any finite partial order $(F,<)$ can be extended to a linear order.
+
+We proceed by induction on the cardinality of $F$.
+
+For $|F|=0$ there is nothing to prove.
+
+Now assume $|F|=n+1$. Pick an arbitrary $a \in F$ and consider $F \setminus \{a\}$. By inductive hypothesis, $F \setminus \{a\}$ can be extended to a linear order $a_1 < a_2 < \dots < a_n$.
+
+If there does not exist $i$ such that $a_i <_F a$, we can extend to a linear order on $F$ by putting $a < a_i$ for all $i$. Otherwise let $k$ be maximal such that $a_k < a$. Then 
+$$
+    a_1 < \dots < a_k < a < a_{k+1} < \dots < a_n
+$$ 
+defines a linear order that extends $(F,<)$.
+
+Now let $(P,<)$ be an arbitrary partial order. We extend the language $\mathcal{L}_<$ of orders to $\mathcal{L}_P$, where we add a new constant symcol $c_p$ for every $p \in P$. 
+
+Let $T$ be the theory of linear orders (see first three lines of sentence $\varphi$ in Problem 3) together with 
+$$
+\{ c_p < c_q : p <_P q \}
+$$
+In other words, if $p$ is less than $q$ according to $P$, we add a corresponding axiom to our theory.
+
+Any model of $T$ is a liner order that extends $P$.
+
+Moreover, any finite subset $T_0 \subseteq T$ induces a partial order on a finite subset of $P$ (induced by those $p$ for which $c_p$ is part of a formula in $T_0$). By our argument in the first part, this finite partial order extends to a linear order, thereby giving a model of $T_0$.
+
+By compactness, $T$ has a model $\mathcal{M} = (M,<)$. By choice of $T$, $(M,<)$ is a linear order. Furthermore, the mapping 
+$$
+  c_p \mapsto c_p^{\mathcal{M}}
+$$
+is one-to-one since $\mathcal{M} \models \forall x \ x \nless x$.
+
+We can "pull back" the order on $\mathcal{M}$ to $P$ by letting
+$$
+  p <' q \iff c_p^{\mathcal{M}} <^{\mathcal{M}} c_q^{\mathcal{M}}
+$$
+By definition of $T$, $<'$ is a linear order that extends $<_P$.
 :::
