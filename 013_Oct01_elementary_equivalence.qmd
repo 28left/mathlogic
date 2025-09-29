@@ -1,0 +1,48 @@
+---
+title: "Math 557 Oct 1"
+---
+
+# Elementary Equivalence
+
+## Key Concepts
+
+- 
+
+## Problems
+
+::: {#exr-}
+\
+Let $\mathcal{L}$ be an arbitrary language. Show that for finite $\mathcal{L}$-structures $\mathcal{M}, \mathcal{N}$,
+
+$$
+\mathcal{M} \equiv mathcal{N} \; \iff \; \mathcal{M}) = \mathcal{N}
+$$
+
+(*We already know this for finite languages (since there a single sentence suffices to force isomorphism). How can we extend this to arbitrary languages?*)
+:::
+
+
+:::{#exr-}
+\
+Show that for any two $\mathcal{L}$-structures $\mathcal{M}, \mathcal{N}$,
+$$
+\mathcal{M}\equiv \mathcal{N} \; \iff \; \operatorname{Th}(\mathcal{M}) = \operatorname{Th}(\mathcal{N}).
+$$
+
+Deduce that a theory $T$ is complete iff any two models are elementary equivalent.
+:::
+
+:::{#exr-}
+\
+Let $\operatorname{DLO}$ be the theory of *dense linear orders without endpoints* (i.e. no minimal or maximal element).
+
+Find a finite axiomatization of $\operatorname{DLO}$.
+:::
+
+
+:::{#exr-}
+\
+Show that any two countable models of $\operatorname{DLO}$ of the same cardinality are isomorphic.
+:::
+
+
