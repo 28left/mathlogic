@@ -13,9 +13,15 @@ title: "Math 557 Oct 3"
 
 :::{#exr-}
 \
+We have the following relations between structures $\mathcal{M}, \mathcal{N}$:
 
+$$\subseteq, \preceq, \equiv, \cong$$
+
+Draw a diagram indicating implications between these relations, giving counterexamples if one relation does not imply another.
 :::
 
+elementary embedding
+Cantor-Schröder-Bernstein?
 
 ::: {.callout-important}
 ## Take-home problem

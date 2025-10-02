@@ -33,6 +33,8 @@ website:
         text: September 26
       - href: 013_Oct01_elementary_equivalence.qmd
         text: Oct 1
+      - href: 014_Oct03_elementary_substructures.qmd
+        text: Oct 3
 
 
 
