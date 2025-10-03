@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 12 – Math 557 Fall 2025</title>
+<title>Math 557 Oct 3 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./007_Sep15_completeness_theorem.html" rel="next">
-<link href="./005_Sep10_implication.html" rel="prev">
+<link href="./013_Oct01_elementary_equivalence.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./006_Sep12_completeness.html">September 12</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./014_Oct03_elementary_substructures.html">Oct 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,7 +168,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./006_Sep12_completeness.html" class="sidebar-item-text sidebar-link active">
+  <a href="./006_Sep12_completeness.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 12</span></a>
   </div>
 </li>
@@ -217,7 +216,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./014_Oct03_elementary_substructures.html" class="sidebar-item-text sidebar-link">
+  <a href="./014_Oct03_elementary_substructures.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Oct 3</span></a>
   </div>
 </li>
@@ -231,20 +230,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#consistency-and-completeness" id="toc-consistency-and-completeness" class="nav-link active" data-scroll-target="#consistency-and-completeness">Consistency and Completeness</a>
+  <li><a href="#elementary-substructures" id="toc-elementary-substructures" class="nav-link active" data-scroll-target="#elementary-substructures">Elementary Substructures</a>
   <ul class="collapse">
   <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a>
+  <ul class="collapse">
+  <li><a href="#tarski-vaught-test" id="toc-tarski-vaught-test" class="nav-link" data-scroll-target="#tarski-vaught-test">Tarski-Vaught test</a></li>
+  <li><a href="#more-on-dlos" id="toc-more-on-dlos" class="nav-link" data-scroll-target="#more-on-dlos">More on DLOs</a></li>
+  </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="006_Sep12_completeness.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="014_Oct03_elementary_substructures.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 12</h1>
+<h1 class="title">Math 557 Oct 3</h1>
 </div>
 
 
@@ -261,21 +264,15 @@ window.Quarto = {
 </header>
 
 
-<section id="consistency-and-completeness" class="level1">
-<h1>Consistency and Completeness</h1>
+<section id="elementary-substructures" class="level1">
+<h1>Elementary Substructures</h1>
 <section id="key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
 <ul>
-<li><p><strong>Consistency</strong>:<br>
-A theory <span class="math inline">\(T\)</span> is <strong>consistent</strong> if there does not exist a formula <span class="math inline">\(\psi\)</span> such that <span class="math inline">\(T \vdash \psi\)</span> and <span class="math inline">\(T \vdash \neg \psi\)</span>.</p></li>
-<li><p><strong>Completeness</strong>:<br>
-A theory <span class="math inline">\(T\)</span> is <strong>complete</strong> if it is consistent and for every sentence <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(T \vdash \sigma\)</span> or <span class="math inline">\(T \vdash \neg \sigma\)</span>.</p></li>
-<li><p>In a complete theory, every statement is determined, in the sense that is either true or false in the theory.</p></li>
-<li><p>An important example of a complete theory is the <em>theory of a fixed structure</em> <span class="math inline">\(\mathcal{M}\)</span>,</p></li>
-</ul>
-<p><span class="math display">\[\operatorname{Th}(\mathcal{M}) = \{ \sigma \colon \mathcal{M} \models \sigma \}\]</span></p>
-<ul>
-<li>If, on the other hand, we are given a complete theory <span class="math inline">\(T\)</span>, does <span class="math inline">\(T\)</span> have a model? This is the subject of the <strong>Completeness Theorem</strong>. It actually shows that any <em>consistent</em> theory has a model.</li>
+<li><p><strong>Substrucure:</strong> <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span> if <span class="math inline">\(M \subseteq N\)</span>, <span class="math inline">\(c^{\mathcal{M}} = c^{\mathcal{N}}\)</span> for all <span class="math inline">\(c \in \mathcal{L}\)</span>, <span class="math inline">\(f^{\mathcal{M}} = f^{\mathcal{N}}\upharpoonright_{\mathcal{M}}\)</span> for all <span class="math inline">\(f \in \mathcal{L}\)</span>, and <span class="math inline">\(R^{\mathcal{M}} = R^{\mathcal{N}}\upharpoonright_{\mathcal{M}}\)</span> for all <span class="math inline">\(R \in \mathcal{L}\)</span>.</p></li>
+<li><p><strong>Elementary substructure:</strong> <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span> if for all <span class="math inline">\(\mathcal{L}\)</span>-formulas <span class="math inline">\(\psi(\vec{x})\)</span> and all <span class="math inline">\(\vec{a} \in M\)</span>, <span class="math display">\[
+\mathcal{M} \models \psi[\vec{a}] \iff \mathcal{N} \models \psi[\vec{a}]
+\]</span></p></li>
 </ul>
 </section>
 <section id="problems" class="level2">
@@ -287,13 +284,18 @@ A theory <span class="math inline">\(T\)</span> is <strong>complete</strong> if 
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Carry-over from Sep 10)</strong></span> <br>
-Prove the <em>Soundness Theorem</em>, i.e.&nbsp;show that</p>
-<p><span class="math display">\[T \vdash \varphi \; \Rightarrow \; T \models \varphi\]</span></p>
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
+We have the following relations between structures <span class="math inline">\(\mathcal{M}, \mathcal{N}\)</span>:</p>
+<p><span class="math display">\[\subseteq, \; \preceq, \;\equiv, \;\cong\]</span></p>
+<p>Draw a diagram indicating implications between these relations, giving counterexamples if one relation does not imply another.</p>
 </div>
 </div>
 </div>
 </div>
+<!-- elementary embedding
+Cantor-Schröder-Bernstein? -->
+<section id="tarski-vaught-test" class="level3">
+<h3 class="anchored" data-anchor-id="tarski-vaught-test">Tarski-Vaught test</h3>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -302,11 +304,14 @@ Prove the <em>Soundness Theorem</em>, i.e.&nbsp;show that</p>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-Why is the theory of a structure, <span class="math inline">\(\operatorname{Th}(\mathcal{M})\)</span>, indeed a complete theory?</p>
+<strong>THM</strong>: <em>Suppose <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span> and that for any formula <span class="math inline">\(\psi(x, \vec{y})\)</span> and any <span class="math inline">\(\vec{a} \in M\)</span>, if there exists <span class="math inline">\(b \in N\)</span> such that <span class="math inline">\(\mathcal{N} \models \psi[b, \vec{a}]\)</span>, then there also exists <span class="math inline">\(c \in M\)</span> such that <span class="math inline">\(\mathcal{N} \models \psi[c, \vec{a}]\)</span>. Then we have <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span>.</em></p>
+<p>Prove this theorem by induction in <span class="math inline">\(\operatorname{ht}(\psi)\)</span>.</p>
+<p><em>Before you start, which inductive case do you think will require the most work?</em></p>
 </div>
 </div>
 </div>
 </div>
+<p>As an application of the Tarski-Vaught test, we get another criterion for <span class="math inline">\(\preceq\)</span> using automorphisms of the bigger structure.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -315,7 +320,7 @@ Why is the theory of a structure, <span class="math inline">\(\operatorname{Th}(
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Show that a theory <span class="math inline">\(T\)</span> is inconsistent iff for every formula <span class="math inline">\(\psi\)</span>, <span class="math inline">\(T \vdash \psi\)</span></p>
+Suppose <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span> and that for any finite subset <span class="math inline">\(A \subseteq M\)</span> and <span class="math inline">\(b \in N\)</span>, there exists an automorphism of <span class="math inline">\(\mathcal{N}\)</span> that fixes <span class="math inline">\(A\)</span> pointwise and maps <span class="math inline">\(b\)</span> into <span class="math inline">\(M\)</span>. Show that <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -328,22 +333,21 @@ Show that a theory <span class="math inline">\(T\)</span> is inconsistent iff fo
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-For each of the following classes <span class="math inline">\(\mathbf{K}\)</span> of structures, determine whether they are <em>axiomatizable</em>, i.e.&nbsp;whether there exists a theory <span class="math inline">\(T\)</span> (in the language of the structures) such that</p>
-<p><span class="math display">\[\mathbf{K} = \{ \mathcal{M} \colon \mathcal{M} \models T \}\]</span></p>
-<p>(In this case <span class="math inline">\(K\)</span> is also called <em>elementary</em>.)</p>
-<p>If <span class="math inline">\(\mathbf{K}\)</span> is axiomatizable, discuss whether it is actually <em>finitely axiomatizable</em> (i.e.&nbsp;can <span class="math inline">\(T\)</span> be chosen finite). And is <span class="math inline">\(T\)</span> complete?</p>
-<ul>
-<li><span class="math inline">\(\mathbf{K} =\)</span> Abelian groups</li>
-<li><span class="math inline">\(\mathbf{K} =\)</span> infinite sets</li>
-<li><span class="math inline">\(\mathbf{K} =\)</span> fields of characteristic <span class="math inline">\(p\)</span> (<span class="math inline">\(p\)</span> prime)</li>
-<li><span class="math inline">\(\mathbf{K} =\)</span> bipartite graphs</li>
-<li><span class="math inline">\(\mathbf{K} =\)</span> torsion groups (<em>all elements have finite order</em>)</li>
-<li><span class="math inline">\(\mathbf{K} =\)</span> algebraically closed fields of characteristic <span class="math inline">\(0\)</span></li>
-</ul>
-<p>(<em>Note: We do not yet have the tools to rigorously answer all these questions, but try an “educated” guess.</em>)</p>
+Use the previous criterion to show that <span class="math display">\[
+(\mathbb{Q}, &lt;) \preceq (\mathbb{R}, &lt;)
+\]</span></p>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="more-on-dlos" class="level3">
+<h3 class="anchored" data-anchor-id="more-on-dlos">More on DLOs</h3>
+<p>We have seen previously that the theory <span class="math inline">\(\operatorname{DLO}\)</span> is <em><span class="math inline">\(\aleph_0\)</span>-categorical</em>, i.e., there is only one countable model up to isomorphism.</p>
+<p>We will now see that this actually implies <span class="math inline">\(\operatorname{DLO}\)</span> is complete.</p>
+<p>We need the following theorem which we will be an easy consequence of the Löwenheim-SKolem Theorems we will prove next week.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> Let <span class="math inline">\(T\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-theory that has an infinite model. If <span class="math inline">\(\kappa\)</span> is an infinite cardinal and <span class="math inline">\(\kappa \geq |\mathcal{L}|\)</span>, then there is a model of <span class="math inline">\(T\)</span> of cardinality <span class="math inline">\(\kappa\)</span>.</p>
 </div>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
@@ -352,15 +356,14 @@ For each of the following classes <span class="math inline">\(\mathbf{K}\)</span
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Suppose that <span class="math inline">\(T \cup \{\neg\varphi\}\)</span> is inconsistent. Show that <span class="math inline">\(T \vdash \varphi\)</span>.</p>
-<p>(<em>This is a technical formulation of the legitimacy of proofs by contradiction.</em>)</p>
+<p><span class="theorem-title"><strong>Exercise 5 (Vaught’s test)</strong></span> Suppose <span class="math inline">\(T\)</span> is a consistent <span class="math inline">\(\mathcal{L}\)</span>-theory with no finite models. If <span class="math inline">\(T\)</span> is <span class="math inline">\(\kappa\)</span>-categorical for some <span class="math inline">\(\kappa \geq |\mathcal{L}|\)</span>, then <span class="math inline">\(T\)</span> is complete.</p>
 </div>
 </div>
 </div>
 </div>
 
 
+</section>
 </section>
 </section>
 
@@ -766,14 +769,11 @@ Suppose that <span class="math inline">\(T \cup \{\neg\varphi\}\)</span> is inco
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./005_Sep10_implication.html" class="pagination-link" aria-label="September 10">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 10</span>
+      <a href="./013_Oct01_elementary_equivalence.html" class="pagination-link" aria-label="Oct 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./007_Sep15_completeness_theorem.html" class="pagination-link" aria-label="September 15">
-        <span class="nav-page-text">September 15</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
