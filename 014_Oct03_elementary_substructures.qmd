@@ -1,0 +1,75 @@
+---
+title: "Math 557 Oct 3"
+---
+
+# Elementary Substructures
+
+## Key Concepts
+
+- **Substrucure:** $\mathcal{M} \subseteq \mathcal{N}$ if $M \subseteq N$, $c^{\mathcal{M}} = c^{\mathcal{N}}$ for all $c \in \mathcal{L}$, $f^\mathcal{M} = f^\mathcal{N}\upharpoonright_\mathcal{M}$ for all $f \in \mathcal{L}$, and $R^\mathcal{M} = R^\mathcal{N}\upharpoonright_\mathcal{M}$ for all $R \in \mathcal{L}$.
+
+- **Elementary substructure:** $\mathcal{M} \preceq \mathcal{N}$ if for all $\mathcal{L}$-formulas $\psi(\vec{x})$ and all $\vec{a} \in M$,
+$$
+\mathcal{M} \models \psi[\vec{a}] \iff \mathcal{N} \models \psi[\vec{a}]
+$$
+
+## Problems
+
+:::{#exr-}
+\
+We have the following relations between structures $\mathcal{M}, \mathcal{N}$:
+
+$$\subseteq, \; \preceq, \;\equiv, \;\cong$$
+
+Draw a diagram indicating implications between these relations, giving counterexamples if one relation does not imply another.
+:::
+
+<!-- elementary embedding
+Cantor-Schröder-Bernstein? -->
+
+### Tarski-Vaught test
+
+::: {#exr-}
+\
+**THM**: *Suppose $\mathcal{M} \subseteq \mathcal{N}$ and that for any formula $\psi(x, \vec{y})$ and any $\vec{a} \in M$, if there exists $b \in N$ such that $\mathcal{N} \models \psi[b, \vec{a}]$, then there also exists $c \in M$ such that $\mathcal{N} \models \psi[c, \vec{a}]$. Then we have $\mathcal{M} \preceq \mathcal{N}$.*
+
+Prove this theorem by induction in $\operatorname{ht}(\psi)$.
+
+*Before you start, which inductive case do you think will require the most work?*
+:::
+
+As an application of the Tarski-Vaught test, we get another criterion for $\preceq$ using automorphisms of the bigger structure.
+
+::: {#exr-} 
+\
+Suppose $\mathcal{M} \subseteq \mathcal{N}$ and that for any finite subset $A \subseteq M$ and $b \in N$, there exists an automorphism of $\mathcal{N}$ that fixes $A$ pointwise and maps $b$ into $M$. Show that $\mathcal{M} \preceq \mathcal{N}$.
+:::
+
+::: {#exr-}
+\
+Use the previous criterion to show that
+$$
+(\mathbb{Q}, <) \preceq (\mathbb{R}, <)
+$$
+:::
+
+
+### More on DLOs
+
+We have seen previously that the theory $\operatorname{DLO}$ is *$\aleph_0$-categorical*, i.e., there is only one countable model up to isomorphism.
+
+We will now see that this actually implies $\operatorname{DLO}$ is complete.
+
+We need the following theorem which we will be an easy consequence of the Löwenheim-SKolem Theorems we will prove next week.
+
+::: {#thm-}
+Let $T$ be an $\mathcal{L}$-theory that has an infinite model. If $\kappa$ is an
+infinite cardinal and $\kappa \geq |\mathcal{L}|$, then there is a model of $T$ of cardinality $\kappa$.
+:::
+
+::: {#exr-}
+## Vaught's test
+
+Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ is $\kappa$-categorical for some $\kappa \geq |\mathcal{L}|$, then $T$ is complete.
+:::
+
