@@ -25,7 +25,7 @@ Draw a diagram indicating implications between these relations, giving counterex
 :::
 
 <!-- elementary embedding
-Cantor-Schröder-Bernstein? -->
+Cantor-Schröder-Bernstein for structures?   -Hard questions -->
 
 ### Tarski-Vaught test
 
