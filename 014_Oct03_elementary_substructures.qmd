@@ -6,7 +6,7 @@ title: "Math 557 Oct 3"
 
 ## Key Concepts
 
-- **Substrucure:** $\mathcal{M} \subseteq \mathcal{N}$ if $M \subseteq N$, $c^{\mathcal{M}} = c^{\mathcal{N}}$ for all $c \in \mathcal{L}$, $f^\mathcal{M} = f^\mathcal{N}\upharpoonright_\mathcal{M}$ for all $f \in \mathcal{L}$, and $R^\mathcal{M} = R^\mathcal{N}\upharpoonright_\mathcal{M}$ for all $R \in \mathcal{L}$.
+- **Substrucure:** $\mathcal{M} \subseteq \mathcal{N}$ if $M \subseteq N$, $c^{\mathcal{M}} = c^{\mathcal{N}}$ for all $c \in \mathcal{L}$, $f^{\mathcal{M}} = f^{\mathcal{N}}\upharpoonright_{\mathcal{M}}$ for all $f \in \mathcal{L}$, and $R^{\mathcal{M}} = R^{\mathcal{N}}\upharpoonright_{\mathcal{M}}$ for all $R \in \mathcal{L}$.
 
 - **Elementary substructure:** $\mathcal{M} \preceq \mathcal{N}$ if for all $\mathcal{L}$-formulas $\psi(\vec{x})$ and all $\vec{a} \in M$,
 $$
