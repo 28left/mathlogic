@@ -37,6 +37,8 @@ website:
         text: Oct 3
       - href: 015_Oct06_loewenheim_skolem.qmd
         text: Oct 6
+      - href: 016_Oct08_ultraproducts.qmd
+        text: Oct 8
 
 
 
@@ -65,6 +67,11 @@ callouty-theorem:
       type: tip
       appearance: minimal
   thm:
+    override-title: false
+    callout:
+      type: tip
+      appearance: simple
+  lem:
     override-title: false
     callout:
       type: tip

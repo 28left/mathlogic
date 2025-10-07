@@ -1,0 +1,229 @@
+---
+title: "Math 557 Oct 8"
+---
+
+# Ultraproducts
+
+## Direct Products
+
+Let $(\mathcal{M}_i)_{i \in I}$ be a family of $L$-structures.
+
+We define the **direct product**
+$$
+\mathcal{M} = \prod_{i \in I} \mathcal{M}_i
+$$
+as follows:
+
+1. The universe is the Cartesian product $M = \prod_{i \in I} M_i$. If $a$ is an element of $M$, we denote its $i$-th component (an element of $M_i$) by $a_i$ and extend this notation to vectors: if $\vec a$ is a finite tuple in $M^n$, $\vec a_i$ denotes the $n$-tuple in $M_i$ consisting of the $M_i$-entries of $\vec a$.
+2. For each relation symbol $R \in \mathcal{L}$,
+   $$
+   R^{\mathcal{M}}(\vec a) :\iff \forall i \in I,\,
+   \vec a_i \in R^{\mathcal{M}_i}
+   $$
+3. For each function symbol $f \in \mathcal{L}$,
+   $$
+   f^{\mathcal{M}}(\vec a)
+   := (f^{\mathcal{M}_i}(\vec a_i))_{i\in I}.
+   $$
+4. For each constant $c \in \mathcal{L}$,
+   $$
+   c^{\mathcal{M}} = (c^{\mathcal{M}_i})_{i\in I}.
+   $$
+
+
+### Examples and Observations
+
+- The direct product of groups is again a group (componentwise operation).
+- The direct product of fields is **not** a field:
+  $$
+  (1,0)\cdot(0,1) = (0,0).
+  $$
+- The direct product of linear orders is only a **partial order**.
+
+We often want to preserve properties that hold in “most” component structures.  
+To formalize “most,” we use **filters** on $I$.
+
+
+## Filters and Ultrafilters
+
+A **filter** $\mathcal{F}$ on a set $I$ is a nonempty collection of subsets of $I$ satisfying:
+
+1. $\emptyset \notin \mathcal{F}$  
+2. If $A,B \in \mathcal{F}$, then $A \cap B \in \mathcal{F}$  
+3. If $A \in \mathcal{F}$ and $A \subseteq B \subseteq I$, then $B \in \mathcal{F}$
+
+An **ultrafilter** $\mathcal{U}$ is a maximal filter, equivalently:
+
+> For all $A \subseteq I$, either $A \in \mathcal{U}$ or $I \setminus A \in \mathcal{U}$.
+
+Ultrafilters interact nicely with logical operators:
+
+-  $A \not \in \mathcal{U} \iff I \backslash A \in \mathcal{U}$,
+- $A  \in \mathcal{U} \wedge B \in \mathcal{U} \iff A \cap B \in \mathcal{U}$,
+- $A  \in \mathcal{U} \vee B \in \mathcal{U} \iff A \cup B \in \mathcal{U}$.
+
+
+### Examples
+
+- A **principal filter** is of the form  
+  $$
+  \mathcal{F}_A = \{ X \subseteq I : A \subseteq X \}
+  $$
+  for some nonempty $A \subseteq I$.  
+  If $A = \{a\}$, then $\mathcal{F}_A$ is a **principal ultrafilter**.
+
+- A **free** (non-principal) ultrafilter exists on every infinite set $I$  
+  (via Zorn’s Lemma / Boolean prime ideal theorem).
+
+### Existence of Ultrafilters
+
+A family of sets has the **finite intersection property (FIP)** if every finite subfamily has nonempty intersection.
+
+::: {#thm-uf-existence}
+\
+If a family $\mathcal{A} \subseteq \mathcal{P}(I)$ has the FIP,  
+then there exists an ultrafilter $\mathcal{U}$ on $I$ with $\mathcal{A} \subseteq \mathcal{U}$.
+:::
+
+
+## Reduced Products
+
+Given a filter $\mathcal{F}$ on $I$ and structures $(\mathcal{M}_i)_{i \in I}$, define the **reduced product**
+$$
+\mathcal{M} / \mathcal{F}
+$$
+as follows.
+
+Let $M = \prod_{i \in I} M_i$. For $a,b \in M$, define
+$$
+a \sim_{\mathcal{F}} b \iff \{\, i \in I : a_i = b_i \,\} \in \mathcal{F}.
+$$
+
+The universe of $\mathcal{M}/\mathcal{F}$ is the quotient $M / {\sim_{\mathcal{F}}}$,
+with elements denoted $a_{\mathcal{F}}$ (alternatively, $a/\mathcal{F}$).
+
+For symbols of $\mathcal{L}$:
+
+- **Relations:**  
+  $$
+  R^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}})
+   : \iff  \{\, i : \mathcal{M}_i \models R(\vec a_i) \,\} \in \mathcal{F}.
+  $$
+
+- **Functions:**  
+  $$
+  f^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}}) =
+  [\, (f^{\mathcal{M}_i}(\vec a_i))_{i \in I} \,]_{\mathcal{F}}.
+  $$
+
+
+- **Constants:**  
+  $$
+  c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
+  $$
+
+
+::: {#exr-}
+Check that the above definition does not depend on the choice of representative for each equivalence class
+:::
+
+
+### Ultraproducts
+
+If $\mathcal{U}$ is an **ultrafilter** on $I$, the reduced product
+$$
+\prod_{i \in I} \mathcal{M}_i / \mathcal{U}
+$$
+is called the **ultraproduct** of $(\mathcal{M}_i)_{i \in I}$ modulo $\mathcal{U}$.
+
+When all $\mathcal{M}_i$ are the same structure $\mathcal{M}$, we get an **ultrapower**
+$$
+\mathcal{M}^I / \mathcal{U}.
+$$
+
+
+## Łoś' Theorem
+
+Let $\mathcal{M} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}$ be an ultraproduct.
+
+::: {#thm-los}
+\
+For every $\mathcal{L}$-formula $\varphi(x_1,\dots,x_n)$ and tuples  
+$\vec a \in \prod_{i \in I} M_i$,
+$$
+\mathcal{M} \models \varphi[\vec a_{\mathcal{U}}]
+\iff
+\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
+$$
+:::
+
+
+For any $\mathcal{L}$-formula $\varphi(v_0,\ldots,v_{n-1})$ a a tuple $\vec{a} \in \prod M_i$ 
+we define the *Boolean extension* as
+$$
+\|\varphi(\vec{a}) \| := \{i \in I| \mathcal{M}_i \models \varphi[\vec{a}_i]\} 
+$$
+
+::: {#lem-}
+
+1. $\| \neg \varphi(\vec{a}) \| = I \backslash \|\varphi(\vec{a}) \|$,
+2. $\| (\varphi \wedge \psi)(\vec{a}) \| =\| \varphi(\vec{a}) \| \cap \| \psi(\vec{a}) \|$,
+3. $\| (\varphi \vee \psi)(\vec{a}) \| =\| \varphi(\vec{a}) \| \cup \| \psi(\vec{a}) \|$,
+4. For all tuples $\vec{a}$ and elements $b$ in $A$:
+$$
+\|\varphi(\vec{a},b) \| \subseteq \| (\exists v_n \varphi)(\vec{a}) \|,
+$$
+and there exists $b \in M$ such that
+$$
+\|\varphi(\vec{a},b) \| = \| (\exists v_n \varphi)(\vec{a}) \|.
+$$
+:::
+
+# Proof of Łoś’s Theorem (Sketch)
+
+We prove by induction on the structure of $\varphi$.
+
+1. **Atomic formulas:**  
+   True by the definitions of $R^{\mathcal{M}}$ and $f^{\mathcal{M}}$.
+
+2. **Boolean connectives:**  
+   The ultrafilter properties ensure
+   - $\{ i : \mathcal{M}_i \models \neg\psi(\bar a_i)\} = I \setminus \{ i : \mathcal{M}_i \models \psi(\bar a_i)\}$  
+   - $\{ i : \mathcal{M}_i \models (\psi \wedge \theta)(\bar a_i)\}
+      = \{ i : \mathcal{M}_i \models \psi(\bar a_i)\}
+        \cap \{ i : \mathcal{M}_i \models \theta(\bar a_i)\}$  
+     and ultrafilters are closed under these operations.
+
+3. **Existential quantifiers:**  
+   Suppose
+   $$
+   \mathcal{M} \models \exists y\, \psi(y,\bar a).
+   $$
+   Then for each $i$, pick $b_i$ such that
+   $\mathcal{M}_i \models \psi(b_i,\bar a_i)$
+   whenever possible, and set $b = [b_i]_{\mathcal{U}}$.
+   By definition of relations in the ultraproduct, we get
+   $\mathcal{M} \models \psi(b,\bar a)$.
+
+Thus the statement holds for all formulas.
+
+# Applications
+
+- **Preservation of theories:**  
+  If each $\mathcal{M}_i \models T$, then $\prod_i \mathcal{M}_i / \mathcal{U} \models T$.
+
+- **Ultrapowers:**  
+  $\mathcal{M} \equiv \mathcal{M}^I / \mathcal{U}$, i.e., a structure is elementarily equivalent to any of its ultrapowers.
+
+- **Nonstandard models:**  
+  For example, the ultrapower $\mathbb{N}^{\mathbb{N}}/\mathcal{U}$ (with $\mathcal{U}$ non-principal)
+  yields a countably saturated nonstandard model of arithmetic.
+
+# Remarks
+
+- Ultraproducts provide a bridge between algebraic and logical constructions.  
+  Algebraically they are products modulo a maximal ideal (ultrafilter).  
+  Logically they yield the most powerful preservation theorem for first-order truth.
+
+- They also give elegant proofs of the **Compactness Theorem** and **Completeness Theorem**:
+  every finitely satisfiable theory has a model that can be constructed as an ultraproduct of its finite fragments.
