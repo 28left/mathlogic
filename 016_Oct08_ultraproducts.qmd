@@ -205,8 +205,8 @@ This easily implies the statement for atomic formulas.
 For $\varphi \equiv \neg \psi$, we have
 $$
 \begin{aligned}
-\mathcal{M}/\mathcal{U} \models \neg \psi[\vec{a}_\mathcal{U}]
-&\iff \mathcal{M}/\mathcal{U} \not\models \psi[\vec{a}_\mathcal{U}] \\[6pt]
+\mathcal{M}/\mathcal{U} \models \neg \psi[\vec{a}_{\mathcal{U}}]
+&\iff \mathcal{M}/\mathcal{U} \not\models \psi[\vec{a}_{\mathcal{U}}] \\[6pt]
 &\iff \{\, i : \mathcal{M}_i \models \psi[\vec{a}_i] \,\} \notin \mathcal{U} 
 && \text{(I.H.)} \\[6pt]
 &\iff \| \psi(\vec{a}) \| \notin \mathcal{U} \\[6pt]
@@ -223,9 +223,9 @@ The case $\varphi \equiv (\psi \land \theta)$ is similar.
 Finally, assume $\varphi \equiv \exists y \psi$. Then
 $$
 \begin{aligned}
-\mathcal{M}/\mathcal{U} \models \exists y\, \psi[\vec{a}_\mathcal{U}]
-&\iff \exists b_\mathcal{U} \in \mathcal{M}/\mathcal{U} \text{ such that } 
-   \mathcal{M}/\mathcal{U} \models \psi[\vec{a}_\mathcal{U}, b_\mathcal{U}] \\[6pt]
+\mathcal{M}/\mathcal{U} \models \exists y\, \psi[\vec{a}_{\mathcal{U}}]
+&\iff \exists b_{\mathcal{U}} \in \mathcal{M}/\mathcal{U} \text{ such that } 
+   \mathcal{M}/\mathcal{U} \models \psi[\vec{a}_{\mathcal{U}}, b_{\mathcal{U}}] \\[6pt]
 &\iff \exists b \in M \text{ such that } 
    \{\, i : \mathcal{M}_i \models \psi[\vec{a}_i, b_i] \,\} \in \mathcal{U} 
    && \text{(I.H.)} \\[6pt]
