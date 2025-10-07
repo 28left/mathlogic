@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 3 – Math 557 Fall 2025</title>
+<title>Math 557 Oct 6 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./004_Sep05_substitution.html" rel="next">
-<link href="./002_Aug29_semantics.html" rel="prev">
+<link href="./014_Oct03_elementary_substructures.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./003_Sep03_validities.html">September 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./015_Oct06_loewenheim_skolem.html">Oct 6</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,7 +150,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./003_Sep03_validities.html" class="sidebar-item-text sidebar-link active">
+  <a href="./003_Sep03_validities.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 3</span></a>
   </div>
 </li>
@@ -223,7 +222,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./015_Oct06_loewenheim_skolem.html" class="sidebar-item-text sidebar-link">
+  <a href="./015_Oct06_loewenheim_skolem.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Oct 6</span></a>
   </div>
 </li>
@@ -237,20 +236,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#validities" id="toc-validities" class="nav-link active" data-scroll-target="#validities">Validities</a>
+  <li><a href="#löwenheim-skolem-theorems" id="toc-löwenheim-skolem-theorems" class="nav-link active" data-scroll-target="#löwenheim-skolem-theorems">Löwenheim-Skolem Theorems</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#down" id="toc-down" class="nav-link" data-scroll-target="#down">Down</a></li>
+  <li><a href="#up" id="toc-up" class="nav-link" data-scroll-target="#up">Up</a></li>
+  <li><a href="#some-consequences" id="toc-some-consequences" class="nav-link" data-scroll-target="#some-consequences">Some consequences</a>
+  <ul class="collapse">
+  <li><a href="#the-reals-as-a-complete-ordered-field" id="toc-the-reals-as-a-complete-ordered-field" class="nav-link" data-scroll-target="#the-reals-as-a-complete-ordered-field">The reals as a complete ordered field</a></li>
+  </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="003_Sep03_validities.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="015_Oct06_loewenheim_skolem.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 3</h1>
+<h1 class="title">Math 557 Oct 6</h1>
 </div>
 
 
@@ -267,93 +270,104 @@ window.Quarto = {
 </header>
 
 
-<section id="validities" class="level1">
-<h1>Validities</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><strong>Validity</strong>: An <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\psi\)</span> that is valid in <em>any</em> <span class="math inline">\(\mathcal{L}\)</span>-structure under <em>any</em> assignment <span class="math inline">\(\alpha\)</span>, i.e.</li>
-</ul>
-<p><span class="math display">\[\mathcal{M} \models \psi[\alpha] \quad \text{ for any } \mathcal{M}, \alpha.\]</span></p>
-<ul>
-<li><p><strong>Sources of validities</strong>:</p>
-<ul>
-<li><em>Propositional tautologies</em> – e.g.&nbsp;formulas of the form <span class="math inline">\(\psi \to \psi\)</span> or <span class="math inline">\(\psi \vee \neg \psi\)</span></li>
-<li><em>Equality</em> - the way <span class="math inline">\(=\)</span> is interpreted implies formulas like <span class="math inline">\(\forall x \; x=x\)</span> are validities.<br>
-</li>
-<li><em>Quantifiers</em></li>
-</ul></li>
-<li><p><strong>Fundamental questions</strong>:</p>
-<ul>
-<li>Can we characterize the set of validities <em>syntactically</em>?</li>
-<li>In particular, is there an algorithm that, on input <span class="math inline">\(\varphi\)</span>, determines whether <span class="math inline">\(\varphi\)</span> is a validity or not?</li>
-</ul></li>
-</ul>
+<section id="löwenheim-skolem-theorems" class="level1">
+<h1>Löwenheim-Skolem Theorems</h1>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> For finite structures <span class="math inline">\(\mathcal{M}, \mathcal{N}\)</span>, <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span> implies <span class="math inline">\(M=N\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>Hence, for finite structures, proper elementary substructures cannot exist. In contrast, infinite structures have an elementary substructure in every smaller infinite cardinality <span class="math inline">\(\kappa\)</span> (as long as <span class="math inline">\(\kappa \ge \operatorname{card}(\mathcal{L})\)</span>):</p>
+<section id="down" class="level2">
+<h2 class="anchored" data-anchor-id="down">Down</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-ls-down" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Löwenheim-Skolem downward)</strong></span> Let <span class="math inline">\(\mathcal{A}\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-structure, <span class="math inline">\(\kappa\)</span> an infinite cardinal with <span class="math inline">\(\operatorname{card}(\mathcal{L}) \le \kappa\)</span> and <span class="math inline">\(\kappa \le \operatorname{card}(A)\)</span>. Then there exists a structure <span class="math inline">\(\mathcal{B}\)</span> with <span class="math display">\[
+\mathcal{B} \preceq  \mathcal{A} \; , \; \operatorname{card}(B) = \kappa.
+\]</span></p>
+<p><strong>Addition:</strong> <em>If <span class="math inline">\(A_0 \subseteq A\)</span> is arbitrary with <span class="math inline">\(\operatorname{card}(A_0) \le \kappa\)</span>, then one can additionally require <span class="math inline">\(A_0 \subseteq B\)</span>.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(A_0 \subseteq A\)</span> be given with <span class="math inline">\(\operatorname{card}(A_0) \le \kappa \le \operatorname{card}(A)\)</span>. By enlarging <span class="math inline">\(A_0\)</span> if necessary, we can assume that <span class="math inline">\(\operatorname{card}(A_0) = \kappa\)</span>.</p>
+<p>If for elements <span class="math inline">\(a_1,\ldots,a_n \in A_0\)</span> <span class="math display">\[
+(*) \quad \mathcal{A} \models \exists v_0 \varphi[a_1,\ldots,a_n]
+\]</span> holds, we have to add a witness <span class="math inline">\(b\)</span> for this existential quantifier to <span class="math inline">\(A_0\)</span>; let <span class="math inline">\(A_1\)</span> be the set that arises from <span class="math inline">\(A_0\)</span> by adding such witnesses (for all possible existential formulas and all possible assignments with elements from <span class="math inline">\(A_0\)</span>). Standard cardinal arithmetic yields <span class="math inline">\(\operatorname{card}(A_1) = \operatorname{card}(A_0) = \kappa\)</span>.</p>
+<p>Now, however, <span class="math inline">\((*)\)</span> may possibly hold for a formula <span class="math inline">\(\varphi\)</span> and new elements <span class="math inline">\(a_1,\ldots,a_n \in A_1\)</span> that are not contained in <span class="math inline">\(A_0\)</span>; thus, we have to iterate the procedure.</p>
+<p>With <span class="math inline">\(A_i\)</span> defined, add suitable elements from <span class="math inline">\(A\)</span>, resulting in a set <span class="math inline">\(A_{i+1}\)</span>, such that: <span class="math display">\[
+\begin{aligned}
+&amp;\text{If for } \; a_1, \ldots,a_n \in A_i: \mathcal{A} \models \exists v_0 \varphi[a_1,\ldots,a_n], \\
+&amp;\text{then there exists an} \; a \in A_{i+1} \; \text{with} \; \mathcal{A} \models  \varphi[a,a_1,\ldots,a_n].
+\end{aligned}
+\]</span></p>
+<p>As in the first step, <span class="math inline">\(A_{i+1}\)</span> can be obtained from <span class="math inline">\(A_i\)</span> without changing the cardinality. Finally, we set <span class="math display">\[
+B:=  \bigcup_{i \in \mathbb{N}} A_i
+\]</span> and obtain a set <span class="math inline">\(B\)</span> with <span class="math inline">\(A_0 \subseteq B \subseteq A\)</span> and <span class="math inline">\(\operatorname{card}(B) = \kappa\)</span>.</p>
+<p>In the first step, we already add all constants of <span class="math inline">\(\mathcal{A}\)</span> (using <span class="math inline">\((*)\)</span> with the formula <span class="math inline">\(\exists v_0 (v_0 = c)\)</span>) and in all further steps we are closing under the functions of <span class="math inline">\(\mathcal{A}\)</span> (using the formula <span class="math inline">\(\exists v_0 (v_0 = f(v_1,\ldots,v_n))\)</span>). It follows that <span class="math inline">\(B\)</span> is the universe of a substructure <span class="math inline">\(\mathcal{B}\)</span> of <span class="math inline">\(\mathcal{A}\)</span>. We can then conclude that <span class="math inline">\(\mathcal{B} \preceq  \mathcal{A}\)</span> using the Tarski-Vaught test, as our construction is arranged precisely so that the Tarski-Vaught criterion is applicable.</p>
+</div>
 </section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<section id="up" class="level2">
+<h2 class="anchored" data-anchor-id="up">Up</h2>
+<p>The proof of the upward version is simpler and is based on the Compactness Theorem.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Warmup)</strong></span> <br>
-Determine whether the following formulas are validitites.</p>
+<div id="thm-ls-up" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Löwenheim-Skolem upward)</strong></span> Let <span class="math inline">\(\mathcal{A}\)</span> be an infinite <span class="math inline">\(\mathcal{L}\)</span>-structure, <span class="math inline">\(\kappa\)</span> a cardinal with <span class="math inline">\(\operatorname{card}(\mathcal{L}) \le \kappa\)</span> and <span class="math inline">\(\operatorname{card}(A) \le \kappa\)</span>. Then there exists a structure <span class="math inline">\(\mathcal{B}\)</span> with* <span class="math display">\[
+\mathcal{A} \preceq  \mathcal{B} \; , \;  \operatorname{card}(B) = \kappa.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We first pick a set <span class="math inline">\(C\)</span> with <span class="math inline">\(A  \subseteq C\)</span> and <span class="math inline">\(\operatorname{card}(C) = \kappa\)</span> and extend the theory of <span class="math inline">\(\mathcal{A}\)</span> (with the help of new constants) so that every model has at least as many elements as <span class="math inline">\(C\)</span>:</p>
+<p><span class="math display">\[
+T' = \operatorname{Th}(\mathcal{A}) \cup \{\underline{c} \ne \underline{d}\mid c,d \in C, c \ne d \}.
+\]</span></p>
+<p>By the Compactness Theorem, <span class="math inline">\(T'\)</span> has a model, say <span class="math inline">\(\mathcal{B}\)</span>, in which the new constants <span class="math inline">\(\underline{c}\)</span> are interpreted by elements of <span class="math inline">\(B\)</span> – different constants by different elements of <span class="math inline">\(B\)</span>. By passing to an isomorphic structure, we can assume that <span class="math inline">\(\underline{c}^{\mathcal{B}} = c\)</span> and thus <span class="math inline">\(C \subseteq B\)</span>, so <span class="math inline">\(\operatorname{card}(B) \ge \kappa\)</span>.</p>
+<p>The language of <span class="math inline">\(T'\)</span> has cardinality <span class="math inline">\(\kappa\)</span> because <span class="math inline">\(\kappa \ge \operatorname{card}(\mathcal{L})\)</span>, so we can also assume that <span class="math inline">\(\operatorname{card}(B) = \kappa\)</span> (by using the downward theorem).</p>
+<p>Finally, because <span class="math inline">\(\mathcal{B} \models \operatorname{Th}(\mathcal{A})\)</span>, we have <span class="math inline">\(\mathcal{A}\equiv \mathcal{B}\)</span>. The stronger statement <span class="math inline">\(\mathcal{A} \preceq \mathcal{B}\)</span> is obtained by using the same argument, but using the elementary diagram <span class="math inline">\(D(\mathcal{A}) = \operatorname{Th}(\mathcal{A}_A)\)</span> instead of <span class="math inline">\(\operatorname{Th}(\mathcal{A})\)</span>.</p>
+</div>
+</section>
+<section id="some-consequences" class="level2">
+<h2 class="anchored" data-anchor-id="some-consequences">Some consequences</h2>
+<ol type="1">
+<li><p>If <span class="math inline">\(\mathcal{A}\)</span> is an infinite <span class="math inline">\(\mathcal{L}\)</span>-structure and <span class="math inline">\(\kappa \ge \operatorname{card}(\mathcal{L})\)</span> is a infinite cardinal, then there exists a structure <span class="math inline">\(\mathcal{B}\)</span> with <span class="math inline">\(\operatorname{card}(B) = \kappa\)</span> and</p>
 <ul>
-<li><span class="math inline">\(((\varphi_1 \, \to \, (\varphi_2 \, \to \, \varphi_3)) \, \to \, ((\varphi_1 \, \to \, \varphi_2) \, \to \, (\varphi_1 \, \to \, \varphi_3)))\)</span></li>
-<li><span class="math inline">\(\exists x (\varphi \wedge \psi) \: \leftrightarrow \: (\exists x \varphi \wedge \exists x \psi)\)</span></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-Let <span class="math inline">\(g ∶ \{0, 1\}^n → \{0, 1\}\)</span> be a Boolean function. Show that there exists a propositional formula <span class="math inline">\(F(p_1, \dots, p_n)\)</span> such that, for any assignment <span class="math inline">\(\delta\)</span> to the variables <span class="math inline">\(p_1, \dots, p_n\)</span>,</p>
-<p><span class="math display">\[\delta^*(F) = g(\delta(p_1), \dots, \delta(p_n)).\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Formally verify that every propositional tautology is a validity.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Verify, using the definition of the satisfaction relation <span class="math inline">\(\models\)</span>, that</p>
-<p><span class="math display">\[\forall x,y (x = y \: \to \: f(x)=f(y)) \quad (\text{$f$ unary function symbol})\]</span></p>
-<p>and <span class="math display">\[\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})\]</span></p>
-<p>are validities.</p>
-</div>
-</div>
-</div>
-</div>
+<li><span class="math inline">\(\mathcal{B} \preceq \mathcal{A}\)</span> in the case <span class="math inline">\(\kappa \le \operatorname{card}(A)\)</span>,</li>
+<li><span class="math inline">\(\mathcal{A} \preceq \mathcal{B}\)</span> in the case <span class="math inline">\(\operatorname{card}(A) \le \kappa\)</span>.</li>
+</ul></li>
+<li><p>In particular, every theory <span class="math inline">\(T\)</span> that has an infinite model has a model of cardinality <span class="math inline">\(\kappa\)</span> for every cardinal <span class="math inline">\(\kappa \ge \operatorname{card}(\mathcal{L})\)</span>.</p></li>
+<li><p>More specifically: A theory <span class="math inline">\(T\)</span> in a countable language <span class="math inline">\(\mathcal{L}\)</span> that has a model at all also has a countable model. This theorem of Löwenheim (1915) is one of the earliest results of mathematical logic.</p></li>
+</ol>
+<section id="the-reals-as-a-complete-ordered-field" class="level3">
+<h3 class="anchored" data-anchor-id="the-reals-as-a-complete-ordered-field">The reals as a complete ordered field</h3>
+<p>Consider the structure <span class="math inline">\((\mathbb{R},0,1,+,\cdot, &lt;)\)</span> over the language of ordered rings. By Löwenheim-Skolem downward, this has a countable elementary substructure <span class="math inline">\(\mathcal{R}'\)</span>. <span class="math inline">\(\mathcal{R}'\)</span> is a field, so it has to contain <span class="math inline">\(\mathbb{Q}\)</span>, and since it inherits the order from <span class="math inline">\(\mathbb{R}\)</span>, it has to be dense in <span class="math inline">\(\mathbb{R}\)</span>. Since <span class="math inline">\(\mathcal{R}'\)</span> is countable, the exists <span class="math inline">\(r_0 \in \mathbb{R}\setminus R'\)</span>. The set <span class="math display">\[
+\{ r \in R' : r &lt; r_0\}
+\]</span> is bounded in <span class="math inline">\(\mathcal{R}'\)</span> but cannot have a least upper bound in <span class="math inline">\(\mathcal{R}'\)</span>.</p>
+<p><em>As <span class="math inline">\(\mathcal{R}' \models \operatorname{Th}(\mathbb{R},0,1,+,\cdot, &lt;)\)</span>, it follows that the theory of <em>complete</em> ordered fields is not first-order axiomatizable in the language of ordered rings.</em></p>
+<p>It can be shown that the <em>algebraic numbers</em> <span class="math inline">\(\mathbb{R}_{\operatorname{alg}}\)</span> form such a countable elementary substructure of <span class="math inline">\(\mathbb{R}\)</span>.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -759,14 +773,11 @@ Verify, using the definition of the satisfaction relation <span class="math inli
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./002_Aug29_semantics.html" class="pagination-link" aria-label="August 29">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">August 29</span>
+      <a href="./014_Oct03_elementary_substructures.html" class="pagination-link" aria-label="Oct 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./004_Sep05_substitution.html" class="pagination-link" aria-label="September 5">
-        <span class="nav-page-text">September 5</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
