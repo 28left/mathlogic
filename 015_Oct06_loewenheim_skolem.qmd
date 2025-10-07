@@ -1,0 +1,106 @@
+---
+title: "Math 557 Oct 6"
+---
+
+# Löwenheim-Skolem Theorems
+
+::: {#exr-}
+For finite structures $\mathcal{M}, \mathcal{N}$, $\mathcal{M} \preceq \mathcal{N}$ implies $M=N$
+:::
+
+Hence, for finite structures, proper elementary substructures cannot exist. In contrast, infinite structures have an elementary substructure in every smaller infinite cardinality $\kappa$ (as long as $\kappa \ge \operatorname{card}(\mathcal{L})$):
+
+
+## Down 
+
+::: {#thm-ls-down}
+## Löwenheim-Skolem downward
+
+Let $\mathcal{A}$ be an $\mathcal{L}$-structure, $\kappa$ an infinite cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\kappa \le \operatorname{card}(A)$. Then there exists a structure $\mathcal{B}$ with
+$$
+\mathcal{B} \preceq  \mathcal{A} \; , \; \operatorname{card}(B) = \kappa.
+$$
+
+**Addition:** *If $A_0 \subseteq A$ is arbitrary with $\operatorname{card}(A_0) \le \kappa$, then one can additionally require $A_0 \subseteq B$.*
+:::
+
+::: {.proof}
+Let $A_0 \subseteq A$ be given with $\operatorname{card}(A_0) \le \kappa \le \operatorname{card}(A)$. By enlarging $A_0$ if necessary, we can assume that $\operatorname{card}(A_0) = \kappa$.
+
+If for elements $a_1,\ldots,a_n \in A_0$
+$$
+(*) \quad \mathcal{A} \models \exists v_0 \varphi[a_1,\ldots,a_n]
+$$
+holds, we have to add a witness $b$ for this existential quantifier to $A_0$; let $A_1$ be the set that arises from $A_0$ by adding such witnesses (for all possible existential formulas and all possible assignments with elements from $A_0$).
+Standard cardinal arithmetic yields $\operatorname{card}(A_1) = \operatorname{card}(A_0) = \kappa$.
+
+Now, however, $(*)$ may possibly hold for a formula $\varphi$ and new elements $a_1,\ldots,a_n \in A_1$ that are not contained in $A_0$; thus, we have to iterate the procedure.
+
+With $A_i$ defined, add suitable elements from $A$, resulting in a set $A_{i+1}$, such that:
+$$
+\begin{aligned}
+&\text{If for } \; a_1, \ldots,a_n \in A_i: \mathcal{A} \models \exists v_0 \varphi[a_1,\ldots,a_n], \\
+&\text{then there exists an} \; a \in A_{i+1} \; \text{with} \; \mathcal{A} \models  \varphi[a,a_1,\ldots,a_n].
+\end{aligned}
+$$
+
+As in the first step, $A_{i+1}$ can be obtained from $A_i$ without changing the cardinality. Finally, we set
+$$
+B:=  \bigcup_{i \in \mathbb{N}} A_i
+$$
+and obtain a set $B$ with $A_0 \subseteq B \subseteq A$ and $\operatorname{card}(B) = \kappa$.
+
+In the first step, we already add all constants of $\mathcal{A}$ (using $(*)$ with the formula $\exists v_0 (v_0 = c)$) and in all further steps we are closing under the functions of $\mathcal{A}$ (using the formula $\exists v_0 (v_0 = f(v_1,\ldots,v_n))$). It follows that  $B$ is the universe of a substructure $\mathcal{B}$ of $\mathcal{A}$. We can then conclude that $\mathcal{B} \preceq  \mathcal{A}$ using the Tarski-Vaught test, as our construction is arranged precisely so that the Tarski-Vaught criterion is applicable.
+:::
+
+
+
+## Up 
+
+The proof of the upward version is simpler and is based on the Compactness Theorem.
+
+::: {#thm-ls-up}
+## Löwenheim-Skolem upward
+
+Let $\mathcal{A}$ be an infinite $\mathcal{L}$-structure, $\kappa$ a cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\operatorname{card}(A) \le \kappa$. Then there exists a structure $\mathcal{B}$ with*
+$$
+\mathcal{A} \preceq  \mathcal{B} \; , \;  \operatorname{card}(B) = \kappa.
+$$
+:::
+
+::: {.proof}
+We first pick a set $C$ with $A  \subseteq C$ and $\operatorname{card}(C) = \kappa$ and extend the theory of $\mathcal{A}$ (with the help of new constants) so that every model has at least as many elements as $C$:
+
+$$
+T' = \operatorname{Th}(\mathcal{A}) \cup \{\underline{c} \ne \underline{d}\mid c,d \in C, c \ne d \}.
+$$
+
+By the Compactness Theorem, $T'$ has a model, say $\mathcal{B}$, in which the new constants $\underline{c}$ are interpreted by elements of $B$ – different constants by different elements of $B$. By passing to an isomorphic structure, we can assume that $\underline{c}^{\mathcal{B}} = c$ and thus $C \subseteq B$, so $\operatorname{card}(B) \ge \kappa$.
+
+The language of $T'$ has cardinality $\kappa$ because $\kappa \ge \operatorname{card}(\mathcal{L})$, so we can also assume that $\operatorname{card}(B) = \kappa$ (by using the downward theorem).
+
+Finally, because $\mathcal{B} \models \operatorname{Th}(\mathcal{A})$, we have $\mathcal{A}\equiv \mathcal{B}$. The stronger statement $\mathcal{A} \preceq \mathcal{B}$ is obtained by using the same argument, but using the elementary diagram $D(\mathcal{A}) = \operatorname{Th}(\mathcal{A}_A)$ instead of $\operatorname{Th}(\mathcal{A})$.
+:::
+
+
+## Some consequences
+
+1. If $\mathcal{A}$ is an infinite $\mathcal{L}$-structure and $\kappa \ge \operatorname{card}(\mathcal{L})$ is a infinite cardinal, then there exists a structure $\mathcal{B}$ with $\operatorname{card}(B) = \kappa$ and
+   - $\mathcal{B} \preceq \mathcal{A}$ in the case $\kappa \le \operatorname{card}(A)$,
+   - $\mathcal{A} \preceq \mathcal{B}$ in the case $\operatorname{card}(A) \le \kappa$.
+
+2. In particular, every theory $T$ that has an infinite model has a model of cardinality $\kappa$ for every cardinal $\kappa \ge \operatorname{card}(\mathcal{L})$.
+
+3. More specifically: A theory $T$ in a countable language $\mathcal{L}$ that has a model at all also has a countable model. This theorem of Löwenheim (1915) is one of the earliest results of mathematical logic.
+
+### The reals as a complete ordered field 
+
+Consider the structure $(\mathbb{R},0,1,+,\cdot, <)$ over the language of ordered rings. By Löwenheim-Skolem downward, this has a countable elementary substructure $\mathcal{R}'$. $\mathcal{R}'$ is a field, so it has to contain $\mathbb{Q}$, and since it inherits the order from $\mathbb{R}$, it has to be dense in $\mathbb{R}$. Since $\mathcal{R}'$ is countable, the exists $r_0 \in \mathbb{R}\setminus R'$. The set
+$$
+\{ r \in R' : r < r_0\}
+$$
+is bounded in $\mathcal{R}'$ but cannot have a least upper bound in $\mathcal{R}'$.
+
+*As $\mathcal{R}' \models \operatorname{Th}(\mathbb{R},0,1,+,\cdot, <)$, it follows that the theory of _complete_ ordered fields is not first-order axiomatizable in the language of ordered rings.*
+
+It can be shown that the *algebraic numbers* $\mathbb{R}_{\operatorname{alg}}$ form such a countable elementary substructure of $\mathbb{R}$.
