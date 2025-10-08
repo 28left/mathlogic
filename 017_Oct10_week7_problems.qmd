@@ -77,6 +77,12 @@ is a filter on $I$. Show that it is an ultrafilter if and only if $|A| = 1$.
 Show that every ultrafilter on a finite set is principal.
 :::
 
+::: {#exr-}
+## Free ultrafilters on infinite sets
+
+Show that a free ultrafilter on an infinite set $I$ cannot contain any finite subsets of $I$.
+:::
+
 
 ::: {#exr-}
 ## Ultrafilter existence
@@ -112,6 +118,23 @@ Show that the ultraproduct
 $$\prod_{p\in P} \mathbb{F}_p/\mathcal{U}$$
 
 is a field of characteristic $0$.
+:::
+
+::: {exr-}
+## Ultrapowers
+
+If we take an ultraproduct over the same structure $\mathcal{M}$ along an index set $I$, we call this an **ultrapower**, denoted by 
+$$
+\mathcal{M}^I/\mathcal{U}
+$$
+
+Let $\mathcal{U}$ be a free ultrafilter on an (infinite) set $I$.
+
+- Show that the map $j: b \mapsto (b)_{i \in I}/\mathcal{U}$ defines an **elementary embedding** of $\mathcal{M}$ into $\mathcal{M}^I/\mathcal{U}$ (i.e. it is injective and the image is an elementary substructure).
+
+- Show that if $\mathcal{M}$ is infinite, $j$ is not a surjection.
+
+*If we apply this to $\mathbb{N}$ in the language of arithmetic, this yields another way to obtain __non-standard models__ of arithmetic.*
 :::
 
 
@@ -150,11 +173,6 @@ is a filter in $\mathcal{B}$.
 
 ### Keisler-Shelah Theorem
 
-If we take an ultraproduct over the same structure $\mathcal{M}$ along an index set $I$, we call this an **ultrapower**, denoted by 
-$$
-\mathcal{M}^I/\mathcal{U}
-$$
-
 From Łoś' Theorem, we know that if two ultrapowers are isomorphic, then the original structures are elementary equivalent. Remarkably, the converse holds, too, and hence gives an *algebraic characterization of elementary equivalence*.
 
 ::: {#thm-keisler-shelah}
@@ -166,3 +184,7 @@ $$
 $$
 :::
 
+
+### Other interesting directions
+
+- [Ramsey theory and ultrafilters](https://dfernandezb.web.app/using-ultrafilters.pdf)
