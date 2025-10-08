@@ -257,10 +257,12 @@ window.Quarto = {
   <li><a href="#łoś-theorem" id="toc-łoś-theorem" class="nav-link" data-scroll-target="#łoś-theorem">Łoś’ Theorem</a></li>
   </ul></li>
   <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#ultrapowers" id="toc-ultrapowers" class="nav-link" data-scroll-target="#ultrapowers">Ultrapowers</a></li>
   <li><a href="#further-explorations" id="toc-further-explorations" class="nav-link" data-scroll-target="#further-explorations">Further explorations</a>
   <ul class="collapse">
   <li><a href="#lindenbaum-tarski-algebra" id="toc-lindenbaum-tarski-algebra" class="nav-link" data-scroll-target="#lindenbaum-tarski-algebra">Lindenbaum-Tarski algebra</a></li>
   <li><a href="#keisler-shelah-theorem" id="toc-keisler-shelah-theorem" class="nav-link" data-scroll-target="#keisler-shelah-theorem">Keisler-Shelah Theorem</a></li>
+  <li><a href="#other-interesting-directions" id="toc-other-interesting-directions" class="nav-link" data-scroll-target="#other-interesting-directions">Other interesting directions</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -375,7 +377,19 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3 (Ultrafilter existence)</strong></span> Use Zorn’s Lemma to show that any family <span class="math inline">\(\mathcal{A} \subseteq \mathcal{P}(I)\)</span> with the FIP can be extended to an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 3 (Free ultrafilters on infinite sets)</strong></span> Show that a free ultrafilter on an infinite set <span class="math inline">\(I\)</span> cannot contain any finite subsets of <span class="math inline">\(I\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4 (Ultrafilter existence)</strong></span> Use Zorn’s Lemma to show that any family <span class="math inline">\(\mathcal{A} \subseteq \mathcal{P}(I)\)</span> with the FIP can be extended to an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span>.</p>
 <p>Use this to show that any infinite set has a free ultrafilter.</p>
 </div>
 </div>
@@ -388,7 +402,7 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4 (Ultrapoducts with principal ultrafilters)</strong></span> Show that if <span class="math inline">\(\mathcal{U}\)</span> is a principal ultrafilter on <span class="math inline">\(I\)</span>, then every ultraproduct <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 5 (Ultrapoducts with principal ultrafilters)</strong></span> Show that if <span class="math inline">\(\mathcal{U}\)</span> is a principal ultrafilter on <span class="math inline">\(I\)</span>, then every ultraproduct <span class="math display">\[
 \mathcal{M}/\mathcal{u} = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
 \]</span> is isomorphic to some <span class="math inline">\(\mathcal{M}_j\)</span>, <span class="math inline">\(j \in I\)</span>.</p>
 <p><em>For principal ultrafilters, ultraproducts do not lead to anything new.</em></p>
@@ -403,7 +417,7 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5 (Ultraproducts of fields)</strong></span> For any prime <span class="math inline">\(p\)</span> let <span class="math inline">\(\mathbb{F}_p\)</span> the field with <span class="math inline">\(p\)</span> elements (of characteristic <span class="math inline">\(p\)</span>), and let <span class="math inline">\(\mathcal{U}\)</span> be a free ultrafilter on the set <span class="math inline">\(P\)</span> of prime numbers.</p>
+<p><span class="theorem-title"><strong>Exercise 6 (Ultraproducts of fields)</strong></span> For any prime <span class="math inline">\(p\)</span> let <span class="math inline">\(\mathbb{F}_p\)</span> the field with <span class="math inline">\(p\)</span> elements (of characteristic <span class="math inline">\(p\)</span>), and let <span class="math inline">\(\mathcal{U}\)</span> be a free ultrafilter on the set <span class="math inline">\(P\)</span> of prime numbers.</p>
 <p>Show that the ultraproduct</p>
 <p><span class="math display">\[\prod_{p\in P} \mathbb{F}_p/\mathcal{U}\]</span></p>
 <p>is a field of characteristic <span class="math inline">\(0\)</span>.</p>
@@ -411,6 +425,18 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </div>
 </div>
 </div>
+</section>
+<section id="ultrapowers" class="level2 {exr-}">
+<h2 class="anchored" data-anchor-id="ultrapowers">Ultrapowers</h2>
+<p>If we take an ultraproduct over the same structure <span class="math inline">\(\mathcal{M}\)</span> along an index set <span class="math inline">\(I\)</span>, we call this an <strong>ultrapower</strong>, denoted by <span class="math display">\[
+\mathcal{M}^I/\mathcal{U}
+\]</span></p>
+<p>Let <span class="math inline">\(\mathcal{U}\)</span> be a free ultrafilter on an (infinite) set <span class="math inline">\(I\)</span>.</p>
+<ul>
+<li><p>Show that the map <span class="math inline">\(j: b \mapsto (b)_{i \in I}/\mathcal{U}\)</span> defines an <strong>elementary embedding</strong> of <span class="math inline">\(\mathcal{M}\)</span> into <span class="math inline">\(\mathcal{M}^I/\mathcal{U}\)</span> (i.e.&nbsp;it is injective and the image is an elementary substructure).</p></li>
+<li><p>Show that if <span class="math inline">\(\mathcal{M}\)</span> is infinite, <span class="math inline">\(j\)</span> is not a surjection.</p></li>
+</ul>
+<p><em>If we apply this to <span class="math inline">\(\mathbb{N}\)</span> in the language of arithmetic, this yields another way to obtain <strong>non-standard models</strong> of arithmetic.</em></p>
 </section>
 <section id="further-explorations" class="level2">
 <h2 class="anchored" data-anchor-id="further-explorations">Further explorations</h2>
@@ -437,9 +463,6 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </section>
 <section id="keisler-shelah-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="keisler-shelah-theorem">Keisler-Shelah Theorem</h3>
-<p>If we take an ultraproduct over the same structure <span class="math inline">\(\mathcal{M}\)</span> along an index set <span class="math inline">\(I\)</span>, we call this an <strong>ultrapower</strong>, denoted by <span class="math display">\[
-\mathcal{M}^I/\mathcal{U}
-\]</span></p>
 <p>From Łoś’ Theorem, we know that if two ultrapowers are isomorphic, then the original structures are elementary equivalent. Remarkably, the converse holds, too, and hence gives an <em>algebraic characterization of elementary equivalence</em>.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
@@ -455,6 +478,12 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </div>
 </div>
 </div>
+</section>
+<section id="other-interesting-directions" class="level3">
+<h3 class="anchored" data-anchor-id="other-interesting-directions">Other interesting directions</h3>
+<ul>
+<li><a href="https://dfernandezb.web.app/using-ultrafilters.pdf">Ramsey theory and ultrafilters</a></li>
+</ul>
 
 
 </section>
