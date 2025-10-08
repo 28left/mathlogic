@@ -1,0 +1,114 @@
+---
+title: "Math 557 Oct 10"
+---
+
+# Ultrapoducts - Exercises
+
+## Key concepts
+
+### (Ultra)filters
+
+A **filter** $\mathcal{F}$ on a set $I$ is a nonempty collection of subsets of $I$ satisfying:
+
+1. $\emptyset \notin \mathcal{F}$  
+2. If $A,B \in \mathcal{F}$, then $A \cap B \in \mathcal{F}$  
+3. If $A \in \mathcal{F}$ and $A \subseteq B \subseteq I$, then $B \in \mathcal{F}$
+
+An **ultrafilter** $\mathcal{U}$ is a maximal filter, equivalently:
+
+> For all $A \subseteq I$, either $A \in \mathcal{U}$ or $I \setminus A \in \mathcal{U}$.
+
+### Reduced products
+
+Given: filter $\mathcal{F}$ on $I$ and structures $(\mathcal{M}_i)_{i \in I}$.
+Let $M = \prod_{i \in I} M_i$ and define 
+$$
+a \sim_{\mathcal{F}} b \iff \{\, i \in I : a_i = b_i \,\} \in \mathcal{F}.
+$$
+
+The universe of $\mathcal{M}/\mathcal{F}$ is the quotient $M / {\sim_{\mathcal{F}}}$,
+with elements denoted $a_{\mathcal{F}}$ (alternatively, $a/\mathcal{F}$).
+
+- **Relations:**  
+  $$
+  R^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}})
+   : \iff  \{\, i : \mathcal{M}_i \models R(\vec a_i) \,\} \in \mathcal{F}.
+  $$
+
+- **Functions:**  
+  $$
+  f^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}}) =
+  [\, (f^{\mathcal{M}_i}(\vec a_i))_{i \in I} \,]_{\mathcal{F}}.
+  $$
+
+
+- **Constants:**  
+  $$
+  c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
+  $$
+
+
+### Łoś' Theorem
+
+Let $\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}$ be an ultraproduct. For every $\mathcal{L}$-formula $\varphi(x_1,\dots,x_n)$ and tuples  
+$\vec a \in \prod_{i \in I} M_i$,
+$$
+\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
+\iff
+\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
+$$
+
+
+## Problems
+
+::: {#exr-}
+## Principal filters
+
+Show that for every $A \subseteq I$,
+$$
+\{X \subseteq I : A \subseteq X \}
+$$
+is a filter on $I$. Show that it is an ultrafilter if and only if $|A| = 1$.
+:::
+
+::: {#exr-}
+## Finite sets
+
+Show that every ultrafilter on a finite set is principal.
+:::
+
+
+::: {#exr-}
+## Ultrafilter existence
+
+Use Zorn's Lemma to show that any family $\mathcal{A} \subseteq \mathcal{P}(I)$ with the FIP can be extended to an ultrafilter $\mathcal{U}$ on $I$.
+
+Use this to show that any infinite set has a free ultrafilter.
+:::
+
+
+::: {#exr-}
+## Ultrapoducts with principal ultrafilters
+
+Show that if $\mathcal{U}$ is a principal ultrafilter on $I$, then every ultraproduct 
+$$
+\mathcal{M}/\mathcal{u}$ = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
+$$
+is isomorphic to some $\mathcal{M}_j$, $j \in I$.
+
+*For principal ultrafilters, ultraproducts do not lead to anything new.*
+:::
+
+
+::: {#exr-}
+## Ultraproducts of fields
+
+:::
+
+
+
+## Further results
+
+::: {#thm-keisler-shelah}
+algebraic characterization of elementary equivalence
+

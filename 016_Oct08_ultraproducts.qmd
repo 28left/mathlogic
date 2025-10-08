@@ -260,15 +260,15 @@ Let $I = \{\Delta : \Delta \subseteq T \text{ finite}\}$.
 
 For $\sigma \in T$, let
 $$
-\begin{align*}
+\begin{aligned}
 \hat{\sigma} & = \{\Delta \in I : \sigma \in \Delta\} \subseteq I \\
-E & = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I)
-\end{align*}
+E & = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I) \\
+\end{aligned}
 $$
 
 $E$ has FIP (finite intersection property), since for $\hat{S}_1, \ldots, \hat{S}_n \in E$,
 $$
-\{\hat{S}_1, \ldots, \hat{S}_n\} \in \hat{\sigma}_1 \cap \cdots \cap \hat{\sigma}_n.
+\{\hat{\sigma}_1, \ldots, \hat{\sigma}_n\} \in \hat{\sigma}_1 \cap \cdots \cap \hat{\sigma}_n.
 $$
 
 By @thm-uf-existence, $E$ can be extended to an ultrafilter $\mathcal{U}$ on $I$.
