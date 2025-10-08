@@ -239,7 +239,7 @@ $$
 This completes the proof.
 
 
-# Applications
+## Applications
 
 - **Preservation of theories:**  
   If each $\mathcal{M}_i \models T$, then $\prod_i \mathcal{M}_i / \mathcal{U} \models T$.
@@ -251,3 +251,43 @@ This completes the proof.
   For example, the ultrapower $\mathbb{N}^{\mathbb{N}}/\mathcal{U}$ (with $\mathcal{U}$ non-principal)
   yields a countably saturated nonstandard model of arithmetic.
 
+
+### A new proof of the compactness theorem
+
+Suppose $T$ is an $\mathcal{L}$-theory for which every finite subset $\Delta$ has a model $\mathcal{M}_\Delta$.
+
+Let $I = \{\Delta : \Delta \subseteq T \text{ finite}\}$.
+
+For $\sigma \in T$, let
+$$
+\begin{align*}
+\hat{\sigma} & = \{\Delta \in I : \sigma \in \Delta\} \subseteq I \\
+E & = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I)
+\end{align*}
+$$
+
+$E$ has FIP (finite intersection property), since for $\hat{S}_1, \ldots, \hat{S}_n \in E$,
+$$
+\{\hat{S}_1, \ldots, \hat{S}_n\} \in \hat{\sigma}_1 \cap \cdots \cap \hat{\sigma}_n.
+$$
+
+By @thm-uf-existence, $E$ can be extended to an ultrafilter $\mathcal{U}$ on $I$.
+
+**Claim:** $\mathcal{M}/\mathcal{U} = \prod_{\Delta \in I} \mathcal{M}_\Delta / \mathcal{U} \models T$.
+
+Let $\sigma \in T$. Then for $\Delta \in I$,
+$$
+\Delta \in \hat{\sigma} \; \Rightarrow \; \sigma \in \Delta \; \Rightarrow \; \mathcal{M}_\Delta \models \sigma
+$$
+
+Hence
+$$
+\hat{\sigma} \subseteq \{\Delta \in I : \mathcal{M}_\Delta \models \sigma\}
+$$
+
+Since $\hat{\sigma} \in E$ and $E \subseteq \mathcal{U}$, we have $\hat{\sigma} \in \mathcal{U}$, which implies
+$$
+\{\Delta \in I : \mathcal{M}_\Delta \models \sigma\} \in \mathcal{U}
+$$
+
+By Łoś' Theorem, $\mathcal{M} \models \sigma$.
