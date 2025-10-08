@@ -2,7 +2,7 @@
 title: "Math 557 Oct 10"
 ---
 
-# Ultrapoducts - Exercises
+# Week 7 - Exercises
 
 ## Key concepts
 
@@ -87,12 +87,14 @@ Use this to show that any infinite set has a free ultrafilter.
 :::
 
 
+
+
 ::: {#exr-}
 ## Ultrapoducts with principal ultrafilters
 
 Show that if $\mathcal{U}$ is a principal ultrafilter on $I$, then every ultraproduct 
 $$
-\mathcal{M}/\mathcal{u}$ = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
+\mathcal{M}/\mathcal{u} = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
 $$
 is isomorphic to some $\mathcal{M}_j$, $j \in I$.
 
@@ -103,12 +105,64 @@ is isomorphic to some $\mathcal{M}_j$, $j \in I$.
 ::: {#exr-}
 ## Ultraproducts of fields
 
+For any prime $p$ let $\mathbb{F}_p$ the field with $p$ elements (of characteristic $p$), and let $\mathcal{U}$ be a free ultrafilter on the set $P$ of prime numbers.
+
+Show that the ultraproduct 
+
+$$\prod_{p\in P} \mathbb{F}_p/\mathcal{U}$$
+
+is a field of characteristic $0$.
 :::
 
 
 
-## Further results
+## Further explorations
+
+### Lindenbaum-Tarski algebra
+
+Given a language $\mathcal{L}$, define an equivalence relation of the set of all $\mathcal{L}$-sentences by 
+$$
+\sigma \sim \tau \; \iff \; \vdash \sigma \leftrightarrow \tau
+$$
+
+The equivalence classes will then form a *Boolean algebra*, the **Lindenbaum-Tarksi algebra** $\mathcal{B}$ with the operations
+$$
+\begin{aligned}
+[\sigma] \land [\tau] & :=  [\sigma \land \tau]\\
+[\sigma] \lor [\tau] & := [\sigma \lor \tau] \\
+\neg[\sigma] & := [\neg \sigma]
+\end{aligned}
+$$
+The *bottom* element is $0 :=[\sigma \land \neg \sigma]$, the *top* element is $1:= [\sigma \lor \neg \sigma]$.
+
+We can define an order by putting $[\sigma] \leq [\tau] : \iff \vdash \sigma \to \tau$. (This corresponds to the order that is defined on any Boolean algebra via $a \leq b :\Leftrightarrow a = a \land b$.)
+
+A *filter* on a Boolean algebra is defined in the same way it is defined on a set $I$ (in fact, a filter on a set $I$ is simply a filter on the Boolean algebra induced on its power set by taking intersections, unions, and complements): $F \subseteq \mathcal{B}$ is a filter if it does not contain the bottom element, is closed under $\land$ and closed upward under $\leq$.
+
+- Show that if $T$ is a deductively closed, consistent $\mathcal{L}$-theory, the set
+$$
+\{ [\sigma] : \sigma \in T \}
+$$
+is a filter in $\mathcal{B}$.
+
+- Show that if $T$ is complete, the above filter is an ultrafilter.
+
+
+### Keisler-Shelah Theorem
+
+If we take an ultraproduct over the same structure $\mathcal{M}$ along an index set $I$, we call this an **ultrapower**, denoted by 
+$$
+\mathcal{M}^I/\mathcal{U}
+$$
+
+From Łoś' Theorem, we know that if two ultrapowers are isomorphic, then the original structures are elementary equivalent. Remarkably, the converse holds, too, and hence gives an *algebraic characterization of elementary equivalence*.
 
 ::: {#thm-keisler-shelah}
-algebraic characterization of elementary equivalence
+## Keisler-Shelah
+
+For any two structures $\mathcal{M}, \mathcal{N}$,
+$$
+\mathcal{M} \equiv \mathcal{N} \; \iff \; \text{ there exists an index set $I$ and an ultrafilter $\mathcal{U}$ on $I$ such that } \mathcal{M}^I/\mathcal{U} \cong \mathcal{N}^I/\mathcal{U}
+$$
+:::
 
