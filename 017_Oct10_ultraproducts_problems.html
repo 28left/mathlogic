@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 5 – Math 557 Fall 2025</title>
+<title>Math 557 Oct 10 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./005_Sep10_implication.html" rel="next">
-<link href="./003_Sep03_validities.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +110,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./004_Sep05_substitution.html">September 5</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -157,7 +157,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./004_Sep05_substitution.html" class="sidebar-item-text sidebar-link active">
+  <a href="./004_Sep05_substitution.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 5</span></a>
   </div>
 </li>
@@ -243,20 +243,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#substitution" id="toc-substitution" class="nav-link active" data-scroll-target="#substitution">Substitution</a>
+  <li><a href="#ultrapoducts---exercises" id="toc-ultrapoducts---exercises" class="nav-link active" data-scroll-target="#ultrapoducts---exercises">Ultrapoducts - Exercises</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a>
+  <ul class="collapse">
+  <li><a href="#ultrafilters" id="toc-ultrafilters" class="nav-link" data-scroll-target="#ultrafilters">(Ultra)filters</a></li>
+  <li><a href="#reduced-products" id="toc-reduced-products" class="nav-link" data-scroll-target="#reduced-products">Reduced products</a></li>
+  <li><a href="#łoś-theorem" id="toc-łoś-theorem" class="nav-link" data-scroll-target="#łoś-theorem">Łoś’ Theorem</a></li>
+  </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="004_Sep05_substitution.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="017_Oct10_ultraproducts_problems.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 5</h1>
+<h1 class="title">Math 557 Oct 10</h1>
 </div>
 
 
@@ -273,90 +277,59 @@ window.Quarto = {
 </header>
 
 
-<section id="substitution" class="level1">
-<h1>Substitution</h1>
+<section id="ultrapoducts---exercises" class="level1">
+<h1>Ultrapoducts - Exercises</h1>
 <section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
+<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<section id="ultrafilters" class="level3">
+<h3 class="anchored" data-anchor-id="ultrafilters">(Ultra)filters</h3>
+<p>A <strong>filter</strong> <span class="math inline">\(\mathcal{F}\)</span> on a set <span class="math inline">\(I\)</span> is a nonempty collection of subsets of <span class="math inline">\(I\)</span> satisfying:</p>
+<ol type="1">
+<li><span class="math inline">\(\emptyset \notin \mathcal{F}\)</span><br>
+</li>
+<li>If <span class="math inline">\(A,B \in \mathcal{F}\)</span>, then <span class="math inline">\(A \cap B \in \mathcal{F}\)</span><br>
+</li>
+<li>If <span class="math inline">\(A \in \mathcal{F}\)</span> and <span class="math inline">\(A \subseteq B \subseteq I\)</span>, then <span class="math inline">\(B \in \mathcal{F}\)</span></li>
+</ol>
+<p>An <strong>ultrafilter</strong> <span class="math inline">\(\mathcal{U}\)</span> is a maximal filter, equivalently:</p>
+<blockquote class="blockquote">
+<p>For all <span class="math inline">\(A \subseteq I\)</span>, either <span class="math inline">\(A \in \mathcal{U}\)</span> or <span class="math inline">\(I \setminus A \in \mathcal{U}\)</span>.</p>
+</blockquote>
+</section>
+<section id="reduced-products" class="level3">
+<h3 class="anchored" data-anchor-id="reduced-products">Reduced products</h3>
+<p>Given: filter <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(I\)</span> and structures <span class="math inline">\((\mathcal{M}_i)_{i \in I}\)</span>. Let <span class="math inline">\(M = \prod_{i \in I} M_i\)</span> and define <span class="math display">\[
+a \sim_{\mathcal{F}} b \iff \{\, i \in I : a_i = b_i \,\} \in \mathcal{F}.
+\]</span></p>
+<p>The universe of <span class="math inline">\(\mathcal{M}/\mathcal{F}\)</span> is the quotient <span class="math inline">\(M / {\sim_{\mathcal{F}}}\)</span>, with elements denoted <span class="math inline">\(a_{\mathcal{F}}\)</span> (alternatively, <span class="math inline">\(a/\mathcal{F}\)</span>).</p>
 <ul>
-<li><p><strong>Substitution</strong>:</p>
-<ul>
-<li>Basic idea: <span class="math inline">\(\varphi_{\bar{s}/\bar{x}}\)</span> is obtained by replacing all occurrences of the variable <span class="math inline">\(x_i\)</span> by the term <span class="math inline">\(s_i\)</span>.</li>
-<li>Uncontrolled substitution may cause issues with quantifiers. If we try to substitute a variable into the range of a quantifier, we rename the quantified variable to an unused variable (<span class="math inline">\(\exists x \dots\)</span> becomes <span class="math inline">\(\exists u \dots\)</span>).</li>
-</ul></li>
-<li><p><strong>Substitution Lemma</strong>:</p>
-<ul>
-<li>Substitution behaves “as expected” with respect to evaluation and satisfaction.</li>
-<li>Evaluating a substituted term yields the same value as evaluating the original term under the “substituted” assignment (i.e.&nbsp;the assignment in which we replace the assignment to <span class="math inline">\(x\)</span> by the value of <span class="math inline">\(s\)</span> under <span class="math inline">\(\alpha\)</span>).</li>
-<li>A substituted formula holds in <span class="math inline">\(\mathcal{M}\)</span> under assignment <span class="math inline">\(\alpha\)</span> iff the original formula holds in <span class="math inline">\(\mathcal{M}\)</span> under the “substituted” assignment.</li>
-</ul></li>
+<li><p><strong>Relations:</strong><br>
+<span class="math display">\[
+R^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}})
+: \iff  \{\, i : \mathcal{M}_i \models R(\vec a_i) \,\} \in \mathcal{F}.
+\]</span></p></li>
+<li><p><strong>Functions:</strong><br>
+<span class="math display">\[
+f^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}}) =
+[\, (f^{\mathcal{M}_i}(\vec a_i))_{i \in I} \,]_{\mathcal{F}}.
+\]</span></p></li>
+<li><p><strong>Constants:</strong><br>
+<span class="math display">\[
+c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
+\]</span></p></li>
 </ul>
 </section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Carry-over from Sep 3)</strong></span> <br>
-Show that if <span class="math inline">\(x\)</span> is not free in <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(\mathcal{M} \models \varphi[\alpha]\)</span> implies <span class="math inline">\(\mathcal{M} \models \forall x \, \varphi [\alpha]\)</span>.</p>
-<p>Then verify that</p>
-<p><span class="math display">\[\forall x ( \varphi \to \psi) \; \to \; (\varphi \to \forall x \psi) \quad (\text{$x$ not free in $\varphi$})\]</span></p>
-<p>is a validity.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> &nbsp;</p>
-<ul>
-<li><p>Show that if <span class="math inline">\(t\)</span> is a term, then <span class="math inline">\(t_{\bar{s}/\bar{x}}\)</span> is a term.</p></li>
-<li><p>Show that if <span class="math inline">\(\varphi\)</span> is a formula, <span class="math inline">\(\varphi_{\bar{s}/\bar{x}}\)</span> is a formula of the same height.</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Use the Substitution Lemma to verify that <span class="math display">\[\varphi_{t/x} \: \to \: \exists x \, \varphi\]</span> is a validity.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Show that if <span class="math inline">\(y\)</span> does not occur in <span class="math inline">\(\psi\)</span>,</p>
-<p><span class="math display">\[
-[\psi_{y/x}]_{x/y} \equiv \psi
+<section id="łoś-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="łoś-theorem">Łoś’ Theorem</h3>
+<p>Let <span class="math inline">\(\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}\)</span> be an ultraproduct. For every <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi(x_1,\dots,x_n)\)</span> and tuples<br>
+<span class="math inline">\(\vec a \in \prod_{i \in I} M_i\)</span>, <span class="math display">\[
+\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
+\iff
+\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
 \]</span></p>
-<p>Find a counterexample that shows this no longer holds if <span class="math inline">\(y\)</span> <em>does</em> occur in <span class="math inline">\(\psi\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
 
 
+</section>
 </section>
 </section>
 
@@ -760,18 +733,6 @@ Show that if <span class="math inline">\(y\)</span> does not occur in <span clas
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./003_Sep03_validities.html" class="pagination-link" aria-label="September 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 3</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./005_Sep10_implication.html" class="pagination-link" aria-label="September 10">
-        <span class="nav-page-text">September 10</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

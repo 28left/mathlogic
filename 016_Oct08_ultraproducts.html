@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,15 +33,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./015_Oct06_loewenheim_skolem.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +83,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -126,8 +125,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Math 557 Fall 2025</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -261,8 +261,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#proof-of-łośs-theorem" id="toc-proof-of-łośs-theorem" class="nav-link" data-scroll-target="#proof-of-łośs-theorem">Proof of Łoś’s Theorem</a></li>
   </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a>
+  <ul class="collapse">
+  <li><a href="#a-new-proof-of-the-compactness-theorem" id="toc-a-new-proof-of-the-compactness-theorem" class="nav-link" data-scroll-target="#a-new-proof-of-the-compactness-theorem">A new proof of the compactness theorem</a></li>
   </ul></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="016_Oct08_ultraproducts.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -513,9 +516,8 @@ t^{\mathcal{M}/\mathcal{U}}(\vec{a}/U) = (t^{\mathcal{M}_i}(\vec{a}_i))_{i \in I
 <p>This completes the proof.</p>
 </section>
 </section>
-</section>
-<section id="applications" class="level1">
-<h1>Applications</h1>
+<section id="applications" class="level2">
+<h2 class="anchored" data-anchor-id="applications">Applications</h2>
 <ul>
 <li><p><strong>Preservation of theories:</strong><br>
 If each <span class="math inline">\(\mathcal{M}_i \models T\)</span>, then <span class="math inline">\(\prod_i \mathcal{M}_i / \mathcal{U} \models T\)</span>.</p></li>
@@ -524,8 +526,35 @@ If each <span class="math inline">\(\mathcal{M}_i \models T\)</span>, then <span
 <li><p><strong>Nonstandard models:</strong><br>
 For example, the ultrapower <span class="math inline">\(\mathbb{N}^{\mathbb{N}}/\mathcal{U}\)</span> (with <span class="math inline">\(\mathcal{U}\)</span> non-principal) yields a countably saturated nonstandard model of arithmetic.</p></li>
 </ul>
+<section id="a-new-proof-of-the-compactness-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="a-new-proof-of-the-compactness-theorem">A new proof of the compactness theorem</h3>
+<p>Suppose <span class="math inline">\(T\)</span> is an <span class="math inline">\(\mathcal{L}\)</span>-theory for which every finite subset <span class="math inline">\(\Delta\)</span> has a model <span class="math inline">\(\mathcal{M}_\Delta\)</span>.</p>
+<p>Let <span class="math inline">\(I = \{\Delta : \Delta \subseteq T \text{ finite}\}\)</span>.</p>
+<p>For <span class="math inline">\(\sigma \in T\)</span>, let <span class="math display">\[
+\begin{aligned}
+\hat{\sigma} &amp; = \{\Delta \in I : \sigma \in \Delta\} \subseteq I \\
+E &amp; = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I) \\
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(E\)</span> has FIP (finite intersection property), since for <span class="math inline">\(\hat{S}_1, \ldots, \hat{S}_n \in E\)</span>, <span class="math display">\[
+\{\hat{\sigma}_1, \ldots, \hat{\sigma}_n\} \in \hat{\sigma}_1 \cap \cdots \cap \hat{\sigma}_n.
+\]</span></p>
+<p>By <a href="#thm-uf-existence" class="quarto-xref">Theorem&nbsp;1</a>, <span class="math inline">\(E\)</span> can be extended to an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span>.</p>
+<p><strong>Claim:</strong> <span class="math inline">\(\mathcal{M}/\mathcal{U} = \prod_{\Delta \in I} \mathcal{M}_\Delta / \mathcal{U} \models T\)</span>.</p>
+<p>Let <span class="math inline">\(\sigma \in T\)</span>. Then for <span class="math inline">\(\Delta \in I\)</span>, <span class="math display">\[
+\Delta \in \hat{\sigma} \; \Rightarrow \; \sigma \in \Delta \; \Rightarrow \; \mathcal{M}_\Delta \models \sigma
+\]</span></p>
+<p>Hence <span class="math display">\[
+\hat{\sigma} \subseteq \{\Delta \in I : \mathcal{M}_\Delta \models \sigma\}
+\]</span></p>
+<p>Since <span class="math inline">\(\hat{\sigma} \in E\)</span> and <span class="math inline">\(E \subseteq \mathcal{U}\)</span>, we have <span class="math inline">\(\hat{\sigma} \in \mathcal{U}\)</span>, which implies <span class="math display">\[
+\{\Delta \in I : \mathcal{M}_\Delta \models \sigma\} \in \mathcal{U}
+\]</span></p>
+<p>By Łoś’ Theorem, <span class="math inline">\(\mathcal{M} \models \sigma\)</span>.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -580,14 +609,13 @@ For example, the ultrapower <span class="math inline">\(\mathbb{N}^{\mathbb{N}}/
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
