@@ -243,13 +243,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ultrapoducts---exercises" id="toc-ultrapoducts---exercises" class="nav-link active" data-scroll-target="#ultrapoducts---exercises">Ultrapoducts - Exercises</a>
+  <li><a href="#week-7---exercises" id="toc-week-7---exercises" class="nav-link active" data-scroll-target="#week-7---exercises">Week 7 - Exercises</a>
   <ul class="collapse">
   <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a>
   <ul class="collapse">
   <li><a href="#ultrafilters" id="toc-ultrafilters" class="nav-link" data-scroll-target="#ultrafilters">(Ultra)filters</a></li>
   <li><a href="#reduced-products" id="toc-reduced-products" class="nav-link" data-scroll-target="#reduced-products">Reduced products</a></li>
   <li><a href="#łoś-theorem" id="toc-łoś-theorem" class="nav-link" data-scroll-target="#łoś-theorem">Łoś’ Theorem</a></li>
+  </ul></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#further-explorations" id="toc-further-explorations" class="nav-link" data-scroll-target="#further-explorations">Further explorations</a>
+  <ul class="collapse">
+  <li><a href="#lindenbaum-tarski-algebra" id="toc-lindenbaum-tarski-algebra" class="nav-link" data-scroll-target="#lindenbaum-tarski-algebra">Lindenbaum-Tarski algebra</a></li>
+  <li><a href="#keisler-shelah-theorem" id="toc-keisler-shelah-theorem" class="nav-link" data-scroll-target="#keisler-shelah-theorem">Keisler-Shelah Theorem</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -277,8 +283,8 @@ window.Quarto = {
 </header>
 
 
-<section id="ultrapoducts---exercises" class="level1">
-<h1>Ultrapoducts - Exercises</h1>
+<section id="week-7---exercises" class="level1">
+<h1>Week 7 - Exercises</h1>
 <section id="key-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
 <section id="ultrafilters" class="level3">
@@ -327,6 +333,123 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 \iff
 \{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
 \]</span></p>
+</section>
+</section>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1 (Principal filters)</strong></span> Show that for every <span class="math inline">\(A \subseteq I\)</span>, <span class="math display">\[
+\{X \subseteq I : A \subseteq X \}
+\]</span> is a filter on <span class="math inline">\(I\)</span>. Show that it is an ultrafilter if and only if <span class="math inline">\(|A| = 1\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2 (Finite sets)</strong></span> Show that every ultrafilter on a finite set is principal.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3 (Ultrafilter existence)</strong></span> Use Zorn’s Lemma to show that any family <span class="math inline">\(\mathcal{A} \subseteq \mathcal{P}(I)\)</span> with the FIP can be extended to an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span>.</p>
+<p>Use this to show that any infinite set has a free ultrafilter.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4 (Ultrapoducts with principal ultrafilters)</strong></span> Show that if <span class="math inline">\(\mathcal{U}\)</span> is a principal ultrafilter on <span class="math inline">\(I\)</span>, then every ultraproduct <span class="math display">\[
+\mathcal{M}/\mathcal{u} = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
+\]</span> is isomorphic to some <span class="math inline">\(\mathcal{M}_j\)</span>, <span class="math inline">\(j \in I\)</span>.</p>
+<p><em>For principal ultrafilters, ultraproducts do not lead to anything new.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5 (Ultraproducts of fields)</strong></span> For any prime <span class="math inline">\(p\)</span> let <span class="math inline">\(\mathbb{F}_p\)</span> the field with <span class="math inline">\(p\)</span> elements (of characteristic <span class="math inline">\(p\)</span>), and let <span class="math inline">\(\mathcal{U}\)</span> be a free ultrafilter on the set <span class="math inline">\(P\)</span> of prime numbers.</p>
+<p>Show that the ultraproduct</p>
+<p><span class="math display">\[\prod_{p\in P} \mathbb{F}_p/\mathcal{U}\]</span></p>
+<p>is a field of characteristic <span class="math inline">\(0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="further-explorations" class="level2">
+<h2 class="anchored" data-anchor-id="further-explorations">Further explorations</h2>
+<section id="lindenbaum-tarski-algebra" class="level3">
+<h3 class="anchored" data-anchor-id="lindenbaum-tarski-algebra">Lindenbaum-Tarski algebra</h3>
+<p>Given a language <span class="math inline">\(\mathcal{L}\)</span>, define an equivalence relation of the set of all <span class="math inline">\(\mathcal{L}\)</span>-sentences by <span class="math display">\[
+\sigma \sim \tau \; \iff \; \vdash \sigma \leftrightarrow \tau
+\]</span></p>
+<p>The equivalence classes will then form a <em>Boolean algebra</em>, the <strong>Lindenbaum-Tarksi algebra</strong> <span class="math inline">\(\mathcal{B}\)</span> with the operations <span class="math display">\[
+\begin{aligned}
+[\sigma] \land [\tau] &amp; :=  [\sigma \land \tau]\\
+[\sigma] \lor [\tau] &amp; := [\sigma \lor \tau] \\
+\neg[\sigma] &amp; := [\neg \sigma]
+\end{aligned}
+\]</span> The <em>bottom</em> element is <span class="math inline">\(0 :=[\sigma \land \neg \sigma]\)</span>, the <em>top</em> element is <span class="math inline">\(1:= [\sigma \lor \neg \sigma]\)</span>.</p>
+<p>We can define an order by putting <span class="math inline">\([\sigma] \leq [\tau] : \iff \vdash \sigma \to \tau\)</span>. (This corresponds to the order that is defined on any Boolean algebra via <span class="math inline">\(a \leq b :\Leftrightarrow a = a \land b\)</span>.)</p>
+<p>A <em>filter</em> on a Boolean algebra is defined in the same way it is defined on a set <span class="math inline">\(I\)</span> (in fact, a filter on a set <span class="math inline">\(I\)</span> is simply a filter on the Boolean algebra induced on its power set by taking intersections, unions, and complements): <span class="math inline">\(F \subseteq \mathcal{B}\)</span> is a filter if it does not contain the bottom element, is closed under <span class="math inline">\(\land\)</span> and closed upward under <span class="math inline">\(\leq\)</span>.</p>
+<ul>
+<li><p>Show that if <span class="math inline">\(T\)</span> is a deductively closed, consistent <span class="math inline">\(\mathcal{L}\)</span>-theory, the set <span class="math display">\[
+\{ [\sigma] : \sigma \in T \}
+\]</span> is a filter in <span class="math inline">\(\mathcal{B}\)</span>.</p></li>
+<li><p>Show that if <span class="math inline">\(T\)</span> is complete, the above filter is an ultrafilter.</p></li>
+</ul>
+</section>
+<section id="keisler-shelah-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="keisler-shelah-theorem">Keisler-Shelah Theorem</h3>
+<p>If we take an ultraproduct over the same structure <span class="math inline">\(\mathcal{M}\)</span> along an index set <span class="math inline">\(I\)</span>, we call this an <strong>ultrapower</strong>, denoted by <span class="math display">\[
+\mathcal{M}^I/\mathcal{U}
+\]</span></p>
+<p>From Łoś’ Theorem, we know that if two ultrapowers are isomorphic, then the original structures are elementary equivalent. Remarkably, the converse holds, too, and hence gives an <em>algebraic characterization of elementary equivalence</em>.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-keisler-shelah" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Keisler-Shelah)</strong></span> For any two structures <span class="math inline">\(\mathcal{M}, \mathcal{N}\)</span>, <span class="math display">\[
+\mathcal{M} \equiv \mathcal{N} \; \iff \; \text{ there exists an index set $I$ and an ultrafilter $\mathcal{U}$ on $I$ such that } \mathcal{M}^I/\mathcal{U} \cong \mathcal{N}^I/\mathcal{U}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -406,7 +529,7 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
