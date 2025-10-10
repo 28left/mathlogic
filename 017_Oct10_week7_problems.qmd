@@ -100,7 +100,7 @@ Use this to show that any infinite set has a free ultrafilter.
 
 Show that if $\mathcal{U}$ is a principal ultrafilter on $I$, then every ultraproduct 
 $$
-\mathcal{M}/\mathcal{u} = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
+\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
 $$
 is isomorphic to some $\mathcal{M}_j$, $j \in I$.
 
