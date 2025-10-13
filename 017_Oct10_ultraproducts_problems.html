@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Oct 8 – Math 557 Fall 2025</title>
+<title>Math 557 Oct 10 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./017_Oct10_week7_problems.html" rel="next">
-<link href="./015_Oct06_loewenheim_skolem.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +110,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./016_Oct08_ultraproducts.html">Oct 8</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -229,20 +229,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./016_Oct08_ultraproducts.html" class="sidebar-item-text sidebar-link active">
+  <a href="./016_Oct08_ultraproducts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oct 8</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./017_Oct10_week7_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 10</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./018_Oct13_homogeneous_structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 13</span></a>
   </div>
 </li>
     </ul>
@@ -255,39 +243,30 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ultraproducts" id="toc-ultraproducts" class="nav-link active" data-scroll-target="#ultraproducts">Ultraproducts</a>
+  <li><a href="#week-7---exercises" id="toc-week-7---exercises" class="nav-link active" data-scroll-target="#week-7---exercises">Week 7 - Exercises</a>
   <ul class="collapse">
-  <li><a href="#direct-products" id="toc-direct-products" class="nav-link" data-scroll-target="#direct-products">Direct Products</a>
+  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key concepts</a>
   <ul class="collapse">
-  <li><a href="#examples-and-observations" id="toc-examples-and-observations" class="nav-link" data-scroll-target="#examples-and-observations">Examples and Observations</a></li>
+  <li><a href="#ultrafilters" id="toc-ultrafilters" class="nav-link" data-scroll-target="#ultrafilters">(Ultra)filters</a></li>
+  <li><a href="#reduced-products" id="toc-reduced-products" class="nav-link" data-scroll-target="#reduced-products">Reduced products</a></li>
+  <li><a href="#łoś-theorem" id="toc-łoś-theorem" class="nav-link" data-scroll-target="#łoś-theorem">Łoś’ Theorem</a></li>
   </ul></li>
-  <li><a href="#filters-and-ultrafilters" id="toc-filters-and-ultrafilters" class="nav-link" data-scroll-target="#filters-and-ultrafilters">Filters and Ultrafilters</a>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#further-explorations" id="toc-further-explorations" class="nav-link" data-scroll-target="#further-explorations">Further explorations</a>
   <ul class="collapse">
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  <li><a href="#existence-of-ultrafilters" id="toc-existence-of-ultrafilters" class="nav-link" data-scroll-target="#existence-of-ultrafilters">Existence of Ultrafilters</a></li>
-  </ul></li>
-  <li><a href="#reduced-products" id="toc-reduced-products" class="nav-link" data-scroll-target="#reduced-products">Reduced Products</a>
-  <ul class="collapse">
-  <li><a href="#ultraproducts-1" id="toc-ultraproducts-1" class="nav-link" data-scroll-target="#ultraproducts-1">Ultraproducts</a></li>
-  </ul></li>
-  <li><a href="#łoś-theorem" id="toc-łoś-theorem" class="nav-link" data-scroll-target="#łoś-theorem">Łoś’ Theorem</a>
-  <ul class="collapse">
-  <li><a href="#proof-of-łośs-theorem" id="toc-proof-of-łośs-theorem" class="nav-link" data-scroll-target="#proof-of-łośs-theorem">Proof of Łoś’s Theorem</a></li>
-  </ul></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a>
-  <ul class="collapse">
-  <li><a href="#a-new-proof-of-the-compactness-theorem" id="toc-a-new-proof-of-the-compactness-theorem" class="nav-link" data-scroll-target="#a-new-proof-of-the-compactness-theorem">A new proof of the compactness theorem</a></li>
+  <li><a href="#lindenbaum-tarski-algebra" id="toc-lindenbaum-tarski-algebra" class="nav-link" data-scroll-target="#lindenbaum-tarski-algebra">Lindenbaum-Tarski algebra</a></li>
+  <li><a href="#keisler-shelah-theorem" id="toc-keisler-shelah-theorem" class="nav-link" data-scroll-target="#keisler-shelah-theorem">Keisler-Shelah Theorem</a></li>
   </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="016_Oct08_ultraproducts.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="017_Oct10_ultraproducts_problems.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Oct 8</h1>
+<h1 class="title">Math 557 Oct 10</h1>
 </div>
 
 
@@ -304,43 +283,12 @@ window.Quarto = {
 </header>
 
 
-<section id="ultraproducts" class="level1">
-<h1>Ultraproducts</h1>
-<section id="direct-products" class="level2">
-<h2 class="anchored" data-anchor-id="direct-products">Direct Products</h2>
-<p>Let <span class="math inline">\((\mathcal{M}_i)_{i \in I}\)</span> be a family of <span class="math inline">\(L\)</span>-structures.</p>
-<p>We define the <strong>direct product</strong> <span class="math display">\[
-\mathcal{M} = \prod_{i \in I} \mathcal{M}_i
-\]</span> as follows:</p>
-<ol type="1">
-<li>The universe is the Cartesian product <span class="math inline">\(M = \prod_{i \in I} M_i\)</span>. If <span class="math inline">\(a\)</span> is an element of <span class="math inline">\(M\)</span>, we denote its <span class="math inline">\(i\)</span>-th component (an element of <span class="math inline">\(M_i\)</span>) by <span class="math inline">\(a_i\)</span> and extend this notation to vectors: if <span class="math inline">\(\vec a\)</span> is a finite tuple in <span class="math inline">\(M^n\)</span>, <span class="math inline">\(\vec a_i\)</span> denotes the <span class="math inline">\(n\)</span>-tuple in <span class="math inline">\(M_i\)</span> consisting of the <span class="math inline">\(M_i\)</span>-entries of <span class="math inline">\(\vec a\)</span>.</li>
-<li>For each relation symbol <span class="math inline">\(R \in \mathcal{L}\)</span>, <span class="math display">\[
-R^{\mathcal{M}}(\vec a) :\iff \forall i \in I,\,
-\vec a_i \in R^{\mathcal{M}_i}
-\]</span></li>
-<li>For each function symbol <span class="math inline">\(f \in \mathcal{L}\)</span>, <span class="math display">\[
-f^{\mathcal{M}}(\vec a)
-:= (f^{\mathcal{M}_i}(\vec a_i))_{i\in I}.
-\]</span></li>
-<li>For each constant <span class="math inline">\(c \in \mathcal{L}\)</span>, <span class="math display">\[
-c^{\mathcal{M}} = (c^{\mathcal{M}_i})_{i\in I}.
-\]</span></li>
-</ol>
-<section id="examples-and-observations" class="level3">
-<h3 class="anchored" data-anchor-id="examples-and-observations">Examples and Observations</h3>
-<ul>
-<li>The direct product of groups is again a group (componentwise operation).</li>
-<li>The direct product of fields is <strong>not</strong> a field: <span class="math display">\[
-(1,0)\cdot(0,1) = (0,0).
-\]</span></li>
-<li>The direct product of linear orders is only a <strong>partial order</strong>.</li>
-</ul>
-<p>We often want to preserve properties that hold in “most” component structures.<br>
-To formalize “most,” we use <strong>filters</strong> on <span class="math inline">\(I\)</span>.</p>
-</section>
-</section>
-<section id="filters-and-ultrafilters" class="level2">
-<h2 class="anchored" data-anchor-id="filters-and-ultrafilters">Filters and Ultrafilters</h2>
+<section id="week-7---exercises" class="level1">
+<h1>Week 7 - Exercises</h1>
+<section id="key-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts">Key concepts</h2>
+<section id="ultrafilters" class="level3">
+<h3 class="anchored" data-anchor-id="ultrafilters">(Ultra)filters</h3>
 <p>A <strong>filter</strong> <span class="math inline">\(\mathcal{F}\)</span> on a set <span class="math inline">\(I\)</span> is a nonempty collection of subsets of <span class="math inline">\(I\)</span> satisfying:</p>
 <ol type="1">
 <li><span class="math inline">\(\emptyset \notin \mathcal{F}\)</span><br>
@@ -353,53 +301,13 @@ To formalize “most,” we use <strong>filters</strong> on <span class="math in
 <blockquote class="blockquote">
 <p>For all <span class="math inline">\(A \subseteq I\)</span>, either <span class="math inline">\(A \in \mathcal{U}\)</span> or <span class="math inline">\(I \setminus A \in \mathcal{U}\)</span>.</p>
 </blockquote>
-<p>Ultrafilters interact nicely with logical operators:</p>
-<ul>
-<li><span class="math inline">\(A \not \in \mathcal{U} \iff I \backslash A \in \mathcal{U}\)</span>,</li>
-<li><span class="math inline">\(A  \in \mathcal{U} \wedge B \in \mathcal{U} \iff A \cap B \in \mathcal{U}\)</span>,</li>
-<li><span class="math inline">\(A  \in \mathcal{U} \vee B \in \mathcal{U} \iff A \cup B \in \mathcal{U}\)</span>.</li>
-</ul>
-<section id="examples" class="level3">
-<h3 class="anchored" data-anchor-id="examples">Examples</h3>
-<ul>
-<li><p>A <strong>principal filter</strong> is of the form<br>
-<span class="math display">\[
-\mathcal{F}_A = \{ X \subseteq I : A \subseteq X \}
-\]</span> for some nonempty <span class="math inline">\(A \subseteq I\)</span>.<br>
-If <span class="math inline">\(A = \{a\}\)</span>, then <span class="math inline">\(\mathcal{F}_A\)</span> is a <strong>principal ultrafilter</strong>.</p></li>
-<li><p>A <strong>free</strong> (non-principal) ultrafilter exists on every infinite set <span class="math inline">\(I\)</span><br>
-(via Zorn’s Lemma / Boolean prime ideal theorem).</p></li>
-</ul>
 </section>
-<section id="existence-of-ultrafilters" class="level3">
-<h3 class="anchored" data-anchor-id="existence-of-ultrafilters">Existence of Ultrafilters</h3>
-<p>A family of sets has the <strong>finite intersection property (FIP)</strong> if every finite subfamily has nonempty intersection.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="thm-uf-existence" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1</strong></span> <br>
-If a family <span class="math inline">\(\mathcal{A} \subseteq \mathcal{P}(I)\)</span> has the FIP,<br>
-then there exists an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span> with <span class="math inline">\(\mathcal{A} \subseteq \mathcal{U}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="reduced-products" class="level2">
-<h2 class="anchored" data-anchor-id="reduced-products">Reduced Products</h2>
-<p>Given a filter <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(I\)</span> and structures <span class="math inline">\((\mathcal{M}_i)_{i \in I}\)</span>, define the <strong>reduced product</strong> <span class="math display">\[
-\mathcal{M} / \mathcal{F}
-\]</span> as follows.</p>
-<p>Let <span class="math inline">\(M = \prod_{i \in I} M_i\)</span>. For <span class="math inline">\(a,b \in M\)</span>, define <span class="math display">\[
+<section id="reduced-products" class="level3">
+<h3 class="anchored" data-anchor-id="reduced-products">Reduced products</h3>
+<p>Given: filter <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(I\)</span> and structures <span class="math inline">\((\mathcal{M}_i)_{i \in I}\)</span>. Let <span class="math inline">\(M = \prod_{i \in I} M_i\)</span> and define <span class="math display">\[
 a \sim_{\mathcal{F}} b \iff \{\, i \in I : a_i = b_i \,\} \in \mathcal{F}.
 \]</span></p>
 <p>The universe of <span class="math inline">\(\mathcal{M}/\mathcal{F}\)</span> is the quotient <span class="math inline">\(M / {\sim_{\mathcal{F}}}\)</span>, with elements denoted <span class="math inline">\(a_{\mathcal{F}}\)</span> (alternatively, <span class="math inline">\(a/\mathcal{F}\)</span>).</p>
-<p>For symbols of <span class="math inline">\(\mathcal{L}\)</span>:</p>
 <ul>
 <li><p><strong>Relations:</strong><br>
 <span class="math display">\[
@@ -416,6 +324,19 @@ f^{\mathcal{M}/\mathcal{F}}(\vec a_{\mathcal{F}}) =
 c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 \]</span></p></li>
 </ul>
+</section>
+<section id="łoś-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="łoś-theorem">Łoś’ Theorem</h3>
+<p>Let <span class="math inline">\(\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}\)</span> be an ultraproduct. For every <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi(x_1,\dots,x_n)\)</span> and tuples<br>
+<span class="math inline">\(\vec a \in \prod_{i \in I} M_i\)</span>, <span class="math display">\[
+\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
+\iff
+\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
+\]</span></p>
+</section>
+</section>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -423,147 +344,112 @@ c^{\mathcal{M}/\mathcal{F}} = ((c^{\mathcal{M}_i})_{i\in I})_{\mathcal{F}}.
 </div>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> Check that the above definition does not depend on the choice of representative for each equivalence class</p>
+<p><span class="theorem-title"><strong>Exercise 1 (Principal filters)</strong></span> Show that for every <span class="math inline">\(A \subseteq I\)</span>, <span class="math display">\[
+\{X \subseteq I : A \subseteq X \}
+\]</span> is a filter on <span class="math inline">\(I\)</span>. Show that it is an ultrafilter if and only if <span class="math inline">\(|A| = 1\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<section id="ultraproducts-1" class="level3">
-<h3 class="anchored" data-anchor-id="ultraproducts-1">Ultraproducts</h3>
-<p>If <span class="math inline">\(\mathcal{U}\)</span> is an <strong>ultrafilter</strong> on <span class="math inline">\(I\)</span>, the reduced product <span class="math display">\[
-\prod_{i \in I} \mathcal{M}_i / \mathcal{U}
-\]</span> is called the <strong>ultraproduct</strong> of <span class="math inline">\((\mathcal{M}_i)_{i \in I}\)</span> modulo <span class="math inline">\(\mathcal{U}\)</span>.</p>
-<p>When all <span class="math inline">\(\mathcal{M}_i\)</span> are the same structure <span class="math inline">\(\mathcal{M}\)</span>, we get an <strong>ultrapower</strong> <span class="math display">\[
-\mathcal{M}^I / \mathcal{U}.
-\]</span></p>
-</section>
-</section>
-<section id="łoś-theorem" class="level2">
-<h2 class="anchored" data-anchor-id="łoś-theorem">Łoś’ Theorem</h2>
-<p>Let <span class="math inline">\(\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}\)</span> be an ultraproduct.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="thm-los" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2</strong></span> <br>
-For every <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi(x_1,\dots,x_n)\)</span> and tuples<br>
-<span class="math inline">\(\vec a \in \prod_{i \in I} M_i\)</span>, <span class="math display">\[
-\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
-\iff
-\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
-\]</span></p>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2 (Finite sets)</strong></span> Show that every ultrafilter on a finite set is principal.</p>
 </div>
 </div>
 </div>
 </div>
-<p>For any <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi(v_0,\ldots,v_{n-1})\)</span> a a tuple <span class="math inline">\(\vec{a} \in \prod M_i\)</span> we define the <em>Boolean extension</em> as <span class="math display">\[
-\|\varphi(\vec{a}) \| := \{i \in I| \mathcal{M}_i \models \varphi[\vec{a}_i]\}
-\]</span></p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="lem-" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1</strong></span> &nbsp;</p>
-<ol type="1">
-<li><span class="math inline">\(\| \neg \varphi(\vec{a}) \| = I \backslash \|\varphi(\vec{a}) \|\)</span>,</li>
-<li><span class="math inline">\(\| (\varphi \wedge \psi)(\vec{a}) \| =\| \varphi(\vec{a}) \| \cap \| \psi(\vec{a}) \|\)</span>,</li>
-<li><span class="math inline">\(\| (\varphi \vee \psi)(\vec{a}) \| =\| \varphi(\vec{a}) \| \cup \| \psi(\vec{a}) \|\)</span>,</li>
-<li>For all tuples <span class="math inline">\(\vec{a}\)</span> and elements <span class="math inline">\(b\)</span> in <span class="math inline">\(A\)</span>: <span class="math display">\[
-\|\varphi(\vec{a},b) \| \subseteq \| (\exists v_n \varphi)(\vec{a}) \|,
-\]</span> and there exists <span class="math inline">\(b \in M\)</span> such that <span class="math display">\[
-\|\varphi(\vec{a},b) \| = \| (\exists v_n \varphi)(\vec{a}) \|.
-\]</span></li>
-</ol>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3 (Ultrafilter existence)</strong></span> Use Zorn’s Lemma to show that any family <span class="math inline">\(\mathcal{A} \subseteq \mathcal{P}(I)\)</span> with the FIP can be extended to an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span>.</p>
+<p>Use this to show that any infinite set has a free ultrafilter.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>(1)-(3) and the first part of (4) follow directly from the definition of ultrafilters (and the definition of <span class="math inline">\(\models\)</span>).</p>
-<p>For the second part of (4), we observe that for every <span class="math display">\[
-i \in \| (\exists v_n \varphi)(\vec{a}) \|
-\]</span> there exists <span class="math inline">\(b_i \in A_i\)</span> with <span class="math inline">\(\mathcal{M}_i \models \varphi[\vec{a}_i,b_i]\)</span>. For all other <span class="math inline">\(j \in I \setminus \| (\exists v_n \varphi)(\vec{a}) \|\)</span> we choose an aribitrary <span class="math inline">\(b_j \in A_j\)</span>. This yields a sequence <span class="math inline">\(b = (b_i)_{i\in I}\)</span> with <span class="math inline">\(b \in M\)</span>, for which <span class="math display">\[
-\| (\exists v_n \varphi)(\vec{a}) \| \subseteq \|\varphi(\vec{a},b) \|.
-\]</span> Together with the first part we obtain <span class="math inline">\(=\)</span>.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<section id="proof-of-łośs-theorem" class="level3">
-<h3 class="anchored" data-anchor-id="proof-of-łośs-theorem">Proof of Łoś’s Theorem</h3>
-<p>We proceed by induction over the formula height. A straightforward argument shows that the interpretation of functions and symbols in <span class="math inline">\(\mathcal{M}\)</span> extends to terms in the following way: <span class="math display">\[
-t^{\mathcal{M}/\mathcal{U}}(\vec{a}/U) = (t^{\mathcal{M}_i}(\vec{a}_i))_{i \in I}/\mathcal{U} = t^{\mathcal{M}}(\vec{a})/\mathcal{U}
-\]</span> This easily implies the statement for atomic formulas.</p>
-<p>For <span class="math inline">\(\varphi \equiv \neg \psi\)</span>, we have <span class="math display">\[
-\begin{aligned}
-\mathcal{M}/\mathcal{U} \models \neg \psi[\vec{a}_{\mathcal{U}}]
-&amp;\iff \mathcal{M}/\mathcal{U} \not\models \psi[\vec{a}_{\mathcal{U}}] \\[6pt]
-&amp;\iff \{\, i : \mathcal{M}_i \models \psi[\vec{a}_i] \,\} \notin \mathcal{U}
-&amp;&amp; \text{(I.H.)} \\[6pt]
-&amp;\iff \| \psi(\vec{a}) \| \notin \mathcal{U} \\[6pt]
-&amp;\iff \neg \| \psi(\vec{a}) \| \in \mathcal{U}
-&amp;&amp; (\mathcal{U}\ \text{is an ultrafilter}) \\[6pt]
-&amp;\iff \| \neg \psi(\vec{a}) \| \in \mathcal{U}
-&amp;&amp; \text{(Lemma (i))} \\[6pt]
-&amp;\iff \{\, i : \mathcal{M}_i \models \neg \psi[\vec{a}_i] \,\} \in \mathcal{U}.
-\end{aligned}
-\]</span></p>
-<p>The case <span class="math inline">\(\varphi \equiv (\psi \land \theta)\)</span> is similar.</p>
-<p>Finally, assume <span class="math inline">\(\varphi \equiv \exists y \psi\)</span>. Then <span class="math display">\[
-\begin{aligned}
-\mathcal{M}/\mathcal{U} \models \exists y\, \psi[\vec{a}_{\mathcal{U}}]
-&amp;\iff \exists b_{\mathcal{U}} \in \mathcal{M}/\mathcal{U} \text{ such that }
-   \mathcal{M}/\mathcal{U} \models \psi[\vec{a}_{\mathcal{U}}, b_{\mathcal{U}}] \\[6pt]
-&amp;\iff \exists b \in M \text{ such that }
-   \{\, i : \mathcal{M}_i \models \psi[\vec{a}_i, b_i] \,\} \in \mathcal{U}
-   &amp;&amp; \text{(I.H.)} \\[6pt]
-&amp;\iff \exists b \in M \text{ such that } \|\psi(\vec{a}, b)\| \in \mathcal{U} \\[6pt]
-&amp;\iff \|\exists y\, \psi(\vec{a})\| \in \mathcal{U}
-   &amp;&amp; (\mathcal{U}\ \text{ultrafilter, Lemma (4)}) \\[6pt]
-&amp;\iff \{\, i : \mathcal{M}_i \models \exists y\, \psi[\vec{a}_i] \,\} \in \mathcal{U}.
-\end{aligned}
-\]</span></p>
-<p>This completes the proof.</p>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4 (Ultrapoducts with principal ultrafilters)</strong></span> Show that if <span class="math inline">\(\mathcal{U}\)</span> is a principal ultrafilter on <span class="math inline">\(I\)</span>, then every ultraproduct <span class="math display">\[
+\mathcal{M}/\mathcal{u} = \prod_{i \in I} \mathcal{M}_i/\mathcal{U}
+\]</span> is isomorphic to some <span class="math inline">\(\mathcal{M}_j\)</span>, <span class="math inline">\(j \in I\)</span>.</p>
+<p><em>For principal ultrafilters, ultraproducts do not lead to anything new.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5 (Ultraproducts of fields)</strong></span> For any prime <span class="math inline">\(p\)</span> let <span class="math inline">\(\mathbb{F}_p\)</span> the field with <span class="math inline">\(p\)</span> elements (of characteristic <span class="math inline">\(p\)</span>), and let <span class="math inline">\(\mathcal{U}\)</span> be a free ultrafilter on the set <span class="math inline">\(P\)</span> of prime numbers.</p>
+<p>Show that the ultraproduct</p>
+<p><span class="math display">\[\prod_{p\in P} \mathbb{F}_p/\mathcal{U}\]</span></p>
+<p>is a field of characteristic <span class="math inline">\(0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-</section>
-<section id="applications" class="level2">
-<h2 class="anchored" data-anchor-id="applications">Applications</h2>
+<section id="further-explorations" class="level2">
+<h2 class="anchored" data-anchor-id="further-explorations">Further explorations</h2>
+<section id="lindenbaum-tarski-algebra" class="level3">
+<h3 class="anchored" data-anchor-id="lindenbaum-tarski-algebra">Lindenbaum-Tarski algebra</h3>
+<p>Given a language <span class="math inline">\(\mathcal{L}\)</span>, define an equivalence relation of the set of all <span class="math inline">\(\mathcal{L}\)</span>-sentences by <span class="math display">\[
+\sigma \sim \tau \; \iff \; \vdash \sigma \leftrightarrow \tau
+\]</span></p>
+<p>The equivalence classes will then form a <em>Boolean algebra</em>, the <strong>Lindenbaum-Tarksi algebra</strong> <span class="math inline">\(\mathcal{B}\)</span> with the operations <span class="math display">\[
+\begin{aligned}
+[\sigma] \land [\tau] &amp; :=  [\sigma \land \tau]\\
+[\sigma] \lor [\tau] &amp; := [\sigma \lor \tau] \\
+\neg[\sigma] &amp; := [\neg \sigma]
+\end{aligned}
+\]</span> The <em>bottom</em> element is <span class="math inline">\(0 :=[\sigma \land \neg \sigma]\)</span>, the <em>top</em> element is <span class="math inline">\(1:= [\sigma \lor \neg \sigma]\)</span>.</p>
+<p>We can define an order by putting <span class="math inline">\([\sigma] \leq [\tau] : \iff \vdash \sigma \to \tau\)</span>. (This corresponds to the order that is defined on any Boolean algebra via <span class="math inline">\(a \leq b :\Leftrightarrow a = a \land b\)</span>.)</p>
+<p>A <em>filter</em> on a Boolean algebra is defined in the same way it is defined on a set <span class="math inline">\(I\)</span> (in fact, a filter on a set <span class="math inline">\(I\)</span> is simply a filter on the Boolean algebra induced on its power set by taking intersections, unions, and complements): <span class="math inline">\(F \subseteq \mathcal{B}\)</span> is a filter if it does not contain the bottom element, is closed under <span class="math inline">\(\land\)</span> and closed upward under <span class="math inline">\(\leq\)</span>.</p>
 <ul>
-<li><p><strong>Preservation of theories:</strong><br>
-If each <span class="math inline">\(\mathcal{M}_i \models T\)</span>, then <span class="math inline">\(\prod_i \mathcal{M}_i / \mathcal{U} \models T\)</span>.</p></li>
-<li><p><strong>Ultrapowers:</strong><br>
-<span class="math inline">\(\mathcal{M} \equiv \mathcal{M}^I / \mathcal{U}\)</span>, i.e., a structure is elementarily equivalent to any of its ultrapowers.</p></li>
-<li><p><strong>Nonstandard models:</strong><br>
-For example, the ultrapower <span class="math inline">\(\mathbb{N}^{\mathbb{N}}/\mathcal{U}\)</span> (with <span class="math inline">\(\mathcal{U}\)</span> non-principal) yields a countably saturated nonstandard model of arithmetic.</p></li>
+<li><p>Show that if <span class="math inline">\(T\)</span> is a deductively closed, consistent <span class="math inline">\(\mathcal{L}\)</span>-theory, the set <span class="math display">\[
+\{ [\sigma] : \sigma \in T \}
+\]</span> is a filter in <span class="math inline">\(\mathcal{B}\)</span>.</p></li>
+<li><p>Show that if <span class="math inline">\(T\)</span> is complete, the above filter is an ultrafilter.</p></li>
 </ul>
-<section id="a-new-proof-of-the-compactness-theorem" class="level3">
-<h3 class="anchored" data-anchor-id="a-new-proof-of-the-compactness-theorem">A new proof of the compactness theorem</h3>
-<p>Suppose <span class="math inline">\(T\)</span> is an <span class="math inline">\(\mathcal{L}\)</span>-theory for which every finite subset <span class="math inline">\(\Delta\)</span> has a model <span class="math inline">\(\mathcal{M}_\Delta\)</span>.</p>
-<p>Let <span class="math inline">\(I = \{\Delta : \Delta \subseteq T \text{ finite}\}\)</span>.</p>
-<p>For <span class="math inline">\(\sigma \in T\)</span>, let <span class="math display">\[
-\begin{aligned}
-\hat{\sigma} &amp; = \{\Delta \in I : \sigma \in \Delta\} \subseteq I \\
-E &amp; = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I) \\
-\end{aligned}
+</section>
+<section id="keisler-shelah-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="keisler-shelah-theorem">Keisler-Shelah Theorem</h3>
+<p>If we take an ultraproduct over the same structure <span class="math inline">\(\mathcal{M}\)</span> along an index set <span class="math inline">\(I\)</span>, we call this an <strong>ultrapower</strong>, denoted by <span class="math display">\[
+\mathcal{M}^I/\mathcal{U}
 \]</span></p>
-<p><span class="math inline">\(E\)</span> has FIP (finite intersection property), since for <span class="math inline">\(\hat{S}_1, \ldots, \hat{S}_n \in E\)</span>, <span class="math display">\[
-\{\hat{\sigma}_1, \ldots, \hat{\sigma}_n\} \in \hat{\sigma}_1 \cap \cdots \cap \hat{\sigma}_n.
+<p>From Łoś’ Theorem, we know that if two ultrapowers are isomorphic, then the original structures are elementary equivalent. Remarkably, the converse holds, too, and hence gives an <em>algebraic characterization of elementary equivalence</em>.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-keisler-shelah" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Keisler-Shelah)</strong></span> For any two structures <span class="math inline">\(\mathcal{M}, \mathcal{N}\)</span>, <span class="math display">\[
+\mathcal{M} \equiv \mathcal{N} \; \iff \; \text{ there exists an index set $I$ and an ultrafilter $\mathcal{U}$ on $I$ such that } \mathcal{M}^I/\mathcal{U} \cong \mathcal{N}^I/\mathcal{U}
 \]</span></p>
-<p>By <a href="#thm-uf-existence" class="quarto-xref">Theorem&nbsp;1</a>, <span class="math inline">\(E\)</span> can be extended to an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on <span class="math inline">\(I\)</span>.</p>
-<p><strong>Claim:</strong> <span class="math inline">\(\mathcal{M}/\mathcal{U} = \prod_{\Delta \in I} \mathcal{M}_\Delta / \mathcal{U} \models T\)</span>.</p>
-<p>Let <span class="math inline">\(\sigma \in T\)</span>. Then for <span class="math inline">\(\Delta \in I\)</span>, <span class="math display">\[
-\Delta \in \hat{\sigma} \; \Rightarrow \; \sigma \in \Delta \; \Rightarrow \; \mathcal{M}_\Delta \models \sigma
-\]</span></p>
-<p>Hence <span class="math display">\[
-\hat{\sigma} \subseteq \{\Delta \in I : \mathcal{M}_\Delta \models \sigma\}
-\]</span></p>
-<p>Since <span class="math inline">\(\hat{\sigma} \in E\)</span> and <span class="math inline">\(E \subseteq \mathcal{U}\)</span>, we have <span class="math inline">\(\hat{\sigma} \in \mathcal{U}\)</span>, which implies <span class="math display">\[
-\{\Delta \in I : \mathcal{M}_\Delta \models \sigma\} \in \mathcal{U}
-\]</span></p>
-<p>By Łoś’ Theorem, <span class="math inline">\(\mathcal{M} \models \sigma\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -643,7 +529,7 @@ E &amp; = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I) \\
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -970,18 +856,6 @@ E &amp; = \{\hat{\sigma} : \sigma \in T\} \subseteq \mathcal{P}(I) \\
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./015_Oct06_loewenheim_skolem.html" class="pagination-link" aria-label="Oct 6">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 6</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./017_Oct10_week7_problems.html" class="pagination-link" aria-label="Oct 10">
-        <span class="nav-page-text">Oct 10</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
