@@ -8,29 +8,33 @@ title: "Math 557 Oct 13"
 
 **Question:** Are there other examples like this?
 
-::: {.callout-note icon=false}
-## Definition
+## Homogeneous structures
 
-Let $\mathcal{L}$ be a language and $\mathcal{M}$ be an $\mathcal{L}$-structure. We say $\mathcal{M}$ is *(ultra) homogeneous* if any isomorphism between finitely generated substructures of $\mathcal{M}$ extends to an automorphism of $\mathcal{M}$.
+Let $\mathcal{L}$ be a language and $\mathcal{M}$ be an $\mathcal{L}$-structure.
 
+::: {#def-}
+\
 For $A \subseteq M$, we denote by $\langle A \rangle^{\mathcal{M}}$ the smallest substructure of $\mathcal{M}$ whose domain contains $A$.
 
-We say $\mathcal{M} \supseteq \mathcal{N}$ is finitely generated if $\mathcal{N} = \langle A \rangle^{\mathcal{M}}$ for some finite $A \subseteq M$.
+We say $\mathcal{N} \subseteq \mathcal{M}$ is finitely generated if $\mathcal{N} = \langle A \rangle^{\mathcal{M}}$ for some finite $A \subseteq M$.
 :::
 
-::: {.callout-tip icon=false}
-## Example
-
-Let $\mathcal{L} = \{<\}$ and $\mathcal{M} = (\mathbb{Q}, <)$. Then finitely generated is equivalent to having a finite substructure.
+::: {#def-}
+\
+ We say $\mathcal{M}$ is *homogeneous* if any isomorphism between finitely generated substructures of $\mathcal{M}$ can be extended to an automorphism of $\mathcal{M}$.
 :::
 
-## Back-and-Forth and Homogeneity
+::: {#exa-}
+\
+Let $\mathcal{L} = \{<\}$ and $\mathcal{M} = (\mathbb{Q}, <)$. The finitely generated substructures coincide with the finite substructures.
+:::
+
+## Back-and-Forth 
 
 In the back-and-forth proof of $\omega$-categoricity of DLO, we used a homogeneity property, similarly for the proof that $(\mathbb{Q}, <) \cong (\mathbb{R}, <)$.
 
-::: {.callout-note icon=false}
-## Definition
-
+::: {#def-}
+\
 The *age* of $\mathcal{M}$, denoted $\mathrm{age}(\mathcal{M})$, is the class of all finitely generated $\mathcal{L}$-structures isomorphic to a substructure of $\mathcal{M}$.
 :::
 
