@@ -8,7 +8,6 @@ title: "Math 557 Oct 13"
 
 **Question:** Are there other examples like this?
 
-## Homogeneous structures
 
 Let $\mathcal{L}$ be a language and $\mathcal{M}$ be an $\mathcal{L}$-structure.
 
@@ -29,7 +28,7 @@ We say $\mathcal{N} \subseteq \mathcal{M}$ is finitely generated if $\mathcal{N}
 Let $\mathcal{L} = \{<\}$ and $\mathcal{M} = (\mathbb{Q}, <)$. The finitely generated substructures coincide with the finite substructures.
 :::
 
-## Back-and-Forth 
+## The age of a structure 
 
 In the back-and-forth proof of $\omega$-categoricity of DLO, we used a homogeneity property, similarly for the proof that $(\mathbb{Q}, <) \cong (\mathbb{R}, <)$.
 
@@ -38,45 +37,35 @@ In the back-and-forth proof of $\omega$-categoricity of DLO, we used a homogenei
 The *age* of $\mathcal{M}$, denoted $\mathrm{age}(\mathcal{M})$, is the class of all finitely generated $\mathcal{L}$-structures isomorphic to a substructure of $\mathcal{M}$.
 :::
 
-::: {.callout-tip icon=false}
-## Example
-
+::: {#exa-}
+\
 $\mathrm{age}(\mathbb{Q}, <)$ is the class of all finite linear orders.
 :::
 
-::: {.callout-important icon=false}
-## Lemma
-
+::: {#lem-}
+\
 Any two countable homogeneous structures with the same age are isomorphic.
 :::
 
-::: {.callout-warning icon=false collapse=true}
-## Proof sketch
+::: {.proof}
+## Sketch
 
 Let $\mathcal{A} \subseteq \mathcal{M}$ and $\mathcal{B} \subseteq \mathcal{N}$ be finitely generated, and let $\pi: \mathcal{A} \to \mathcal{B}$ be an isomorphism.
 
 Let $a \in M \setminus A$. We need to show that $\pi$ can be extended to an isomorphism $\mathcal{A} \cup \{a\} \to \mathcal{B}'$.
+This suffices, since we can then use the back-and-forth argument (remember our structures are countable) to extend everything to an automorphism of $\mathcal{M}$.
 
-This suffices, since we can then use the back-and-forth argument.
-
-Suppose $\mathcal{A} = \langle E \rangle^{\mathcal{M}}$ and $\mathcal{B} = \langle F \rangle^{\mathcal{N}}$.
-
-Then $\widetilde{\pi}: E \leftrightarrow F$ extends uniquely to $\pi$.
+Suppose $\mathcal{A} = \langle E \rangle^{\mathcal{M}}$ and $\mathcal{B} = \langle F \rangle^{\mathcal{N}}$. 
+<!-- Observe that $\widetilde{\pi}: E \leftrightarrow F$ extends uniquely to $\pi$. -->
 
 Let $\mathcal{A}' = \langle E \cup \{a\} \rangle^{\mathcal{M}} \subseteq \mathcal{M}$.
+Since $\mathcal{M}$ and $\mathcal{N}$ have the same age, there exists $\mathcal{C} \subseteq \mathcal{N}$ finitely generated such that $\mathcal{A}' \cong \mathcal{C}$ via some isomorphism $g$. 
 
-Since $\mathcal{M}$ and $\mathcal{N}$ have the same age, there exists $\mathcal{C} \subseteq \mathcal{N}$ finitely generated such that $\mathcal{A}' \cong \mathcal{C}$ via some isomorphism $g$.
-
-Note that $\mathcal{A}' \cong \mathcal{C}$ via $g$. The map $g$ is uniquely determined by its values on $E \cup \{a\}$.
-
-The restriction $g|_E$ induces an isomorphism $\langle E \rangle^{\mathcal{M}} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
+The map $g$ is uniquely determined by its values on $E \cup \{a\}$. The restriction $g|_E$ induces an isomorphism $\langle E \rangle^{\mathcal{M}} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
 
 Therefore, $\pi \circ (g|_E)^{-1}$ is an isomorphism $\mathcal{B} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
-
 Call this map $\tau$. Note that $\langle g(E) \rangle^{\mathcal{N}}$ is a finitely generated subset of $\mathcal{N}$.
-
 Since $\mathcal{N}$ is homogeneous, $\tau$ extends to an automorphism $\overline{\tau}: \mathcal{N} \to \mathcal{N}$.
-
 This yields an isomorphism $\mathcal{A}' \to \mathcal{B} \cup \{\overline{\tau}(g(a))\}$.
 :::
 
