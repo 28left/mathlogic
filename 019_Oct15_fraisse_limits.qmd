@@ -4,7 +4,7 @@ title: "MATH 557 Oct 15"
 
 # Amalgamation Classes
 
-Let $\overline{K}$ be a class of finitely generated structures.
+Let $\overline{K}$ be a class of finitely generated structures. $\overline{K}$ is called an **amalgamation class** if it has the following three properties:
 
 ::: {.callout-note icon=false}
 ## (HP) Hereditary Property
@@ -27,7 +27,13 @@ $$g_0: \mathcal{B} \to \mathcal{D}, \quad g_1: \mathcal{C} \to \mathcal{D}$$
 such that $g_0 \circ f_0 = g_1 \circ f_1$.
 :::
 
-**Exercise:** $(AP) \not\Rightarrow (JEP)$
+::: {#exr-}
+\
+Show that (AP) does not imply (JEP).
+
+(*Hint: finite fields*)
+:::
+
 
 ::: {.callout-tip icon=false}
 ## Example
