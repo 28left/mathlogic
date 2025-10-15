@@ -63,10 +63,9 @@ Since $\mathcal{M}$ and $\mathcal{N}$ have the same age, there exists $\mathcal{
 
 The map $g$ is uniquely determined by its values on $E \cup \{a\}$. The restriction $g|_E$ induces an isomorphism $\langle E \rangle^{\mathcal{M}} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
 
-Therefore, $\pi \circ (g|_E)^{-1}$ is an isomorphism $\mathcal{B} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
+Therefore, $\pi \circ (g|_E)^{-1}$ is an isomorphism $\langle g(E) \rangle^{\mathcal{N}} \xrightarrow{\cong} \mathcal{B}$.
 Call this map $\tau$. Note that $\langle g(E) \rangle^{\mathcal{N}}$ is a finitely generated subset of $\mathcal{N}$.
-Since $\mathcal{N}$ is homogeneous, $\tau$ extends to an automorphism $\overline{\tau}: \mathcal{N} \to \mathcal{N}$.
-This yields an isomorphism $\mathcal{A}' \to \mathcal{B} \cup \{\overline{\tau}(g(a))\}$.
+Since $\mathcal{N}$ is homogeneous, $\tau$ extends to an automorphism $\overline{\tau}: \mathcal{N} \to \mathcal{N}$. Let $\mathcal{B}'$ be the image of $\mathcal{C}$ under $\overline{\tau}$. By definition of $\overline{\tau}$, $\mathcal{B} \subset \mathcal{B}'$ and $\mathcal{A}'$ is isomorphic to $\mathcal{B}'$ via the map $\overline{\tau} \circ g$.
 :::
 
 **Question:** What do ages of homogeneous structures look like?
