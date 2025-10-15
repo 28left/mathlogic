@@ -68,8 +68,12 @@ Call this map $\tau$. Note that $\langle g(E) \rangle^{\mathcal{N}}$ is a finite
 Since $\mathcal{N}$ is homogeneous, $\tau$ extends to an automorphism $\overline{\tau}: \mathcal{N} \to \mathcal{N}$. Let $\mathcal{B}'$ be the image of $\mathcal{C}$ under $\overline{\tau}$. By definition of $\overline{\tau}$, $\mathcal{B} \subset \mathcal{B}'$ and $\mathcal{A}'$ is isomorphic to $\mathcal{B}'$ via the map $\overline{\tau} \circ g$.
 :::
 
-**Question:** What do ages of homogeneous structures look like?
 
+::: {.callout-tip}
+## Question 
+
+What do ages of countable homogeneous structures look like?
+:::
 
 
 <!-- 
