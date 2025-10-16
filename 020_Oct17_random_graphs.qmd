@@ -6,15 +6,43 @@ title: "MATH 557 Oct 17"
 
 ## Key facts from Fräissé theory
 
-## Random graphs
+## Simple, undirected graphs
 
 We consider the theory of simple, undirected graphs. Let $\mathcal{L} = \{E\}$ be the language of graphs with one binary relation symbol $E$.
 
 Simple, undirected graphs are formalized by the axioms
 
 - $\forall x \neg E(x,x)$
-- 
+- $\forall x, y \: (E(x,y) \to E(y,x))$
 
+We denote the theory of simple, undirected graphs by $T_{G}$
+
+::: {#exr-}
+Verify that 
+$$
+\overline{K} = \{\mathcal{G} : \mathcal{G} \models T_G, \mathcal{G} \text{ finite}\}
+$$
+is an amalgamation class with countably many isomorphism types.
+:::
+
+It follows that $\overline{K}$ has a Fraïssé limit. What does this limit look like?
+
+## Random graphs
+
+We now add the following axioms:
+
+$$
+\sigma_{n,m} \equiv \forall x_1, \dots, x_n \forall y_1, \dots, y_m \; \left ( \bigwedge_{i=1}^n \bigwedge_{j = 1}^m x_i \neq y_j \; \to \; \exists z \: \bigl ( \bigwedge_{i=1}^n (z \neq  x_i \land E(z,x_i) ) \land \bigwedge_{j = 1}^m (z \neq y_j \land \neg E(z, y_j)) \bigr ) \right )
+$$
+
+Let
+$$
+T_{RG} = T_G \cup \{ \exists x,y \: (x \neq y) \} \cup \{ \sigma_{n,m} : n, m \geq 1 \}
+$$
+
+::: {#exr-}
+Show that every countable model of $T_{RG}$ is homogeneous.
+:::
 
 
 ::: {.callout-note icon=false}
