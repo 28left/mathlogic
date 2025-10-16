@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./019_Oct15_fraisse_limits.html" rel="next">
 <link href="./017_Oct10_week7_problems.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -244,6 +245,12 @@ window.Quarto = {
  <span class="menu-text">Oct 13</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./019_Oct15_fraisse_limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 15</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -358,9 +365,21 @@ Any two countable homogeneous structures with the same age are isomorphic.</p>
 <p>Suppose <span class="math inline">\(\mathcal{A} = \langle E \rangle^{\mathcal{M}}\)</span> and <span class="math inline">\(\mathcal{B} = \langle F \rangle^{\mathcal{N}}\)</span>. <!-- Observe that $\widetilde{\pi}: E \leftrightarrow F$ extends uniquely to $\pi$. --></p>
 <p>Let <span class="math inline">\(\mathcal{A}' = \langle E \cup \{a\} \rangle^{\mathcal{M}} \subseteq \mathcal{M}\)</span>. Since <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> have the same age, there exists <span class="math inline">\(\mathcal{C} \subseteq \mathcal{N}\)</span> finitely generated such that <span class="math inline">\(\mathcal{A}' \cong \mathcal{C}\)</span> via some isomorphism <span class="math inline">\(g\)</span>.</p>
 <p>The map <span class="math inline">\(g\)</span> is uniquely determined by its values on <span class="math inline">\(E \cup \{a\}\)</span>. The restriction <span class="math inline">\(g|_E\)</span> induces an isomorphism <span class="math inline">\(\langle E \rangle^{\mathcal{M}} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}\)</span>.</p>
-<p>Therefore, <span class="math inline">\(\pi \circ (g|_E)^{-1}\)</span> is an isomorphism <span class="math inline">\(\mathcal{B} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}\)</span>. Call this map <span class="math inline">\(\tau\)</span>. Note that <span class="math inline">\(\langle g(E) \rangle^{\mathcal{N}}\)</span> is a finitely generated subset of <span class="math inline">\(\mathcal{N}\)</span>. Since <span class="math inline">\(\mathcal{N}\)</span> is homogeneous, <span class="math inline">\(\tau\)</span> extends to an automorphism <span class="math inline">\(\overline{\tau}: \mathcal{N} \to \mathcal{N}\)</span>. This yields an isomorphism <span class="math inline">\(\mathcal{A}' \to \mathcal{B} \cup \{\overline{\tau}(g(a))\}\)</span>.</p>
+<p>Therefore, <span class="math inline">\(\pi \circ (g|_E)^{-1}\)</span> is an isomorphism <span class="math inline">\(\langle g(E) \rangle^{\mathcal{N}} \xrightarrow{\cong} \mathcal{B}\)</span>. Call this map <span class="math inline">\(\tau\)</span>. Note that <span class="math inline">\(\langle g(E) \rangle^{\mathcal{N}}\)</span> is a finitely generated subset of <span class="math inline">\(\mathcal{N}\)</span>. Since <span class="math inline">\(\mathcal{N}\)</span> is homogeneous, <span class="math inline">\(\tau\)</span> extends to an automorphism <span class="math inline">\(\overline{\tau}: \mathcal{N} \to \mathcal{N}\)</span>. Let <span class="math inline">\(\mathcal{B}'\)</span> be the image of <span class="math inline">\(\mathcal{C}\)</span> under <span class="math inline">\(\overline{\tau}\)</span>. By definition of <span class="math inline">\(\overline{\tau}\)</span>, <span class="math inline">\(\mathcal{B} \subset \mathcal{B}'\)</span> and <span class="math inline">\(\mathcal{A}'\)</span> is isomorphic to <span class="math inline">\(\mathcal{B}'\)</span> via the map <span class="math inline">\(\overline{\tau} \circ g\)</span>.</p>
 </div>
-<p><strong>Question:</strong> What do ages of homogeneous structures look like?</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What do ages of countable homogeneous structures look like?</p>
+</div>
+</div>
 <!-- 
 \documentclass{article}
 \usepackage{amsmath, amssymb, amsthm}
@@ -855,6 +874,9 @@ This yields an isomorphism $\mathcal{A}' \to \mathcal{B} \cup \{\overline{\tau}(
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./019_Oct15_fraisse_limits.html" class="pagination-link" aria-label="Oct 15">
+        <span class="nav-page-text">Oct 15</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

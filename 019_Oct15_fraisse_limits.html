@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 10 – Math 557 Fall 2025</title>
+<title>MATH 557 Oct 15 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./006_Sep12_completeness.html" rel="next">
-<link href="./004_Sep05_substitution.html" rel="prev">
+<link href="./018_Oct13_homogeneous_structures.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./005_Sep10_implication.html">September 10</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./019_Oct15_fraisse_limits.html">Oct 15</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,7 +162,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link active">
+  <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 10</span></a>
   </div>
 </li>
@@ -247,7 +246,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./019_Oct15_fraisse_limits.html" class="sidebar-item-text sidebar-link">
+  <a href="./019_Oct15_fraisse_limits.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Oct 15</span></a>
   </div>
 </li>
@@ -261,20 +260,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logical-implication-and-proof" id="toc-logical-implication-and-proof" class="nav-link active" data-scroll-target="#logical-implication-and-proof">Logical Implication and Proof</a>
+  <li><a href="#amalgamation-classes" id="toc-amalgamation-classes" class="nav-link active" data-scroll-target="#amalgamation-classes">Amalgamation Classes</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#fraïssés-theorem" id="toc-fraïssés-theorem" class="nav-link" data-scroll-target="#fraïssés-theorem">Fraïssé’s Theorem</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="005_Sep10_implication.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="019_Oct15_fraisse_limits.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 10</h1>
+<h1 class="title">MATH 557 Oct 15</h1>
 </div>
 
 
@@ -291,115 +289,120 @@ window.Quarto = {
 </header>
 
 
-<section id="logical-implication-and-proof" class="level1">
-<h1>Logical Implication and Proof</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><p><strong>Logical consequence</strong>:</p>
-<ul>
-<li>This is the semantical implication we are often working with in mathematical practice. We say <span class="math inline">\(T\)</span> <strong>logically implies</strong> <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(T \models \varphi\)</span>, if for structure <span class="math inline">\(\mathcal{M}\)</span>, <span class="math inline">\(\mathcal{M} \models T\)</span> implies <span class="math inline">\(\mathcal{M} \models \varphi\)</span>.</li>
-</ul></li>
-<li><p><strong>Formal proof</strong>:</p>
-<ul>
-<li><span class="math inline">\(T \vdash \varphi\)</span> means there is a formal (i.e.&nbsp;<em>syntactical</em>) derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(T\)</span> using the formulas of <span class="math inline">\(T\)</span>, the three kinds of <em>logical axioms</em> (propositional tautologies, equality and quantifier axioms), and the <em>inference rules</em> Modus Ponens and Generalization.</li>
-</ul></li>
-</ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Warmup - Logical Implication)</strong></span> <br>
-Let <span class="math inline">\(T\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-theory. We say a theory <span class="math inline">\(T'\)</span> is an <strong>axiomatization</strong> of <span class="math inline">\(T\)</span> if for any <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\mathcal{M}\)</span>,</p>
-<p><span class="math display">\[\mathcal{M} \models T \; \iff \; \mathcal{M} \models T'\]</span></p>
-<p>Show that for any axiomatization <span class="math inline">\(T'\)</span> of <span class="math inline">\(T\)</span>, for any <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\sigma\)</span>,</p>
-<p><span class="math display">\[T \models \sigma \; \iff \; T' \models \sigma\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2 (Warmup 2)</strong></span> <br>
-Recall that a <em>model</em> of a theory <span class="math inline">\(T\)</span> is a structure <span class="math inline">\(\mathcal{M}\)</span> such that for any sentence <span class="math inline">\(\sigma \in T\)</span>, <span class="math inline">\(\mathcal{M} \models \sigma\)</span>. In this case we write <span class="math inline">\(\mathcal{M} \models T\)</span>.</p>
-<p>Argue that if <span class="math inline">\(T\)</span> does not have a model, every sentence is a logical implication of <span class="math inline">\(T\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3 (Formal notion of proof – Warmup)</strong></span> <br>
-Verify that</p>
-<p><span class="math display">\[\{\varphi, \neg \psi\} \vdash \neg(\varphi \to \psi)\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Argue (semantically) that if <span class="math inline">\(x\)</span> is not free in <span class="math inline">\(\psi\)</span>,</p>
-<p><span class="math display">\[\{\varphi \to \psi\} \models \exists x \varphi \: \to \: \psi\]</span></p>
-<p>Then prove this <em>syntactically</em>, i.e.&nbsp;show (under the same assumption) that</p>
-<p><span class="math display">\[\{\varphi \to \psi\} \vdash \exists x \varphi \: \to \: \psi\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Prove the <em>Soundness Theorem</em>, i.e.&nbsp;show that</p>
-<p><span class="math display">\[T \vdash \varphi \; \Rightarrow \; T \models \varphi\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<section id="amalgamation-classes" class="level1">
+<h1>Amalgamation Classes</h1>
+<p>Let <span class="math inline">\(\overline{K}\)</span> be a class of finitely generated structures. <span class="math inline">\(\overline{K}\)</span> is called an <strong>amalgamation class</strong> if it has the following three properties:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home problem
+(HP) Hereditary Property
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><br>
-Show that</p>
-<p><span class="math display">\[\begin{align*}
-\{\varphi \to \psi \} &amp; \vdash \exists x \varphi \: \to \: \exists x \psi \\
-\{\varphi \to \psi \} &amp; \vdash \forall x \varphi \: \to \: \forall x \psi \\
-\end{align*}\]</span></p>
+<p>If <span class="math inline">\(A \in \overline{K}\)</span>, <span class="math inline">\(\mathcal{B} \cong \mathcal{C} \in A\)</span>, and <span class="math inline">\(\mathcal{C}\)</span> is finitely generated, then <span class="math inline">\(\mathcal{B} \in \overline{K}\)</span>.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+(JEP) Joint Embedding Property
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A, \mathcal{B} \in \overline{K}\)</span>, then there exists <span class="math inline">\(\mathcal{C} \in \overline{K}\)</span> and embeddings <span class="math display">\[f_0: A \to \mathcal{C}, \quad f_1: \mathcal{B} \to \mathcal{C}\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+(AP) Amalgamation Property
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A, \mathcal{B}, \mathcal{C} \in \overline{K}\)</span> with embeddings <span class="math inline">\(f_0: A \to \mathcal{B}\)</span> and <span class="math inline">\(f_1: A \to \mathcal{C}\)</span>, then there exists <span class="math inline">\(\mathcal{D} \in \overline{K}\)</span> and embeddings <span class="math display">\[g_0: \mathcal{B} \to \mathcal{D}, \quad g_1: \mathcal{C} \to \mathcal{D}\]</span> such that <span class="math inline">\(g_0 \circ f_0 = g_1 \circ f_1\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
+Show that (AP) does not imply (JEP).</p>
+<p>(<em>Hint: finite fields</em>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1</strong></span> <br>
+<span class="math inline">\(\overline{K} = \{ (Z,&lt;): (Z,&lt;) \text{ finite linear order} \}\)</span> forms an amalgamation class.</p>
+</div>
+</div>
+</div>
+</div>
+<section id="fraïssés-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="fraïssés-theorem">Fraïssé’s Theorem</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-fraisse" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> Let <span class="math inline">\(\overline{K}\)</span> be a class of finitely generated <span class="math inline">\(\mathcal{L}\)</span>-structures such that there are only countably many isomorphism types in <span class="math inline">\(\overline{K}\)</span>.</p>
+<p>Then: <span class="math inline">\(\overline{K}\)</span> is an amalgamation class <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(\overline{K}\)</span> is the age of a countable homogeneous <span class="math inline">\(\mathcal{L}\)</span>-structure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(<span class="math inline">\(\Leftarrow\)</span>):</strong> Suppose <span class="math inline">\(\overline{K} = \text{age}(\mathcal{M})\)</span> where <span class="math inline">\(\mathcal{M}\)</span> is countable and homogeneous.</p>
+<p><strong>(HP):</strong> Holds by definition of age.</p>
+<p><strong>(JEP):</strong> Let <span class="math inline">\(\mathcal{A}, \mathcal{B} \in \text{age}(\mathcal{M})\)</span>. Then <span class="math inline">\(A \cong \langle A \rangle^{\mathcal{M}}\)</span> and <span class="math inline">\(\mathcal{B} \cong \langle B \rangle^{\mathcal{M}}\)</span>, with <span class="math inline">\(A,B \subseteq M\)</span> finite. Then <span class="math inline">\(\mathcal{A}\)</span> and <span class="math inline">\(\mathcal{B}\)</span> embed into <span class="math inline">\(\langle A \cup B \rangle^{\mathcal{M}}\)</span>.</p>
+<p><strong>(AP):</strong> Suppose <span class="math inline">\(f_0: \mathcal{A} \to \mathcal{B}\)</span> and <span class="math inline">\(f_1: \mathcal{A} \to \mathcal{C}\)</span> are embeddings, where <span class="math inline">\(\mathcal{A}, \mathcal{B}, \mathcal{C} \in \text{age}(\mathcal{M})\)</span>.</p>
+<!-- Let $\mathcal{A} = \langle A \rangle^{\mathcal{M}}$, $\mathcal{B} = \langle B \rangle^{\mathcal{M}}$, $\mathcal{C} = \langle C \rangle^{\mathcal{M}}$. -->
+<p>Without loss of generality, <span class="math inline">\(\mathcal{A}, \mathcal{B}, \mathcal{C} \subseteq \mathcal{M}\)</span> and <span class="math inline">\(f_0 = \text{id}_A\)</span>.</p>
+<p>Since <span class="math inline">\(\mathcal{M}\)</span> is homogeneous, there exists an automorphism <span class="math inline">\(\pi: \mathcal{M} \overset{\sim}{\to} \mathcal{M}\)</span> such that <span class="math inline">\(\pi^{-1}|_A = f_1\)</span> (i.e., <span class="math inline">\(\pi\)</span> extends <span class="math inline">\(f_1^{-1}\)</span>).</p>
+<p>Consider <span class="math inline">\(\mathcal{D} = \langle B \cup \pi^{-1}(C) \rangle^{\mathcal{M}}\)</span>. <span class="math inline">\(\mathcal{D}\)</span> amalgamates <span class="math inline">\(\mathcal{B}\)</span> and <span class="math inline">\(\mathcal{C}\)</span> via <span class="math inline">\(\text{id}_{\mathcal{B}}: \mathcal{B} \to \mathcal{D}\)</span> and <span class="math inline">\(\pi^{-1}|_C: \mathcal{C} \to \mathcal{D}\)</span>.</p>
+</div>
+<p><strong>(<span class="math inline">\(\Rightarrow\)</span>):</strong> Assume <span class="math inline">\(\overline{K}\)</span> is an amalgamation class. We construct a structure <span class="math inline">\(\mathcal{N}\)</span> with <span class="math inline">\(\text{age}(\mathcal{N}) = \overline{K}\)</span> where <span class="math inline">\(\mathcal{N}\)</span> is homogeneous and has domain <span class="math inline">\(N \subset \mathbb{N}\)</span>.</p>
+<p>Since <span class="math inline">\(\overline{K}\)</span> has countably many isomorphism types, we enumerate the elements of <span class="math inline">\(\overline{K}\)</span> (up to isomorphism) as <span class="math inline">\((\mathcal{K}_e: e \in \mathbb{N})\)</span> where <span class="math inline">\(K_e \subseteq \mathbb{N}\)</span>.</p>
+<p>Consider tuples <span class="math inline">\((\bar{a}, \bar{b}, f)\)</span> where <span class="math inline">\(\bar{a}_i, \bar{b}_i\)</span> are finite subsets of <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\(f\)</span> is a partial function with <span class="math inline">\(\operatorname{dom}(f) = \bar{a}\)</span> and <span class="math inline">\(\text{ran}(f) \subseteq \bar{b}\)</span>. Enumerate all such triples as <span class="math inline">\((\bar{a}_e, \bar{b}_e, f_e)\)</span> so that every <span class="math inline">\((\bar{a}, \bar{b}, f)\)</span> occurs infinitely often.</p>
+<p><span class="math inline">\(\mathcal{N}\)</span> will be the union of an increasing sequence <span class="math inline">\((\mathcal{C}_n)_{n \in \mathbb{N}}\)</span> where <span class="math inline">\(\mathcal{C}_n \in \overline{K}\)</span>.</p>
+<p><strong>Initialize:</strong> <span class="math inline">\(\mathcal{C}_0 = \mathcal{K}_0\)</span></p>
+<p>Now assume we have defined <span class="math inline">\(\mathcal{C}_n\)</span>.</p>
+<p><strong>Case <span class="math inline">\(n = 2\ell\)</span> (even):</strong> Apply (JEP) to <span class="math inline">\(\mathcal{C}_n, \mathcal{K}_\ell\)</span> to obtain <span class="math inline">\(\mathcal{C}_{n+1}\)</span>.</p>
+<p><strong>Case <span class="math inline">\(n = 2\ell + 1\)</span> (odd):</strong> If <span class="math inline">\(\bar{a}_\ell\)</span> or <span class="math inline">\(\bar{b}_\ell \nsubseteq C_n\)</span>, put <span class="math inline">\(\mathcal{C}_{n+1} = \mathcal{C}_n\)</span>. If <span class="math inline">\(\bar{a}_\ell, \bar{b}_\ell \subseteq C_n\)</span>, let <span class="math inline">\(\mathcal{A}_\ell = \langle \bar{a}_\ell \rangle^{\mathcal{C}_n}\)</span> and <span class="math inline">\(\mathcal{B}_\ell = \langle \bar{b}_\ell \rangle^{\mathcal{C}_n} \subseteq \mathcal{C}_n\)</span>. Apply (AP) to the embeddings <span class="math inline">\(\operatorname{id}: \mathcal{A}_\ell \to \mathcal{C}_n\)</span> and <span class="math inline">\(f: \mathcal{A}_\ell \to \mathcal{B}_\ell\)</span> (induced by <span class="math inline">\(f_\ell: \bar{a}_\ell \to \bar{b}_\ell\)</span>). This yields a structure <span class="math inline">\(\mathcal{C}_{n+1} \in \overline{K}\)</span>. Renaming if necessary, we can assume <span class="math inline">\(\mathcal{C}_n \subseteq \mathcal{C}_{n+1}\)</span>.</p>
+<p>Define <span class="math inline">\(\mathcal{N} = \bigcup_{n \in \mathbb{N}} \mathcal{C}_n\)</span>.</p>
+<p><strong>Claim 1:</strong> <span class="math inline">\(\text{age}(\mathcal{N}) = \overline{K}\)</span>.<br>
+In the even steps <span class="math inline">\(n = 2\ell\)</span>, we ensure <span class="math inline">\(K_\ell \subseteq \mathcal{N}\)</span>, so all structures isomorphic to <span class="math inline">\(K_\ell\)</span> also enter <span class="math inline">\(\text{age}(\mathcal{N})\)</span>. Since the <span class="math inline">\((K_e)_{e \in \mathbb{N}}\)</span> enumerates all isomorphism types of <span class="math inline">\(\overline{K}\)</span>, we get <span class="math inline">\(\text{age}(\mathcal{N}) = \overline{K}\)</span>.</p>
+<p><strong>Claim 2:</strong> <span class="math inline">\(\mathcal{N}\)</span> is homogeneous.<br>
+Let <span class="math inline">\(\tau: A \to \mathcal{B}\)</span> be an isomorphism between finitely generated substructures <span class="math inline">\(\mathcal{A} = \langle \bar{a} \rangle^{\mathcal{N}}\)</span> and <span class="math inline">\(\mathcal{B} = \langle \bar{b} \rangle^{\mathcal{N}}\)</span> where <span class="math inline">\(\bar{a}, \bar{b} \in N\)</span> are finite. We show that for any <span class="math inline">\(c_0 \in N \setminus B\)</span>, there exists a partial isomorphism <span class="math inline">\(\tau': \mathcal{A}' \to \mathcal{B}'\)</span> where <span class="math inline">\(\mathcal{A}', \mathcal{B}'\)</span> are finitely generated, <span class="math inline">\(\tau' \supseteq \tau\)</span>, and <span class="math inline">\(c_0 \in \operatorname{dom}(\tau')\)</span>. (This suffices since we can continue via back-and-forth.)</p>
+<p>There exists <span class="math inline">\(\ell\)</span> such that <span class="math inline">\(f_\ell\)</span> induces an embedding <span class="math inline">\(f: A \to \langle \mathcal{B} \cup \{c_0\} \rangle^{\mathcal{N}}\)</span> (since every triple occurs infinitely often in the enumeration, in particular the triple <span class="math inline">\((\bar{a}, \bar{b} \cup \{c_0\}, f)\)</span>).</p>
+<p>In step <span class="math inline">\(n = 2\ell + 1\)</span>, <span class="math inline">\(\mathcal{B}_\ell =  \in \langle \mathcal{B} \cup \{c_0\} \rangle^{\mathcal{N}}\)</span> and <span class="math inline">\(\mathcal{C}_n\)</span> are amalgamated over <span class="math inline">\(A_\ell\)</span>. This yields embeddings: <span class="math display">\[
+\begin{aligned}
+\operatorname{id}: &amp; \;  \mathcal{A} \hookrightarrow \mathcal{C}_{n+1} \\
+g: &amp; \; \mathcal{B} \hookrightarrow \mathcal{C}_{n+1}  \text{ where } g \circ f_\ell = \operatorname{id}_A \\
+\end{aligned}
+\]</span> Let <span class="math inline">\(a_0 = g(c_0)\)</span>. Then <span class="math inline">\((g|_{\mathcal{B}})^{-1}: \langle \bar{a} \cup \{a_0\} \rangle^{\mathcal{N}} \overset{\sim}{\to} \langle \bar{b} \cup \{c_0\} \rangle^{\mathcal{N}}\)</span> is the desired isomorphism.</p>
 
 
 </section>
@@ -807,14 +810,11 @@ Show that</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./004_Sep05_substitution.html" class="pagination-link" aria-label="September 5">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 5</span>
+      <a href="./018_Oct13_homogeneous_structures.html" class="pagination-link" aria-label="Oct 13">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 13</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./006_Sep12_completeness.html" class="pagination-link" aria-label="September 12">
-        <span class="nav-page-text">September 12</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
