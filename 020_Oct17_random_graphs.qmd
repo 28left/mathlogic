@@ -1,0 +1,130 @@
+---
+title: "MATH 557 Oct 17"
+---
+
+# Fraïssé Theory of Random Graphs
+
+## Key facts from Fräissé theory
+
+## Random graphs
+
+We consider the theory of simple, undirected graphs. Let $\mathcal{L} = \{E\}$ be the language of graphs with one binary relation symbol $E$.
+
+Simple, undirected graphs are formalized by the axioms
+
+- $\forall x \neg E(x,x)$
+- 
+
+
+
+::: {.callout-note icon=false}
+## (HP) Hereditary Property
+
+If $A \in \overline{K}$, $\mathcal{B} \cong \mathcal{C} \in A$, and $\mathcal{C}$ is finitely generated, then $\mathcal{B} \in \overline{K}$.
+:::
+
+::: {.callout-note icon=false}
+## (JEP) Joint Embedding Property
+
+If $A, \mathcal{B} \in \overline{K}$, then there exists $\mathcal{C} \in \overline{K}$ and embeddings 
+$$f_0: A \to \mathcal{C}, \quad f_1: \mathcal{B} \to \mathcal{C}$$
+:::
+
+::: {.callout-note icon=false}
+## (AP) Amalgamation Property
+
+If $A, \mathcal{B}, \mathcal{C} \in \overline{K}$ with embeddings $f_0: A \to \mathcal{B}$ and $f_1: A \to \mathcal{C}$, then there exists $\mathcal{D} \in \overline{K}$ and embeddings 
+$$g_0: \mathcal{B} \to \mathcal{D}, \quad g_1: \mathcal{C} \to \mathcal{D}$$
+such that $g_0 \circ f_0 = g_1 \circ f_1$.
+:::
+
+::: {#exr-}
+\
+Show that (AP) does not imply (JEP).
+
+(*Hint: finite fields*)
+:::
+
+
+::: {#exm-}
+\
+$\overline{K} = \{ (Z,<): (Z,<) \text{ finite linear order} \}$ forms an amalgamation class.
+:::
+
+
+## Fraïssé's Theorem
+
+::: {#thm-fraisse}
+Let $\overline{K}$ be a class of finitely generated $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
+
+Then: $\overline{K}$ is an amalgamation class $\Leftrightarrow$ $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
+:::
+
+::: {.proof}
+
+**($\Leftarrow$):**
+Suppose $\overline{K} = \text{age}(\mathcal{M})$ where $\mathcal{M}$ is countable and homogeneous.
+
+**(HP):** Holds by definition of age.
+
+**(JEP):** Let $\mathcal{A}, \mathcal{B} \in \text{age}(\mathcal{M})$. Then $A \cong \langle A \rangle^{\mathcal{M}}$ and $\mathcal{B} \cong \langle B \rangle^{\mathcal{M}}$, with $A,B \subseteq M$ finite. 
+Then $\mathcal{A}$ and $\mathcal{B}$ embed into $\langle A \cup B \rangle^{\mathcal{M}}$.
+
+**(AP):** Suppose $f_0: \mathcal{A} \to \mathcal{B}$ and $f_1: \mathcal{A} \to \mathcal{C}$ are embeddings, where $\mathcal{A}, \mathcal{B}, \mathcal{C} \in \text{age}(\mathcal{M})$. 
+
+<!-- Let $\mathcal{A} = \langle A \rangle^{\mathcal{M}}$, $\mathcal{B} = \langle B \rangle^{\mathcal{M}}$, $\mathcal{C} = \langle C \rangle^{\mathcal{M}}$. -->
+
+Without loss of generality, $\mathcal{A}, \mathcal{B}, \mathcal{C} \subseteq \mathcal{M}$ and $f_0 = \text{id}_A$.
+
+Since $\mathcal{M}$ is homogeneous, there exists an automorphism $\pi: \mathcal{M} \overset{\sim}{\to} \mathcal{M}$ such that $\pi^{-1}|_A = f_1$ (i.e., $\pi$ extends $f_1^{-1}$).
+
+Consider $\mathcal{D} = \langle B \cup \pi^{-1}(C) \rangle^{\mathcal{M}}$. $\mathcal{D}$ amalgamates $\mathcal{B}$ and $\mathcal{C}$ via $\text{id}_{\mathcal{B}}: \mathcal{B} \to \mathcal{D}$ and $\pi^{-1}|_C: \mathcal{C} \to \mathcal{D}$.
+:::
+
+**($\Rightarrow$):**
+Assume $\overline{K}$ is an amalgamation class.
+We construct a structure $\mathcal{N}$ with $\text{age}(\mathcal{N}) = \overline{K}$ where $\mathcal{N}$ is homogeneous and has domain $N \subset \mathbb{N}$.
+
+Since $\overline{K}$ has countably many isomorphism types, we enumerate the elements of $\overline{K}$ (up to isomorphism) as $(\mathcal{K}_e: e \in \mathbb{N})$ where $K_e \subseteq \mathbb{N}$.
+
+Consider tuples $(\bar{a}, \bar{b}, f)$ where $\bar{a}_i, \bar{b}_i$ are finite subsets of $\mathbb{N}$ and $f$ is a partial function with $\operatorname{dom}(f) = \bar{a}$ and $\text{ran}(f) \subseteq \bar{b}$.
+Enumerate all such triples as $(\bar{a}_e, \bar{b}_e, f_e)$ so that every $(\bar{a}, \bar{b}, f)$ occurs infinitely often.
+
+$\mathcal{N}$ will be the union of an increasing sequence $(\mathcal{C}_n)_{n \in \mathbb{N}}$ where $\mathcal{C}_n \in \overline{K}$.
+
+**Initialize:** $\mathcal{C}_0 = \mathcal{K}_0$
+
+Now assume we have defined $\mathcal{C}_n$.
+
+**Case $n = 2\ell$ (even):**
+Apply (JEP) to $\mathcal{C}_n, \mathcal{K}_\ell$ to obtain $\mathcal{C}_{n+1}$.
+
+**Case $n = 2\ell + 1$ (odd):**
+If $\bar{a}_\ell$ or $\bar{b}_\ell \nsubseteq C_n$, put $\mathcal{C}_{n+1} = \mathcal{C}_n$. If $\bar{a}_\ell, \bar{b}_\ell \subseteq C_n$, let $\mathcal{A}_\ell = \langle \bar{a}_\ell \rangle^{\mathcal{C}_n}$ and $\mathcal{B}_\ell = \langle \bar{b}_\ell \rangle^{\mathcal{C}_n} \subseteq \mathcal{C}_n$.
+Apply (AP) to the embeddings $\operatorname{id}: \mathcal{A}_\ell \to \mathcal{C}_n$
+and $f: \mathcal{A}_\ell \to \mathcal{B}_\ell$ (induced by $f_\ell: \bar{a}_\ell \to \bar{b}_\ell$). This yields a structure $\mathcal{C}_{n+1} \in \overline{K}$.
+Renaming if necessary, we can assume $\mathcal{C}_n \subseteq \mathcal{C}_{n+1}$.
+
+Define $\mathcal{N} = \bigcup_{n \in \mathbb{N}} \mathcal{C}_n$.
+
+
+**Claim 1:** $\text{age}(\mathcal{N}) = \overline{K}$.\
+In the even steps $n = 2\ell$, we ensure $K_\ell \subseteq \mathcal{N}$, so all  structures isomorphic to $K_\ell$ also enter $\text{age}(\mathcal{N})$.
+Since the $(K_e)_{e \in \mathbb{N}}$ enumerates all isomorphism types of $\overline{K}$, we get $\text{age}(\mathcal{N}) = \overline{K}$.
+
+**Claim 2:** $\mathcal{N}$ is homogeneous.\
+Let $\tau: A \to \mathcal{B}$ be an isomorphism between finitely generated substructures $\mathcal{A} = \langle \bar{a} \rangle^{\mathcal{N}}$ and $\mathcal{B} = \langle \bar{b} \rangle^{\mathcal{N}}$ where $\bar{a}, \bar{b} \in N$ are finite.
+We show that for any $c_0 \in N \setminus B$, there exists a partial isomorphism $\tau': \mathcal{A}' \to \mathcal{B}'$ where $\mathcal{A}', \mathcal{B}'$ are finitely generated, $\tau' \supseteq \tau$, and $c_0 \in \operatorname{dom}(\tau')$.
+(This suffices since we can continue via back-and-forth.)
+
+There exists $\ell$ such that $f_\ell$ induces an embedding $f: A \to \langle \mathcal{B} \cup \{c_0\} \rangle^{\mathcal{N}}$ (since every triple occurs infinitely often in the enumeration, in particular the triple $(\bar{a}, \bar{b} \cup \{c_0\}, f)$).
+
+In step $n = 2\ell + 1$, $\mathcal{B}_\ell =  \in \langle \mathcal{B} \cup \{c_0\} \rangle^{\mathcal{N}}$ and $\mathcal{C}_n$ are amalgamated over $A_\ell$.
+This yields embeddings:
+$$
+\begin{aligned}
+\operatorname{id}: & \;  \mathcal{A} \hookrightarrow \mathcal{C}_{n+1} \\
+ g: & \; \mathcal{B} \hookrightarrow \mathcal{C}_{n+1}  \text{ where } g \circ f_\ell = \operatorname{id}_A \\
+\end{aligned}
+$$
+Let $a_0 = g(c_0)$. Then $(g|_{\mathcal{B}})^{-1}: \langle \bar{a} \cup \{a_0\} \rangle^{\mathcal{N}} \overset{\sim}{\to} \langle \bar{b} \cup \{c_0\} \rangle^{\mathcal{N}}$ is the desired isomorphism. 
