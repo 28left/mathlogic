@@ -1,0 +1,376 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Proof}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\newtheorem{refremark}{Remark}[section]
+\newtheorem{refsolution}{Solution}[section]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 557 Oct 15},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{MATH 557 Oct 15}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+
+\section{Amalgamation Classes}\label{amalgamation-classes}
+
+Let \(\overline{K}\) be a class of finitely generated structures.
+\(\overline{K}\) is called an \textbf{amalgamation class} if it has the
+following three properties:
+
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, left=2mm, toprule=.15mm, rightrule=.15mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, arc=.35mm, colback=white, breakable, title={(HP) Hereditary Property}, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame]
+
+If \(A \in \overline{K}\), \(\mathcal{B} \cong \mathcal{C} \in A\), and
+\(\mathcal{C}\) is finitely generated, then
+\(\mathcal{B} \in \overline{K}\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, left=2mm, toprule=.15mm, rightrule=.15mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, arc=.35mm, colback=white, breakable, title={(JEP) Joint Embedding Property}, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame]
+
+If \(A, \mathcal{B} \in \overline{K}\), then there exists
+\(\mathcal{C} \in \overline{K}\) and embeddings
+\[f_0: A \to \mathcal{C}, \quad f_1: \mathcal{B} \to \mathcal{C}\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, left=2mm, toprule=.15mm, rightrule=.15mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, arc=.35mm, colback=white, breakable, title={(AP) Amalgamation Property}, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame]
+
+If \(A, \mathcal{B}, \mathcal{C} \in \overline{K}\) with embeddings
+\(f_0: A \to \mathcal{B}\) and \(f_1: A \to \mathcal{C}\), then there
+exists \(\mathcal{D} \in \overline{K}\) and embeddings
+\[g_0: \mathcal{B} \to \mathcal{D}, \quad g_1: \mathcal{C} \to \mathcal{D}\]
+such that \(g_0 \circ f_0 = g_1 \circ f_1\).
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-}{}\label{exr-}
+
+\hfill\break
+Show that (AP) does not imply (JEP).
+
+(\emph{Hint: finite fields})
+
+\end{exercise}
+
+\begin{example}[]\protect\hypertarget{exm-}{}\label{exm-}
+
+\hfill\break
+\(\overline{K} = \{ (Z,<): (Z,<) \text{ finite linear order} \}\) forms
+an amalgamation class.
+
+\end{example}
+
+\subsection{Fraïssé's Theorem}\label{frauxefssuxe9s-theorem}
+
+\begin{theorem}[]\protect\hypertarget{thm-fraisse}{}\label{thm-fraisse}
+
+Let \(\overline{K}\) be a class of finitely generated
+\(\mathcal{L}\)-structures such that there are only countably many
+isomorphism types in \(\overline{K}\).
+
+Then: \(\overline{K}\) is an amalgamation class \(\Leftrightarrow\)
+\(\overline{K}\) is the age of a countable homogeneous
+\(\mathcal{L}\)-structure.
+
+\end{theorem}
+
+\begin{proof}
+\textbf{(\(\Leftarrow\)):} Suppose
+\(\overline{K} = \text{age}(\mathcal{M})\) where \(\mathcal{M}\) is
+countable and homogeneous.
+
+\textbf{(HP):} Holds by definition of age.
+
+\textbf{(JEP):} Let
+\(\mathcal{A}, \mathcal{B} \in \text{age}(\mathcal{M})\). Then
+\(A \cong \langle A \rangle^{\mathcal{M}}\) and
+\(\mathcal{B} \cong \langle B \rangle^{\mathcal{M}}\), with
+\(A,B \subseteq M\) finite. Then \(\mathcal{A}\) and \(\mathcal{B}\)
+embed into \(\langle A \cup B \rangle^{\mathcal{M}}\).
+
+\textbf{(AP):} Suppose \(f_0: \mathcal{A} \to \mathcal{B}\) and
+\(f_1: \mathcal{A} \to \mathcal{C}\) are embeddings, where
+\(\mathcal{A}, \mathcal{B}, \mathcal{C} \in \text{age}(\mathcal{M})\).
+
+Without loss of generality,
+\(\mathcal{A}, \mathcal{B}, \mathcal{C} \subseteq \mathcal{M}\) and
+\(f_0 = \text{id}_A\).
+
+Since \(\mathcal{M}\) is homogeneous, there exists an automorphism
+\(\pi: \mathcal{M} \overset{\sim}{\to} \mathcal{M}\) such that
+\(\pi^{-1}|_A = f_1\) (i.e., \(\pi\) extends \(f_1^{-1}\)).
+
+Consider
+\(\mathcal{D} = \langle B \cup \pi^{-1}(C) \rangle^{\mathcal{M}}\).
+\(\mathcal{D}\) amalgamates \(\mathcal{B}\) and \(\mathcal{C}\) via
+\(\text{id}_{\mathcal{B}}: \mathcal{B} \to \mathcal{D}\) and
+\(\pi^{-1}|_C: \mathcal{C} \to \mathcal{D}\).
+\end{proof}
+
+\textbf{(\(\Rightarrow\)):} Assume \(\overline{K}\) is an amalgamation
+class. We construct a structure \(\mathcal{N}\) with
+\(\text{age}(\mathcal{N}) = \overline{K}\) where \(\mathcal{N}\) is
+homogeneous and has domain \(N \subset \mathbb{N}\).
+
+Since \(\overline{K}\) has countably many isomorphism types, we
+enumerate the elements of \(\overline{K}\) (up to isomorphism) as
+\((\mathcal{K}_e: e \in \mathbb{N})\) where
+\(K_e \subseteq \mathbb{N}\).
+
+Consider tuples \((\bar{a}, \bar{b}, f)\) where \(\bar{a}_i, \bar{b}_i\)
+are finite subsets of \(\mathbb{N}\) and \(f\) is a partial function
+with \(\operatorname{dom}(f) = \bar{a}\) and
+\(\text{ran}(f) \subseteq \bar{b}\). Enumerate all such triples as
+\((\bar{a}_e, \bar{b}_e, f_e)\) so that every \((\bar{a}, \bar{b}, f)\)
+occurs infinitely often.
+
+\(\mathcal{N}\) will be the union of an increasing sequence
+\((\mathcal{C}_n)_{n \in \mathbb{N}}\) where
+\(\mathcal{C}_n \in \overline{K}\).
+
+\textbf{Initialize:} \(\mathcal{C}_0 = \mathcal{K}_0\)
+
+Now assume we have defined \(\mathcal{C}_n\).
+
+\textbf{Case \(n = 2\ell\) (even):} Apply (JEP) to
+\(\mathcal{C}_n, \mathcal{K}_\ell\) to obtain \(\mathcal{C}_{n+1}\).
+
+\textbf{Case \(n = 2\ell + 1\) (odd):} If \(\bar{a}_\ell\) or
+\(\bar{b}_\ell \nsubseteq C_n\), put
+\(\mathcal{C}_{n+1} = \mathcal{C}_n\). If
+\(\bar{a}_\ell, \bar{b}_\ell \subseteq C_n\), let
+\(\mathcal{A}_\ell = \langle \bar{a}_\ell \rangle^{\mathcal{C}_n}\) and
+\(\mathcal{B}_\ell = \langle \bar{b}_\ell \rangle^{\mathcal{C}_n} \subseteq \mathcal{C}_n\).
+Apply (AP) to the embeddings
+\(\operatorname{id}: \mathcal{A}_\ell \to \mathcal{C}_n\) and
+\(f: \mathcal{A}_\ell \to \mathcal{B}_\ell\) (induced by
+\(f_\ell: \bar{a}_\ell \to \bar{b}_\ell\)). This yields a structure
+\(\mathcal{C}_{n+1} \in \overline{K}\). Renaming if necessary, we can
+assume \(\mathcal{C}_n \subseteq \mathcal{C}_{n+1}\).
+
+Define \(\mathcal{N} = \bigcup_{n \in \mathbb{N}} \mathcal{C}_n\).
+
+\textbf{Claim 1:} \(\text{age}(\mathcal{N}) = \overline{K}\).\\
+In the even steps \(n = 2\ell\), we ensure
+\(K_\ell \subseteq \mathcal{N}\), so all structures isomorphic to
+\(K_\ell\) also enter \(\text{age}(\mathcal{N})\). Since the
+\((K_e)_{e \in \mathbb{N}}\) enumerates all isomorphism types of
+\(\overline{K}\), we get \(\text{age}(\mathcal{N}) = \overline{K}\).
+
+\textbf{Claim 2:} \(\mathcal{N}\) is homogeneous.\\
+Let \(\tau: A \to \mathcal{B}\) be an isomorphism between finitely
+generated substructures
+\(\mathcal{A} = \langle \bar{a} \rangle^{\mathcal{N}}\) and
+\(\mathcal{B} = \langle \bar{b} \rangle^{\mathcal{N}}\) where
+\(\bar{a}, \bar{b} \in N\) are finite. We show that for any
+\(c_0 \in N \setminus B\), there exists a partial isomorphism
+\(\tau': \mathcal{A}' \to \mathcal{B}'\) where
+\(\mathcal{A}', \mathcal{B}'\) are finitely generated,
+\(\tau' \supseteq \tau\), and \(c_0 \in \operatorname{dom}(\tau')\).
+(This suffices since we can continue via back-and-forth.)
+
+There exists \(\ell\) such that \(f_\ell\) induces an embedding
+\(f: A \to \langle \mathcal{B} \cup \{c_0\} \rangle^{\mathcal{N}}\)
+(since every triple occurs infinitely often in the enumeration, in
+particular the triple \((\bar{a}, \bar{b} \cup \{c_0\}, f)\)).
+
+In step \(n = 2\ell + 1\),
+\(\mathcal{B}_\ell =  \in \langle \mathcal{B} \cup \{c_0\} \rangle^{\mathcal{N}}\)
+and \(\mathcal{C}_n\) are amalgamated over \(A_\ell\). This yields
+embeddings: \[
+\begin{aligned}
+\operatorname{id}: & \;  \mathcal{A} \hookrightarrow \mathcal{C}_{n+1} \\
+ g: & \; \mathcal{B} \hookrightarrow \mathcal{C}_{n+1}  \text{ where } g \circ f_\ell = \operatorname{id}_A \\
+\end{aligned}
+\] Let \(a_0 = g(c_0)\). Then
+\((g|_{\mathcal{B}})^{-1}: \langle \bar{a} \cup \{a_0\} \rangle^{\mathcal{N}} \overset{\sim}{\to} \langle \bar{b} \cup \{c_0\} \rangle^{\mathcal{N}}\)
+is the desired isomorphism.
+
+
+
+
+\end{document}

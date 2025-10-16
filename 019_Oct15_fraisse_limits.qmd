@@ -43,7 +43,7 @@ $\overline{K} = \{ (Z,<): (Z,<) \text{ finite linear order} \}$ forms an amalgam
 
 ## Fraïssé's Theorem
 
-::: {#thm-fraisse}
+::: {#thm-fraisse-thm}
 Let $\overline{K}$ be a class of finitely generated $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
 
 Then: $\overline{K}$ is an amalgamation class $\Leftrightarrow$ $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
