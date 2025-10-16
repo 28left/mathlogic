@@ -43,6 +43,8 @@ website:
         text: Oct 10
       - href: 018_Oct13_homogeneous_structures.qmd
         text: Oct 13
+      - href: 019_Oct15_fraisse_limits.qmd
+        text: Oct 15
 
 
 
@@ -86,7 +88,7 @@ callouty-theorem:
     callout:
       type: tip
       appearance: simple
-  exa:
+  exm:
     override-title: false
     callout:
       type: tip
