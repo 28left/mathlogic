@@ -48,7 +48,7 @@ Show that every countable model of $T_{RG}$ is homogeneous.
 Show that if $\mathcal{R}$ is a model of $T_{RG}$, $\operatorname{age}(\mathcal{R}) = \overline{K}$.
 :::
 
-It follows from  that $T_{RG}$ has a countable model $\mathcal{R}$, and that this model is unique up to isomorphism.
+It follows from Fraïssé's Theorem that $T_{RG}$ has a countable model $\mathcal{R}$, and that this model is unique up to isomorphism.
 
 ::: {#exr-}
 Show that $T_{RG}$ is complete.
@@ -77,7 +77,7 @@ This justifies referring to $\mathcal{R}$ as *the random graph*, since it can be
 
 ### 0-1 law for graphs
 
-::: {#thm-}
+::: {#thm-zero-one}
 For any $\mathcal{L}_G$-sentence $\sigma$,
 
 $$

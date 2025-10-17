@@ -78,7 +78,7 @@ callouty-theorem:
   thm:
     override-title: false
     callout:
-      type: tip
+      type: caution
       appearance: simple
   lem:
     override-title: false
