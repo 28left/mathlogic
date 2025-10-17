@@ -11,7 +11,7 @@ To simplify things, we state everything in the context of a **finite language th
 - $\mathrm{age}(\mathcal{M})$ is the class of all finite $\mathcal{L}$-structures isomorphic to a substructure of $\mathcal{M}$.
 - Any two countable homogeneous structures with the same age are isomorphic.
 - A class of finite structures $\overline{K}$ is an **amalgamation class** if it satisfies (HP), (JEP), and (AP). In words, every substructure of a structure in $\overline{K}$ is in $\overline{K}$, any two structures in $\overline{K}$ embed into another structure from $\overline{K}$, and any two structures with a common substructure (up to isomorphism) amalgamate to another structure that preserves the common substructure.
-- **Fraïssé's theorem:** Suppose $\overline{K}$ is a class of finite $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
+- **Fraïssé's Theorem:** Suppose $\overline{K}$ is a class of finite $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
 Then $\overline{K}$ is an amalgamation class iff $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
 
 
