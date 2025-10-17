@@ -5,6 +5,15 @@ title: "MATH 557 Oct 17"
 # Fraïssé Theory of Random Graphs
 
 ## Key facts from Fräissé theory
+To simplify things, we state everything in the context of a **finite language that contains only constants and relations**. In this case *finitely generated* is equivalent to *finite*.
+
+- $\mathcal{M}$ is **homogeneous** if any isomorphism between finite substructures of $\mathcal{M}$ can be extended to an automorphism of $\mathcal{M}$.
+- $\mathrm{age}(\mathcal{M})$ is the class of all finite $\mathcal{L}$-structures isomorphic to a substructure of $\mathcal{M}$.
+- Any two countable homogeneous structures with the same age are isomorphic.
+- A class of finite structures $\overline{K}$ is an **amalgamation class** if it satisfies (HP), (JEP), and (AP). In words, every substructure of a structure in $\overline{K}$ is in $\overline{K}$, any two structures in $\overline{K}$ embed into another structure from $\overline{K}$, and any two structures with a common substructure (up to isomorphism) amalgamate to another structure that preserves the common substructure.
+- **Fraïssé's theorem:** Suppose $\overline{K}$ is a class of finite $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
+Then $\overline{K}$ is an amalgamation class iff $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
+
 
 ## Simple graphs
 
@@ -29,7 +38,7 @@ It follows that $\overline{K}$ has a Fraïssé limit. What does this limit look 
 
 ## Random graphs
 
-We now add the following **extension axioms**:
+We add the following **extension axioms**:
 
 $$
 \sigma_{n,m} \equiv \forall x_1, \dots, x_n \forall y_1, \dots, y_m \; \left ( \bigwedge_{i=1}^n \bigwedge_{j = 1}^m x_i \neq y_j \; \to \; \exists z \: \bigl ( \bigwedge_{i=1}^n (z \neq  x_i \land E(z,x_i) ) \land \bigwedge_{j = 1}^m (z \neq y_j \land \neg E(z, y_j)) \bigr ) \right )
@@ -81,17 +90,14 @@ This justifies referring to $\mathcal{R}$ as *the random graph*, since it can be
 For any $\mathcal{L}_G$-sentence $\sigma$,
 
 $$
-\text{either } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 0 \text{ or } \lim_{N \to \infty} \mathbb{P}_N(\sigma_{n,m}) = 1.
+\text{either } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 0 \text{ or } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 1.
 $$
-:::
-
-It follows that $T_{RG}$ axiomatizes the *almost sure theory$ of graphs
-
+Moreover, $T_{RG}$ axiomatizes the theory
 $$
 \{ \sigma : \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 1 \} 
 $$
-
-(and we already know this theory is complete).
+and this theory is complete.
+:::
 
 *To prove the theorem, use that $T_{RG}$ is complete together with @exr-asextension. Give it a try!*
 
@@ -105,4 +111,4 @@ There are other classes of structures that are amalgamation classes, for example
 - (non-trivial) finite Boolean algebras 
 
 
-*What could be the Fraïssé limit in each case?*
+*What kind of object is the Fraïssé limit in each case?*
