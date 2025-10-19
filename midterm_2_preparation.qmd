@@ -1,0 +1,116 @@
+---
+title: "MATH 557 Midterm 2 Preparation"
+---
+
+The second midterm will have two parts:
+
+1. Reproduce a proof (in sufficient detail) of one the theorems below we covered in class.
+2. Present a proof to one of the exercises (or a closely related problem) listed on this page.
+
+## Theorems
+
+::: Theorem
+
+Any two countable models of $\operatorname{DLO}$ are isomorphic.
+:::
+
+::: Theorem
+
+Suppose for $\mathcal{L}$-theories $\mathcal{M}, \mathcal{N}$, $\mathcal{M} \subseteq \mathcal{N}$ and for any formula $\psi(x, \vec{y})$ and any $\vec{a} \in M$, if there exists $b \in N$ such that $\mathcal{N} \models \psi[b, \vec{a}]$, then there also exists $c \in M$ such that $\mathcal{N} \models \psi[c, \vec{a}]$. Then $\mathcal{M} \preceq \mathcal{N}$.
+:::
+
+::: Theorem 
+
+Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ is $\kappa$-categorical for some $\kappa \geq |\mathcal{L}|$, then $T$ is complete.
+:::
+
+::: Theorem
+
+Let $\mathcal{A}$ be an $\mathcal{L}$-structure, $\kappa$ an infinite cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\kappa \le \operatorname{card}(A)$. Then there exists a structure $\mathcal{B}$ with
+$$
+\mathcal{B} \preceq  \mathcal{A} \; , \; \operatorname{card}(B) = \kappa.
+$$
+:::
+
+
+::: Theorem
+
+Let $\mathcal{A}$ be an infinite $\mathcal{L}$-structure, $\kappa$ a cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\operatorname{card}(A) \le \kappa$. Then there exists a structure $\mathcal{B}$ with
+$$
+\mathcal{A} \preceq  \mathcal{B} \; , \;  \operatorname{card}(B) = \kappa.
+$$
+:::
+
+
+::: Theorem
+
+Let $\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}$ be an ultraproduct.
+For every $\mathcal{L}$-formula $\varphi(x_1,\dots,x_n)$ and tuples  
+$\vec a \in \prod_{i \in I} M_i$,
+$$
+\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
+\iff
+\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
+$$
+:::
+
+
+::: Theorem
+
+Any two countable homogeneous structures with the same age are isomorphic.
+:::
+
+::: Theorem
+
+Let $\mathcal{L}$ be a finite language with only relation symbols. Let $\overline{K}$ be a class of finite $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
+
+Then $\overline{K}$ is an amalgamation class if and only if $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
+:::
+
+
+
+## Problems
+
+::: Problem
+
+Let $\mathcal{L}$ be an arbitrary language. Show that for finite $\mathcal{L}$-structures $\mathcal{M}, \mathcal{N}$,
+$$
+\mathcal{M} \equiv \mathcal{N} \; \iff \; \mathcal{M} \cong \mathcal{N}
+$$
+:::
+
+::: Problem
+
+A model $\mathcal{M}$ of an $\mathcal{L}$-theory $T$ is **prime** if for every $\mathcal{N} \models T$, there exists an elementary embedding of $\mathcal{M}$ into $\mathcal{N}$.
+
+- Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
+- Show that if $T$ is an $\omega$-categorical theory over a countable language and has no finite models, $T$ has a prime model.
+:::
+
+
+::: Problem
+
+If we take an ultraproduct over the same structure $\mathcal{M}$ along an index set $I$, we call this an **ultrapower**, denoted by 
+$$
+\mathcal{M}^I/\mathcal{U}
+$$
+
+Let $\mathcal{U}$ be a free ultrafilter on an (infinite) set $I$. The map $j: b \mapsto (b)_{i \in I}/\mathcal{U}$ defines an **elementary embedding** of $\mathcal{M}$ into $\mathcal{M}^I/\mathcal{U}$ (i.e. it is injective and the image is an elementary substructure).
+
+Show that if $\mathcal{M}$ is infinite, $j$ is not a surjection.
+:::
+
+::: Problem
+
+Let $G_N$ be the set of all simple graphs on the vertex set $\{1, \dots, N\}$. Let $\mathbb{P}_N(\sigma)$ be the probability that an $\mathcal{L}_G$-sentence $\sigma$ holds for a random graph in $G_N$, i.e.
+$$
+\mathbb{P}_N(\sigma)=  \frac{|\{ \mathcal{G} \in G_N : \mathcal{G} \models \sigma\}|}{|G_N|}.
+$$
+
+Show that for any $\mathcal{L}_G$-sentence $\sigma$,
+$$
+\text{either } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 0 \text{ or } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 1.
+$$
+:::
+
+
