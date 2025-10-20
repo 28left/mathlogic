@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./011_Sep24_compactness.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -95,7 +96,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -137,9 +138,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Math 557 Fall 2025</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -318,7 +318,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home Problem 1
+<span class="screen-reader-only">Important</span>Take-home Problem 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -389,7 +389,7 @@ Suppose <span class="math inline">\(\varphi \equiv \exists x \psi \equiv \exists
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home Problem 2
+<span class="screen-reader-only">Important</span>Take-home Problem 2
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -404,12 +404,12 @@ Let <span class="math inline">\(\mathcal{L}\)</span> be any finite language and 
 <p>Since <span class="math inline">\(\mathcal{M}\)</span> is finite, we may assume <span class="math inline">\(M = \{1, \dots, n\}\)</span> for some <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
 <p>The basic idea is to collect all “elementary facts” about <span class="math inline">\(\mathcal{M}\)</span> in a single formula (think of a <em>group multiplication table</em>, just for all functions and relations).</p>
 <p>Define</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{aligned}
 \varphi \equiv \; \exists x_1, \dots, x_n   \biggl ( &amp; \bigwedge_{i \neq m} x_i \neq x_l \; \land \; \forall y \bigvee_{i \leq n} y = x_i \\
 &amp; \land \bigwedge_{i \leq k} c_i = x_{c^{\mathcal{M}}_i} \\
 &amp; \land \bigwedge_{i\leq l} \bigwedge_{\pi \in \{1,\dots, n\}^{a_i}} f_i x_{\pi(1)} \dots x_{\pi(a_i)} = x_{f^{\mathcal{M}}_i(\pi(1), \dots, \pi(a_i))} \\
 &amp; \land \bigwedge_{i\leq j} \bigwedge_{\pi \in \{1,\dots, n\}^{b_i}} \delta_\pi R_i x_{\pi(1)} \dots x_{\pi(b_i)} \biggr )
-\end{align}\]</span></p>
+\end{aligned}\]</span></p>
 <p>where <span class="math inline">\(\delta_\pi\)</span> is empty if <span class="math inline">\(R(\pi(1), \dots, \pi(b_i))\)</span> holds in <span class="math inline">\(\mathcal{M}\)</span>, and <span class="math inline">\(\neg\)</span> if not.</p>
 <p>Assme <span class="math inline">\(\mathcal{N} \models \varphi\)</span>. Due to the first line of the equation, <span class="math inline">\(N\)</span> has exactly <span class="math inline">\(n\)</span> elements, and let <span class="math inline">\(r_i \in N\)</span> be the witness to <span class="math inline">\(\exists x_i\)</span>. Define a mapping <span class="math inline">\(\tau: M \to N\)</span> by letting <span class="math inline">\(\tau(i) = r_i\)</span>. We claim that <span class="math inline">\(\tau\)</span> is an isomorphism.</p>
 <p>By definition we have <span class="math inline">\(\tau(c_i^{\mathcal{M}}) = r_{c_i^{\mathcal{M}}}\)</span>. Moreover, by the second line of the formula, <span class="math inline">\(r_{c^{\mathcal{M}}_i}\)</span> is the unique element of <span class="math inline">\(N\)</span> that makes the formula <span class="math inline">\(c_i = x_{c_i^{\mathcal{M}}}\)</span> true. It follows that <span class="math inline">\(\tau(c_i^{\mathcal{M}}) = c_i^{\mathcal{N}}\)</span> for all <span class="math inline">\(1 \leq i \leq k\)</span>.</p>
@@ -424,7 +424,7 @@ Let <span class="math inline">\(\mathcal{L}\)</span> be any finite language and 
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home Problem 3
+<span class="screen-reader-only">Important</span>Take-home Problem 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -438,12 +438,12 @@ Give an example of a language <span class="math inline">\(\mathcal{L}\)</span> a
 </div>
 <div id="sol-3" class="proof solution">
 <p><span class="proof-title"><em>Solution 3</em>. </span>Let <span class="math inline">\(\mathcal{L} = \{&lt;\}\)</span>, where <span class="math inline">\(&lt;\)</span> is a binary relation symbol. Define</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{aligned}
 \psi \equiv \;  &amp; \forall x \; x \nless x \\
     &amp; \land \forall x,y \; x &lt; y \lor x=y \lor y &lt; x \\
     &amp; \land \forall x,y,z \; (x &lt; y \land y &lt; z) \to x &lt; z \\
     &amp; \land \forall x \exists y \; x &lt; y
-\end{align}\]</span></p>
+\end{aligned}\]</span></p>
 <p>The formula says that <span class="math inline">\(&lt;\)</span> is a linear order with no maximal element.</p>
 <p>Clearly, <span class="math inline">\((\mathbb{Z}, &lt;) \models \psi\)</span>.</p>
 <p>Now suppose <span class="math inline">\(\mathcal{M} \models \psi\)</span>. Due to the last line of <span class="math inline">\(\psi\)</span>, there exists a function <span class="math inline">\(f: M \to M\)</span> such that <span class="math inline">\(x &lt; f(x)\)</span> for all <span class="math inline">\(x \in M\)</span>. We claim that for any <span class="math inline">\(x\)</span> and for any <span class="math inline">\(n \neq m\)</span>, <span class="math display">\[
@@ -459,16 +459,16 @@ f^{(n)}(x) \neq f^{(m)}(x)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home problem 4
+<span class="screen-reader-only">Important</span>Take-home problem 4
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><br>
 Show that</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[\begin{aligned}
 \{\varphi \to \psi \} &amp; \vdash \exists x \varphi \: \to \: \exists x \psi \\
 \{\varphi \to \psi \} &amp; \vdash \forall x \varphi \: \to \: \forall x \psi \\
-\end{align*}\]</span></p>
+\end{aligned}\]</span></p>
 </div>
 </div>
 <div id="sol-4" class="proof solution">
@@ -563,7 +563,7 @@ Show that</p>
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home Problem 6
+<span class="screen-reader-only">Important</span>Take-home Problem 6
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -652,13 +652,14 @@ Use the compactness theorem to show (without using the Axiom of Choice) that eve
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
