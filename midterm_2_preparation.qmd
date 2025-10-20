@@ -19,10 +19,6 @@ Any two countable models of $\operatorname{DLO}$ are isomorphic.
 Suppose for $\mathcal{L}$-theories $\mathcal{M}, \mathcal{N}$, $\mathcal{M} \subseteq \mathcal{N}$ and for any formula $\psi(x, \vec{y})$ and any $\vec{a} \in M$, if there exists $b \in N$ such that $\mathcal{N} \models \psi[b, \vec{a}]$, then there also exists $c \in M$ such that $\mathcal{N} \models \psi[c, \vec{a}]$. Then $\mathcal{M} \preceq \mathcal{N}$.
 :::
 
-::: Theorem 
-
-Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ is $\kappa$-categorical for some $\kappa \geq |\mathcal{L}|$, then $T$ is complete.
-:::
 
 ::: Theorem
 
@@ -39,6 +35,11 @@ Let $\mathcal{A}$ be an infinite $\mathcal{L}$-structure, $\kappa$ a cardinal wi
 $$
 \mathcal{A} \preceq  \mathcal{B} \; , \;  \operatorname{card}(B) = \kappa.
 $$
+:::
+
+::: Theorem 
+
+Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ is $\kappa$-categorical for some $\kappa \geq |\mathcal{L}|$, then $T$ is complete.
 :::
 
 
@@ -60,13 +61,13 @@ $$
 Any two countable homogeneous structures with the same age are isomorphic.
 :::
 
-::: Theorem
+<!-- ::: Theorem
 
 Let $\mathcal{L}$ be a finite language with only relation symbols. Let $\overline{K}$ be a class of finite $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
 
 Then $\overline{K}$ is an amalgamation class if and only if $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
 :::
-
+ -->
 
 
 ## Problems
@@ -83,8 +84,7 @@ $$
 
 A model $\mathcal{M}$ of an $\mathcal{L}$-theory $T$ is **prime** if for every $\mathcal{N} \models T$, there exists an elementary embedding of $\mathcal{M}$ into $\mathcal{N}$.
 
-- Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
-- Show that if $T$ is an $\omega$-categorical theory over a countable language and has no finite models, $T$ has a prime model.
+Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
 :::
 
 
