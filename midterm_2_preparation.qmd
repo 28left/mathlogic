@@ -84,7 +84,8 @@ $$
 
 A model $\mathcal{M}$ of an $\mathcal{L}$-theory $T$ is **prime** if for every $\mathcal{N} \models T$, there exists an elementary embedding of $\mathcal{M}$ into $\mathcal{N}$.
 
-Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
+- Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
+- Show that if $T$ is an $\omega$-categorical theory over a countable language and has no finite models, $T$ has a prime model.
 :::
 
 
