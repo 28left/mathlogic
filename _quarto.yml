@@ -49,6 +49,8 @@ website:
         text: Oct 17
       - href: midterm_2_preparation.qmd
         text: Midterm 2 preparation
+      - href: 021_Oct22_computable_functions.qmd
+        text: Oct 22
 
 
 
