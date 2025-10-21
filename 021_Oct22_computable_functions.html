@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 19 – Math 557 Fall 2025</title>
+<title>MATH 557 Oct 20 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./010_Sep22_model_existence.html" rel="next">
-<link href="./008_Sep17_completing_theories.html" rel="prev">
+<link href="./midterm_2_preparation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,12 +70,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
 .Theorem {
   --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -123,7 +122,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./009_Sep19_Henkin_theories.html">September 19</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./021_Oct22_computable_functions.html">Oct 22</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,7 +197,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./009_Sep19_Henkin_theories.html" class="sidebar-item-text sidebar-link active">
+  <a href="./009_Sep19_Henkin_theories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 19</span></a>
   </div>
 </li>
@@ -276,7 +275,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./021_Oct22_computable_functions.html" class="sidebar-item-text sidebar-link">
+  <a href="./021_Oct22_computable_functions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Oct 22</span></a>
   </div>
 </li>
@@ -290,20 +289,31 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#henkin-theories" id="toc-henkin-theories" class="nav-link active" data-scroll-target="#henkin-theories">Henkin Theories</a>
+  <li><a href="#computable-functions" id="toc-computable-functions" class="nav-link active" data-scroll-target="#computable-functions">Computable functions</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#turing-machines" id="toc-turing-machines" class="nav-link" data-scroll-target="#turing-machines">Turing machines</a>
+  <ul class="collapse">
+  <li><a href="#the-computation-of-a-turing-program" id="toc-the-computation-of-a-turing-program" class="nav-link" data-scroll-target="#the-computation-of-a-turing-program">The computation of a Turing program</a></li>
+  <li><a href="#an-example" id="toc-an-example" class="nav-link" data-scroll-target="#an-example">An example</a></li>
+  <li><a href="#turing-computable-functions" id="toc-turing-computable-functions" class="nav-link" data-scroll-target="#turing-computable-functions">Turing-computable functions</a></li>
+  </ul></li>
+  <li><a href="#register-machines" id="toc-register-machines" class="nav-link" data-scroll-target="#register-machines">Register machines</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#urm-computable-functions" id="toc-urm-computable-functions" class="nav-link" data-scroll-target="#urm-computable-functions">URM-computable functions</a></li>
+  </ul></li>
+  <li><a href="#church-turing-thesis" id="toc-church-turing-thesis" class="nav-link" data-scroll-target="#church-turing-thesis">Church-Turing Thesis</a></li>
+  <li><a href="#enumerability-of-programs-and-computable-functions" id="toc-enumerability-of-programs-and-computable-functions" class="nav-link" data-scroll-target="#enumerability-of-programs-and-computable-functions">Enumerability of programs and computable functions</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="009_Sep19_Henkin_theories.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="021_Oct22_computable_functions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 19</h1>
+<h1 class="title">MATH 557 Oct 20</h1>
 </div>
 
 
@@ -320,140 +330,281 @@ window.Quarto = {
 </header>
 
 
-<section id="henkin-theories" class="level1">
-<h1>Henkin Theories</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><p>An <span class="math inline">\(\mathcal{L}\)</span>-theory <span class="math inline">\(T\)</span> is a <strong>Henkin theory</strong> if for every sentence of the form <span class="math inline">\(\exists x \psi\)</span> there exists a constant <span class="math inline">\(\mathcal{L}\)</span>-term <span class="math inline">\(t\)</span> such that <span class="math display">\[
-  T \vdash_{\mathcal{L}} \exists x \psi \; \to \; \psi_{t/x}
-\]</span></p></li>
-<li><p><strong>Questions:</strong></p>
-<ul>
-<li>What are Henkin theories needed for?</li>
-<li>Do they exist?</li>
-<li>Can we extend a given consistent theory to a Henkin theory that is still consistent?</li>
-</ul></li>
-</ul>
+<section id="computable-functions" class="level1">
+<h1>Computable functions</h1>
+<section id="turing-machines" class="level2">
+<h2 class="anchored" data-anchor-id="turing-machines">Turing machines</h2>
+<p>A <strong>Turing machine</strong> <span class="math inline">\(M\)</span> has an unlimited (both sides) <strong>tape</strong> which is partitioned into infinitely many <strong>cells</strong>. Each cell can hold a letter from a finite <strong>alphabet</strong> <span class="math inline">\(s_1,\ldots,s_n\)</span>. At any time, only finitely many cells contain a symbol <span class="math inline">\(\in \{s_1,\ldots,s_n\}\)</span>. The empty cells are marked by a <em>blank</em> symbol <span class="math inline">\(b\)</span> that is distinct from the <span class="math inline">\(s_i\)</span>. To facilitate things, we put <span class="math inline">\(s_0 := b\)</span>.</p>
+<p>Access to the tape is given via a <strong>read-write head</strong>, which scans a single cell. The cell currently scanned can be read and its contents overwritten. The head can also move left or right. These actions can be made dependent on the contents of the scanned cell.</p>
+<p>Thus, the machine can read any cell on the tape and read and write its contents. Furthermore, at any time <span class="math inline">\(M\)</span> is in one of finitely many <strong>states</strong> <span class="math inline">\(q_1,\ldots, q_r\)</span>. The states influence the behavior of <span class="math inline">\(M\)</span>.</p>
+<p>Formally, there are three types of operations (also called <em>instructions</em>): Suppose <span class="math inline">\(M\)</span> is in state <span class="math inline">\(q_i\)</span> and currently scan a cell with symbol <span class="math inline">\(s_j\)</span> (<span class="math inline">\(0 \leq j \leq n\)</span>).</p>
+<ol type="1">
+<li><span class="math inline">\(q_i \; s_j \; s_k \; q_l\)</span>:   delete <span class="math inline">\(s_j\)</span> write <span class="math inline">\(s_k\)</span>,</li>
+<li><span class="math inline">\(q_i \; s_j \;R \; q_l\)</span>:   move the head one cell to the right,</li>
+<li><span class="math inline">\(q_i \; s_j \; L \; q_l\)</span>:   move the head one cell to the left.</li>
+</ol>
+<p>In each case, transition to <span class="math inline">\(q_l\)</span> afterwards.</p>
+<p>A (deterministic) <strong>Turing program</strong> is a finite list of instructions (1)-(3) such that for any pair <span class="math inline">\((q_i,s_k)\)</span> there is at most one instruction starting with <span class="math inline">\(q_i, s_k\)</span>.</p>
+<section id="the-computation-of-a-turing-program" class="level3">
+<h3 class="anchored" data-anchor-id="the-computation-of-a-turing-program">The computation of a Turing program</h3>
+<p>The machine begins in state <span class="math inline">\(q_1\)</span> scanning the leftmost cell not containing a blank and follows the instructions, describe above, according to the current state and the content of the current cell.</p>
+<p>If the machine enters state <span class="math inline">\(q_r\)</span>, the computation <strong>halts</strong> (no further instructions will be applied). If it ever enters a state <span class="math inline">\(q_i\)</span> and scans symbol <span class="math inline">\(s_j\)</span> for which there is no applicable instruction, it <strong>stalls</strong> (in particular, there will be no output as defined below).</p>
+<p>During the computation, the machine will pass from one <strong>configuration</strong> to the next. A configuration consists of</p>
+<blockquote class="blockquote">
+<p>the current state + the current cell scanned + the contents the left and right of the current cell up to the leftmost/rightmost non-blank symbol.</p>
+</blockquote>
+<p>Every configuration is determined by a finite amount of information.</p>
 </section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
-As before, let <span class="math inline">\(\mathcal{A}_T\)</span> be the term model of <span class="math inline">\(T\)</span>. Pinpoint exactly where we might run into difficulties when we are trying to prove <span class="math display">\[
-\mathcal{A}_T \models \exists x \psi \; \iff \; T \vdash_{\mathcal{L}} \exists x \psi
+<section id="an-example" class="level3">
+<h3 class="anchored" data-anchor-id="an-example">An example</h3>
+<p>The alphabet of <span class="math inline">\(M\)</span> consists of the symbols <span class="math inline">\(0,1\)</span> (and <span class="math inline">\(b\)</span> for a blank cell), the states are <span class="math inline">\(q_1,q_2, q_3\)</span>. The program <span class="math inline">\(P\)</span> has the following instructions: <span class="math display">\[
+\begin{aligned}
+q_1 &amp; \; 0  \; R  \; q_1\\
+q_1 &amp; \; 1  \; 0  \; q_2\\
+q_2 &amp; \; 0  \; R  \; q_2\\
+q_2 &amp; \; 1  \; R  \; q_1\\
+q_2 &amp; \; b \; b \; q_3
+\end{aligned}
 \]</span></p>
+<p>In the initial configuration, the machine looks as follows:</p>
+<div class="{=latex}">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(\downarrow\)</span></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">…</td>
+</tr>
+</tbody>
+</table>
 </div>
+<p><span class="math inline">\(M\)</span> follows the instructions above until it reaches the halting state <span class="math inline">\(q_3\)</span></p>
+<div class="{=latex}">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(\downarrow\)</span></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">…</td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div>
+</section>
+<section id="turing-computable-functions" class="level3">
+<h3 class="anchored" data-anchor-id="turing-computable-functions">Turing-computable functions</h3>
+<p>Since Turing computations may not halt (either because they stall or enter an infinite loop and never reach the halting state), we define <strong>partial computable functions</strong> whose domain may be a proper subset of <span class="math inline">\(\mathbb{N}^n\)</span>.</p>
+<p>We use the following notation:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(\vec{x}) \downarrow: &amp; \iff  f \text{ is defined for } \vec{x} \\
+f(\vec{x}) \uparrow: &amp; \iff  f \text{ is not defined for } \vec{x} \\
+f(\vec{x}) \simeq g(\vec{x}): &amp; \iff  f(\vec{x})\downarrow \iff g(\vec{x}) \downarrow \; \text{ and } \; f(\vec{x})\downarrow \Longrightarrow f(\vec{x}) = g(\vec{x}).
+\end{aligned}
+\]</span></p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2 (Interlude)</strong></span> <br>
-What if in <span class="math inline">\(\exists x \psi\)</span> the variable <span class="math inline">\(x\)</span> is not free? Does that make a difference regarding being a Henkin theory?</p>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
+We say a Turing machine <span class="math inline">\(M\)</span> with program <span class="math inline">\(P\)</span> <strong>computes</strong> a partial function <span class="math inline">\(f : \subseteq \mathbb{N} \to \mathbb{N}\)</span> if the machine, when starting with <span class="math inline">\(n+1\)</span> many <span class="math inline">\(1\)</span>’s, ends in state <span class="math inline">\(q_r\)</span> if and only if <span class="math inline">\(n\)</span> is in the domain of <span class="math inline">\(f\)</span>, and in this case, when <span class="math inline">\(M\)</span> reaches state <span class="math inline">\(q_r\)</span>, there are exactly <span class="math inline">\(f(n)\)</span> many <span class="math inline">\(1\)</span>’s on the tape (not necessarily contiguous).</p>
+<p>A partial function <span class="math inline">\(f\)</span> is <strong>Turing computable</strong> if and only if there exists a Turing machine <span class="math inline">\(M\)</span> and a program <span class="math inline">\(P\)</span> that computes it.</p>
 </div>
 </div>
 </div>
 </div>
+<p>The definition for multidimensional functions is similar.</p>
+</section>
+</section>
+<section id="register-machines" class="level2">
+<h2 class="anchored" data-anchor-id="register-machines">Register machines</h2>
+<p><em>Sheperdson</em> and <em>Sturgis</em> proposed a variant of a machine model in 1963: An <strong>unlimited register machine</strong> (URM) has an infinite number of <em>registers</em> <span class="math inline">\(R_1,\ldots,R_l, \dots\)</span>, each containing a natural number; we use <span class="math inline">\(r_n\)</span> to denote the number in register <span class="math inline">\(R_n\)</span>. These numbers are modified by a URM according to the following types of <strong>instructions</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 32%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Instruction</th>
+<th>Operation</th>
+<th>Alternative Form</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(O(n)\)</span>:</td>
+<td><span class="math inline">\(0 \to R_n\)</span></td>
+<td>or <span class="math inline">\(r_n:=0\)</span></td>
+<td>replace <span class="math inline">\(r_n\)</span> with <span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S(n)\)</span>:</td>
+<td><span class="math inline">\(r_n +1 \to R_n\)</span></td>
+<td>or <span class="math inline">\(r_n:= r_n+1\)</span></td>
+<td>add 1 to <span class="math inline">\(r_n\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(T(m,n)\)</span>:</td>
+<td><span class="math inline">\(r_m \to R_n\)</span></td>
+<td>or <span class="math inline">\(r_n:= r_m\)</span></td>
+<td>replace <span class="math inline">\(r_n\)</span> with <span class="math inline">\(r_m\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(J(m,n,q)\)</span>:</td>
+<td>if <span class="math inline">\(r_n = r_m\)</span>, then jump to the <span class="math inline">\(q\)</span>th instruction, otherwise proceed to the next.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Note: The jump instruction <span class="math inline">\(J(m,n,q)\)</span> spans multiple columns in the original layout since it has a different structure than the other instructions. A <strong>program</strong> is a numbered finite sequence of such instructions, <span class="math inline">\(P=(I_1,\ldots,I_k)\)</span>. To run a a program, the URM must be provided with an <strong>initial configuration</strong> of the registers, i.e.&nbsp;a sequence <span class="math inline">\((a_i)_{n \in \mathbb{N}}\)</span> such that <span class="math inline">\(r_i = a_i\)</span> for all <span class="math inline">\(i\)</span>. The machine then executes its program line-by-line, unless it encounters a jump instruction (in which case it performs the test and, if applicable, jumps to the given instruction). The computation <strong>halts</strong> if there is no “next” instruction, that is, either there is no next line to execute or the instruction given in a <span class="math inline">\(J\)</span>-type line does not exist.</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p><span class="math display">\[
+\begin{aligned}
+I_1: &amp;&amp; J(1,2,6)\\
+I_2:&amp;&amp; S(2)\\
+I_3:&amp;&amp; S(3)\\
+I_4:&amp;&amp; J(1,2,6)\\
+I_5:&amp;&amp; J(1,1,2)\\
+I_6:&amp;&amp; T(3,1)
+\end{aligned}
+\]</span></p>
+<p>If the URM starts with the number <span class="math inline">\(9\)</span> in the 1st and <span class="math inline">\(5\)</span> in the 2nd register (and 0 in all others), it produces the number <span class="math inline">\(4\)</span> in the 3rd register after several steps and then reaches instruction <span class="math inline">\(I_6\)</span>, which transfers the number <span class="math inline">\(4\)</span> to the 1st register; since no further instruction follows, the program halts.</p>
+</section>
+<section id="urm-computable-functions" class="level3">
+<h3 class="anchored" data-anchor-id="urm-computable-functions">URM-computable functions</h3>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Can you find a couple of examples of Henkin theories?</p>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2</strong></span> Let <span class="math inline">\(f\)</span> be a partial <span class="math inline">\(n\)</span>-ary function on the natural numbers, <span class="math inline">\(P\)</span> a program, and let <span class="math inline">\(a_1,\ldots, a_n, b\)</span> be given numbers. We say <span class="math inline">\(P\)</span> on input <span class="math inline">\(a_1, \ldots, a_n\)</span> <strong>converges to</strong> <span class="math inline">\(b\)</span>, written <span class="math inline">\(P(a_1,\ldots,a_n) \downarrow b\)</span>, if the run of <span class="math inline">\(P\)</span> with initial configuration <span class="math inline">\(a_1, \dots, a_n, 0, 0, 0, \dots\)</span> halts after finitely many steps and the number <span class="math inline">\(b\)</span> is in the 1st register.</p>
+<p><span class="math inline">\(P\)</span> <strong>computes</strong> <span class="math inline">\(f\)</span> if and only if for all <span class="math inline">\(a_1,\ldots,a_n, b\)</span> we have</p>
+<p><span class="math display">\[
+P(a_1,\ldots,a_n) \downarrow b \; \iff \;  f(a_1,\ldots,a_n) \text{ is defined and equals } b.
+\]</span></p>
+<p>We say <span class="math inline">\(f\)</span> is <strong>URM-computable</strong> if and only if there exists a program <span class="math inline">\(P\)</span> that computes <span class="math inline">\(f\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<p>The basic construction step for extending an <span class="math inline">\(\mathcal{L}\)</span>-theory <span class="math inline">\(T\)</span> to a Henkin theory is for every sentence of the form <span class="math inline">\(\sigma \equiv \exists x \psi\)</span>,</p>
+</section>
+</section>
+<section id="church-turing-thesis" class="level2">
+<h2 class="anchored" data-anchor-id="church-turing-thesis">Church-Turing Thesis</h2>
+<p>There are further approaches to formalize the notion of <strong>computable functions</strong>:</p>
 <ul>
-<li>add a new constant symbol <span class="math inline">\(c_\sigma\)</span> to <span class="math inline">\(\mathcal{L}\)</span></li>
-<li>add the formula <span class="math inline">\(\exists x \psi \; \to \; \psi_{c_\sigma/x}\)</span> to <span class="math inline">\(T\)</span>.</li>
+<li><em>Gödel-Herbrand-Kleene</em> (1936): <em>general recursive functions</em> defined via an equational calculus</li>
+<li><em>Church</em> (1936): <span class="math inline">\(\lambda\)</span>-definable functions</li>
+<li><em>Gödel-Kleene</em> (1936): <span class="math inline">\(\mu\)</span>-recursive functions</li>
+<li><em>Post</em> (1943): computable functions via <em>canonical deduction systems</em></li>
+<li>Markov (1951): computable functions via <em>algorithms</em> over finite alphabets</li>
 </ul>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Why could the addition of a constant theoretically lead to <span class="math inline">\(T\)</span> being inconsistent, even though <span class="math inline">\(T\)</span> itself remains unchanged?</p>
-<p>And why does <span class="math inline">\(T\)</span> actually remain consistent?</p>
-</div>
-</div>
-</div>
-</div>
-<p>The Henkin extension <span class="math inline">\(T_H\)</span> of <span class="math inline">\(T\)</span> is obtained by an iterative process:</p>
-<p>Single iteration step:</p>
-<ul>
-<li><span class="math inline">\(\mathcal{L}' = \mathcal{L} \cup \{c_\sigma \colon \sigma \: \mathcal{L}\text{-sentence of the form } \exists x \psi \}\)</span></li>
-<li><span class="math inline">\(\Gamma = \{ \exists x \psi(x) \to \psi_{c_\sigma/x} \colon \sigma \: \mathcal{L}\text{-sentence of the form } \exists x \psi \}\)</span></li>
-<li><span class="math inline">\(T' = T \cup \Gamma\)</span> (an <span class="math inline">\(\mathcal{L}'\)</span>-theory)</li>
-</ul>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Why is <span class="math inline">\(T'\)</span> above not necessarily a Henkin theory?</p>
-</div>
-</div>
-</div>
-</div>
-<p>Iteration process:</p>
-<ul>
-<li><span class="math inline">\(\mathcal{L}_0 = \mathcal{L}, \; T_0 = T\)</span></li>
-<li><span class="math inline">\(\mathcal{L}_{n+1} = \mathcal{L}'_n, \; T_{n+1} = T_n'\)</span></li>
-<li><span class="math inline">\(\textstyle \mathcal{L}_H = \bigcup_{n \in \mathbb{N}} \mathcal{L}_n, \; T_H = \bigcup_{n \in \mathbb{N}} T_n\)</span></li>
-</ul>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> <br>
-Why is <span class="math inline">\(T_H\)</span> a Henkin theory?</p>
-</div>
-</div>
-</div>
-</div>
-<p><span class="math inline">\(T_H\)</span> is no longer a purely symbolic extension of <span class="math inline">\(T\)</span> (in the sense that we simply extend the language), since we add new sentences to <span class="math inline">\(T\)</span> (the sentences in <span class="math inline">\(\Gamma\)</span> for each iteration step).</p>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<p>All these definitions turned out to be formally equivalent, and moreover, every individual (intuitively) computable function has so far been shown to be computable in the above formal sense, which has given rise to the following thesis:</p>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Take-home Problem
+Church-Turing Thesis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><br>
-Show that for every <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi\)</span>, <span class="math display">\[
-T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
-\]</span></p>
+<p>The (intuitively) computable functions are precisely the (in one of the above senses) formally computable functions.</p>
 </div>
 </div>
+</section>
+<section id="enumerability-of-programs-and-computable-functions" class="level2">
+<h2 class="anchored" data-anchor-id="enumerability-of-programs-and-computable-functions">Enumerability of programs and computable functions</h2>
+<p>We include, without detailed proofs, some basic facts and consequences regarding the enumeration of computable functions.</p>
+<p>Since all programs can be effectively enumerated (in any formalization, they are finite sequences over a countable alhpabet), there is an <em>effective enumeration</em> <span class="math inline">\(\varphi_0, \varphi_1, \ldots, \varphi_n, \ldots\)</span> of all unary computable (partial) functions. In particular, given an index <span class="math inline">\(n\)</span>, we can effectively produce a (Turing-, URM-, …) program that computes <span class="math inline">\(\varphi_n\)</span>.</p>
+<p>Using a diagonal argument, one obtains from this:</p>
+<ul>
+<li>there exists a total function <span class="math inline">\(f: \mathbb{N} \to \mathbb{N}\)</span> that is <em>not</em> computable:</li>
+</ul>
+<p><span class="math display">\[f(n) =\begin{cases}
+    \varphi_n(n)+1  &amp; \text{if } \varphi_n(n) \text{ is defined}, \\
+  0    &amp; \text{otherwise}.
+\end{cases}\]</span></p>
+<p>Thus, while there exists an enumeration of all <em>total</em> computable functions, this enumeration itself <em>cannot</em> be computable.</p>
+<p>The following predicates are also <em>not decidable</em> (i.e., their characteristic functions are not computable):</p>
+<ul>
+<li><span class="math inline">\(\varphi_n(n)\)</span> is defined,</li>
+<li><span class="math inline">\(\varphi_n\)</span> is a total function,</li>
+<li><span class="math inline">\(\varphi_n\)</span> is the constant function 0,</li>
+<li><span class="math inline">\(\varphi_n = \varphi_m\)</span>,</li>
+<li>the <span class="math inline">\(n\)</span>-th program with input <span class="math inline">\(n\)</span> (more generally with input <span class="math inline">\(m\)</span>) halts after finitely many steps (the <strong>halting problem</strong>).</li>
+</ul>
+<p><strong>Universal</strong> functions (or programs): For every computable 2-ary function <span class="math inline">\(f\)</span>, there exists a total computable function <span class="math inline">\(k\)</span> with <span class="math inline">\(f(n,m) = \varphi_{k(n)}(m)\)</span>; the 2-ary function <span class="math inline">\(\varphi(n,m)= \varphi_n(m)\)</span> is computable.</p>
 
 
 </section>
@@ -861,14 +1012,11 @@ T_H \vdash_{\mathcal{L}_H} \varphi \; \iff \; T \vdash_{\mathcal{L}} \varphi
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./008_Sep17_completing_theories.html" class="pagination-link" aria-label="September 17">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 17</span>
+      <a href="./midterm_2_preparation.html" class="pagination-link" aria-label="Midterm 2 preparation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Midterm 2 preparation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./010_Sep22_model_existence.html" class="pagination-link" aria-label="September 22">
-        <span class="nav-page-text">September 22</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
