@@ -194,7 +194,7 @@ Thus every primitive recursive function is also a recursive function (while the 
 
 
 
-## Recursive Relations
+### Recursive Relations
 
 ::: Definition
 A number-theoretic relation $R \subseteq \mathbb{N}^k$ is called **(primitive) recursive** if and only if its characteristic function $c_R$ is (primitive) recursive, where
@@ -214,3 +214,18 @@ A relation  $R \subseteq \mathbb{N}^k$ is called **recursively enumerable** (*r.
 
 $$R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ for a computable function } \; f.$$
 :::
+
+
+### Some Remarks
+
+- A non-empty set $A \subseteq \mathbb{N}^k$ is r.e. if and only if $A$ is the range of a computable function.
+- If $R$ is a decidable relation, then there is an effective procedure that determines if $R$ holds or not. An r.e. set is also called **semi-decidable**, since in this case we have a procedure to list the elements. 
+- If both a relation and its complement are r.e., we can run both listing procedures in parallel and wait until an element gets listed. Thus
+$$
+A \text{ decidable} \quad \Leftrightarrow \quad A \text{ and } \mathbb{N}^k \setminus A \text{ are r.e.}
+$$
+- We will later see that if $T$ is a theory consisting of a computable set of sentences, its deductive closure
+$$
+\{\sigma : T \vdash \sigma\}
+$$
+is r.e.. If $T$ is complete, this will imply that the deductive closure is decidable.
