@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Math 557 Fall 2025</title>
+<title>Math 557 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,16 +73,16 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Problem {
   --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -300,14 +300,26 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="about.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#recursive-and-partially-recursive-functions" id="toc-recursive-and-partially-recursive-functions" class="nav-link active" data-scroll-target="#recursive-and-partially-recursive-functions">Recursive and Partially Recursive Functions</a>
+  <ul class="collapse">
+  <li><a href="#the-ackermann-function" id="toc-the-ackermann-function" class="nav-link" data-scroll-target="#the-ackermann-function">The Ackermann Function</a></li>
+  <li><a href="#minimalization" id="toc-minimalization" class="nav-link" data-scroll-target="#minimalization">Minimalization</a></li>
+  <li><a href="#definition-primitive-recursive-and-recursive-relations" id="toc-definition-primitive-recursive-and-recursive-relations" class="nav-link" data-scroll-target="#definition-primitive-recursive-and-recursive-relations">Definition: Primitive Recursive and Recursive Relations</a></li>
+  <li><a href="#remarks" id="toc-remarks" class="nav-link" data-scroll-target="#remarks">Remarks</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="023_recursive_functions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Math 557</h1>
 </div>
 
 
@@ -324,9 +336,79 @@ window.Quarto = {
 </header>
 
 
-<p>About this site</p>
+<section id="recursive-and-partially-recursive-functions" class="level1">
+<h1>Recursive and Partially Recursive Functions</h1>
+<p>An example of a computable, but not p.r. function is the</p>
+<section id="the-ackermann-function" class="level2">
+<h2 class="anchored" data-anchor-id="the-ackermann-function">The Ackermann Function</h2>
+<p>The <strong>Ackermann</strong> function is a 2-ary function that is recursively defined by the following equations:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A(0,y) &amp;= y+1\\
+A(x+1,0)&amp;= A(x,1)\\
+A(x+1,y+1)&amp;= A(x,A(x+1,y))
+\end{aligned}
+\]</span></p>
+<p>This is a double recursion, yet one can easily verify that each value <span class="math inline">\(A(x,y)\)</span> is determined by finitely many “earlier” values <span class="math inline">\(A(u,v)\)</span> with <span class="math inline">\(u&lt;x\)</span> or <span class="math inline">\(u=x \wedge v&lt;y\)</span>. Writing <span class="math inline">\(F_n(m)\)</span> for <span class="math inline">\(A(n,m)\)</span>, we obtain:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_0(m)   &amp;= m+1\\
+F_1(m)  &amp;= m+2\\
+F_2(m) &amp; \approx 2m\\
+F_3(m) &amp; \approx 2^m\\
+F_4(m) &amp; \approx  2^{2^{.^{.^{.^{2}}}}} \text{ ($m$ times)}
+\end{aligned}
+\]</span></p>
+<p>This means that the <strong>Ackermann</strong> function iterates the basic arithmetic operations and grows very rapidly, particularly in the first argument (which indicates the number of iterations). In fact, it majorizes every p.r. function: If <span class="math inline">\(f\)</span> is a k-ary p.r. function, then there exists a number <span class="math inline">\(n\)</span> with</p>
+<p><span class="math display">\[
+f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
+\]</span></p>
+<p>for all <span class="math inline">\(x_1,\ldots,x_k\)</span>. Thus the 2-ary function <span class="math inline">\(A\)</span> <em>cannot</em> be p.r. (although on the other hand all <span class="math inline">\(F_n\)</span> are p.r.!). That the <strong>Ackermann</strong> function is nevertheless computable can be seen from the fact that it can be obtained from a p.r. function by means of</p>
+</section>
+<section id="minimalization" class="level2">
+<h2 class="anchored" data-anchor-id="minimalization">Minimalization</h2>
+<p>R6: <span class="math inline">\(f(\vec{x}) \simeq  \mu y \; (g(\vec{x},y)\simeq 0)\)</span>,</p>
+<p>that is,</p>
+<p><span class="math display">\[f(\vec{x}) = \begin{cases}
+  \text{the smallest } y \text{ such that}  &amp; \\  \qquad (i) \;  g(\vec{x},z)\;  \text{is defined for all} \; z\le y \;  \text{and} \\
+  \qquad (ii)   \;  g(\vec{x},y)=0, \qquad  \qquad \quad \text{if such a } y \text{ exists}, \\
+    \text{undefined}   \qquad \qquad \qquad \qquad  \;  \text{otherwise}.
+\end{cases}\]</span></p>
+<p>This principle can lead from total to partial functions (e.g., for <span class="math inline">\(g(x,y)=|x-y^2|\)</span>).</p>
+<p>The class <strong>R</strong> (or <span class="math inline">\(\mathcal{C}\)</span>) of all <strong>recursive</strong> functions is the smallest class of functions that contains the initial functions and is closed under substitution, primitive recursion and minimalization. One sometimes also speaks of <em>general recursive</em>, <span class="math inline">\(\mu\)</span><em>-recursive</em> functions or (based on <strong>Church</strong>’s thesis) of <em>computable functions</em> (<span class="math inline">\(\mathcal{C}\)</span> = <em>computable functions</em>). We will speak of <em>recursive</em> functions primarily in the case of total computable functions.</p>
+<p>Thus every p.r. function is also a recursive function (while the <strong>Ackermann</strong> function is an example of a recursive, but not p.r. function), and the closure properties from previous sections (suitably modified for partial functions) also hold for recursive functions.</p>
+</section>
+<section id="definition-primitive-recursive-and-recursive-relations" class="level2">
+<h2 class="anchored" data-anchor-id="definition-primitive-recursive-and-recursive-relations">Definition: Primitive Recursive and Recursive Relations</h2>
+<div id="Definition-1" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>A number-theoretic relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>primitive recursive</strong> or <strong>recursive</strong> (or also: <strong>decidable</strong>) if and only if its characteristic function <span class="math inline">\(c_R\)</span> is primitive recursive or recursive, respectively, where<p></p>
+<p><span class="math display">\[c_R(\vec{x}) = \begin{cases}
+    1  &amp; \text{if } \; R(\vec{x}), \\
+     0 &amp; \text{otherwise}.
+\end{cases}\]</span></p>
+</div></details>
+</div>
+<p>Thus, for example, the predicates $; x=y,, x y, , x y, , x&lt;y ; $ are primitive recursive. (Further examples are contained in later chapters.)</p>
+<div id="Definition-2" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>A relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>recursively enumerable</strong> (<em>r.e. = recursively enumerable</em>, in more recent literature also <em>c.e. = computably enumerable</em>) if and only if it is the domain of a computable function:<p></p>
+<p><span class="math display">\[R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ for a computable function } \; f.\]</span></p>
+</div></details>
+</div>
+</section>
+<section id="remarks" class="level2">
+<h2 class="anchored" data-anchor-id="remarks">Remarks</h2>
+<ol type="1">
+<li><p>A non-empty subset <span class="math inline">\(A \subseteq \mathbb{N}\)</span> is r.e. if and only if it is the range of a recursive function:</p>
+<p><span class="math inline">\(A \, \text{r.e.} \iff A = \emptyset \vee A = \{f(x)\mid x \in \mathbb{N} \} \, \text{ for a recursive function } \; f: \mathbb{N} \to \mathbb{N}\)</span></p></li>
+<li><p>In the case of a decidable relation <span class="math inline">\(R\)</span>, there exists an effective procedure that answers the question of whether <span class="math inline">\(R\)</span> holds or not. A recursively enumerable set <span class="math inline">\(A\)</span> is also called <em>positively decidable</em>, since there is at least a procedure that can output those numbers that are in <span class="math inline">\(A\)</span> as elements in a list. If the same also holds for the complement of <span class="math inline">\(A\)</span>, then one can run both procedures alternately to decide whether a number is in <span class="math inline">\(A\)</span> or not:</p></li>
+<li><p>It holds that:</p>
+<p><span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> is decidable if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(\mathbb{N}^k - A\)</span> are r.e.</p></li>
+<li><p>There exist r.e. sets that are not recursive; we will encounter examples of these later.</p></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -401,7 +483,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

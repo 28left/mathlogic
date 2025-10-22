@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Math 557 Fall 2025</title>
+<title>Math 557 Oct 24 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,20 +69,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Definition {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Exercise {
-  --color1: #FFE6B4;
+.Definition {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Problem {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Theorem {
-  --color1: #F8FBD3;
+.Exercise {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -300,14 +300,24 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="about.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#primitive-recursive-functions" id="toc-primitive-recursive-functions" class="nav-link active" data-scroll-target="#primitive-recursive-functions">Primitive Recursive Functions</a>
+  <ul class="collapse">
+  <li><a href="#examples-of-primitive-recursive-functions" id="toc-examples-of-primitive-recursive-functions" class="nav-link" data-scroll-target="#examples-of-primitive-recursive-functions">Examples of Primitive Recursive Functions</a></li>
+  <li><a href="#sec-closure-properties" id="toc-sec-closure-properties" class="nav-link" data-scroll-target="#sec-closure-properties">Closure Properties</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="prim_rec.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Math 557 Oct 24</h1>
 </div>
 
 
@@ -324,9 +334,178 @@ window.Quarto = {
 </header>
 
 
-<p>About this site</p>
+<section id="primitive-recursive-functions" class="level1">
+<h1>Primitive Recursive Functions</h1>
+<p>The following functions are certainly intuitively computable.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>R1</td>
+<td><span class="math inline">\(O(x) = 0\)</span></td>
+<td><em>Zero function</em></td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td><span class="math inline">\(S(x)=x+1\)</span></td>
+<td><em>Successor function</em></td>
+</tr>
+<tr class="odd">
+<td>R3</td>
+<td><span class="math inline">\(P^n_i(x_1,\ldots,x_n) = x_i\)</span></td>
+<td><em>i-th Projection</em></td>
+</tr>
+</tbody>
+</table>
+<p>By <strong>substituting</strong> functions into already given functions we obtain a new function:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>R4</td>
+<td><span class="math inline">\(f(\vec{x}) \simeq h(g_1(\vec{x}), \ldots, g_k(\vec{x}))\)</span></td>
+<td><em>Substitution</em></td>
+</tr>
+</tbody>
+</table>
+<p>Another important way to form new functions is by <strong>primitive recursion</strong>. According to this pattern the arithmetic operations addition, multiplication and exponentiation are defined.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>R5</td>
+<td><span class="math inline">\(f(\vec{x},0) \simeq g(\vec{x})\)</span></td>
+<td><em>Primitive recursion</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(f(\vec{x},y+1) \simeq h(\vec{x},y,f(\vec{x},y))\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="Definition-1" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>The class <strong>PRIM</strong> of all <strong>primitive recursive</strong> (abbreviated: <strong>p.r.</strong>) functions is the smallest class of functions that contains the initial functions and is closed under substitution and primitive recursion. These functions are in particular total functions.<p></p>
+</div></details>
+</div>
+<section id="examples-of-primitive-recursive-functions" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-primitive-recursive-functions">Examples of Primitive Recursive Functions</h2>
+<p><em>The following functions are primitive recursive:</em></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(x+y\)</span></td>
+<td><em>Sum</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(x\cdot y\)</span></td>
+<td><em>Product</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(x^y\)</span></td>
+<td><em>Exponentiation</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\max(x,y)\)</span></td>
+<td><em>Maximum</em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\min(x,y)\)</span></td>
+<td><em>Minimum</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\|x-y\|\)</span></td>
+<td><em>Absolute difference</em></td>
+</tr>
+</tbody>
+</table>
+<p>and moreover,</p>
+<p><span class="math display">\[x\dot{-} y = \begin{cases}
+  x - y   &amp; \text{if} \; x \ge y, \\
+  0   &amp; \text{otherwise}
+\end{cases} \qquad \text{\emph{Monus (difference on $\mathbb{N}$)}}\]</span></p>
+<p><span class="math display">\[sg(x) = \begin{cases}
+  0   &amp; \text{if} \; x =0, \\
+  1   &amp; \text{if} \; x &gt; 0
+\end{cases} \qquad \text{\emph{Sign function}}\]</span></p>
+<p><span class="math display">\[\overline{sg}(x) = \begin{cases}
+  1   &amp; \text{if} \; x = 0, \\
+  0   &amp; \text{if} \; x &gt; 0
+\end{cases} \qquad \text{\emph{Negated sign function}}\]</span></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Addition, multiplication and exponentiation are obviously primitive recursive. For the remaining cases one first shows that the predecessor function <span class="math inline">\(x \dot{-} 1\)</span> is primitive recursive, namely because</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 \dot{-} 1 &amp;= 0\\
+(x+1) \dot{-} 1 &amp;= x
+\end{aligned}
+\]</span></p>
+<p>and then defines <span class="math inline">\(\dot{-}\)</span> by primitive recursion</p>
+<p><span class="math display">\[
+\begin{aligned}
+x \dot{-} 0 &amp;= x\\
+x \dot{-} (y+1) &amp;= (x \dot{-} y) \dot{-} 1
+\end{aligned}
+\]</span></p>
+<p>The remaining functions can be defined directly using <span class="math inline">\(+\)</span> and <span class="math inline">\(\dot{-}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+|x-y| &amp;= (x\dot{-} y) + (y\dot{-} x)\\
+\max (x,y) &amp;= x+(y\dot{-} x)\\
+\min (x,y) &amp;= \max(x,y)\dot{-} |x-y|\\
+\overline{sg}(x) &amp;= 1\dot{-} x\\
+sg(x) &amp;= 1\dot{-} \overline{sg} (x)
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="sec-closure-properties" class="level2">
+<h2 class="anchored" data-anchor-id="sec-closure-properties">Closure Properties</h2>
+<div id="Exercise-1" class="Exercise">
+<p></p><details class="Exercise fbx-simplebox fbx-default" open=""><summary><strong>Exercise 1</strong></summary><div>Show that primitive recursive functions are closed under<p></p>
+<p><strong>(i) Case distinction:</strong></p>
+<p><em>If</em> <span class="math inline">\(g, f_0,f_1,\ldots,f_k\)</span> <em>are primitive recursive, then so is f with</em></p>
+<p><span class="math display">\[f(\vec{x})= \begin{cases}
+    f_0(\vec{x})  &amp; \text{if}  \quad  g(\vec{x}) =0, \\
+     f_1(\vec{x})  &amp; \text{if}  \quad  g(\vec{x}) =1, \\
+     \vdots         &amp;  \vdots \\
+      f_k(\vec{x})  &amp; \text{if}  \quad  g(\vec{x}) \ge k.
+\end{cases}\]</span></p>
+<p>and</p>
+<p><strong>(ii) Bounded <span class="math inline">\(\mu\)</span>-operator:</strong></p>
+<p><em>If</em> <span class="math inline">\(g\)</span> <em>is primitive recursive, then so is f with</em></p>
+<p><span class="math display">\[
+f(\vec{x},z) = \mu y &lt; z \; (g(\vec{x},y) = 0),
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\mu y &lt; z \; R(\vec{x},y) = \begin{cases}
+    \text{the smallest } y &lt; z \text{ with } R(\vec{x},y)  &amp;  \text{\emph{if such exists}} \\
+      z &amp; \text{otherwise}.
+\end{cases}\]</span></p>
+</div></details>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -401,7 +580,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
