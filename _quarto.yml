@@ -51,6 +51,8 @@ website:
         text: Midterm 2 preparation
       - href: 021_Oct22_computable_functions.qmd
         text: Oct 22
+      - href: 021_Oct24_primitive_recursive.qmd
+        text: Oct 24
 
 
 
@@ -91,7 +93,11 @@ custom-numbered-blocks:
   classes:
     Theorem:
       group: thmlike
+    Definition:
+      group: thmlike
     Problem:
+      group: exrlike
+    Exercise:
       group: exrlike
 
 callouty-theorem:
