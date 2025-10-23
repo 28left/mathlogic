@@ -69,16 +69,16 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Problem {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Theorem {
@@ -311,8 +311,11 @@ window.Quarto = {
   <li><a href="#examples-of-primitive-recursive-functions" id="toc-examples-of-primitive-recursive-functions" class="nav-link" data-scroll-target="#examples-of-primitive-recursive-functions">Examples of Primitive Recursive Functions</a></li>
   <li><a href="#sec-closure-properties" id="toc-sec-closure-properties" class="nav-link" data-scroll-target="#sec-closure-properties">Closure Properties</a></li>
   </ul></li>
-  <li><a href="#recursive-and-partially-recursive-functions" id="toc-recursive-and-partially-recursive-functions" class="nav-link" data-scroll-target="#recursive-and-partially-recursive-functions">Recursive and Partially Recursive Functions</a></li>
+  <li><a href="#recursive-and-partially-recursive-functions" id="toc-recursive-and-partially-recursive-functions" class="nav-link" data-scroll-target="#recursive-and-partially-recursive-functions">Recursive and Partially Recursive Functions</a>
+  <ul class="collapse">
   <li><a href="#recursive-relations" id="toc-recursive-relations" class="nav-link" data-scroll-target="#recursive-relations">Recursive Relations</a></li>
+  <li><a href="#some-remarks" id="toc-some-remarks" class="nav-link" data-scroll-target="#some-remarks">Some Remarks</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="022_Oct24_primitive_recursive.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -553,9 +556,8 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
 </div></details>
 </div>
 <p>Thus every primitive recursive function is also a recursive function (while the Ackermann function is an example of a recursive, but not p.r. function), and the closure properties from previous sections (suitably modified for partial functions) also hold for recursive functions.</p>
-</section>
-<section id="recursive-relations" class="level2">
-<h2 class="anchored" data-anchor-id="recursive-relations">Recursive Relations</h2>
+<section id="recursive-relations" class="level3">
+<h3 class="anchored" data-anchor-id="recursive-relations">Recursive Relations</h3>
 <div id="Definition-3" class="Definition">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3</strong></summary><div>A number-theoretic relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>(primitive) recursive</strong> if and only if its characteristic function <span class="math inline">\(c_R\)</span> is (primitive) recursive, where<p></p>
 <p><span class="math display">\[c_R(\vec{x}) = \begin{cases}
@@ -570,8 +572,22 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
 <p><span class="math display">\[R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ for a computable function } \; f.\]</span></p>
 </div></details>
 </div>
+</section>
+<section id="some-remarks" class="level3">
+<h3 class="anchored" data-anchor-id="some-remarks">Some Remarks</h3>
+<ul>
+<li>A non-empty set <span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> is r.e. if and only if <span class="math inline">\(A\)</span> is the range of a computable function.</li>
+<li>If <span class="math inline">\(R\)</span> is a decidable relation, then there is an effective procedure that determines if <span class="math inline">\(R\)</span> holds or not. An r.e. set is also called <strong>semi-decidable</strong>, since in this case we have a procedure to list the elements.</li>
+<li>If both a relation and its complement are r.e., we can run both listing procedures in parallel and wait until an element gets listed. Thus <span class="math display">\[
+A \text{ decidable} \quad \Leftrightarrow \quad A \text{ and } \mathbb{N}^k \setminus A \text{ are r.e.}
+\]</span></li>
+<li>We will later see that if <span class="math inline">\(T\)</span> is a theory consisting of a computable set of sentences, its deductive closure <span class="math display">\[
+\{\sigma : T \vdash \sigma\}
+\]</span> is r.e.. If <span class="math inline">\(T\)</span> is complete, this will imply that the deductive closure is decidable.</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
