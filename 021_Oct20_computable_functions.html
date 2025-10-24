@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,14 +32,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -93,7 +94,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -121,9 +122,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Math 557 Fall 2025
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">MATH 557 Oct 20</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,9 +136,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Math 557 Fall 2025</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -292,12 +290,6 @@ window.Quarto = {
   <li><a href="#an-example" id="toc-an-example" class="nav-link" data-scroll-target="#an-example">An example</a></li>
   <li><a href="#turing-computable-functions" id="toc-turing-computable-functions" class="nav-link" data-scroll-target="#turing-computable-functions">Turing-computable functions</a></li>
   </ul></li>
-  <li><a href="#register-machines" id="toc-register-machines" class="nav-link" data-scroll-target="#register-machines">Register machines</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  <li><a href="#urm-computable-functions" id="toc-urm-computable-functions" class="nav-link" data-scroll-target="#urm-computable-functions">URM-computable functions</a></li>
-  </ul></li>
-  <li><a href="#church-turing-thesis" id="toc-church-turing-thesis" class="nav-link" data-scroll-target="#church-turing-thesis">Church-Turing Thesis</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="021_Oct20_computable_functions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -469,70 +461,9 @@ We say a Turing machine <span class="math inline">\(M\)</span> with program <spa
 </div>
 </div>
 <p>The definition for multidimensional functions is similar.</p>
-</section>
-</section>
-<section id="register-machines" class="level2">
-<h2 class="anchored" data-anchor-id="register-machines">Register machines</h2>
-<p><em>Sheperdson</em> and <em>Sturgis</em> proposed a variant of a machine model in 1963: An <strong>unlimited register machine</strong> (URM) has an infinite number of <em>registers</em> <span class="math inline">\(R_1,\ldots,R_l, \dots\)</span>, each containing a natural number; we use <span class="math inline">\(r_n\)</span> to denote the number in register <span class="math inline">\(R_n\)</span>. These numbers are modified by a URM according to the following types of <strong>instructions</strong>:</p>
-<div class="{=latex}">
-<div class="tabbing">
-<p>̄ <span class="math inline">\(O(n)\)</span>: ̄ <span class="math inline">\(0 \to R_n\)</span> ōr <span class="math inline">\(r_n:=0\)</span> r̄eplace <span class="math inline">\(r_n\)</span> with <span class="math inline">\(0\)</span><br>
-<span class="math inline">\(S(n)\)</span>: <span class="math inline">\(r_n +1 \to R_n\)</span> or <span class="math inline">\(r_n:= r_n+1\)</span> add 1 to <span class="math inline">\(r_n\)</span><br>
-<span class="math inline">\(T(m,n)\)</span>: <span class="math inline">\(r_m \to R_n\)</span> or <span class="math inline">\(r_n:= r_m\)</span> replace <span class="math inline">\(r_n\)</span> with <span class="math inline">\(r_m\)</span><br>
-<span class="math inline">\(J(m,n,q)\)</span>: if <span class="math inline">\(r_n = r_m\)</span>, then jump to the <span class="math inline">\(q\)</span>th instruction, otherwise proceed to the next.</p>
-</div>
-</div>
-<p>A <strong>program</strong> is a numbered finite sequence of such instructions, <span class="math inline">\(P=(I_1,\ldots,I_k)\)</span>. To run a a program, the URM must be provided with an <strong>initial configuration</strong> of the registers, i.e.&nbsp;a sequence <span class="math inline">\((a_i)_{n \in \mathbb{N}}\)</span> such that <span class="math inline">\(r_i = a_i\)</span> for all <span class="math inline">\(i\)</span>. The machine then executes its program line-by-line, unless it encounters a jump instruction (in which case it performs the test and, if applicable, jumps to the given instruction). The computation <strong>halts</strong> if there is no “next” instruction, that is, either there is no next line to execute or the instruction given in a <span class="math inline">\(J\)</span>-type line does not exist.</p>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p><span class="math display">\[
-\begin{aligned}
-I_1: &amp;&amp; J(1,2,6)\\
-I_2:&amp;&amp; S(2)\\
-I_3:&amp;&amp; S(3)\\
-I_4:&amp;&amp; J(1,2,6)\\
-I_5:&amp;&amp; J(1,1,2)\\
-I_6:&amp;&amp; T(3,1)
-\end{aligned}
-\]</span></p>
-<p>If the URM starts with the number <span class="math inline">\(9\)</span> in the 1st and <span class="math inline">\(5\)</span> in the 2nd register (and 0 in all others), it produces the number <span class="math inline">\(4\)</span> in the 3rd register after several steps and then reaches instruction <span class="math inline">\(I_6\)</span>, which transfers the number <span class="math inline">\(4\)</span> to the 1st register; since no further instruction follows, the program halts.</p>
-</section>
-<section id="urm-computable-functions" class="level3">
-<h3 class="anchored" data-anchor-id="urm-computable-functions">URM-computable functions</h3>
-<p>Let <span class="math inline">\(f\)</span> be a partial <span class="math inline">\(n\)</span>-ary function on the natural numbers, <span class="math inline">\(P\)</span> a program, and let <span class="math inline">\(a_1,\ldots, a_n, b\)</span> be given numbers. We say <span class="math inline">\(P\)</span> on input <span class="math inline">\(a_1, \ldots, a_n\)</span> <strong>converges to</strong> <span class="math inline">\(b\)</span>, written <span class="math inline">\(P(a_1,\ldots,a_n) \downarrow b\)</span>, if the run of <span class="math inline">\(P\)</span> with initial configuration <span class="math inline">\(a_1, \dots, a_n, 0, 0, 0, \dots\)</span> halts after finitely many steps and the number <span class="math inline">\(b\)</span> is in the 1st register.</p>
-<p><span class="math inline">\(P\)</span> <strong>computes</strong> <span class="math inline">\(f\)</span> if and only if for all <span class="math inline">\(a_1,\ldots,a_n, b\)</span> we have</p>
-<p><span class="math display">\[
-P(a_1,\ldots,a_n) \downarrow b \; \iff \;  f(a_1,\ldots,a_n) \text{ is defined and equals } b.
-\]</span></p>
-<p>We say <span class="math inline">\(f\)</span> is <strong>URM-computable</strong> if and only if there exists a program <span class="math inline">\(P\)</span> that computes <span class="math inline">\(f\)</span>.</p>
-</section>
-</section>
-<section id="church-turing-thesis" class="level2">
-<h2 class="anchored" data-anchor-id="church-turing-thesis">Church-Turing Thesis</h2>
-<p>There are further approaches to formalize the notion of <strong>computable functions</strong>:</p>
-<ul>
-<li><em>Gödel-Herbrand-Kleene</em> (1936)}: <em>general recursive functions</em> defined via an equational calculus</li>
-<li><em>Church</em> (1936): <span class="math inline">\(\lambda\)</span>-definable functions</li>
-<li><em>Gödel-Kleene</em> (1936): <span class="math inline">\(\mu\)</span>-recursive functions</li>
-<li><em>Post</em> (1943): computable functions via <em>canonical deduction systems</em></li>
-<li>Markov (1951): computable functions via <em>algorithms</em> over finite alphabets</li>
-</ul>
-<p>All these definitions turned out to be formally equivalent, and moreover, every individual (intuitively) computable function has so far been shown to be computable in the above formal sense, which has given rise to the following thesis:</p>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Church-Turing Thesis
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The (intuitively) computable functions are precisely the (in one of the above senses) formally computable functions.</p>
-</div>
-</div>
 
 
+</section>
 </section>
 </section>
 
@@ -588,13 +519,14 @@ Church-Turing Thesis
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -609,7 +541,7 @@ Church-Turing Thesis
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

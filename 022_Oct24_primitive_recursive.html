@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./021_Oct22_computable_functions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -70,20 +71,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Theorem {
   --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -102,7 +103,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -144,9 +145,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Math 557 Fall 2025</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -431,7 +431,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td></td>
-<td><span class="math inline">\(\|x-y\|\)</span></td>
+<td><span class="math inline">\(|x-y|\)</span></td>
 <td><em>Absolute difference</em></td>
 </tr>
 </tbody>
@@ -551,7 +551,7 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
 \end{cases}\]</span></p>
 <p>This principle can lead from total to partial functions (e.g., for <span class="math inline">\(g(x,y)=|x-y^2|\)</span>, as a function over <span class="math inline">\(\mathbb{N}\times \mathbb{N}\)</span>).</p>
 <div id="Definition-2" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>The class <strong>R</strong> of all <strong>recursive functions</strong> is the smallest class of functions that contains the initial functions and is closed under substitution, primitive recursion and minimalization. These functions are often also referred to as <em>general recursive</em>, <span class="math inline">\(\mu\)</span><em>-recursive</em> functions or (based on the Church-Turing thesis) as <em>computable functions</em>. We will use <em>recursive</em> functions primarily to denote total (i.e.&nbsp;everywhere defined) computable functions.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>The class <strong>R</strong> of all <strong>recursive functions</strong> is the smallest class of functions that contains the initial functions and is closed under substitution, primitive recursion and minimalization. These functions are often also referred to as <em>general recursive</em>, <span class="math inline">\(\mu\)</span><em>-recursive</em> functions or (based on the Church-Turing thesis) as <em>computable functions</em>. We will use <em>recursive</em> functions primarily to denote total (i.e.&nbsp;everywhere defined) computable functions. If the functions involved are partial, we will use <em>partial recursive</em> and <em>partial computable</em>.<p></p>
 </div></details>
 </div>
 <p>Thus every primitive recursive function is also a recursive function (while the Ackermann function is an example of a recursive, but not p.r. function), and the closure properties from previous sections (suitably modified for partial functions) also hold for recursive functions.</p>
@@ -567,7 +567,7 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
 </div>
 <p>Thus, for example, the predicates <span class="math inline">\(x=y,\, x \ne y, \, x \le y, \, x&lt;y\)</span> are primitive recursive. Recursive relations are also called <strong>decidable</strong>.</p>
 <div id="Definition-4" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4</strong></summary><div>A relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>recursively enumerable</strong> (<em>r.e.</em>), often also <em>computably enumerable (c.e.)</em> if it is the domain of a computable function:<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4</strong></summary><div>A relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>recursively enumerable</strong> (<em>r.e.</em>), often also <em>computably enumerable (c.e.)</em> if it is the domain of a partial computable function:<p></p>
 <p><span class="math display">\[R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ for a computable function } \; f.\]</span></p>
 </div></details>
 </div>
@@ -575,7 +575,7 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
 <section id="some-remarks" class="level3">
 <h3 class="anchored" data-anchor-id="some-remarks">Some Remarks</h3>
 <ul>
-<li>A non-empty set <span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> is r.e. if and only if <span class="math inline">\(A\)</span> is the range of a computable function.</li>
+<li>A non-empty set <span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> is r.e. if and only if <span class="math inline">\(A\)</span> is the range of a total computable function.</li>
 <li>If <span class="math inline">\(R\)</span> is a decidable relation, then there is an effective procedure that determines if <span class="math inline">\(R\)</span> holds or not. An r.e. set is also called <strong>semi-decidable</strong>, since in this case we have a procedure to list the elements.</li>
 <li>If both a relation and its complement are r.e., we can run both listing procedures in parallel and wait until an element gets listed. Thus <span class="math display">\[
 A \text{ decidable} \quad \Leftrightarrow \quad A \text{ and } \mathbb{N}^k \setminus A \text{ are r.e.}
@@ -642,13 +642,14 @@ A \text{ decidable} \quad \Leftrightarrow \quad A \text{ and } \mathbb{N}^k \set
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
