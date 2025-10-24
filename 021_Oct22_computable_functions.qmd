@@ -1,5 +1,5 @@
 ---
-title: "MATH 557 Oct 20"
+title: "MATH 557 Oct 22"
 ---
 
 # Computable functions
