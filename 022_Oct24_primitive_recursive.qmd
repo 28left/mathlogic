@@ -45,7 +45,7 @@ The class **PRIM** of all **primitive recursive** (abbreviated: **p.r.**) functi
 | | $x^y$ | *Exponentiation* |
 | | $\max(x,y)$ | *Maximum* |
 | | $\min(x,y)$ | *Minimum* |
-| | $\|x-y\|$ | *Absolute difference* |
+| | $|x-y|$ | *Absolute difference* |
 
 and moreover,
 
@@ -187,7 +187,7 @@ This principle can lead from total to partial functions (e.g., for $g(x,y)=|x-y^
 
 ::: Definition
 
-The class **R** of all **recursive functions** is the smallest class of functions that contains the initial functions and is closed under substitution, primitive recursion and minimalization. These functions are often also referred to as *general recursive*, $\mu$*-recursive* functions or (based on the Church-Turing thesis) as *computable functions*. We will use *recursive* functions primarily to denote total (i.e. everywhere defined) computable functions.
+The class **R** of all **recursive functions** is the smallest class of functions that contains the initial functions and is closed under substitution, primitive recursion and minimalization. These functions are often also referred to as *general recursive*, $\mu$*-recursive* functions or (based on the Church-Turing thesis) as *computable functions*. We will use *recursive* functions primarily to denote total (i.e. everywhere defined) computable functions. If the functions involved are partial, we will use *partial recursive* and *partial computable*.
 :::
 
 Thus every primitive recursive function is also a recursive function (while the Ackermann function is an example of a recursive, but not p.r. function), and the closure properties from previous sections (suitably modified for partial functions) also hold for recursive functions.
@@ -210,7 +210,7 @@ Recursive relations are also called **decidable**.
 
 
 ::: Definition
-A relation  $R \subseteq \mathbb{N}^k$ is called **recursively enumerable** (*r.e.*), often also *computably enumerable (c.e.)* if it is the domain of a computable function:
+A relation  $R \subseteq \mathbb{N}^k$ is called **recursively enumerable** (*r.e.*), often also *computably enumerable (c.e.)* if it is the domain of a partial computable function:
 
 $$R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ for a computable function } \; f.$$
 :::
@@ -218,7 +218,7 @@ $$R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ fo
 
 ### Some Remarks
 
-- A non-empty set $A \subseteq \mathbb{N}^k$ is r.e. if and only if $A$ is the range of a computable function.
+- A non-empty set $A \subseteq \mathbb{N}^k$ is r.e. if and only if $A$ is the range of a  total computable function.
 - If $R$ is a decidable relation, then there is an effective procedure that determines if $R$ holds or not. An r.e. set is also called **semi-decidable**, since in this case we have a procedure to list the elements. 
 - If both a relation and its complement are r.e., we can run both listing procedures in parallel and wait until an element gets listed. Thus
 $$
