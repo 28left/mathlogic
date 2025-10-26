@@ -96,9 +96,9 @@ $$
 \mathcal{M}^I/\mathcal{U}
 $$
 
-Let $\mathcal{U}$ be a free ultrafilter on the set $\mathbb{N}$. The map $j: b \mapsto (b)_{i \in I}/\mathcal{U}$ defines an **elementary embedding** of $\mathcal{M}$ into $\mathcal{M}^I/\mathcal{U}$ (i.e. it is injective and the image is an elementary substructure).
+Let $\mathcal{U}$ be a free ultrafilter on an (infinite) set $I$. The map $j: b \mapsto (b)_{i \in I}/\mathcal{U}$ defines an **elementary embedding** of $\mathcal{M}$ into $\mathcal{M}^I/\mathcal{U}$ (i.e. it is injective and the image is an elementary substructure).
 
-Show that if $\mathcal{M}$ is infinite, $j$ is not a surjection.
+Show that if $\mathcal{M}$ is infinite and $I = \mathbb{N}$, $j$ is not a surjection.
 :::
 
 ::: Problem
