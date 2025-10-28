@@ -53,6 +53,8 @@ website:
         text: Oct 22
       - href: 022_Oct24_primitive_recursive.qmd
         text: Oct 24
+      - href: 023_Oct29_peano_arithmetic.qmd
+        text: Oct 29
 
 
 
@@ -82,7 +84,7 @@ format:
 custom-numbered-blocks:
   groups:
     thmlike:
-      colors: [F8FBD3, EBEBEB]
+      colors: [FFE6A2, EBEBEB]
       boxstyle: foldbox.simple
       collapse: false
     exrlike:
