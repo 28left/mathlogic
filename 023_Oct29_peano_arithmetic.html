@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 – Math 557 Fall 2025</title>
+<title>Math 557 Oct 29 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./022_Oct24_primitive_recursive.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,12 +70,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Theorem {
-  --color1: #F8FBD3;
+  --color1: #FFE6A2;
   --color2: #EBEBEB;
 }
 .Exercise {
@@ -83,6 +80,10 @@ ul.task-list li input[type="checkbox"] {
 }
 .Problem {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #FFE6A2;
   --color2: #EBEBEB;
 }
 </style>
@@ -129,9 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Math 557 Fall 2025
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./023_Oct29_peano_arithmetic.html">Oct 29</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -290,8 +289,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./021_Oct24_primitive_recursive.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./022_Oct24_primitive_recursive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oct 24</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./023_Oct29_peano_arithmetic.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Oct 29</span></a>
   </div>
 </li>
     </ul>
@@ -304,22 +309,27 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#recursive-and-partially-recursive-functions" id="toc-recursive-and-partially-recursive-functions" class="nav-link active" data-scroll-target="#recursive-and-partially-recursive-functions">Recursive and Partially Recursive Functions</a>
+  <li><a href="#peano-arithmetic" id="toc-peano-arithmetic" class="nav-link active" data-scroll-target="#peano-arithmetic">Peano Arithmetic</a>
   <ul class="collapse">
-  <li><a href="#the-ackermann-function" id="toc-the-ackermann-function" class="nav-link" data-scroll-target="#the-ackermann-function">The Ackermann Function</a></li>
-  <li><a href="#minimalization" id="toc-minimalization" class="nav-link" data-scroll-target="#minimalization">Minimalization</a></li>
-  <li><a href="#definition-primitive-recursive-and-recursive-relations" id="toc-definition-primitive-recursive-and-recursive-relations" class="nav-link" data-scroll-target="#definition-primitive-recursive-and-recursive-relations">Definition: Primitive Recursive and Recursive Relations</a></li>
-  <li><a href="#remarks" id="toc-remarks" class="nav-link" data-scroll-target="#remarks">Remarks</a></li>
+  <li><a href="#mathsfpa--peano-arithmetic-without-induction" id="toc-mathsfpa--peano-arithmetic-without-induction" class="nav-link" data-scroll-target="#mathsfpa--peano-arithmetic-without-induction"><span class="math inline">\(\mathsf{PA}^-\)</span>: Peano Arithmetic without Induction</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#relation-to-discretely-ordered-rings" id="toc-relation-to-discretely-ordered-rings" class="nav-link" data-scroll-target="#relation-to-discretely-ordered-rings">Relation to Discretely Ordered Rings</a></li>
+  </ul></li>
+  <li><a href="#end-extensions" id="toc-end-extensions" class="nav-link" data-scroll-target="#end-extensions">End Extensions</a>
+  <ul class="collapse">
+  <li><a href="#remark" id="toc-remark" class="nav-link" data-scroll-target="#remark">Remark</a></li>
+  </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="023_recursive_functions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="023_Oct29_peano_arithmetic.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557</h1>
+<h1 class="title">Math 557 Oct 29</h1>
 </div>
 
 
@@ -336,77 +346,136 @@ window.Quarto = {
 </header>
 
 
-<section id="recursive-and-partially-recursive-functions" class="level1">
-<h1>Recursive and Partially Recursive Functions</h1>
-<p>An example of a computable, but not p.r. function is the</p>
-<section id="the-ackermann-function" class="level2">
-<h2 class="anchored" data-anchor-id="the-ackermann-function">The Ackermann Function</h2>
-<p>The <strong>Ackermann</strong> function is a 2-ary function that is recursively defined by the following equations:</p>
+<section id="peano-arithmetic" class="level1">
+<h1>Peano Arithmetic</h1>
+<p>While the algebraic theories of groups, rings, fields, … have many models, (elementary) number theory studies properties of <em>one</em> model, which is called the <strong>standard model</strong> of number theory:</p>
 <p><span class="math display">\[
-\begin{aligned}
-A(0,y) &amp;= y+1\\
-A(x+1,0)&amp;= A(x,1)\\
-A(x+1,y+1)&amp;= A(x,A(x+1,y))
-\end{aligned}
+\mathcal{N} = (\mathbb{N},+,\cdot,+1,0).
 \]</span></p>
-<p>This is a double recursion, yet one can easily verify that each value <span class="math inline">\(A(x,y)\)</span> is determined by finitely many “earlier” values <span class="math inline">\(A(u,v)\)</span> with <span class="math inline">\(u&lt;x\)</span> or <span class="math inline">\(u=x \wedge v&lt;y\)</span>. Writing <span class="math inline">\(F_n(m)\)</span> for <span class="math inline">\(A(n,m)\)</span>, we obtain:</p>
-<p><span class="math display">\[
-\begin{aligned}
-F_0(m)   &amp;= m+1\\
-F_1(m)  &amp;= m+2\\
-F_2(m) &amp; \approx 2m\\
-F_3(m) &amp; \approx 2^m\\
-F_4(m) &amp; \approx  2^{2^{.^{.^{.^{2}}}}} \text{ ($m$ times)}
-\end{aligned}
-\]</span></p>
-<p>This means that the <strong>Ackermann</strong> function iterates the basic arithmetic operations and grows very rapidly, particularly in the first argument (which indicates the number of iterations). In fact, it majorizes every p.r. function: If <span class="math inline">\(f\)</span> is a k-ary p.r. function, then there exists a number <span class="math inline">\(n\)</span> with</p>
-<p><span class="math display">\[
-f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
-\]</span></p>
-<p>for all <span class="math inline">\(x_1,\ldots,x_k\)</span>. Thus the 2-ary function <span class="math inline">\(A\)</span> <em>cannot</em> be p.r. (although on the other hand all <span class="math inline">\(F_n\)</span> are p.r.!). That the <strong>Ackermann</strong> function is nevertheless computable can be seen from the fact that it can be obtained from a p.r. function by means of</p>
-</section>
-<section id="minimalization" class="level2">
-<h2 class="anchored" data-anchor-id="minimalization">Minimalization</h2>
-<p>R6: <span class="math inline">\(f(\vec{x}) \simeq  \mu y \; (g(\vec{x},y)\simeq 0)\)</span>,</p>
-<p>that is,</p>
-<p><span class="math display">\[f(\vec{x}) = \begin{cases}
-  \text{the smallest } y \text{ such that}  &amp; \\  \qquad (i) \;  g(\vec{x},z)\;  \text{is defined for all} \; z\le y \;  \text{and} \\
-  \qquad (ii)   \;  g(\vec{x},y)=0, \qquad  \qquad \quad \text{if such a } y \text{ exists}, \\
-    \text{undefined}   \qquad \qquad \qquad \qquad  \;  \text{otherwise}.
-\end{cases}\]</span></p>
-<p>This principle can lead from total to partial functions (e.g., for <span class="math inline">\(g(x,y)=|x-y^2|\)</span>).</p>
-<p>The class <strong>R</strong> (or <span class="math inline">\(\mathcal{C}\)</span>) of all <strong>recursive</strong> functions is the smallest class of functions that contains the initial functions and is closed under substitution, primitive recursion and minimalization. One sometimes also speaks of <em>general recursive</em>, <span class="math inline">\(\mu\)</span><em>-recursive</em> functions or (based on <strong>Church</strong>’s thesis) of <em>computable functions</em> (<span class="math inline">\(\mathcal{C}\)</span> = <em>computable functions</em>). We will speak of <em>recursive</em> functions primarily in the case of total computable functions.</p>
-<p>Thus every p.r. function is also a recursive function (while the <strong>Ackermann</strong> function is an example of a recursive, but not p.r. function), and the closure properties from previous sections (suitably modified for partial functions) also hold for recursive functions.</p>
-</section>
-<section id="definition-primitive-recursive-and-recursive-relations" class="level2">
-<h2 class="anchored" data-anchor-id="definition-primitive-recursive-and-recursive-relations">Definition: Primitive Recursive and Recursive Relations</h2>
-<div id="Definition-1" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>A number-theoretic relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>primitive recursive</strong> or <strong>recursive</strong> (or also: <strong>decidable</strong>) if and only if its characteristic function <span class="math inline">\(c_R\)</span> is primitive recursive or recursive, respectively, where<p></p>
-<p><span class="math display">\[c_R(\vec{x}) = \begin{cases}
-    1  &amp; \text{if } \; R(\vec{x}), \\
-     0 &amp; \text{otherwise}.
-\end{cases}\]</span></p>
+<p>Let <span class="math inline">\(\mathcal{L}_{\mathsf{PA}}\)</span> be the associated language, for which we also choose <span class="math inline">\(+,\cdot,0\)</span> as (non-logical) symbols, but <span class="math inline">\(S\)</span> for the unary successor operation <span class="math inline">\(+1\)</span>. The theory of the standard model, <span class="math inline">\(\operatorname{Th}(\mathcal{N})\)</span>, is the set of <span class="math inline">\(L_{\mathsf{PA}}\)</span>-sentences that hold in this model. We have already seen as a consequence of the compactness theorem that there exist <strong>non-standard models</strong>, i.e., models that are not isomorphic to the standard model, because they have “infinitely large” numbers.</p>
+<p>Moreover, <span class="math inline">\(\operatorname{Th}(\mathcal{N})\)</span> as a theory, while complete, is rather mysterious, since we do not know a priori which sentences exactly it comprises. The most important properties of the standard model are captured by the <strong>Peano Axioms</strong>.</p>
+<div id="peano-axioms" class="Definition" title="Peano Axioms">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1: </strong>Peano Axioms</summary><div><strong>P1.</strong> <span class="math inline">\(Sx \ne 0\)</span><p></p>
+<p><strong>P2.</strong> <span class="math inline">\(Sx=Sy \to x=y\)</span></p>
+<p><strong>P3.</strong> <span class="math inline">\(x+0 = x\)</span></p>
+<p><strong>P4.</strong> <span class="math inline">\(x+Sy =S(x+y)\)</span></p>
+<p><strong>P5.</strong> <span class="math inline">\(x \cdot 0 = 0\)</span></p>
+<p><strong>P6.</strong> <span class="math inline">\(x \cdot Sy = x \cdot y + x\)</span></p>
+<p>To these we add the infinitely many <strong>induction axioms</strong>:</p>
+<p><strong>Ind.</strong> <span class="math inline">\(\varphi(0) \, \wedge \, \forall x (\varphi(x) \to \varphi(Sx)) \to \forall x \; \varphi(x)\)</span></p>
 </div></details>
 </div>
-<p>Thus, for example, the predicates $; x=y,, x y, , x y, , x&lt;y ; $ are primitive recursive. (Further examples are contained in later chapters.)</p>
-<div id="Definition-2" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>A relation <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span> is called <strong>recursively enumerable</strong> (<em>r.e. = recursively enumerable</em>, in more recent literature also <em>c.e. = computably enumerable</em>) if and only if it is the domain of a computable function:<p></p>
-<p><span class="math display">\[R \; \text{r.e.} :\iff R =  \{\vec{x}\mid f(\vec{x})\downarrow \} \; \text{ for a computable function } \; f.\]</span></p>
+<p>The theory comprising these axioms is called <span class="math inline">\(\mathsf{PA}\)</span>, <strong>Peano Arithmetic</strong>. As every model of <span class="math inline">\(\operatorname{Th}(\mathcal{N})\)</span> is also a model of <span class="math inline">\(\mathsf{PA}\)</span>, we have</p>
+<div id="Theorem-2" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2</strong></summary><div>There exists a (countable) model <span class="math inline">\(\mathcal{N}^*\)</span> of <span class="math inline">\(\mathsf{PA}\)</span> which is not isomorphic to <span class="math inline">\(\mathcal{N}\)</span>.<p></p>
 </div></details>
 </div>
-</section>
-<section id="remarks" class="level2">
-<h2 class="anchored" data-anchor-id="remarks">Remarks</h2>
+<p>(In fact, we know by Loewenheim-Skolem that there exists a non-standard model in every infinite cardinality.)</p>
+<p>These results can be interpreted as an expressive weakness of the language of first-order logic, because if one moves to a <strong>language of second order</strong>, in which one additionally has the possibility of using <strong>second-order quantifiers</strong> <span class="math inline">\(\exists X, \forall Y\)</span> to quantify over subsets of the respective domain, then one can uniquely characterize (up to isomorphism) the standard model in this stronger theory:</p>
+<div id="second-order-peano-axioms" class="Definition" title="Second-Order Peano Axioms">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3: </strong>Second-Order Peano Axioms</summary><div>The theory <span class="math inline">\(\mathsf{PA}^{(2)}\)</span> (Peano Axioms of second order) has the following axioms:<p></p>
+<p><strong>P1.</strong> <span class="math inline">\(\forall x \; 0 \ne Sx\)</span></p>
+<p><strong>P2.</strong> <span class="math inline">\(\forall x \forall y (Sx = Sy \to x = y)\)</span></p>
+<p><strong>IND.</strong> <span class="math inline">\(\forall X (0 \in X \wedge \forall x ( x \in X \to Sx \in X) \to \forall x \; x \in X)\)</span></p>
+</div></details>
+</div>
+<div id="Theorem-4" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 4</strong></summary><div><em>Every model of <span class="math inline">\(\mathsf{PA}^{(2)}\)</span> is isomorphic to the standard model</em> <span class="math inline">\((\mathbb{N},S,0)\)</span>.<p></p>
+</div></details>
+</div>
+<p>The second-order induction axiom (actually a <em>set-theoretic</em> axiom) is thus significantly more expressive than the corresponding induction schema, in which only first-order properties are allowed, which can only quantify over elements (instead of also over subsets) of natural numbers.</p>
+<p>On the other hand, second-order logic has other disadvantages – most prominently, no completeness theorem holds.</p>
+<section id="mathsfpa--peano-arithmetic-without-induction" class="level2">
+<h2 class="anchored" data-anchor-id="mathsfpa--peano-arithmetic-without-induction"><span class="math inline">\(\mathsf{PA}^-\)</span>: Peano Arithmetic without Induction</h2>
+<p><span class="math inline">\(\mathsf{PA}\)</span> still has infinitely many (induction) axioms. We will introduce a finite subtheory that turns out is strong enough to capture many essential properties of arithmetic.</p>
+<p>This theory is formalized in a language <span class="math inline">\(\mathcal{L}\)</span> with the symbols <span class="math inline">\(0,1,&lt;,+, \cdot\)</span>. The first axioms state that addition and multiplication are associative and commutative and satisfy the distributive law, and furthermore that 0 and 1 are neutral elements for the respective operations and 0 is a zero divisor:</p>
+<p><strong>Axioms A1-A7:</strong></p>
+<ul>
+<li><strong>A1:</strong> <span class="math inline">\((x +y)+z= x + (y+z)\)</span></li>
+<li><strong>A2:</strong> <span class="math inline">\((x \cdot y) \cdot z= x \cdot (y \cdot z)\)</span></li>
+<li><strong>A3:</strong> <span class="math inline">\(x + y= y + x\)</span></li>
+<li><strong>A4:</strong> <span class="math inline">\(x \cdot y = y \cdot x\)</span></li>
+<li><strong>A5:</strong> <span class="math inline">\(x \cdot (y+z) = x \cdot y + x \cdot z\)</span></li>
+<li><strong>A6:</strong> <span class="math inline">\(x+0=x \wedge x \cdot 0 = 0\)</span></li>
+<li><strong>A7:</strong> <span class="math inline">\(x \cdot 1 = x\)</span></li>
+</ul>
+<p>Here we use the usual algebraic bracket conventions (<span class="math inline">\(\cdot\)</span> binds more strongly than <span class="math inline">\(+\)</span>). For the <span class="math inline">\(&lt;\)</span>-relation, the laws of a linear order hold, which is compatible with addition and multiplication:</p>
+<p><strong>Axioms A8-A12:</strong></p>
+<ul>
+<li><strong>A8:</strong> <span class="math inline">\(\neg  \; x &lt; x\)</span></li>
+<li><strong>A9:</strong> <span class="math inline">\(x &lt; y \wedge  y &lt; z \to x &lt; z\)</span></li>
+<li><strong>A10:</strong> <span class="math inline">\(x &lt; y \vee x = y \vee y &lt; x\)</span></li>
+<li><strong>A11:</strong> <span class="math inline">\(x &lt; y \to x+z &lt; y+z\)</span></li>
+<li><strong>A12:</strong> <span class="math inline">\(0 &lt; z \wedge x &lt; y \to x \cdot z &lt;  y \cdot z\)</span></li>
+</ul>
+<p>A number can be subtracted from a larger one:</p>
+<p><strong>Axiom A13:</strong></p>
+<ul>
+<li><strong>A13:</strong> <span class="math inline">\(x &lt; y \to \exists z \; (x+z = y)\)</span></li>
+</ul>
+<p>And finally, <span class="math inline">\(1\)</span> is the successor of <span class="math inline">\(0\)</span> and <span class="math inline">\(0\)</span> is the smallest element (where as usual <span class="math inline">\(x \le y: \iff x &lt; y \vee x = y\)</span>):</p>
+<p><strong>Axioms A14-A15:</strong></p>
+<ul>
+<li><strong>A14:</strong> <span class="math inline">\(0&lt;1 \wedge \forall x \; (0 &lt; x \to 1 \le x)\)</span></li>
+<li><strong>A15:</strong> <span class="math inline">\(\forall x \; (0 \le x)\)</span></li>
+</ul>
+<p>From A14 it follows with A11 that more generally <span class="math inline">\(x+1\)</span> is the successor of <span class="math inline">\(x\)</span>, and thus the order is <em>discrete</em>: <span class="math display">\[
+x &lt; x+1 \wedge \forall y \; (x &lt; y \to x+1 \le y).
+\]</span></p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
 <ol type="1">
-<li><p>A non-empty subset <span class="math inline">\(A \subseteq \mathbb{N}\)</span> is r.e. if and only if it is the range of a recursive function:</p>
-<p><span class="math inline">\(A \, \text{r.e.} \iff A = \emptyset \vee A = \{f(x)\mid x \in \mathbb{N} \} \, \text{ for a recursive function } \; f: \mathbb{N} \to \mathbb{N}\)</span></p></li>
-<li><p>In the case of a decidable relation <span class="math inline">\(R\)</span>, there exists an effective procedure that answers the question of whether <span class="math inline">\(R\)</span> holds or not. A recursively enumerable set <span class="math inline">\(A\)</span> is also called <em>positively decidable</em>, since there is at least a procedure that can output those numbers that are in <span class="math inline">\(A\)</span> as elements in a list. If the same also holds for the complement of <span class="math inline">\(A\)</span>, then one can run both procedures alternately to decide whether a number is in <span class="math inline">\(A\)</span> or not:</p></li>
-<li><p>It holds that:</p>
-<p><span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> is decidable if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(\mathbb{N}^k - A\)</span> are r.e.</p></li>
-<li><p>There exist r.e. sets that are not recursive; we will encounter examples of these later.</p></li>
+<li><p>In Peano Arithmetic <span class="math inline">\(\mathsf{PA}\)</span>, one can define the <span class="math inline">\(&lt;\)</span>-relation by <span class="math inline">\(x&lt;y \leftrightarrow \exists z \; (x+z+1 = y)\)</span> and thus obtain all axioms of <span class="math inline">\(\mathsf{PA}^-\)</span>. In particular, the standard model <span class="math inline">\(\mathbb{N}\)</span> with the usual <span class="math inline">\(&lt;\)</span>-relation, the usual operations, and the natural numbers 0,1 is a model of <span class="math inline">\(\mathsf{PA}^-\)</span>.</p></li>
+<li><p>The set <span class="math inline">\(\mathbb{Z}[X]\)</span> of polynomials in one variable <span class="math inline">\(X\)</span> with integer coefficients is a commutative ring with the usual operations. One can order this ring by setting for a polynomial <span class="math inline">\(p=a_n X^n+\ldots a_1 X + a_0\)</span> with leading coefficient <span class="math inline">\(a_n \ne 0\)</span>: <span class="math display">\[
+a_n X^n+\ldots a_1 X + a_0 &gt; 0 :\iff a_n&gt;0
+\]</span> and thus ordering polynomials <span class="math inline">\(p,q \in \mathbb{Z}[X]\)</span> by <span class="math inline">\(p&lt;q: \iff q-p&gt;0\)</span>. The subset <span class="math inline">\(\mathbb{Z}[X]^+\)</span> of polynomials <span class="math inline">\(p\in \mathbb{Z}[X]\)</span> with <span class="math inline">\(p\ge 0\)</span> then becomes a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, in which the polynomial <span class="math inline">\(X\)</span> is larger than all constant polynomials and thus “infinitely large”.</p></li>
 </ol>
+</section>
+<section id="relation-to-discretely-ordered-rings" class="level3">
+<h3 class="anchored" data-anchor-id="relation-to-discretely-ordered-rings">Relation to Discretely Ordered Rings</h3>
+<p>In a ring, there is a group with respect to addition, while A13 only allows a restricted inverse formation. If one replaces axioms A13 and A15 in <span class="math inline">\(\mathsf{PA}^-\)</span> with the axiom</p>
+<p><strong>Axiom A16:</strong></p>
+<ul>
+<li><strong>A16:</strong> <span class="math inline">\(\forall x \; \exists z \; (x+z = 0)\)</span></li>
+</ul>
+<p>one obtains the algebraic theory <strong>DOR</strong> of <strong>discretely ordered rings</strong>, whose models include, for example, the rings <span class="math inline">\(\mathbb{Z}\)</span> and <span class="math inline">\(\mathbb{Z}[X]\)</span>. Every model <span class="math inline">\(\mathcal{M}\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span> can be extended to a model <span class="math inline">\(\mathcal{R}\)</span> of the theory <strong>DOR</strong> (following the same pattern by which one extends the natural numbers to the ring of integers), such that the non-negative elements of <span class="math inline">\(\mathcal{R}\)</span> coincide with the original model. Conversely, for every model <span class="math inline">\(\mathcal{R}\)</span> of the theory <strong>DOR</strong>, the restriction to the non-negative elements is a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, so that one can <em>describe <span class="math inline">\(\mathsf{PA}^-\)</span> as the theory of (the non-negative part of) discretely ordered rings</em>.</p>
+</section>
+</section>
+<section id="end-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="end-extensions">End Extensions</h2>
+<p>The standard model can be embedded into every model <span class="math inline">\(\mathcal{M}\)</span> of <span class="math inline">\(\mathsf{PA}\)</span> as an initial segment. It turns out this already holds for models of the theory <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
+<div id="Definition-5" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5</strong></summary><div>Let <span class="math inline">\(L\)</span> be a language containing a 2-ary symbol <span class="math inline">\(&lt;\)</span>, and let <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> be <span class="math inline">\(L\)</span>-structures with <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span>. Then <span class="math inline">\(\mathcal{N}\)</span> is called an <strong>end extension</strong> of <span class="math inline">\(\mathcal{M}\)</span> (and correspondingly <span class="math inline">\(\mathcal{M}\)</span> is an <strong>initial segment</strong> of <span class="math inline">\(\mathcal{N}\)</span>) if and only if the larger set <span class="math inline">\(N\)</span> does not add any further elements below an element of <span class="math inline">\(M\)</span>: <span class="math display">\[
+\mathcal{M} \subseteq_{end} \mathcal{N}: \iff \text{for all} \; x \in M,y \in N: (y&lt;^N x \Rightarrow y \in M).
+\]</span><p></p>
+</div></details>
+</div>
+<p>Each natural number <span class="math inline">\(n\)</span> is represented in the standard model, which we also simply denote by <span class="math inline">\(\mathbb{N}\)</span> here, by the constant term <span class="math display">\[
+\underline{n} = 1+ \ldots + 1 \quad \text{($n$ times)}
+\]</span> where <span class="math inline">\(\underline{0}\)</span> is the constant <span class="math inline">\(0\)</span>.</p>
+<div id="Theorem-6" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 6</strong></summary><div>Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. Then the map <span class="math display">\[n \mapsto \underline{n}^{\mathcal{M}}\]</span> defines an embedding of the standard model <span class="math inline">\(\mathbb{N}\)</span> onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.<p></p>
+<p>In particular, every model of <span class="math inline">\(\mathsf{PA}^-\)</span> is isomorphic to an end extension of the standard model <span class="math inline">\(\mathbb{N}\)</span>.*</p>
+</div></details>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By simple induction (in the meta-theory), one shows for all natural numbers <span class="math inline">\(n,k,l\)</span>: <span class="math display">\[
+\begin{aligned}
+n = k+l &amp; \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k}+ \underline{l} \\
+n = k \cdot l &amp; \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k} \cdot \underline{l} \\
+n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &lt; \underline{k}\\
+\end{aligned}
+\]</span> and <span class="math display">\[
+\mathsf{PA}^- \vdash \forall x \; (\; x \le  \underline{k} \to  x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+\]</span></p>
+<p>The first three statements will later be generalized to all recursive functions and relations; They imply that the map <span class="math inline">\(n \mapsto \underline{n}^{\mathcal{M}}\)</span> is a homomorphism, and, due to the last statement, the map is also an embedding onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.</p>
+</div>
+<section id="remark" class="level3">
+<h3 class="anchored" data-anchor-id="remark">Remark</h3>
+<p>The standard model has no proper initial segment, and <span class="math inline">\(\mathbb{Z}[X]^+\)</span> has <span class="math inline">\(\mathbb{N}\)</span> as its only proper initial segment. On the other hand, every model <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span> has a proper end extension that is also a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, namely the non-negative part of the polynomial ring <span class="math inline">\(R[X]\)</span>, where <span class="math inline">\(R\)</span> is the discretely ordered ring associated with the model <span class="math inline">\(\mathcal{M}\)</span>.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -483,7 +552,7 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -810,6 +879,15 @@ f(x_1,\ldots,x_k) \le F_n(\max(x_1,\ldots,x_k))
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./022_Oct24_primitive_recursive.html" class="pagination-link" aria-label="Oct 24">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 24</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
