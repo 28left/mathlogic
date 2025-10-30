@@ -1,0 +1,18 @@
+---
+title: "Math 557 Oct 31"
+---
+
+## Problems on $\mathsf{PA}$ and $\mathsf{PA}^-$ 
+
+::: Problem
+In $\mathsf{PA}$, we can define $1 := S(0)$.
+
+Show that 
+$$
++PA \vdash \forall x \: (x \cdot 1 = x)
+$$
+:::
+
+::: Problem
+## Non-standard models of $+PA^-$
+

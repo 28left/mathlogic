@@ -82,7 +82,7 @@ This theory is formalized in a language $\mathcal{L}$ with the symbols $0,1,<,+,
 - **A6:** $x+0=x \wedge x \cdot 0 = 0$
 - **A7:** $x \cdot 1 = x$
 
-Here we use the usual algebraic bracket conventions ($\cdot$ binds more strongly than $+$). For the $<$-relation, the laws of a linear order hold, which is compatible with addition and multiplication:
+Here we use the usual algebraic bracket conventions ($\cdot$ binds more strongly than $+$). For the $<$-relation, the axioms state that it is a linear order compatible with addition and multiplication:
 
 **Axioms A8-A12:**
 

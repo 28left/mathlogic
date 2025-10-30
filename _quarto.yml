@@ -131,3 +131,4 @@ callouty-theorem:
 
 search-replace:
   +L : $\mathcal{L}$
+  +PA : \mathsf{PA}
