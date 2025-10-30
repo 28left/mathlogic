@@ -35,7 +35,8 @@ To these we add the infinitely many **induction axioms**:
 **Ind.** $\varphi(0) \, \wedge \, \forall x (\varphi(x) \to \varphi(Sx)) \to \forall x \; \varphi(x)$
 :::
 
-The theory comprising these axioms is called $\mathsf{PA}$, **Peano Arithmetic**. As every model of $\operatorname{Th}(\mathcal{N})$ is also a model of $\mathsf{PA}$, we have 
+The theory comprising these axioms is called $\mathsf{PA}$, **Peano Arithmetic**. As every model of $\operatorname{Th}(\mathcal{N})$ is also a model of $\mathsf{PA}$, it follows from the compactness theorem that there are non-standard models of $\mathsf{PA}$.
+ 
 
 ::: Theorem
 There exists a (countable) model $\mathcal{N}^*$ of $\mathsf{PA}$ which is not isomorphic to $\mathcal{N}$.
