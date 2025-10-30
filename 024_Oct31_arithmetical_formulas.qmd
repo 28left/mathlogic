@@ -16,3 +16,16 @@ $$
 ::: Problem
 ## Non-standard models of $+PA^-$
 
+The set $\mathbb{Z}[X]$ of polynomials in one variable $X$ with integer coefficients is a commutative ring with the usual operations. One can order this ring by setting for a polynomial $p=a_n X^n+\ldots a_1 X + a_0$ with leading coefficient $a_n \ne 0$:
+   $$
+   a_n X^n+\ldots a_1 X + a_0 > 0 :\iff a_n>0
+   $$
+and thus ordering polynomials $p,q \in \mathbb{Z}[X]$ by $p<q: \iff q-p>0$.
+
+1. Verify that the subset $\mathbb{Z}[X]^+$ of polynomials $p\in \mathbb{Z}[X]$ with $p\ge 0$ is a model of $\mathsf{PA}^-$. 
+2. What does the natural number $n$ correspond to in $\mathbb{Z}[X]^+$? In other words, what is the interpretation of the constant term $\underline{n}$?
+3. Identify an element of $\mathbb{Z}[X]^+$ that is larger than any "natural number" and thus "infinitely large".
+4. Is $\mathbb{Z}[X]^+$ a model of $+PA$?
+:::
+
+
