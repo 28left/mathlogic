@@ -129,7 +129,7 @@ $$
 where
 
 $$\mu y < z \; R(\vec{x},y) = \begin{cases}
-    \text{the smallest } y < z \text{ with } R(\vec{x},y)  &  \text{\emph{if such exists}} \\
+    \text{the smallest } y < z \text{ with } R(\vec{x},y)  &  \text{if such $y$ exists} \\
       z & \text{otherwise}.
 \end{cases}$$
 :::

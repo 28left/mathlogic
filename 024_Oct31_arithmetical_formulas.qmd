@@ -9,12 +9,12 @@ In $\mathsf{PA}$, we can define $1 := S(0)$.
 
 Show that 
 $$
-+PA \vdash \forall x \: (x \cdot 1 = x)
+\mathsf{PA} \vdash \forall x \: (x \cdot 1 = x)
 $$
 :::
 
 ::: Problem
-## Non-standard models of $+PA^-$
+## Non-standard models of $\mathsf{PA}^-$
 
 The set $\mathbb{Z}[X]$ of polynomials in one variable $X$ with integer coefficients is a commutative ring with the usual operations. One can order this ring by setting for a polynomial $p=a_n X^n+\ldots a_1 X + a_0$ with leading coefficient $a_n \ne 0$:
    $$
@@ -25,7 +25,149 @@ and thus ordering polynomials $p,q \in \mathbb{Z}[X]$ by $p<q: \iff q-p>0$.
 1. Verify that the subset $\mathbb{Z}[X]^+$ of polynomials $p\in \mathbb{Z}[X]$ with $p\ge 0$ is a model of $\mathsf{PA}^-$. 
 2. What does the natural number $n$ correspond to in $\mathbb{Z}[X]^+$? In other words, what is the interpretation of the constant term $\underline{n}$?
 3. Identify an element of $\mathbb{Z}[X]^+$ that is larger than any "natural number" and thus "infinitely large".
-4. Is $\mathbb{Z}[X]^+$ a model of $+PA$?
+4. Is $\mathbb{Z}[X]^+$ a model of $\mathsf{PA}$?
 :::
+
+
+::: Problem
+## Overspill
+Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A **proper cut** in $\mathcal{M}$ is a set $I \subsetneq M$ that is an initial segment of $M$ and closed under successor, e.g.\ the standard model $\mathbb{N}$.
+
+Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \varphi(x,\vec{a})$.
+:::
+
+::: Take-Home
+Show that if $\mathcal{M} \models \mathsf{PA}^{-}$, is non-standard, and satisfies the conclusion of the previous problem, then $\mathcal{M} \models \mathsf{PA}$.
+:::
+
+
+## Arithmetical Formulas
+
+### Bounded Quantifiers
+
+For terms $t$ and formulas $\varphi$ in the language of $\mathsf{PA}^-$, we write
+$$
+\begin{aligned}
+\exists x < t \;  \varphi & \text{ for } & \exists x (x < t \wedge \varphi)\\
+\forall x < t \;  \varphi & \text{ for } & \forall x (x < t \to \varphi)
+\end{aligned}
+$$
+and call $\exists x < t$ and $\forall x < t$ **bounded quantifiers**.
+
+### Arithmetical Hierarchy
+
+::: Definition
+
+- $\varphi$ is a **$\Delta_0$-formula**: $\iff$ $\varphi$ contains at most bounded quantifiers,
+- $\varphi$ is a **$\Sigma_1$-formula**: $\iff$ $\varphi = \exists \vec{x} \; \psi$ for a $\Delta_0$-formula $\psi$,
+- $\varphi$ is a **$\Pi_1$-formula**: $\iff$ $\varphi = \forall \vec{x}  \;\psi$ for a $\Delta_0$-formula $\psi$.
+:::
+
+This is the beginning of the **arithmetical hierarchy**. Setting
+$$
+\Sigma_0 = \Pi_0 = \Delta_0,
+$$
+we can continue:
+
+- $\varphi$ is a **$\Sigma_{n+1}$-formula** $\iff$ $\varphi = \exists \vec{x} \; \psi$ for a $\Pi_n$-formula $\psi$,
+- $\varphi$ is a **$\Pi_{n+1}$-formula** $\iff$ $\varphi = \forall \vec{x} \; \psi$ for a $\Sigma_n$-formula $\psi$.
+
+Thus, a $\Sigma_3$-formula has the form $\exists \vec{x} \; \forall \vec{y}\; \exists \vec{z} \; \psi$, where $\psi$ contains at most bounded quantifiers. This means that bounded quantifiers are not counted; $\Sigma$ or $\Pi$ indicates whether the formula begins with a (finite) sequence of $\exists$-quantifiers or $\forall$-quantifiers respectively, and the index counts the quantifier blocks. So it depends less on the number of quantifiers than on the number of quantifier alternations.
+
+In this classification, we do not distinguish between logically equivalent formulas, so that every $\Pi_n$-formula for $n<m$ is also a $\Sigma_m$- and $\Pi_m$-formula (by simply prefixing the formula with additional quantifiers over variables that do not occur). Thus we can also define the formula classes
+$$
+\Delta_n = \Sigma_n \cap \Pi_n.
+$$
+
+This gives us the following picture of the **arithmetical hierarchy**:
+
+![Arithmetical Hierarchy](arith_hier.png){width=50%}
+
+
+Many fundamental properties of natural numbers can be expressed using $\Delta_0$-formulas, e.g.:
+$$
+x \text{ is irreducible} \iff 1 < x \wedge \forall u<x \; \forall v<x \; \neg (u \cdot v = x).
+$$
+
+### Computability of arithmetical predicates
+
+We will show that the recursive relations coincide with the sets that can be defined by $\Delta_1$-formulas, and that the graph of a recursive function can be defined by a $\Sigma_1$-formula. We start by showing that $\Delta_0$-definable functions are primitive recursive.
+
+::: Lemma
+For every $\Delta_0$-formula $\theta(\vec{v})$, the relation
+$$
+R(\vec{a}) :\iff \mathbb{N} \models \theta(\vec{a})
+$$
+is primitive recursive.
+:::
+
+::: {.proof}
+We show by induction on the height of $\theta$ that the associated characteristic function
+$$
+c_{\theta}(\vec{x}) =
+\begin{cases}
+    1  &  \text{if } \mathbb{N} \models \theta(\vec{x})\\
+    0   &   \text{otherwise}
+\end{cases}
+$$
+is primitive recursive.
+
+First, the functions $x+1, x+y, x \cdot y$ are p.r., and thus every term in $\mathbb{N}$ defines a primitive recursive function. Since the functions $\text{eq}(x,y)=\overline{\text{sg}}(|x-y|)$ and $\text{sg}(y \stackrel{.}{-} x)$ are  primitive recursive and the primitive recursive functions are closed under composition, the claim holds for the atomic formulas $t=s, t < s$.
+
+For the case of propositional operations, use
+$$
+\begin{aligned}
+c_{\neg \theta}(\vec{x}) & = 1 \stackrel{.}{-} c_{\theta}(\vec{x}) \\
+c_{\theta \wedge \psi}(\vec{x}) & = c_{\theta}(\vec{x}) \cdot c_{\psi}(\vec{x}) \\
+c_{\theta \vee \psi}(\vec{x}) & = \min(c_{\theta}(\vec{x}),c_{\psi}(\vec{x}))
+\end{aligned}
+$$
+
+Finally, if $\psi$ is a $\Delta_0$-formula, $t$ is a term and $\theta(\vec{x}) = \forall y < t(\vec{x}) \; \psi(\vec{x},y)$, then the claim follows from
+$$
+c_{\theta}(\vec{x}) = \text{eq}( t(\vec{x}) , (\mu y \le t(\vec{x}) (c_{\psi}(\vec{x},y) = 0)).
+$$
+One argues similarly in the case of the formula $\exists y < t(\vec{x}) \; \psi(\vec{x},y)$ (or reduces this case to the earlier one using negation).
+:::
+
+**Remark:** The converse of the above lemma does not hold: there are primitive recursive sets that cannot be defined by any $\Delta_0$-formula in the natural numbers.
+
+
+### More Exercises
+
+::: Problem
+Show that the following relations and functions are primitive recursive.
+
+$$
+\begin{aligned}
+& x  \text{ divides }  y \\
+& \operatorname{rem}(x,y) \text{ (remainder when $y$ is divided by $x$)} \\
+& x  \text{ is prime}\\
+& n \mapsto p_n, \text{ where $p_n$ is the $n$th prime}\\
+\end{aligned}
+$$
+:::
+
+::: Take-Home
+Show that the *Euler totient function*
+$$  
+        \phi (x) = \text{ \# of $m \leq x$ relatively prime to $x$}
+$$
+is primitive recursive.
+:::
+
+
+::: Take-Home
+Show that the set of *generalized Mersenne primes*,
+$$ 
+    \left \{ N \text{ prime } \colon N = \dfrac{p^n -1}{p-1} \text{ for some prime $p$ and $n \geq 2$} \right \}
+$$ 
+is primitive recursive.
+:::
+
+
+
+
+
 
 

@@ -55,6 +55,8 @@ website:
         text: Oct 24
       - href: 023_Oct29_peano_arithmetic.qmd
         text: Oct 29
+      - href: 024_Oct31_arithmetical_formulas.qmd
+        text: Oct 31
 
 
 
@@ -84,11 +86,15 @@ format:
 custom-numbered-blocks:
   groups:
     thmlike:
-      colors: [FFE6A2, EBEBEB]
+      colors: [F8FBD3, EBEBEB]
       boxstyle: foldbox.simple
       collapse: false
     exrlike:
       colors: [FFE6B4, EBEBEB]
+      boxstyle: foldbox.simple
+      collapse: false
+    takehome:
+      colors: [FF7E79, EBEBEB]
       boxstyle: foldbox.simple
       collapse: false
 
@@ -97,10 +103,14 @@ custom-numbered-blocks:
       group: thmlike
     Definition:
       group: thmlike
+    Lemma:
+      group: thmlike
     Problem:
       group: exrlike
     Exercise:
       group: exrlike
+    Take-Home:
+      group: takehome
 
 callouty-theorem:
   exr:

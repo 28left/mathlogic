@@ -1,0 +1,117 @@
+Für Terme $t$ und Formeln $\varphi$ der Sprache von  $PA^-$ schreiben wir
+\begin{eqnarray*}
+\exists x < t \;  \varphi & \text{für} & \exists x (x < t \wedge \varphi)\\
+\forall x < t \;  \varphi & \text{für} & \forall x (x < t \to \varphi)
+\end{eqnarray*}
+\noindent und nennen $\exists x < t$  und $\forall x < t$ {\bf beschränkte} Quantoren.
+
+\subsection*{Definition}
+\begin{tabbing}
+\qquad \= $\varphi$ ist $\Delta_0$-Formel: \; \= $\iff \varphi$ enthält höchstens beschränkte Quantoren,\\
+\> $\varphi$ ist $\Sigma_1$-Formel: \; \> $\iff \varphi = \exists \vec{x} \; \psi$ \; für eine $\Delta_0$-Formel $\psi$,\\
+\> $\varphi$ ist $\Pi_1$-Formel: \; \>  $\iff \varphi = \forall \vec{x}  \;\psi$ \; für eine $\Delta_0$-Formel $\psi$,
+\end{tabbing}
+\noindent Dieses ist der Anfang der {\bf Hierarchie der arithmetischen Formeln}; setzt man
+\begin{equation*}
+\Sigma_0 = \Pi_0 = \Delta_0,
+\end{equation*}
+so kann man fortsetzen:
+
+\begin{tabbing}
+\qquad \quad \= $\varphi$ ist $\Delta_0$-Formel \quad  \=  $\iff \varphi$ höchstens beschränkte Quantoren enthält,\kill
+\> $\varphi$ ist $\Sigma_{n+1}$-Formel \; \>  $\iff \varphi = \exists \vec{x} \; \psi$ \; für eine $\Pi_n$-Formel $\psi$,\\
+\> $\varphi$ ist $\Pi_{n+1}$-Formel \; \>  $\iff \varphi = \forall \vec{x} \; \psi$ \; für eine $\Pi_n$-Formel $\psi$.
+\end{tabbing}
+
+Eine $\Sigma_3$-Formel ist also von der Form $\exists \vec{x} \; \forall \vec{y}\; \exists \vec{z} \; \psi$, wobei $\psi$ höchstens beschränkte Quantoren enthält. Das bedeutet also, dass man beschränkte Quantoren nicht mitzählt, mit $\Sigma$ bzw. $\Pi$ anzeigt, dass die Formel mit einer (endlichen) Folge von $\exists$-Quantoren bzw. $\forall$-Quantoren beginnt und der Index die Quantorenblöcke zählt, so dass es weniger auf die Anzahl der Quantoren als auf die Anzahl der Quantorenwechsel ankommt.
+
+Bei dieser Klassifizierung unterscheidet man nicht zwischen logisch äquivalenten Formeln, so dass etwa jede $\Pi_n$-Formel für $n<m$ auch eine $\Sigma_m$- und $\Pi_m$-Formel ist (indem man der Formel einfach zusätzliche Quantoren über nicht vorkommende Variablen voranstellt). Somit kann man dann auch die Formelmengen
+
+\begin{equation*}
+ \Delta_n = \Sigma_n \cap \Pi_n
+\end{equation*}
+
+\noindent definieren. Es ergibt sich daraus folgendes Bild der {\bf arithmetischen Hierarchie}:
+
+\setlength{\unitlength}{1cm}
+\begin{picture}(12,5)\thicklines
+
+\put(0.7,3){\makebox(0,0)[t]{$\Delta_0$}}
+\put(1.1,2.8){\line(1,0){0.6}}
+\put(2.1,3){\makebox(0,0)[t]{$\Delta_1$}}
+
+\put(2.2,3){\line(1,1){0.8}}
+\put(2.2,2.6){\line(1,-1){0.8}}
+
+\put(3.4,2){\makebox(0,0)[t]{$\Pi_1$}}
+\put(3.4,4){\makebox(0,0)[t]{$\Sigma_1$}}
+
+\put(3.8,3.8){\line(1,-1){0.8}}
+\put(3.8,1.8){\line(1,1){0.8}}
+
+\put(4.9,3){\makebox(0,0)[t]{$\Delta_2$}}
+
+\put(5.1,3){\line(1,1){0.8}}
+\put(5.1,2.6){\line(1,-1){0.8}}
+
+\put(6.3,2){\makebox(0,0)[t]{$\Pi_2$}}
+\put(6.3,4){\makebox(0,0)[t]{$\Sigma_2$}}
+
+\put(6.6,3.8){\line(1,-1){0.8}}
+\put(6.6,1.8){\line(1,1){0.8}}
+
+\put(7.6,3){\makebox(0,0)[t]{$\Delta_3$}}
+
+\put(7.8,3){\line(1,1){0.8}}
+\put(7.8,2.6){\line(1,-1){0.8}}
+
+\put(9.6,2.8){\makebox(0,0)[t]{\ldots \ldots}}
+
+\end{picture}
+  \hspace*{1cm}
+
+Viele nützliche Eigenschaften natürlicher Zahlen lassen sich mittels $\Delta_0$-For\-meln ausdrücken, z.\, B.:
+
+\begin{equation*}
+x \; ist \; irreduzibel   \iff 1 < x \wedge \forall u<x \; \forall v<x \; \neg (u \cdot v = x).
+\end{equation*}
+
+
+
+Hier soll gezeigt werden, dass die rekursive Relationen mit den Mengen übereinstimmen, die sich durch eine $\Delta_1$-Formeln in den natürlichen Zahlen definieren lassen, und dass der Graph einer  rekursiven Funktion durch eine  $\Sigma_1$-Formeln in den natürlichen Zahlen definiert werden kann. Wir beginnen mit dem
+
+\section{Lemma über $\Delta_0$-Formeln} \label{delta0formeln}
+\emph{Für jede $\Delta_0$-Formel $\theta(\vec{v})$ ist die Relation}
+
+\begin{equation*}
+R(\vec{a}) \iff \mathbb{N} \models \theta(\vec{a})
+\end{equation*}
+  \emph{primitiv-rekursiv.}
+  
+  \begin{Beweis}
+Wir zeigen durch Induktion über lz($\theta$), dass die zugehörige charakteristische Funktion
+
+\medskip
+
+$c_{\theta}(\vec{x}) = 
+\begin{cases}
+    1  &  \text{falls } \mathbb{N} \models \theta(\vec{x})\\
+    0   &   \text{sonst}
+\end{cases}$
+
+\medskip
+
+\noindent primitiv-rekursiv ist: Zunächst sind die Funktionen $x+1, x+y, x \cdot y$ p.r. und damit definiert jeder Term in $\mathbb{N}$ eine primitiv-rekursive Funktion. Da auch die Funktionen $eq(x,y)=\overline{sg}(|x-y|)$ und $sg(y \Pmin x)$ primitv-rekursiv sind (und die p.r. Funktionen abgeschlossen sind unter Substitution), gilt die Behauptung für die atomaren Formeln $t=s, t < s$. Für den Fall der aussagenlogischen Operationen  benutze man
+\begin{equation*}
+c_{\neg \theta}(\vec{x}) = 1 \Pmin c_{\theta}(\vec{x}),  \; c_{\theta \wedge \psi}(\vec{x}) = c_{\theta}(\vec{x}) \cdot c_{\psi}(\vec{x}), \; c_{\theta \vee \psi}(\vec{x}) = \min(c_{\theta}(\vec{x}),c_{\psi}(\vec{x})).
+\end{equation*}
+Ist schließlich $\theta$ eine $\Delta_0$-Formel, $t$ ein Term und $\psi(\vec{x}) = \forall y < t(\vec{x}) \; \theta(\vec{x},y)$, so folgt die Behauptung aus
+
+\begin{equation*}
+c_{ \psi}(\vec{x}) = eq( t(\vec{x}) , (\mu y \le t(\vec{x}) (c_{\theta}(\vec{x},y) = 0)).
+\end{equation*}
+
+\noindent Ähnlich argumentiert man im Falle der Formel  $ \exists y < t(\vec{x}) \; \theta(\vec{x},y)$ (oder führt diesen Fall mittels der Negation auf den früheren zurück).
+\end{Beweis}
+
+Die Umkehrung des obigen Lemmas gilt nicht: es gibt primitiv-rekursive Mengen, die durch keine $\Delta_0$-Formel in den natürlichen Zahlen definierbar sind. 
