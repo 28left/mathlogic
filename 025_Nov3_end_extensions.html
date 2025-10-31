@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Oct 13 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 3 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./019_Oct15_fraisse_limits.html" rel="next">
-<link href="./017_Oct10_week7_problems.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -72,19 +70,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Lemma {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Theorem {
+.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -92,8 +82,16 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FF7E79;
   --color2: #EBEBEB;
 }
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
 .Definition {
   --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -140,7 +138,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./018_Oct13_homogeneous_structures.html">Oct 13</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Math 557 Nov 3</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -268,7 +266,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./018_Oct13_homogeneous_structures.html" class="sidebar-item-text sidebar-link active">
+  <a href="./018_Oct13_homogeneous_structures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oct 13</span></a>
   </div>
 </li>
@@ -324,19 +322,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#homogeneous-structures" id="toc-homogeneous-structures" class="nav-link active" data-scroll-target="#homogeneous-structures">Homogeneous Structures</a>
+  <li><a href="#end-extensions" id="toc-end-extensions" class="nav-link active" data-scroll-target="#end-extensions">End Extensions</a>
   <ul class="collapse">
-  <li><a href="#the-age-of-a-structure" id="toc-the-age-of-a-structure" class="nav-link" data-scroll-target="#the-age-of-a-structure">The age of a structure</a></li>
+  <li><a href="#remark" id="toc-remark" class="nav-link" data-scroll-target="#remark">Remark</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="018_Oct13_homogeneous_structures.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="025_Nov3_end_extensions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Oct 13</h1>
+<h1 class="title">Math 557 Nov 3</h1>
 </div>
 
 
@@ -353,178 +351,38 @@ window.Quarto = {
 </header>
 
 
-<section id="homogeneous-structures" class="level1">
-<h1>Homogeneous Structures</h1>
-<p><strong>Recall:</strong> We have seen that DLO is <span class="math inline">\(\omega\)</span>-categorical, meaning up to isomorphism there is only one countable model. Since there are no finite models, by Vaught’s test, DLO is complete.</p>
-<p><strong>Question:</strong> Are there other examples like this?</p>
-<p>Let <span class="math inline">\(\mathcal{L}\)</span> be a language and <span class="math inline">\(\mathcal{M}\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-structure.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="end-extensions" class="level1">
+<h1>End Extensions</h1>
+<p>The standard model can be embedded into every model <span class="math inline">\(\mathcal{M}\)</span> of <span class="math inline">\(\mathsf{PA}\)</span> as an initial segment. It turns out this already holds for models of the theory <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
+<div id="Definition-1" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>Let <span class="math inline">\(L\)</span> be a language containing a 2-ary symbol <span class="math inline">\(&lt;\)</span>, and let <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> be <span class="math inline">\(L\)</span>-structures with <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span>. Then <span class="math inline">\(\mathcal{N}\)</span> is called an <strong>end extension</strong> of <span class="math inline">\(\mathcal{M}\)</span> (and correspondingly <span class="math inline">\(\mathcal{M}\)</span> is an <strong>initial segment</strong> of <span class="math inline">\(\mathcal{N}\)</span>) if and only if the larger set <span class="math inline">\(N\)</span> does not add any further elements below an element of <span class="math inline">\(M\)</span>: <span class="math display">\[
+\mathcal{M} \subseteq_{end} \mathcal{N}: \iff \text{for all} \; x \in M,y \in N: (y&lt;^N x \Rightarrow y \in M).
+\]</span><p></p>
+</div></details>
 </div>
-<div class="callout-body-container">
-<div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
-For <span class="math inline">\(A \subseteq M\)</span>, we denote by <span class="math inline">\(\langle A \rangle^{\mathcal{M}}\)</span> the smallest substructure of <span class="math inline">\(\mathcal{M}\)</span> whose domain contains <span class="math inline">\(A\)</span>.</p>
-<p>We say <span class="math inline">\(\mathcal{N} \subseteq \mathcal{M}\)</span> is finitely generated if <span class="math inline">\(\mathcal{N} = \langle A \rangle^{\mathcal{M}}\)</span> for some finite <span class="math inline">\(A \subseteq M\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2</strong></span> <br>
-We say <span class="math inline">\(\mathcal{M}\)</span> is <em>homogeneous</em> if any isomorphism between finitely generated substructures of <span class="math inline">\(\mathcal{M}\)</span> can be extended to an automorphism of <span class="math inline">\(\mathcal{M}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="exa-">
-<p><br>
-Let <span class="math inline">\(\mathcal{L} = \{&lt;\}\)</span> and <span class="math inline">\(\mathcal{M} = (\mathbb{Q}, &lt;)\)</span>. The finitely generated substructures coincide with the finite substructures.</p>
-</div>
-<section id="the-age-of-a-structure" class="level2">
-<h2 class="anchored" data-anchor-id="the-age-of-a-structure">The age of a structure</h2>
-<p>In the back-and-forth proof of <span class="math inline">\(\omega\)</span>-categoricity of DLO, we used a homogeneity property, similarly for the proof that <span class="math inline">\((\mathbb{Q}, &lt;) \cong (\mathbb{R}, &lt;)\)</span>.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3</strong></span> <br>
-The <em>age</em> of <span class="math inline">\(\mathcal{M}\)</span>, denoted <span class="math inline">\(\mathrm{age}(\mathcal{M})\)</span>, is the class of all finitely generated <span class="math inline">\(\mathcal{L}\)</span>-structures isomorphic to a substructure of <span class="math inline">\(\mathcal{M}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="exa-">
-<p><br>
-<span class="math inline">\(\mathrm{age}(\mathbb{Q}, &lt;)\)</span> is the class of all finite linear orders.</p>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="lem-" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1</strong></span> <br>
-Any two countable homogeneous structures with the same age are isomorphic.</p>
-</div>
-</div>
-</div>
+<p>Each natural number <span class="math inline">\(n\)</span> is represented in the standard model, which we also simply denote by <span class="math inline">\(\mathbb{N}\)</span> here, by the constant term <span class="math display">\[
+\underline{n} = 1+ \ldots + 1 \quad \text{($n$ times)}
+\]</span> where <span class="math inline">\(\underline{0}\)</span> is the constant <span class="math inline">\(0\)</span>.</p>
+<div id="Theorem-2" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2</strong></summary><div>Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. Then the map <span class="math display">\[n \mapsto \underline{n}^{\mathcal{M}}\]</span> defines an embedding of the standard model <span class="math inline">\(\mathbb{N}\)</span> onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.<p></p>
+<p>In particular, every model of <span class="math inline">\(\mathsf{PA}^-\)</span> is isomorphic to an end extension of the standard model <span class="math inline">\(\mathbb{N}\)</span>.*</p>
+</div></details>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em> (Sketch). </span>Let <span class="math inline">\(\mathcal{A} \subseteq \mathcal{M}\)</span> and <span class="math inline">\(\mathcal{B} \subseteq \mathcal{N}\)</span> be finitely generated, and let <span class="math inline">\(\pi: \mathcal{A} \to \mathcal{B}\)</span> be an isomorphism.</p>
-<p>Let <span class="math inline">\(a \in M \setminus A\)</span>. We need to show that <span class="math inline">\(\pi\)</span> can be extended to an isomorphism <span class="math inline">\(\mathcal{A} \cup \{a\} \to \mathcal{B}'\)</span>. This suffices, since we can then use the back-and-forth argument (remember our structures are countable) to extend everything to an automorphism of <span class="math inline">\(\mathcal{M}\)</span>.</p>
-<p>Suppose <span class="math inline">\(\mathcal{A} = \langle E \rangle^{\mathcal{M}}\)</span> and <span class="math inline">\(\mathcal{B} = \langle F \rangle^{\mathcal{N}}\)</span>. <!-- Observe that $\widetilde{\pi}: E \leftrightarrow F$ extends uniquely to $\pi$. --></p>
-<p>Let <span class="math inline">\(\mathcal{A}' = \langle E \cup \{a\} \rangle^{\mathcal{M}} \subseteq \mathcal{M}\)</span>. Since <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> have the same age, there exists <span class="math inline">\(\mathcal{C} \subseteq \mathcal{N}\)</span> finitely generated such that <span class="math inline">\(\mathcal{A}' \cong \mathcal{C}\)</span> via some isomorphism <span class="math inline">\(g\)</span>.</p>
-<p>The map <span class="math inline">\(g\)</span> is uniquely determined by its values on <span class="math inline">\(E \cup \{a\}\)</span>. The restriction <span class="math inline">\(g|_E\)</span> induces an isomorphism <span class="math inline">\(\langle E \rangle^{\mathcal{M}} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}\)</span>.</p>
-<p>Therefore, <span class="math inline">\(\pi \circ (g|_E)^{-1}\)</span> is an isomorphism <span class="math inline">\(\langle g(E) \rangle^{\mathcal{N}} \xrightarrow{\cong} \mathcal{B}\)</span>. Call this map <span class="math inline">\(\tau\)</span>. Note that <span class="math inline">\(\langle g(E) \rangle^{\mathcal{N}}\)</span> is a finitely generated subset of <span class="math inline">\(\mathcal{N}\)</span>. Since <span class="math inline">\(\mathcal{N}\)</span> is homogeneous, <span class="math inline">\(\tau\)</span> extends to an automorphism <span class="math inline">\(\overline{\tau}: \mathcal{N} \to \mathcal{N}\)</span>. Let <span class="math inline">\(\mathcal{B}'\)</span> be the image of <span class="math inline">\(\mathcal{C}\)</span> under <span class="math inline">\(\overline{\tau}\)</span>. By definition of <span class="math inline">\(\overline{\tau}\)</span>, <span class="math inline">\(\mathcal{B} \subset \mathcal{B}'\)</span> and <span class="math inline">\(\mathcal{A}'\)</span> is isomorphic to <span class="math inline">\(\mathcal{B}'\)</span> via the map <span class="math inline">\(\overline{\tau} \circ g\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>By simple induction (in the meta-theory), one shows for all natural numbers <span class="math inline">\(n,k,l\)</span>: <span class="math display">\[
+\begin{aligned}
+n = k+l &amp; \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k}+ \underline{l} \\
+n = k \cdot l &amp; \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k} \cdot \underline{l} \\
+n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &lt; \underline{k}\\
+\end{aligned}
+\]</span> and <span class="math display">\[
+\mathsf{PA}^- \vdash \forall x \; (\; x \le  \underline{k} \to  x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+\]</span></p>
+<p>The first three statements will later be generalized to all recursive functions and relations; they imply that the map <span class="math inline">\(n \mapsto \underline{n}^{\mathcal{M}}\)</span> is a homomorphism, and, due to the last statement, the map is also an embedding onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.</p>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Question
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What do ages of countable homogeneous structures look like?</p>
-</div>
-</div>
-<!-- 
-\documentclass{article}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage[margin=1in]{geometry}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-
-\title{MATH 557 Lecture Notes}
-\date{October 13, 2025}
-
-\begin{document}
-
-\maketitle
-
-\section*{Homogeneous Structures}
-
-\textbf{Recall:} We have seen that DLO is $\omega$-categorical, meaning up to isomorphism there is only one countable model. Since there are no finite models, by Vaught's test, DLO is complete.
-
-\textbf{Question:} Are there other examples like this?
-
-\begin{definition}
-Let $\mathcal{L}$ be a language and $\mathcal{M}$ be an $\mathcal{L}$-structure. We say $\mathcal{M}$ is \emph{(ultra) homogeneous} if any isomorphism between finitely generated substructures of $\mathcal{M}$ extends to an automorphism of $\mathcal{M}$.
-
-For $A \subseteq M$, we denote by $\langle A \rangle^{\mathcal{M}}$ the smallest substructure of $\mathcal{M}$ whose domain contains $A$.
-
-We say $\mathcal{M} \supseteq \mathcal{N}$ is finitely generated if $\mathcal{N} = \langle A \rangle^{\mathcal{M}}$ for some finite $A \subseteq M$.
-\end{definition}
-
-\begin{example}
-Let $\mathcal{L} = \{<\}$ and $\mathcal{M} = (\mathbb{Q}, <)$. Then finitely generated is equivalent to having a finite substructure.
-\end{example}
-
-\section*{Back-and-Forth and Homogeneity}
-
-In the back-and-forth proof of $\omega$-categoricity of DLO, we used a homogeneity property, similarly for the proof that $(\mathbb{Q}, <) \cong (\mathbb{R}, <)$.
-
-\begin{definition}
-The \emph{age} of $\mathcal{M}$, denoted $\mathrm{age}(\mathcal{M})$, is the class of all finitely generated $\mathcal{L}$-structures isomorphic to a substructure of $\mathcal{M}$.
-\end{definition}
-
-\begin{example}
-$\mathrm{age}(\mathbb{Q}, <)$ is the class of all finite linear orders.
-\end{example}
-
-\begin{lemma}
-Any two countable homogeneous structures with the same age are isomorphic.
-\end{lemma}
-
-\begin{proof}[Proof sketch]
-Let $\mathcal{A} \subseteq \mathcal{M}$ and $\mathcal{B} \subseteq \mathcal{N}$ be finitely generated, and let $\pi: \mathcal{A} \to \mathcal{B}$ be an isomorphism.
-
-Let $a \in M \setminus A$. We need to show that $\pi$ can be extended to an isomorphism $\mathcal{A} \cup \{a\} \to \mathcal{B}'$.
-
-This suffices, since we can then use the back-and-forth argument.
-
-Suppose $\mathcal{A} = \langle E \rangle^{\mathcal{M}}$ and $\mathcal{B} = \langle F \rangle^{\mathcal{N}}$.
-
-Then $\widetilde{\pi}: E \leftrightarrow F$ extends uniquely to $\pi$.
-
-Let $\mathcal{A}' = \langle E \cup \{a\} \rangle^{\mathcal{M}} \subseteq \mathcal{M}$.
-
-Since $\mathcal{M}$ and $\mathcal{N}$ have the same age, there exists $\mathcal{C} \subseteq \mathcal{N}$ finitely generated such that $\mathcal{A}' \cong \mathcal{C}$ via some isomorphism $g$.
-
-Note that $\mathcal{A}' \cong \mathcal{C}$ via $g$. The map $g$ is uniquely determined by its values on $E \cup \{a\}$.
-
-The restriction $g|_E$ induces an isomorphism $\langle E \rangle^{\mathcal{M}} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
-
-Therefore, $\pi \circ (g|_E)^{-1}$ is an isomorphism $\mathcal{B} \xrightarrow{\cong} \langle g(E) \rangle^{\mathcal{N}}$.
-
-Call this map $\tau$. Note that $\langle g(E) \rangle^{\mathcal{N}}$ is a finitely generated subset of $\mathcal{N}$.
-
-Since $\mathcal{N}$ is homogeneous, $\tau$ extends to an automorphism $\overline{\tau}: \mathcal{N} \to \mathcal{N}$.
-
-This yields an isomorphism $\mathcal{A}' \to \mathcal{B} \cup \{\overline{\tau}(g(a))\}$.
-\end{proof}
-
-\textbf{Question:} What do ages of homogeneous structures look like?
-
-\end{document} -->
+<section id="remark" class="level3">
+<h3 class="anchored" data-anchor-id="remark">Remark</h3>
+<p>The standard model has no proper initial segment, and <span class="math inline">\(\mathbb{Z}[X]^+\)</span> has <span class="math inline">\(\mathbb{N}\)</span> as its only proper initial segment. On the other hand, every model <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span> has a proper end extension that is also a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, namely the non-negative part of the polynomial ring <span class="math inline">\(R[X]\)</span>, where <span class="math inline">\(R\)</span> is the discretely ordered ring associated with the model <span class="math inline">\(\mathcal{M}\)</span>.</p>
 
 
 </section>
@@ -931,18 +789,6 @@ This yields an isomorphism $\mathcal{A}' \to \mathcal{B} \cup \{\overline{\tau}(
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./017_Oct10_week7_problems.html" class="pagination-link" aria-label="Oct 10">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 10</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./019_Oct15_fraisse_limits.html" class="pagination-link" aria-label="Oct 15">
-        <span class="nav-page-text">Oct 15</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
