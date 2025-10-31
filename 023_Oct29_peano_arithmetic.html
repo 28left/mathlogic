@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,18 +30,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./024_Oct31_arithmetical_formulas.html" rel="next">
 <link href="./022_Oct24_primitive_recursive.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -72,18 +72,26 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>
 .Definition {
-  --color1: #FFE6A2;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #FFE6A2;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
@@ -103,7 +111,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -145,8 +153,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Math 557 Fall 2025</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -299,6 +308,12 @@ window.Quarto = {
  <span class="menu-text">Oct 29</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./024_Oct31_arithmetical_formulas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 31</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -399,7 +414,7 @@ window.Quarto = {
 <li><strong>A6:</strong> <span class="math inline">\(x+0=x \wedge x \cdot 0 = 0\)</span></li>
 <li><strong>A7:</strong> <span class="math inline">\(x \cdot 1 = x\)</span></li>
 </ul>
-<p>Here we use the usual algebraic bracket conventions (<span class="math inline">\(\cdot\)</span> binds more strongly than <span class="math inline">\(+\)</span>). For the <span class="math inline">\(&lt;\)</span>-relation, the laws of a linear order hold, which is compatible with addition and multiplication:</p>
+<p>Here we use the usual algebraic bracket conventions (<span class="math inline">\(\cdot\)</span> binds more strongly than <span class="math inline">\(+\)</span>). For the <span class="math inline">\(&lt;\)</span>-relation, the axioms state that it is a linear order compatible with addition and multiplication:</p>
 <p><strong>Axioms A8-A12:</strong></p>
 <ul>
 <li><strong>A8:</strong> <span class="math inline">\(\neg  \; x &lt; x\)</span></li>
@@ -468,7 +483,7 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
 \]</span> and <span class="math display">\[
 \mathsf{PA}^- \vdash \forall x \; (\; x \le  \underline{k} \to  x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
 \]</span></p>
-<p>The first three statements will later be generalized to all recursive functions and relations; They imply that the map <span class="math inline">\(n \mapsto \underline{n}^{\mathcal{M}}\)</span> is a homomorphism, and, due to the last statement, the map is also an embedding onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.</p>
+<p>The first three statements will later be generalized to all recursive functions and relations; they imply that the map <span class="math inline">\(n \mapsto \underline{n}^{\mathcal{M}}\)</span> is a homomorphism, and, due to the last statement, the map is also an embedding onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.</p>
 </div>
 <section id="remark" class="level3">
 <h3 class="anchored" data-anchor-id="remark">Remark</h3>
@@ -531,14 +546,13 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -887,6 +901,9 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./024_Oct31_arithmetical_formulas.html" class="pagination-link" aria-label="Oct 31">
+        <span class="nav-page-text">Oct 31</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
