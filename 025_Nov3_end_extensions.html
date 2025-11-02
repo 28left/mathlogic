@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,17 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./024_Oct31_arithmetical_formulas.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -70,7 +70,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Theorem {
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -78,15 +90,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Definition {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -110,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -138,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Math 557 Nov 3</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./025_Nov3_end_extensions.html">Nov 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,8 +156,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Math 557 Fall 2025</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -312,6 +317,12 @@ window.Quarto = {
  <span class="menu-text">Oct 31</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./025_Nov3_end_extensions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Nov 3</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -325,6 +336,7 @@ window.Quarto = {
   <li><a href="#end-extensions" id="toc-end-extensions" class="nav-link active" data-scroll-target="#end-extensions">End Extensions</a>
   <ul class="collapse">
   <li><a href="#remark" id="toc-remark" class="nav-link" data-scroll-target="#remark">Remark</a></li>
+  <li><a href="#preservation-properties-of-end-extensions" id="toc-preservation-properties-of-end-extensions" class="nav-link" data-scroll-target="#preservation-properties-of-end-extensions">Preservation Properties of End Extensions</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="025_Nov3_end_extensions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -383,6 +395,49 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
 <section id="remark" class="level3">
 <h3 class="anchored" data-anchor-id="remark">Remark</h3>
 <p>The standard model has no proper initial segment, and <span class="math inline">\(\mathbb{Z}[X]^+\)</span> has <span class="math inline">\(\mathbb{N}\)</span> as its only proper initial segment. On the other hand, every model <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span> has a proper end extension that is also a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, namely the non-negative part of the polynomial ring <span class="math inline">\(R[X]\)</span>, where <span class="math inline">\(R\)</span> is the discretely ordered ring associated with the model <span class="math inline">\(\mathcal{M}\)</span>.</p>
+</section>
+<section id="preservation-properties-of-end-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="preservation-properties-of-end-extensions">Preservation Properties of End Extensions</h2>
+<p>In the previous lecture, we introduced <em>arithmetical formulas</em>. <span class="math inline">\(\Delta_0\)</span>-formulas are at the bottom of the <em>arithmetical hierarchy</em>. We already saw that relations defined by such formulas are primitive recursive. Next, we will show that those formulas <em>mean the same thing in a structure as in all end extensions</em>. This will be crucial later on.</p>
+<div id="Theorem-3" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
+<ol type="1">
+<li><p>Every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>upward-persistent</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \Longrightarrow \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Pi_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>downward-persistent</strong>: <span class="math display">\[
+\mathcal{M}\models \varphi[\vec{a}] \Longrightarrow \mathcal{N}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Delta_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}].
+\]</span></p></li>
+</ol>
+</div></details>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We prove (i) by induction on the formula structure of <span class="math inline">\(\varphi(\vec{v})\)</span>. Only the case of a bounded quantifier needs to be addressed. Since <span class="math inline">\(\mathcal{M}\)</span> is an end extension of <span class="math inline">\(\mathcal{N}\)</span>, <span class="math inline">\(M\)</span> does not insert any new elements below an element of <span class="math inline">\(N\)</span>, so that a bounded quantifier means the same thing in both structures.</p>
+</div>
+<p>Let <span class="math inline">\(\Sigma_1\)</span>-<span class="math inline">\(\operatorname{Th}(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}\)</span>. Then we have:</p>
+<div id="Corollary-4" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 4</strong></summary><div><span class="math display">\[
+\mathsf{PA}^- \models \Sigma_1\text{-}\operatorname{Th}(\mathbb{N})
+\]</span><p></p>
+</div></details>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By the previous theorem, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
+</div>
+<p>Thus one can prove in the theory <span class="math inline">\(\mathsf{PA}^-\)</span> all <span class="math inline">\(\Sigma_1\)</span>-sentences that hold in the standard model. This is no longer true for <span class="math inline">\(\Pi_1\)</span>-sentences. For instance, the <span class="math inline">\(\Pi_1\)</span>-sentence stating that every number is even or odd: <span class="math display">\[
+(*) \quad \forall x \;  \exists y \le x \; (x = 2 \cdot y \vee x = 2 \cdot y +1)
+\]</span> is true in the standard model, but not in the <span class="math inline">\(\mathsf{PA}^-\)</span>-model <span class="math inline">\(\mathbb{Z}[X]^+\)</span>.</p>
+<p>Even true <span class="math inline">\(\forall\)</span>-sentences (i.e., sentences of the form <span class="math inline">\(\forall \vec{x} \; \psi\)</span> with <em>quantifier-free</em> <span class="math inline">\(\psi\)</span>) that hold in the standard model need not be provable in <span class="math inline">\(\mathsf{PA}^-\)</span>. For example, the <span class="math inline">\(\forall\)</span>-sentence <span class="math display">\[
+\forall x,y  (x^2 \ne 2 \cdot y^2)
+\]</span> is true in the standard model, but not provable in <span class="math inline">\(\mathsf{PA}^-\)</span> (<span class="math inline">\(\mathbb{Z}/(X^2 - 2Y^2)\)</span> is a counterexample).</p>
+<p>Thus the above sentence (*) is an example of a <span class="math inline">\(\Pi_1\)</span>-sentence that is not a <span class="math inline">\(\forall\)</span>-sentence, where one cannot omit the bounded quantifier! (By the way, one can show that <span class="math inline">\(\mathbb{Z}[X]^+\)</span> is at least a model of all <span class="math inline">\(\forall\)</span>-sentences that hold in the standard model.)</p>
 
 
 </section>
@@ -440,14 +495,13 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -789,6 +843,15 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./024_Oct31_arithmetical_formulas.html" class="pagination-link" aria-label="Oct 31">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 31</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MATH 557 Oct 20 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 5 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,15 +32,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -70,11 +69,27 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
 .Problem {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Theorem {
+.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -94,7 +109,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -122,7 +137,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">MATH 557 Oct 20</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,8 +153,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Math 557 Fall 2025</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -272,6 +290,36 @@ window.Quarto = {
  <span class="menu-text">Midterm 2 preparation</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./021_Oct22_computable_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 22</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./022_Oct24_primitive_recursive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 24</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./023_Oct29_peano_arithmetic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 29</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./024_Oct31_arithmetical_formulas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 31</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./025_Nov3_end_extensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nov 3</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -282,24 +330,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#computable-functions" id="toc-computable-functions" class="nav-link active" data-scroll-target="#computable-functions">Computable functions</a>
+  <li><a href="#preservation" id="toc-preservation" class="nav-link active" data-scroll-target="#preservation">Preservation Properties under End Extensions</a>
   <ul class="collapse">
-  <li><a href="#turing-machines" id="toc-turing-machines" class="nav-link" data-scroll-target="#turing-machines">Turing machines</a>
-  <ul class="collapse">
-  <li><a href="#the-computation-of-a-turing-program" id="toc-the-computation-of-a-turing-program" class="nav-link" data-scroll-target="#the-computation-of-a-turing-program">The computation of a Turing program</a></li>
-  <li><a href="#an-example" id="toc-an-example" class="nav-link" data-scroll-target="#an-example">An example</a></li>
-  <li><a href="#turing-computable-functions" id="toc-turing-computable-functions" class="nav-link" data-scroll-target="#turing-computable-functions">Turing-computable functions</a></li>
-  </ul></li>
+  <li><a href="#corollary" id="toc-corollary" class="nav-link" data-scroll-target="#corollary">Corollary</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="021_Oct20_computable_functions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="026_Nov5_preservation_properties.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MATH 557 Oct 20</h1>
+<h1 class="title">Math 557 Nov 5</h1>
 </div>
 
 
@@ -316,154 +359,49 @@ window.Quarto = {
 </header>
 
 
-<section id="computable-functions" class="level1">
-<h1>Computable functions</h1>
-<section id="turing-machines" class="level2">
-<h2 class="anchored" data-anchor-id="turing-machines">Turing machines</h2>
-<p>A <strong>Turing machine</strong> <span class="math inline">\(M\)</span> has an unlimited (both sides) <strong>tape</strong> which is partitioned into infinitely many <strong>cells</strong>. Each cell can hold a letter from a finite <strong>alphabet</strong> <span class="math inline">\(s_1,\ldots,s_n\)</span>. At any time, only finitely many cells contain a symbol <span class="math inline">\(\in \{s_1,\ldots,s_n\}\)</span>. The empty cells are marked by a <em>blank</em> symbol <span class="math inline">\(b\)</span> that is distinct from the <span class="math inline">\(s_i\)</span>. To facilitate things, we put <span class="math inline">\(s_0 := b\)</span>.</p>
-<p>Access to the tape is given via a <strong>read-write head</strong>, which scans a single cell. The cell currently scanned can be read and its contents overwritten. The head can also move left or right. These actions can be made dependent on the contents of the scanned cell.</p>
-<p>Thus, the machine can read any cell on the tape and read and write its contents. Furthermore, at any time <span class="math inline">\(M\)</span> is in one of finitely many <strong>states</strong> <span class="math inline">\(q_1,\ldots, q_r\)</span>. The states influence the behavior of <span class="math inline">\(M\)</span>.</p>
-<p>Formally, there are three types of operations (also called <em>instructions</em>): Suppose <span class="math inline">\(M\)</span> is in state <span class="math inline">\(q_i\)</span> and currently scan a cell with symbol <span class="math inline">\(s_j\)</span> (<span class="math inline">\(0 \leq j \leq n\)</span>).</p>
+<p>Of particular importance is that <span class="math inline">\(\Delta_0\)</span>-formulas mean the same thing in a structure as in all end extensions:</p>
+<section id="preservation" class="level1">
+<h1>Preservation Properties under End Extensions</h1>
+<div id="Theorem-1" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 1</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
 <ol type="1">
-<li><span class="math inline">\(q_i \; s_j \; s_k \; q_l\)</span>:   delete <span class="math inline">\(s_j\)</span> write <span class="math inline">\(s_k\)</span>,</li>
-<li><span class="math inline">\(q_i \; s_j \;R \; q_l\)</span>:   move the head one cell to the right,</li>
-<li><span class="math inline">\(q_i \; s_j \; L \; q_l\)</span>:   move the head one cell to the left.</li>
+<li><p>Every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>upward-persistent</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \Longrightarrow \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Pi_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>downward-persistent</strong>: <span class="math display">\[
+\mathcal{M}\models \varphi[\vec{a}] \Longrightarrow \mathcal{N}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Delta_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}].
+\]</span></p></li>
 </ol>
-<p>In each case, transition to <span class="math inline">\(q_l\)</span> afterwards.</p>
-<p>A (deterministic) <strong>Turing program</strong> is a finite list of instructions (1)-(3) such that for any pair <span class="math inline">\((q_i,s_k)\)</span> there is at most one instruction starting with <span class="math inline">\(q_i, s_k\)</span>.</p>
-<section id="the-computation-of-a-turing-program" class="level3">
-<h3 class="anchored" data-anchor-id="the-computation-of-a-turing-program">The computation of a Turing program</h3>
-<p>The machine begins in state <span class="math inline">\(q_1\)</span> scanning the leftmost cell not containing a blank and follows the instructions, describe above, according to the current state and the content of the current cell.</p>
-<p>If the machine enters state <span class="math inline">\(q_r\)</span>, the computation <strong>halts</strong> (no further instructions will be applied). If it ever enters a state <span class="math inline">\(q_i\)</span> and scans symbol <span class="math inline">\(s_j\)</span> for which there is no applicable instruction, it <strong>stalls</strong> (in particular, there will be no output as defined below).</p>
-<p>During the computation, the machine will pass from one <strong>configuration</strong> to the next. A configuration consists of</p>
-<blockquote class="blockquote">
-<p>the current state + the current cell scanned + the contents the left and right of the current cell up to the leftmost/rightmost non-blank symbol.</p>
-</blockquote>
-<p>Every configuration is determined by a finite amount of information.</p>
-</section>
-<section id="an-example" class="level3">
-<h3 class="anchored" data-anchor-id="an-example">An example</h3>
-<p>The alphabet of <span class="math inline">\(M\)</span> consists of the symbols <span class="math inline">\(0,1\)</span> (and <span class="math inline">\(b\)</span> for a blank cell), the states are <span class="math inline">\(q_1,q_2, q_3\)</span>. The program <span class="math inline">\(P\)</span> has the following instructions: <span class="math display">\[
-\begin{aligned}
-q_1 &amp; \; 0  \; R  \; q_1\\
-q_1 &amp; \; 1  \; 0  \; q_2\\
-q_2 &amp; \; 0  \; R  \; q_2\\
-q_2 &amp; \; 1  \; R  \; q_1\\
-q_2 &amp; \; b \; b \; q_3
-\end{aligned}
-\]</span></p>
-<p>In the initial configuration, the machine looks as follows:</p>
-<div class="{=latex}">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"><span class="math inline">\(\downarrow\)</span></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">…</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">…</td>
-</tr>
-</tbody>
-</table>
+</div></details>
 </div>
-<p><span class="math inline">\(M\)</span> follows the instructions above until it reaches the halting state <span class="math inline">\(q_3\)</span></p>
-<div class="{=latex}">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"><span class="math inline">\(\downarrow\)</span></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">…</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">…</td>
-</tr>
-</tbody>
-</table>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We prove (i) by induction on the formula construction of <span class="math inline">\(\varphi(\vec{v})\)</span>, where only the case of a bounded quantifier is of interest. But since <span class="math inline">\(\mathcal{M}\)</span> is an end extension of <span class="math inline">\(\mathcal{N}\)</span>, <span class="math inline">\(M\)</span> does not insert any new elements below an element of <span class="math inline">\(N\)</span>, so that a bounded quantifier means the same thing in both structures.</p>
 </div>
-</section>
-<section id="turing-computable-functions" class="level3">
-<h3 class="anchored" data-anchor-id="turing-computable-functions">Turing-computable functions</h3>
-<p>Since Turing computations may not halt (either because they stall or enter an infinite loop and never reach the halting state), we define <strong>partial computable functions</strong> whose domain may be a proper subset of <span class="math inline">\(\mathbb{N}^n\)</span>.</p>
-<p>We use the following notation:</p>
+<p>Let <span class="math inline">\(\Sigma_1\)</span>-<span class="math inline">\(Th(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}\)</span>. Then we have:</p>
+<section id="corollary" class="level2">
+<h2 class="anchored" data-anchor-id="corollary">Corollary</h2>
 <p><span class="math display">\[
-\begin{aligned}
-f(\vec{x}) \downarrow: &amp; \iff  f \text{ is defined for } \vec{x} \\
-f(\vec{x}) \uparrow: &amp; \iff  f \text{ is not defined for } \vec{x} \\
-f(\vec{x}) \simeq g(\vec{x}): &amp; \iff  f(\vec{x})\downarrow \iff g(\vec{x}) \downarrow \; \text{ and } \; f(\vec{x})\downarrow \Longrightarrow f(\vec{x}) = g(\vec{x}).
-\end{aligned}
+\mathsf{PA}^- \models \Sigma_1\text{-}Th(\mathbb{N})
 \]</span></p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By the previous theorem, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
 </div>
-<div class="callout-body-container">
-<div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
-We say a Turing machine <span class="math inline">\(M\)</span> with program <span class="math inline">\(P\)</span> <strong>computes</strong> a partial function <span class="math inline">\(f : \subseteq \mathbb{N} \to \mathbb{N}\)</span> if the machine, when starting with <span class="math inline">\(n+1\)</span> many <span class="math inline">\(1\)</span>’s, ends in state <span class="math inline">\(q_r\)</span> if and only if <span class="math inline">\(n\)</span> is in the domain of <span class="math inline">\(f\)</span>, and in this case, when <span class="math inline">\(M\)</span> reaches state <span class="math inline">\(q_r\)</span>, there are exactly <span class="math inline">\(f(n)\)</span> many <span class="math inline">\(1\)</span>’s on the tape (not necessarily contiguous).</p>
-<p>A partial function <span class="math inline">\(f\)</span> is <strong>Turing computable</strong> if and only if there exists a Turing machine <span class="math inline">\(M\)</span> and a program <span class="math inline">\(P\)</span> that computes it.</p>
-</div>
-</div>
-</div>
-</div>
-<p>The definition for multidimensional functions is similar.</p>
+<p>Thus one can prove in the theory <span class="math inline">\(\mathsf{PA}^-\)</span> all <span class="math inline">\(\Sigma_1\)</span>-sentences that hold in the standard model, but not all true <span class="math inline">\(\Pi_1\)</span>-sentences anymore. For instance, the <span class="math inline">\(\Pi_1\)</span>-sentence stating that every number is even or odd: <span class="math display">\[
+(*) \quad \forall x \;  \exists y \le x \; (x = 2 \cdot y \vee x = 2 \cdot y +1)
+\]</span> is true in the standard model, but not in the <span class="math inline">\(\mathsf{PA}^-\)</span>-model <span class="math inline">\(\mathbb{Z}[X]^+\)</span>.</p>
+<p>Even true <span class="math inline">\(\forall\)</span>-sentences (i.e., sentences of the form <span class="math inline">\(\forall \vec{x} \; \psi\)</span> with <em>quantifier-free</em> <span class="math inline">\(\psi\)</span>) that hold in the standard model need not be provable in <span class="math inline">\(\mathsf{PA}^-\)</span>. For example, the <span class="math inline">\(\forall\)</span>-sentence <span class="math display">\[
+\forall x,y  (x^2 \ne 2 \cdot y^2)
+\]</span> is true in the standard model, but not provable in <span class="math inline">\(\mathsf{PA}^-\)</span> (<span class="math inline">\(\mathbb{Z}/(X^2 - 2Y^2)\)</span> is a counterexample).</p>
+<p>Thus the above sentence (*) is an example of a <span class="math inline">\(\Pi_1\)</span>-sentence that is not a <span class="math inline">\(\forall\)</span>-sentence, where one cannot omit the bounded quantifier! (By the way, one can easily show that <span class="math inline">\(\mathbb{Z}[X]^+\)</span> is at least a model of all <span class="math inline">\(\forall\)</span>-sentences that hold in the standard model.)</p>
 
 
-</section>
 </section>
 </section>
 
@@ -519,14 +457,13 @@ We say a Turing machine <span class="math inline">\(M\)</span> with program <spa
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -541,7 +478,7 @@ We say a Turing machine <span class="math inline">\(M\)</span> with program <spa
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
