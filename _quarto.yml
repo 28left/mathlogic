@@ -57,6 +57,8 @@ website:
         text: Oct 29
       - href: 024_Oct31_arithmetical_formulas.qmd
         text: Oct 31
+      - href: 025_Nov3_end_extensions.qmd
+        text: Nov 3
 
 
 
@@ -104,6 +106,8 @@ custom-numbered-blocks:
     Definition:
       group: thmlike
     Lemma:
+      group: thmlike
+    Corollary:
       group: thmlike
     Problem:
       group: exrlike
