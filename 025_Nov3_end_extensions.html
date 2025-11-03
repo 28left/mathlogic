@@ -71,32 +71,32 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Lemma {
+.Definition {
   --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Take-Home {
   --color1: #FF7E79;
   --color2: #EBEBEB;
 }
-.Problem {
+.Exercise {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Corollary {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Definition {
+.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Corollary {
-  --color1: #F8FBD3;
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -366,19 +366,37 @@ window.Quarto = {
 <section id="end-extensions" class="level1">
 <h1>End Extensions</h1>
 <p>The standard model can be embedded into every model <span class="math inline">\(\mathcal{M}\)</span> of <span class="math inline">\(\mathsf{PA}\)</span> as an initial segment. It turns out this already holds for models of the theory <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
-<div id="Definition-1" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1</strong></summary><div>Let <span class="math inline">\(L\)</span> be a language containing a 2-ary symbol <span class="math inline">\(&lt;\)</span>, and let <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> be <span class="math inline">\(L\)</span>-structures with <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span>. Then <span class="math inline">\(\mathcal{N}\)</span> is called an <strong>end extension</strong> of <span class="math inline">\(\mathcal{M}\)</span> (and correspondingly <span class="math inline">\(\mathcal{M}\)</span> is an <strong>initial segment</strong> of <span class="math inline">\(\mathcal{N}\)</span>) if and only if the larger set <span class="math inline">\(N\)</span> does not add any further elements below an element of <span class="math inline">\(M\)</span>: <span class="math display">\[
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-end-ext" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
+Let <span class="math inline">\(L\)</span> be a language containing a 2-ary symbol <span class="math inline">\(&lt;\)</span>, and let <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> be <span class="math inline">\(L\)</span>-structures with <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span>. Then <span class="math inline">\(\mathcal{N}\)</span> is called an <strong>end extension</strong> of <span class="math inline">\(\mathcal{M}\)</span> (and correspondingly <span class="math inline">\(\mathcal{M}\)</span> is an <strong>initial segment</strong> of <span class="math inline">\(\mathcal{N}\)</span>) if and only if the larger set <span class="math inline">\(N\)</span> does not add any further elements below an element of <span class="math inline">\(M\)</span>: <span class="math display">\[
 \mathcal{M} \subseteq_{end} \mathcal{N}: \iff \text{for all} \; x \in M,y \in N: (y&lt;^N x \Rightarrow y \in M).
-\]</span><p></p>
-</div></details>
+\]</span></p>
+</div>
+</div>
+</div>
 </div>
 <p>Each natural number <span class="math inline">\(n\)</span> is represented in the standard model, which we also simply denote by <span class="math inline">\(\mathbb{N}\)</span> here, by the constant term <span class="math display">\[
 \underline{n} = 1+ \ldots + 1 \quad \text{($n$ times)}
 \]</span> where <span class="math inline">\(\underline{0}\)</span> is the constant <span class="math inline">\(0\)</span>.</p>
-<div id="Theorem-2" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2</strong></summary><div>Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. Then the map <span class="math display">\[n \mapsto \underline{n}^{\mathcal{M}}\]</span> defines an embedding of the standard model <span class="math inline">\(\mathbb{N}\)</span> onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.<p></p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-pa-end-ext" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> <br>
+Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. Then the map <span class="math display">\[n \mapsto \underline{n}^{\mathcal{M}}\]</span> defines an embedding of the standard model <span class="math inline">\(\mathbb{N}\)</span> onto an initial segment of <span class="math inline">\(\mathcal{M}\)</span>.</p>
 <p>In particular, every model of <span class="math inline">\(\mathsf{PA}^-\)</span> is isomorphic to an end extension of the standard model <span class="math inline">\(\mathbb{N}\)</span>.*</p>
-</div></details>
+</div>
+</div>
+</div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>By simple induction (in the meta-theory), one shows for all natural numbers <span class="math inline">\(n,k,l\)</span>: <span class="math display">\[
@@ -399,9 +417,15 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
 <section id="preservation-properties-of-end-extensions" class="level2">
 <h2 class="anchored" data-anchor-id="preservation-properties-of-end-extensions">Preservation Properties of End Extensions</h2>
 <p>In the previous lecture, we introduced <em>arithmetical formulas</em>. <span class="math inline">\(\Delta_0\)</span>-formulas are at the bottom of the <em>arithmetical hierarchy</em>. We already saw that relations defined by such formulas are primitive recursive. Next, we will show that those formulas <em>mean the same thing in a structure as in all end extensions</em>. This will be crucial later on.</p>
-<div id="Theorem-3" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3</strong></summary><div>
-<p>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-pa-absoluteness" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> <br>
+Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
 <ol type="1">
 <li><p>Every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
 \mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
@@ -416,20 +440,30 @@ n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &l
 \mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}].
 \]</span></p></li>
 </ol>
-</div></details>
+</div>
+</div>
+</div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>We prove (i) by induction on the formula structure of <span class="math inline">\(\varphi(\vec{v})\)</span>. Only the case of a bounded quantifier needs to be addressed. Since <span class="math inline">\(\mathcal{M}\)</span> is an end extension of <span class="math inline">\(\mathcal{N}\)</span>, <span class="math inline">\(M\)</span> does not insert any new elements below an element of <span class="math inline">\(N\)</span>, so that a bounded quantifier means the same thing in both structures.</p>
 </div>
 <p>Let <span class="math inline">\(\Sigma_1\)</span>-<span class="math inline">\(\operatorname{Th}(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}\)</span>. Then we have:</p>
-<div id="Corollary-4" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 4</strong></summary><div><span class="math display">\[
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-pa-sigma1-theory" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1</strong></span> <span class="math display">\[
 \mathsf{PA}^- \models \Sigma_1\text{-}\operatorname{Th}(\mathbb{N})
-\]</span><p></p>
-</div></details>
+\]</span></p>
+</div>
+</div>
+</div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By the previous theorem, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By <a href="#thm-pa-end-ext" class="quarto-xref">Theorem&nbsp;1</a>, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
 </div>
 <p>Thus one can prove in the theory <span class="math inline">\(\mathsf{PA}^-\)</span> all <span class="math inline">\(\Sigma_1\)</span>-sentences that hold in the standard model. This is no longer true for <span class="math inline">\(\Pi_1\)</span>-sentences. For instance, the <span class="math inline">\(\Pi_1\)</span>-sentence stating that every number is even or odd: <span class="math display">\[
 (*) \quad \forall x \;  \exists y \le x \; (x = 2 \cdot y \vee x = 2 \cdot y +1)
