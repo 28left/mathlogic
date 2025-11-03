@@ -125,7 +125,7 @@ $$
 
 Finally, if $\psi$ is a $\Delta_0$-formula, $t$ is a term and $\theta(\vec{x}) = \forall y < t(\vec{x}) \; \psi(\vec{x},y)$, then the claim follows from
 $$
-c_{\theta}(\vec{x}) = \text{eq}( t(\vec{x}) , (\mu y \le t(\vec{x}) (c_{\psi}(\vec{x},y) = 0)).
+c_{\theta}(\vec{x}) = \text{eq}( t(\vec{x}) , (\mu y < t(\vec{x}) (c_{\psi}(\vec{x},y) = 0)).
 $$
 One argues similarly in the case of the formula $\exists y < t(\vec{x}) \; \psi(\vec{x},y)$ (or reduces this case to the earlier one using negation).
 :::
