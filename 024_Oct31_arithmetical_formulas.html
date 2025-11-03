@@ -72,7 +72,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Theorem {
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -80,20 +84,16 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Corollary {
-  --color1: #F8FBD3;
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Definition {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Take-Home {
   --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Problem {
-  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Lemma {
@@ -469,7 +469,7 @@ c_{\theta \vee \psi}(\vec{x}) &amp; = \min(c_{\theta}(\vec{x}),c_{\psi}(\vec{x})
 \end{aligned}
 \]</span></p>
 <p>Finally, if <span class="math inline">\(\psi\)</span> is a <span class="math inline">\(\Delta_0\)</span>-formula, <span class="math inline">\(t\)</span> is a term and <span class="math inline">\(\theta(\vec{x}) = \forall y &lt; t(\vec{x}) \; \psi(\vec{x},y)\)</span>, then the claim follows from <span class="math display">\[
-c_{\theta}(\vec{x}) = \text{eq}( t(\vec{x}) , (\mu y \le t(\vec{x}) (c_{\psi}(\vec{x},y) = 0)).
+c_{\theta}(\vec{x}) = \text{eq}( t(\vec{x}) , (\mu y &lt; t(\vec{x}) (c_{\psi}(\vec{x},y) = 0)).
 \]</span> One argues similarly in the case of the formula <span class="math inline">\(\exists y &lt; t(\vec{x}) \; \psi(\vec{x},y)\)</span> (or reduces this case to the earlier one using negation).</p>
 </div>
 <p><strong>Remark:</strong> The converse of the above lemma does not hold: there are primitive recursive sets that cannot be defined by any <span class="math inline">\(\Delta_0\)</span>-formula in the natural numbers.</p>
