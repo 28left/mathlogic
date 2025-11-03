@@ -8,8 +8,8 @@ title: "Math 557 Nov 3"
 The standard model can be embedded into every model $\mathcal{M}$ of $\mathsf{PA}$ as an initial segment.
 It turns out this already holds for models of the theory $\mathsf{PA}^-$.
 
-::: Definition
-
+::: {#def-end-ext}
+\
 Let $L$ be a language containing a 2-ary symbol $<$, and let $\mathcal{M}$ and $\mathcal{N}$ be $L$-structures with $\mathcal{M} \subseteq \mathcal{N}$. Then $\mathcal{N}$ is called an **end extension** of $\mathcal{M}$ (and correspondingly $\mathcal{M}$ is an **initial segment** of $\mathcal{N}$) if and only if the larger set $N$ does not add any further elements below an element of $M$:
 $$
 \mathcal{M} \subseteq_{end} \mathcal{N}: \iff \text{for all} \; x \in M,y \in N: (y<^N x \Rightarrow y \in M).
@@ -23,7 +23,8 @@ $$
 where $\underline{0}$ is the constant $0$.
 
 
-::: Theorem
+::: {#thm-pa-end-ext}
+\
 Let $\mathcal{M} \models \mathsf{PA}^-$. Then the map
 $$n \mapsto \underline{n}^{\mathcal{M}}$$
 defines an embedding of the standard model $\mathbb{N}$ onto an initial segment of $\mathcal{M}$.
@@ -58,7 +59,8 @@ The standard model has no proper initial segment, and $\mathbb{Z}[X]^+$ has $\ma
 In the previous lecture, we introduced *arithmetical formulas*. $\Delta_0$-formulas are at the bottom of the *arithmetical hierarchy*. We already saw that relations defined by such formulas are primitive recursive. Next, we will show that those formulas *mean the same thing in a structure as in all end extensions*. This will be crucial later on.
 
 
-::: Theorem
+::: {#thm-pa-absoluteness}
+\
 Let $\mathcal{N}, \mathcal{M}$ be structures of the language $L$ of $\mathsf{PA}^-$, with $\mathcal{N} \subseteq_{end} \mathcal{M}$, and let $\vec{a} \in N$. Then:
 
 1. Every $\Delta_0$-formula $\varphi(\vec{v})$ is **absolute**:
@@ -88,7 +90,7 @@ We prove (i) by induction on the formula structure of $\varphi(\vec{v})$. Only t
 
 Let $\Sigma_1$-$\operatorname{Th}(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}$. Then we have:
 
-::: Corollary
+::: {#cor-pa-sigma1-theory}
 
 $$
 \mathsf{PA}^- \models \Sigma_1\text{-}\operatorname{Th}(\mathbb{N})
@@ -96,7 +98,7 @@ $$
 :::
 
 ::: {.proof}
-Let $\mathcal{N} \models \mathsf{PA}^-$. By the previous theorem, we may assume that $\mathbb{N} \subseteq_{end} \mathcal{N}$, and the claim then follows from part (ii) above.
+Let $\mathcal{N} \models \mathsf{PA}^-$. By @thm-pa-end-ext, we may assume that $\mathbb{N} \subseteq_{end} \mathcal{N}$, and the claim then follows from part (ii) above.
 :::
 
 Thus one can prove in the theory $\mathsf{PA}^-$ all $\Sigma_1$-sentences that hold in the standard model. This is no longer true for $\Pi_1$-sentences. For instance, the $\Pi_1$-sentence stating that every number is even or odd:

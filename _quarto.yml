@@ -132,6 +132,11 @@ callouty-theorem:
     callout:
       type: tip
       appearance: simple
+  cor:
+    override-title: false
+    callout:
+      type: warning
+      appearance: simple
   def:
     override-title: false
     callout:
