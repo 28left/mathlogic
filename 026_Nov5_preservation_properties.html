@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 August 29 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 5 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./003_Sep03_validities.html" rel="next">
-<link href="./001_Aug27_syntax.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -79,11 +77,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Lemma {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -91,11 +85,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FF7E79;
   --color2: #EBEBEB;
 }
-.Corollary {
-  --color1: #F8FBD3;
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Theorem {
+.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -143,7 +137,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./002_Aug29_semantics.html">August 29</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,7 +172,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./002_Aug29_semantics.html" class="sidebar-item-text sidebar-link active">
+  <a href="./002_Aug29_semantics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">August 29</span></a>
   </div>
 </li>
@@ -324,12 +320,6 @@ window.Quarto = {
  <span class="menu-text">Nov 3</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./026_Nov5_definability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 5</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -340,17 +330,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link active" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#preservation" id="toc-preservation" class="nav-link active" data-scroll-target="#preservation">Preservation Properties under End Extensions</a>
+  <ul class="collapse">
+  <li><a href="#corollary" id="toc-corollary" class="nav-link" data-scroll-target="#corollary">Corollary</a></li>
+  </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="002_Aug29_semantics.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="026_Nov5_preservation_properties.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 August 29</h1>
+<h1 class="title">Math 557 Nov 5</h1>
 </div>
 
 
@@ -367,136 +359,50 @@ window.Quarto = {
 </header>
 
 
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><p><strong><span class="math inline">\(\mathcal{L}\)</span>-structures</strong>: Provide a realm to interpret <span class="math inline">\(\mathcal{L}\)</span>-formulas over.</p>
-<ul>
-<li>non-empty universe <span class="math inline">\(M\)</span>,</li>
-<li>interpretation of all constant, function, and relation symbols over <span class="math inline">\(M\)</span>.</li>
-</ul></li>
-<li><p><strong>structure isomorphism</strong>: bijection <span class="math inline">\(\pi\)</span> between the universes of two <span class="math inline">\(\mathcal{L}\)</span>-structures that preserves interpretations of symbols. General version of the well-known idea of isomorphism of mathematical structures.</p></li>
-<li><p><strong>assignment</strong>: function <span class="math inline">\(\alpha: \mathcal{V} \to M\)</span> that assigns all variables values in the universe of a structure. Recursively extends to terms.</p></li>
-<li><p><strong>satisfaction relation</strong>: <span class="math inline">\(\mathcal{M} \models \varphi[\alpha]\)</span> means the <span class="math inline">\(\mathcal{L}\)</span>-formula <span class="math inline">\(\varphi\)</span> is true when interpreted in the <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\mathcal{M}\)</span> and all variables are assigned values according to assignment <span class="math inline">\(\alpha\)</span>. This is defined recursively over the structure of a formula.</p></li>
-</ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<p>We warm up with a quote often attributed to Lincoln.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
-<blockquote class="blockquote">
-<p>You can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.</p>
-</blockquote>
-<p>Define a suitable language and formalize this statement in first-order logic.</p>
-</div>
-</div>
-</div>
-</div>
-<p>Next, a couple of problems to see the definition of structures and the satisfaction relation <span class="math inline">\(\models\)</span> at work.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-Let <span class="math inline">\(\mathcal{L} = \{ \Box, \triangle, c\}\)</span>, where <span class="math inline">\(\Box\)</span> is a binary relation symbol, <span class="math inline">\(\triangle\)</span> is a binary function symbol, and <span class="math inline">\(c\)</span> is a constant symbol.</p>
-<p>For each of the following formulas, find two <span class="math inline">\(\mathcal{L}\)</span>-structures and (if necessary) assignments to the free variable(s) such that the formula holds in one structure but fails in the other.</p>
-<p><span class="math display">\[\begin{aligned}
-\varphi &amp; \equiv \forall x \exists y \: \Box \, \triangle x y \, c \\
-\psi &amp; \equiv \exists x \forall y ( x = c \: \wedge \: \Box \, \triangle zc \, y )
-\end{aligned}\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<p>Next, let’s see some general properties of structures we can describe through first-order formulas.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Let <span class="math inline">\(n\)</span> be a natural number and let <span class="math inline">\(\mathcal{L}\)</span> be any language. Find formulas <span class="math inline">\(, \psi^{\geq}, \psi^{\leq}, \psi^=\)</span> such that, for any <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\mathcal{M}\)</span>,</p>
-<p><span class="math display">\[\begin{aligned}
-\mathcal{M} \models \psi^{\geq} &amp; \iff \; |M| \geq n \\
-\mathcal{M} \models \psi^{\leq} &amp; \iff \; |M| \leq n \\
-\mathcal{M} \models \psi^{=} &amp; \iff \; |M| = n \\
-\end{aligned}\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Question
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><br>
-Can we find a formula <span class="math inline">\(\theta\)</span> such that</p>
-<p><span class="math display">\[
-\mathcal{M} \models \theta \; \iff \; |M| \text{ is finite}?
-\]</span></p>
-</div>
-</div>
-<p>We will answer this question in a few weeks…</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Let <span class="math inline">\(\mathcal{L} = \{\cdot , e\}\)</span> be the language of groups. Show that there is a sentence <span class="math inline">\(\varphi\)</span> such that <span class="math inline">\(\mathcal{M} \models \varphi\)</span> if and only if</p>
-<p><span class="math display">\[M \cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}.\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Take-home Problems
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><br></p>
+<p>Of particular importance is that <span class="math inline">\(\Delta_0\)</span>-formulas mean the same thing in a structure as in all end extensions:</p>
+<section id="preservation" class="level1">
+<h1>Preservation Properties under End Extensions</h1>
+<div id="Theorem-1" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 1</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
 <ol type="1">
-<li>Let <span class="math inline">\(\mathcal{L}\)</span> be any finite language and let <span class="math inline">\(\mathcal{M}\)</span> be a finite <span class="math inline">\(\mathcal{L}\)</span>-structure. Show that there is an <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\varphi\)</span> such that</li>
+<li><p>Every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>upward-persistent</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \Longrightarrow \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Pi_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>downward-persistent</strong>: <span class="math display">\[
+\mathcal{M}\models \varphi[\vec{a}] \Longrightarrow \mathcal{N}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Delta_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}].
+\]</span></p></li>
 </ol>
+</div></details>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We prove (i) by induction on the formula construction of <span class="math inline">\(\varphi(\vec{v})\)</span>, where only the case of a bounded quantifier is of interest. But since <span class="math inline">\(\mathcal{M}\)</span> is an end extension of <span class="math inline">\(\mathcal{N}\)</span>, <span class="math inline">\(M\)</span> does not insert any new elements below an element of <span class="math inline">\(N\)</span>, so that a bounded quantifier means the same thing in both structures.</p>
+</div>
+<p>Let <span class="math inline">\(\Sigma_1\)</span>-<span class="math inline">\(Th(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}\)</span>. Then we have:</p>
+<section id="corollary" class="level2">
+<h2 class="anchored" data-anchor-id="corollary">Corollary</h2>
 <p><span class="math display">\[
-\mathcal{N} \models \varphi \; \iff \; \mathcal{N} \cong \mathcal{M}.
+\mathsf{PA}^- \models \Sigma_1\text{-}Th(\mathbb{N})
 \]</span></p>
-<ol start="2" type="1">
-<li>Give an example of a language <span class="math inline">\(\mathcal{L}\)</span> and an <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\psi\)</span> such that
-<ul>
-<li>there is at least one <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\cal A\)</span> such that <span class="math inline">\(\cal A \models \psi\)</span>,</li>
-<li>for all <span class="math inline">\(\cal L\)</span>-structures <span class="math inline">\(\cal A\)</span>, if <span class="math inline">\(\cal A \models \psi\)</span>, then the universe <span class="math inline">\(A\)</span> of <span class="math inline">\(\cal A\)</span> is infinite.</li>
-</ul></li>
-</ol>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By the previous theorem, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
 </div>
-</div>
+<p>Thus one can prove in the theory <span class="math inline">\(\mathsf{PA}^-\)</span> all <span class="math inline">\(\Sigma_1\)</span>-sentences that hold in the standard model, but not all true <span class="math inline">\(\Pi_1\)</span>-sentences anymore. For instance, the <span class="math inline">\(\Pi_1\)</span>-sentence stating that every number is even or odd: <span class="math display">\[
+(*) \quad \forall x \;  \exists y \le x \; (x = 2 \cdot y \vee x = 2 \cdot y +1)
+\]</span> is true in the standard model, but not in the <span class="math inline">\(\mathsf{PA}^-\)</span>-model <span class="math inline">\(\mathbb{Z}[X]^+\)</span>.</p>
+<p>Even true <span class="math inline">\(\forall\)</span>-sentences (i.e., sentences of the form <span class="math inline">\(\forall \vec{x} \; \psi\)</span> with <em>quantifier-free</em> <span class="math inline">\(\psi\)</span>) that hold in the standard model need not be provable in <span class="math inline">\(\mathsf{PA}^-\)</span>. For example, the <span class="math inline">\(\forall\)</span>-sentence <span class="math display">\[
+\forall x,y  (x^2 \ne 2 \cdot y^2)
+\]</span> is true in the standard model, but not provable in <span class="math inline">\(\mathsf{PA}^-\)</span> (<span class="math inline">\(\mathbb{Z}/(X^2 - 2Y^2)\)</span> is a counterexample).</p>
+<p>Thus the above sentence (*) is an example of a <span class="math inline">\(\Pi_1\)</span>-sentence that is not a <span class="math inline">\(\forall\)</span>-sentence, where one cannot omit the bounded quantifier! (By the way, one can easily show that <span class="math inline">\(\mathbb{Z}[X]^+\)</span> is at least a model of all <span class="math inline">\(\forall\)</span>-sentences that hold in the standard model.)</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -572,7 +478,7 @@ Take-home Problems
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -899,18 +805,6 @@ Take-home Problems
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./001_Aug27_syntax.html" class="pagination-link" aria-label="August 27">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">August 27</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./003_Sep03_validities.html" class="pagination-link" aria-label="September 3">
-        <span class="nav-page-text">September 3</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
