@@ -85,7 +85,9 @@ $$
 :::
 
 ::: {.proof}
-We prove (i) by induction on the formula structure of $\varphi(\vec{v})$. Only the case of a bounded quantifier needs to be addressed. Since $\mathcal{M}$ is an end extension of $\mathcal{N}$, $M$ does not insert any new elements below an element of $N$, so that a bounded quantifier means the same thing in both structures.
+Part (i) is proved by induction on the formula structure of $\varphi(\vec{v})$. Most cases are straightforward (using that $\mathcal{N}$ is a substructure of $\mathcal{M}$). In the case of a bounded quantifier, one argues that, since $\mathcal{M}$ is an end extension of $\mathcal{N}$, $M$ does not insert any new elements below an element of $N$, so that a bounded quantifier means the same thing in both structures.
+
+The other parts follow easily from the definition of the satisfaction relation $\models$ and the $\Delta_0$ case.
 :::
 
 Let $\Sigma_1$-$\operatorname{Th}(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}$. Then we have:
