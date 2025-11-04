@@ -133,9 +133,8 @@ One argues similarly in the case of the formula $\exists y < t(\vec{x}) \; \psi(
 **Remark:** The converse of the above lemma does not hold: there are primitive recursive sets that cannot be defined by any $\Delta_0$-formula in the natural numbers.
 
 
-### More Exercises
-
-::: Problem
+::: {#exr-number-theoretic-functions}
+\
 Show that the following relations and functions are primitive recursive.
 
 $$
@@ -147,6 +146,33 @@ $$
 \end{aligned}
 $$
 :::
+
+### Coding Sequences
+
+The fact that basic number-theoretic functions are primitive recursive allows for primitive recursive encodings of finite sequences of natural numbers by numbers, e.g.
+$$
+(n_0, n_1, \ldots, n_k) \quad \text{by} \quad p_0^{n_0+1} \cdot p_1^{n_1+1}\cdot  \ldots \cdot p_k^{n_k+1}.
+$$
+
+If we define for $x,y \in \mathbb{N}$
+$$
+\langle x,y \rangle := \frac{(x+y)(x+y+1)}{2} + y,
+$$
+we obtain a primitive recursive bijection (pairing function) $\mathbb{N}^2 \leftrightarrow  \mathbb{N}$. We denote the inverse projections by $(z)_i$, $i = 0,1$, that is, 
+$$
+\langle (z)_0, (z)_1 \rangle = z.
+$$
+
+We can extended this to tuples of arbitrary (but *fixed*) length by iterating:
+$$
+\langle x_1, x_2, \ldots x_k  \rangle = \langle x_1, \langle x_2, \ldots x_k \rangle \rangle
+$$
+
+Using these primitive recursive bijections, we can generally assume functions to be defined on (subsets of) $\mathbb{N}$. We can also use it to "compress" quantifiers: For example, $\exists x \exists y \psi(x,y)$ can be replaced by $\exists z \psi\left((z)_0, (z)_1\right)$ without affecting the arithmetical complexity.
+
+ 
+
+## Take-Home Problems 
 
 ::: Take-Home
 Show that the *Euler totient function*
