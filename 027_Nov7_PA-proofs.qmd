@@ -1,0 +1,53 @@
+--
+title: "Math 557 Nov 7"
+---
+
+# Practice on $\mathsf{PA}$ and Computability
+
+## The power of induction
+
+Recall the axioms of $\mathsf{PA}$:
+
+- **P1** $\quad$ $Sx \ne 0$
+- **P2** $\quad$ $Sx=Sy \to x=y$
+- **P3** $\quad$ $x+0 = x$
+- **P4** $\quad$ $x+Sy =S(x+y)$
+- **P5** $\quad$ $x \cdot 0 = 0$
+- **P6** $\quad$ $x cdot Sy = x \cdot y + x$
+- **Ind${}_\varphi$** $\;$ $\varphi(0) \, \wedge \, \forall x (\varphi(x) \to \varphi(Sx)) \to \forall x \; \varphi(x)$
+
+
+::: {#exr-}
+\
+Show that $\mathsf{PA} \vdash \forall x (Sx \neq x)$
+:::
+
+But we need induction to prove this, even if we throw in another axiom:
+
+- **P7** $\quad$ $\forall x \: (x \neq 0 \to \exists y (x = Sy))$
+
+The system (P1)-(P7) is referred to as **Robinson's $\mathsf{Q}$**
+
+::: {#exr-}
+\
+Show that $Q \nvdash \forall x (Sx \neq x)$
+
+(*Construct a model of $\mathsf{Q}$ by adding a "point at infinity" to $\mathbb{N}$ and defining the operations $S, +$ accordingly.*)
+
+If we use induction in the *metatheory* (i.e. the theory we are using to reason about $\mathsf{Q}$, $\mathsf{PA}$, etc.), we can still show
+
+$$\text{For all } n \in \mathbb{N}, \quad \mathsf{Q} \vdash S\underline{n} \neq \underline{n}$$
+:::
+
+
+## Capturing basic arithmetic of $\mathbb{N}$ in $\mathsf{PA}^-$
+
+We saw in class that $\mathsf{PA}^-$ proves all true $\Sigma_1$-statements about $\mathbb{N}$. This is due to two facts:
+
+- $Delta_0$-formulas are **absolute between structures and end-extensions thereof**. 
+- Any model $\mathcal{M}$ of $\mathsf{PA}^-$ is an end-extension of (an isomorphic copy of) $\mathbb{N}$.
+
+To prove the second fact, we need to show two things:
+
+1. The mapping $\iota: n \mapsto \underline{n}^{\mathcal{M}}$ is an embedding (so $\iota(\mathbb{N})$ is a substructure of $\mathcal{M}$ isomorphic to $\mathbb{N}$).
+2. Any element $y \in M$ with $y <^{\mathcal{M}} \underline{n}^{\mathcal{M}}$ is itself some $\underline{m}^{\mathcal{M}}$.
