@@ -146,13 +146,12 @@ It is not hard to transform this into an equivalent $\Sigma_1$-formula.
 
 
 
-## Corollary: Characterization of the Arithmetic Hierarchy
+### Characterization of the Arithmetic Hierarchy
 
 If we call a set $A \subseteq \mathbb{N}^k$ that is definable by a formula in $\Gamma$ over the natural numbers a $\Gamma$-*set*, we obtain a new characterization of the first levels of the arithmetic hierarchy:
 
 ::: {#cor-arithmetic-hierarchy}
-## Corollary
-
+\
 1. *The $\Sigma_1$-sets are precisely the r.e. (recursively enumerable) relations $R \subseteq \mathbb{N}^k$.*
 
 2. *The $\Pi_1$-sets are the complements of r.e. relations.*
