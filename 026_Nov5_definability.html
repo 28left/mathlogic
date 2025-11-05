@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./025_Nov3_end_extensions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -70,22 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Lemma {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
 .Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
@@ -94,8 +79,24 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
+.Lemma {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Corollary {
   --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -114,7 +115,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -156,9 +157,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Math 557 Fall 2025</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -345,8 +345,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#gödels-lemma" id="toc-gödels-lemma" class="nav-link" data-scroll-target="#gödels-lemma">Gödel’s Lemma</a></li>
   <li><a href="#completing-the-proof-of-the-definability-theorem" id="toc-completing-the-proof-of-the-definability-theorem" class="nav-link" data-scroll-target="#completing-the-proof-of-the-definability-theorem">Completing the proof of the Definability Theorem</a></li>
+  <li><a href="#characterization-of-the-arithmetic-hierarchy" id="toc-characterization-of-the-arithmetic-hierarchy" class="nav-link" data-scroll-target="#characterization-of-the-arithmetic-hierarchy">Characterization of the Arithmetic Hierarchy</a></li>
   </ul></li>
-  <li><a href="#corollary-characterization-of-the-arithmetic-hierarchy" id="toc-corollary-characterization-of-the-arithmetic-hierarchy" class="nav-link" data-scroll-target="#corollary-characterization-of-the-arithmetic-hierarchy">Corollary: Characterization of the Arithmetic Hierarchy</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="026_Nov5_definability.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -484,9 +484,8 @@ u_0 = f(x, 0), \, u_1 = f(x, 1), \, \ldots, \, u_y = f(x, y),
 \]</span></p>
 <p>It is not hard to transform this into an equivalent <span class="math inline">\(\Sigma_1\)</span>-formula.</p>
 </section>
-</section>
-<section id="corollary-characterization-of-the-arithmetic-hierarchy" class="level2">
-<h2 class="anchored" data-anchor-id="corollary-characterization-of-the-arithmetic-hierarchy">Corollary: Characterization of the Arithmetic Hierarchy</h2>
+<section id="characterization-of-the-arithmetic-hierarchy" class="level3">
+<h3 class="anchored" data-anchor-id="characterization-of-the-arithmetic-hierarchy">Characterization of the Arithmetic Hierarchy</h3>
 <p>If we call a set <span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> that is definable by a formula in <span class="math inline">\(\Gamma\)</span> over the natural numbers a <span class="math inline">\(\Gamma\)</span>-<em>set</em>, we obtain a new characterization of the first levels of the arithmetic hierarchy:</p>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
@@ -495,9 +494,9 @@ u_0 = f(x, 0), \, u_1 = f(x, 1), \, \ldots, \, u_y = f(x, y),
 </div>
 <div class="callout-body-container">
 <div id="cor-arithmetic-hierarchy" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 1 (Corollary)</strong></span> &nbsp;</p>
-<ol type="1">
-<li><p><em>The <span class="math inline">\(\Sigma_1\)</span>-sets are precisely the r.e. (recursively enumerable) relations <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span>.</em></p></li>
+<p><span class="theorem-title"><strong>Corollary 1</strong></span> <br>
+1. <em>The <span class="math inline">\(\Sigma_1\)</span>-sets are precisely the r.e. (recursively enumerable) relations <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span>.</em></p>
+<ol start="2" type="1">
 <li><p><em>The <span class="math inline">\(\Pi_1\)</span>-sets are the complements of r.e. relations.</em></p></li>
 <li><p><em>The <span class="math inline">\(\Delta_1\)</span>-sets are precisely the recursive relations <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span>.</em></p></li>
 </ol>
@@ -507,6 +506,7 @@ u_0 = f(x, 0), \, u_1 = f(x, 1), \, \ldots, \, u_y = f(x, y),
 </div>
 
 
+</section>
 </section>
 </section>
 
@@ -562,13 +562,14 @@ u_0 = f(x, 0), \, u_1 = f(x, 1), \, \ldots, \, u_y = f(x, y),
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

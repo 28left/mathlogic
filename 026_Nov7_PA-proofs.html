@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gödel’s Beta Function – Math 557 Fall 2025</title>
+<title>Math 557 Nov 5 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,14 +32,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -77,10 +78,6 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
@@ -89,12 +86,16 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
 .Problem {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
 </style>
@@ -113,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -141,9 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Math 557 Fall 2025
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Math 557 Nov 5</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -157,9 +156,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Math 557 Fall 2025</a> 
-    </div>
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -324,6 +322,12 @@ window.Quarto = {
  <span class="menu-text">Nov 3</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./026_Nov5_definability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nov 5</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -334,19 +338,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#coding-sequences" id="toc-coding-sequences" class="nav-link active" data-scroll-target="#coding-sequences">Coding Sequences</a>
+  <li><a href="#definability-of-computable-functions" id="toc-definability-of-computable-functions" class="nav-link active" data-scroll-target="#definability-of-computable-functions">Definability of Computable Functions</a>
+  <ul class="collapse">
+  <li><a href="#the-definability-theorem" id="toc-the-definability-theorem" class="nav-link" data-scroll-target="#the-definability-theorem">The Definability Theorem</a>
   <ul class="collapse">
   <li><a href="#gödels-lemma" id="toc-gödels-lemma" class="nav-link" data-scroll-target="#gödels-lemma">Gödel’s Lemma</a></li>
+  <li><a href="#completing-the-proof-of-the-definability-theorem" id="toc-completing-the-proof-of-the-definability-theorem" class="nav-link" data-scroll-target="#completing-the-proof-of-the-definability-theorem">Completing the proof of the Definability Theorem</a></li>
+  </ul></li>
+  <li><a href="#corollary-characterization-of-the-arithmetic-hierarchy" id="toc-corollary-characterization-of-the-arithmetic-hierarchy" class="nav-link" data-scroll-target="#corollary-characterization-of-the-arithmetic-hierarchy">Corollary: Characterization of the Arithmetic Hierarchy</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="beta_function.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="026_Nov7_PA-proofs.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gödel’s Beta Function</h1>
+<h1 class="title">Math 557 Nov 5</h1>
 </div>
 
 
@@ -363,28 +372,78 @@ window.Quarto = {
 </header>
 
 
-<section id="coding-sequences" class="level1">
-<h1>Coding Sequences</h1>
-<p>Thus we can encode finite sequences of natural numbers by numbers, e.g. <span class="math display">\[
-(n_0, n_1, \ldots, n_k) \quad \text{by} \quad p_0^{n_0+1} \cdot p_1^{n_1+1}\cdot  \ldots \cdot p_k^{n_k+1}.
+<section id="definability-of-computable-functions" class="level1">
+<h1>Definability of Computable Functions</h1>
+<p>We now extend the connection between arithmetical formulas and computable functions significantly. Our goal is to show that the recursive relations on <span class="math inline">\(\mathbb{N}\)</span> are precisely those that are <span class="math inline">\(\Delta_1\)</span>-definable. At the core of this connection is the <strong>Definability Theorem</strong>. For a partial function <span class="math inline">\(f\)</span>, let <span class="math inline">\(\Gamma_f\)</span> denote the <strong>graph</strong> of <span class="math inline">\(f\)</span>, i.e., the relation <span class="math display">\[
+\Gamma_f(\vec{x},y): \iff f(\vec{x})=y.
 \]</span></p>
-<p>If we define for <span class="math inline">\(x,y \in \mathbb{N}\)</span> <span class="math display">\[
-\langle x,y \rangle := \frac{(x+y)(x+y+1)} 2 + y,
-\]</span> we obtain a primitive recursive bijection (pairing function) <span class="math inline">\(\mathbb{N}^2 \leftrightarrow  \mathbb{N}\)</span>, which can be extended by iteration by setting</p>
+<section id="the-definability-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="the-definability-theorem">The Definability Theorem</h2>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-definability" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> <br>
+A partial function <span class="math inline">\(f: \subseteq \mathbb{N} \to \mathbb{N}\)</span> is computable if and only if its graph <span class="math inline">\(\Gamma_f\)</span> over the natural numbers is definable by a <span class="math inline">\(\Sigma_1\)</span>-formula, i.e., if there exists a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta\)</span> such that for all <span class="math inline">\(x, y \in \mathbb{N}\)</span>:</p>
 <p><span class="math display">\[
-\langle x_1, x_2, \ldots x_k  \rangle = \langle x_1, \langle x_2, \ldots x_k \rangle \rangle
+\Gamma_f(x, y) \iff \mathbb{N} \models \theta[x, y].
 \]</span></p>
-<p>However, we additionally need a function that uniformly encodes each finite sequence of natural numbers by a single number:</p>
-<section id="gödels-lemma" class="level2">
-<h2 class="anchored" data-anchor-id="gödels-lemma">Gödel’s Lemma</h2>
-<div id="Lemma-1" class="Lemma">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 1</strong></summary><div>There exists a primitive recursive function <span class="math inline">\(\beta\)</span> such that for every <span class="math inline">\(k\)</span> and for every finite sequence <span class="math inline">\(x_0,x_1,\ldots x_{k-1} \in \mathbb{N}\)</span>, there exists a natural number <span class="math inline">\(c\)</span> with <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<p>The direction (<span class="math inline">\(\Leftarrow\)</span>) is relatively straightforward: Let <span class="math inline">\(\theta = \exists z \, \psi\)</span> be a <span class="math inline">\(\Sigma_1\)</span>-formula that defines the graph <span class="math inline">\(\Gamma_f\)</span> of a partial function <span class="math inline">\(f\)</span>, where <span class="math inline">\(\psi(x, y, z)\)</span> is a <span class="math inline">\(\Delta_0\)</span>-formula. As <span class="math inline">\(\Delta_0\)</span>-formulas define primitive recursive relations, we obtain a computable function <span class="math inline">\(g\)</span> by letting</p>
+<p><span class="math display">\[
+g(x) = \mu z \, \psi( x, (z)_0, (z)_1).
+\]</span></p>
+<p>Then <span class="math inline">\((g(x))_0\)</span> is the smallest <span class="math inline">\(y\)</span> with <span class="math inline">\(\mathbb{N} \models \theta[x, y]\)</span>, if such a <span class="math inline">\(y\)</span> exists, and undefined otherwise, since for each <span class="math inline">\(x \in \mathbb{N}\)</span> there is at most one <span class="math inline">\(y\)</span> with <span class="math inline">\(\mathbb{N} \models \theta[x, y]\)</span>. Thus <span class="math inline">\((g(x))_0 \cong f(x)\)</span>, and therefore <span class="math inline">\(f\)</span> is partial computable.</p>
+<p>For the proof of (<span class="math inline">\(\Rightarrow\)</span>), we call partial functions <span class="math inline">\(f\)</span> whose graph can be defined by a <span class="math inline">\(\Sigma_1\)</span>-formula over the natural numbers <em>functions with a <span class="math inline">\(\Sigma_1\)</span>-graph</em>. The obvious strategy is to show that the set of these functions contains the initial functions and is closed under composition, primitive recursion, and the <span class="math inline">\(\mu\)</span>-operator.</p>
+<p>Most cases are straightforward (just by writing out the definitions), but when we get to closure under primitive recursion, we run into difficulties: Suppose the function <span class="math inline">\(f\)</span> arises from functions <span class="math inline">\(g, h\)</span> by primitive recursion:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x, 0) &amp;\cong g(x) \\
+f(x, y+1) &amp;\cong h(x, y, f(x, y))
+\end{aligned}
+\]</span></p>
+<p>We may assume that the graphs of <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> are definable by <span class="math inline">\(\Sigma_1\)</span>-formulas. To describe the graph of <span class="math inline">\(f\)</span> with this, we note that the value of <span class="math inline">\(f(x, y)\)</span> is computed through the preceding values</p>
+<p><span class="math display">\[
+u_0 = f(x, 0), \, u_1 = f(x, 1), \, \ldots, \, u_y = f(x, y),
+\]</span></p>
+<p>We somehow have to <em>eliminate the function <span class="math inline">\(f\)</span></em> from this sequence to obtain an <em>explicit</em> definition (in the language of arithmetic).</p>
+<p>The idea is to express the following through a formula:</p>
+<blockquote class="blockquote">
+<p>There exists a code <span class="math inline">\(u\)</span> such that <span class="math inline">\(u\)</span> codes a sequence of numbers <span class="math inline">\((u_0, \dots, u_y)\)</span> in which the <span class="math inline">\(u_{i+1}\)</span> is obtained from <span class="math inline">\(u_i\)</span> using a valid application of the primitive recursion scheme with respect to <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span>.</p>
+</blockquote>
+<p>The problem is that we do not know a priori how long the sequence coded by <span class="math inline">\(u\)</span> is. We therefore cannot use the preferred coding scheme</p>
+<p><span class="math display">\[
+\langle u_0, \dots, u_y \rangle
+\]</span></p>
+<p>which is <span class="math inline">\(\Delta_0\)</span>-definable. The coding scheme <span class="math display">\[
+(n_0, n_1, \ldots, n_k) \quad \text{by} \quad p_0^{n_0+1} \cdot p_1^{n_1+1}\cdot  \ldots \cdot p_k^{n_k+1}.
+\]</span> on the other hand is uniform independent of the length of the sequence, but it uses exponentiation, which is not present in <span class="math inline">\(\mathsf{PA}^-\)</span> (and would have to be defined via recursion).</p>
+<p>This is where Gödel, according to Mostowski, “had a phone call with God”.</p>
+<section id="gödels-lemma" class="level3">
+<h3 class="anchored" data-anchor-id="gödels-lemma">Gödel’s Lemma</h3>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="lem-goedel" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1</strong></span> <br>
+There exists a primitive recursive function <span class="math inline">\(\beta\)</span> such that for every <span class="math inline">\(k\)</span> and for every finite sequence <span class="math inline">\(x_0,x_1,\ldots x_{k-1} \in \mathbb{N}\)</span>, there exists a natural number <span class="math inline">\(c\)</span> with <span class="math display">\[
 \text{for all} \;  i&lt;k: \;  \beta(c,i) = x_i.
-\]</span><p></p>
+\]</span></p>
 <p>In fact, there exists a <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\theta(x,y,z)\)</span> such that <span class="math display">\[
 \mathbb{N} \models \forall x,y \;\exists ! z \, \theta(x,y,z),
 \]</span> and the formula <span class="math inline">\(\theta(x,y,z)\)</span> defines the function <span class="math inline">\(\beta\)</span> over the natural numbers.</p>
-</div></details>
+</div>
+</div>
+</div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(x_0,x_1,\ldots x_{k-1}\)</span> be a sequence of natural numbers.</p>
@@ -392,17 +451,59 @@ window.Quarto = {
 m+1, 2m+1, \ldots k \cdot m+1
 \]</span> are pairwise coprime. By the theorem on simultaneous congruences (<em>Chinese Remainder Theorem</em>), there exists a natural number <span class="math inline">\(a\)</span> with <span class="math display">\[
 a \equiv x_i  \pmod{(i+1)m+1} \quad \text{for all } i &lt; k.
-\]</span> Now we can choose <span class="math inline">\(\langle a,m \rangle\)</span> as a code for the sequence <span class="math inline">\(x_0,x_1,\ldots x_{k-1}\)</span>, because from this we can recover each <span class="math inline">\(x_i\)</span> for every <span class="math inline">\(i&lt;k\)</span> as the remainder of the division of <span class="math inline">\(a\)</span> by the number <span class="math inline">\((i+1)m+1\)</span>. If <span class="math inline">\(rest(x:y)= z\)</span> denotes the remainder of the division of <span class="math inline">\(x\)</span> by <span class="math inline">\(y\)</span> (when <span class="math inline">\(y \ne 0\)</span> and <span class="math inline">\(rest(x:0)=0\)</span>), then this is a p.r. function with a <span class="math inline">\(\Delta_0\)</span>-definition. We obtain another p.r. function by <span class="math display">\[
-\alpha(a,m,i) =rest(a: (1+i)m+1).
+\]</span> Now we can choose <span class="math inline">\(\langle a,m \rangle\)</span> as a code for the sequence <span class="math inline">\(x_0,x_1,\ldots x_{k-1}\)</span>, because from this we can recover each <span class="math inline">\(x_i\)</span> for every <span class="math inline">\(i&lt;k\)</span> as the remainder of the division of <span class="math inline">\(a\)</span> by the number <span class="math inline">\((i+1)m+1\)</span>. If <span class="math inline">\(rem(x:y)= z\)</span> denotes the remainder of the division of <span class="math inline">\(x\)</span> by <span class="math inline">\(y\)</span> (when <span class="math inline">\(y \ne 0\)</span> and <span class="math inline">\(rem(x:0)=0\)</span>), then this is a p.r. function with a <span class="math inline">\(\Delta_0\)</span>-definition. We obtain another p.r. function by <span class="math display">\[
+\alpha(a,m,i) =rem(a: (1+i)m+1).
 \]</span> Let <span class="math inline">\(p_1,p_2\)</span> denote the inverse functions of the pairing function <span class="math inline">\(\langle x,y \rangle\)</span> above, for which <span class="math display">\[
 \langle p_1(x),p_2(x) \rangle = x , \quad  \text{where} \; p_1(x),p_2(x) \le x,
 \]</span> these are also p.r., and we finally obtain the <strong>Gödel beta function</strong> as <span class="math display">\[
 \beta(c,i) = \alpha(p_1(c),p_2(c),i).
 \]</span></p>
 </div>
-<p>For a partial function <span class="math inline">\(f\)</span>, let <span class="math inline">\(\Gamma_f\)</span> denote the <strong>graph</strong> of <span class="math inline">\(f\)</span>, i.e., the relation <span class="math display">\[
-\Gamma_f(\vec{x},y): \iff f(\vec{x})=y.
+</section>
+<section id="completing-the-proof-of-the-definability-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="completing-the-proof-of-the-definability-theorem">Completing the proof of the Definability Theorem</h3>
+<p>Returning to the sequence</p>
+<p><span class="math display">\[
+u_0 = f(x, 0), \, u_1 = f(x, 1), \, \ldots, \, u_y = f(x, y),
 \]</span></p>
+<p>we can now use the <span class="math inline">\(\beta\)</span>-function to encode this by a single number <span class="math inline">\(u\)</span>. The first value <span class="math inline">\(u_0\)</span> is determined by the graph of <span class="math inline">\(g\)</span>, and the further values <span class="math inline">\(u_{i+1}\)</span> are determined from <span class="math inline">\(u_i\)</span> according to the recursion conditions via the graph of <span class="math inline">\(h\)</span>:</p>
+<p><span class="math display">\[
+\forall i &lt; y \, \exists r, s \, [\beta(u, i) = r \wedge \beta(u, i+1) = s \wedge \Gamma_h(\vec{x}, i, r, s)]
+\]</span></p>
+<p>This formula can be transformed (by choosing a sufficiently large <span class="math inline">\(w\)</span>) into</p>
+<p><span class="math display">\[
+\exists w \, \forall i &lt; y \, \exists r, s &lt; w \, [\beta(u, i) = r \wedge \beta(u, i+1) = s \wedge \Gamma_h(\vec{x}, i, r, s)].
+\]</span></p>
+<p>The last value of the sequence encoded by <span class="math inline">\(u\)</span> is the function value of <span class="math inline">\(f\)</span> at the point <span class="math inline">\((x, y)\)</span>. Thus we obtain the following description of the graph of <span class="math inline">\(f\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Gamma_f(\vec{x}, y, z) \iff \; &amp; \exists u, v, w \, (\Gamma_g(\vec{x}, v) \wedge \beta(u, 0) = v \wedge \beta(u, y) = z \; \wedge \\
+&amp; \forall i &lt; y \, \exists r, s &lt; w \, [\beta(u, i) = r \wedge \beta(u, i+1) = s \wedge \Gamma_h(\vec{x}, i, r, s)]),
+\end{aligned}
+\]</span></p>
+<p>It is not hard to transform this into an equivalent <span class="math inline">\(\Sigma_1\)</span>-formula.</p>
+</section>
+</section>
+<section id="corollary-characterization-of-the-arithmetic-hierarchy" class="level2">
+<h2 class="anchored" data-anchor-id="corollary-characterization-of-the-arithmetic-hierarchy">Corollary: Characterization of the Arithmetic Hierarchy</h2>
+<p>If we call a set <span class="math inline">\(A \subseteq \mathbb{N}^k\)</span> that is definable by a formula in <span class="math inline">\(\Gamma\)</span> over the natural numbers a <span class="math inline">\(\Gamma\)</span>-<em>set</em>, we obtain a new characterization of the first levels of the arithmetic hierarchy:</p>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-arithmetic-hierarchy" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (Corollary)</strong></span> &nbsp;</p>
+<ol type="1">
+<li><p><em>The <span class="math inline">\(\Sigma_1\)</span>-sets are precisely the r.e. (recursively enumerable) relations <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span>.</em></p></li>
+<li><p><em>The <span class="math inline">\(\Pi_1\)</span>-sets are the complements of r.e. relations.</em></p></li>
+<li><p><em>The <span class="math inline">\(\Delta_1\)</span>-sets are precisely the recursive relations <span class="math inline">\(R \subseteq \mathbb{N}^k\)</span>.</em></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -460,13 +561,14 @@ a \equiv x_i  \pmod{(i+1)m+1} \quad \text{for all } i &lt; k.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -481,7 +583,7 @@ a \equiv x_i  \pmod{(i+1)m+1} \quad \text{for all } i &lt; k.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
