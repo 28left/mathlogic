@@ -1,4 +1,4 @@
---
+---
 title: "Math 557 Nov 7"
 ---
 
@@ -13,7 +13,7 @@ Recall the axioms of $\mathsf{PA}$:
 - **P3** $\quad$ $x+0 = x$
 - **P4** $\quad$ $x+Sy =S(x+y)$
 - **P5** $\quad$ $x \cdot 0 = 0$
-- **P6** $\quad$ $x cdot Sy = x \cdot y + x$
+- **P6** $\quad$ $x \cdot Sy = x \cdot y + x$
 - **Ind${}_\varphi$** $\;$ $\varphi(0) \, \wedge \, \forall x (\varphi(x) \to \varphi(Sx)) \to \forall x \; \varphi(x)$
 
 
@@ -36,7 +36,7 @@ Show that $Q \nvdash \forall x (Sx \neq x)$
 
 If we use induction in the *metatheory* (i.e. the theory we are using to reason about $\mathsf{Q}$, $\mathsf{PA}$, etc.), we can still show
 
-$$\text{For all } n \in \mathbb{N}, \quad \mathsf{Q} \vdash S\underline{n} \neq \underline{n}$$
+$$\text{for all } n \in \mathbb{N}, \quad \mathsf{Q} \vdash S\underline{n} \neq \underline{n}$$
 :::
 
 
@@ -44,10 +44,107 @@ $$\text{For all } n \in \mathbb{N}, \quad \mathsf{Q} \vdash S\underline{n} \neq 
 
 We saw in class that $\mathsf{PA}^-$ proves all true $\Sigma_1$-statements about $\mathbb{N}$. This is due to two facts:
 
-- $Delta_0$-formulas are **absolute between structures and end-extensions thereof**. 
+- $\Delta_0$-formulas are **absolute between structures and end-extensions thereof**. 
 - Any model $\mathcal{M}$ of $\mathsf{PA}^-$ is an end-extension of (an isomorphic copy of) $\mathbb{N}$.
 
 To prove the second fact, we need to show two things:
 
 1. The mapping $\iota: n \mapsto \underline{n}^{\mathcal{M}}$ is an embedding (so $\iota(\mathbb{N})$ is a substructure of $\mathcal{M}$ isomorphic to $\mathbb{N}$).
 2. Any element $y \in M$ with $y <^{\mathcal{M}} \underline{n}^{\mathcal{M}}$ is itself some $\underline{m}^{\mathcal{M}}$.
+
+
+The first item is established in the next exercise.
+
+::: {#exr-}
+\
+Show that for all natural numbers $n,k,l$,
+
+$$
+\begin{aligned}
+n = k+l & \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k}+ \underline{l} \\
+n = k \cdot l & \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k} \cdot \underline{l} \\
+n < k& \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} < \underline{k}\\
+\end{aligned}
+$$
+
+(*You prove this by induction in the metatheory. For example, for the first statement, the case $k=0$ follows from axiom (A6). For the inductive step, use axiom (A1).*)
+:::
+
+For the second item:
+
+::: {#exr-}
+\
+Show that for all $k \in \mathbb{N}$,
+
+$$
+\mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+$$
+
+*Again, use (meta-) induction on $k$. The case $k=0$ follows from (A15). For the inductive step, show*
+
+$$
+\mathsf{PA}^- \vdash \forall x,y \: (y > x \to y \geq x+1)
+$$
+:::
+
+## More on the limitations of $\mathsf{PA}^-$
+
+
+::: {#exr-} 
+\
+Let $R$ be the ring $\mathbb{Z}[X,Y]/(X^2-2Y^2)$, i.e., $R$ is the polynomial ring $mathbb{Z}[X,Y]$ modulo the equivalence
+$$
+p(X,Y) \sim q(X,Y) \quad :\iff \quad p-q = r (X^2-2Y^2).
+$$
+Show that $R$ can be discretely ordered.
+
+Infer that 
+$$
+\mathsf{PA}^- \nvdash \forall x,y \: (x> 1 \to x^2 \neq 2y^2)
+$$
+:::
+
+
+## Number theoretic functions
+
+
+::: {#exr-}
+\
+Show that the following relations and functions are primitive recursive.
+
+$$
+\begin{aligned}
+& x  \text{ divides }  y \\
+& \operatorname{rem}(x,y) \text{ (remainder when $y$ is divided by $x$)} \\
+& x  \text{ is prime}\\
+& n \mapsto p_n, \text{ where $p_n$ is the $n$th prime}\\
+\end{aligned}
+$$
+:::
+
+
+## Gödel's Lemma
+
+If you feel like it, try your hands at proving Gödel's famous Lemma on the $\beta$ function:
+
+::: {#lem-goedel}
+## Gödel's Lemma
+\
+There exists a primitive recursive function $\beta$ such that for every $k$ and  for every finite sequence $x_0,x_1,\ldots x_{k-1} \in \mathbb{N}$, there exists a natural number $c$ with
+$$
+\text{for all} \;  i<k: \;  \beta(c,i) = x_i.
+$$
+
+In fact, there exists a $\Delta_0$-formula $\theta(x,y,z)$ such that
+$$
+\mathbb{N} \models \forall x,y \;\exists ! z \, \theta(x,y,z),
+$$
+and the formula $\theta(x,y,z)$ defines the function $\beta$ over the natural numbers.
+:::
+
+*Hint:* To code a sequence $x_0,x_1,\ldots x_{k-1}$ of natural numbers, set $m=b!$ where $b = \max(k,x_0,x_1,\ldots x_{k-1})$. Verify the numbers
+$$
+m+1, 2m+1, \ldots k \cdot m+1
+$$
+are pairwise coprime. Now try to apply the *Chinese Remainder Theorem*.
+

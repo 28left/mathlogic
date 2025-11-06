@@ -43,7 +43,7 @@ n < k& \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} < \underl
 $$
 and
 $$
-\mathsf{PA}^- \vdash x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+\mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
 $$
 
 The first three statements will later be generalized to all recursive functions and relations; they imply that the map $n \mapsto \underline{n}^{\mathcal{M}}$ is a homomorphism, and, due to the last statement, the map is also an embedding onto an initial segment of $\mathcal{M}$.
