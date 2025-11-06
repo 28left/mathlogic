@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 24 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 7 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./012_Sep26_midterm_review.html" rel="next">
-<link href="./010_Sep22_model_existence.html" rel="prev">
+<link href="./026_Nov5_definability.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +70,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Corollary {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
@@ -79,24 +94,8 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Problem {
   --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Definition {
-  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -143,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./011_Sep24_compactness.html">September 24</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./027_Nov7_PA-proofs.html">Nov 7</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -230,7 +229,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./011_Sep24_compactness.html" class="sidebar-item-text sidebar-link active">
+  <a href="./011_Sep24_compactness.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 24</span></a>
   </div>
 </li>
@@ -332,7 +331,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./027_Nov7_PA-proofs.html" class="sidebar-item-text sidebar-link">
+  <a href="./027_Nov7_PA-proofs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Nov 7</span></a>
   </div>
 </li>
@@ -346,20 +345,23 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-compactness-theorem" id="toc-the-compactness-theorem" class="nav-link active" data-scroll-target="#the-compactness-theorem">The Compactness Theorem</a>
+  <li><a href="#practice-on-mathsfpa-and-computability" id="toc-practice-on-mathsfpa-and-computability" class="nav-link active" data-scroll-target="#practice-on-mathsfpa-and-computability">Practice on <span class="math inline">\(\mathsf{PA}\)</span> and Computability</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#the-power-of-induction" id="toc-the-power-of-induction" class="nav-link" data-scroll-target="#the-power-of-induction">The power of induction</a></li>
+  <li><a href="#capturing-basic-arithmetic-of-mathbbn-in-mathsfpa-" id="toc-capturing-basic-arithmetic-of-mathbbn-in-mathsfpa-" class="nav-link" data-scroll-target="#capturing-basic-arithmetic-of-mathbbn-in-mathsfpa-">Capturing basic arithmetic of <span class="math inline">\(\mathbb{N}\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span></a></li>
+  <li><a href="#more-on-the-limitations-of-mathsfpa-" id="toc-more-on-the-limitations-of-mathsfpa-" class="nav-link" data-scroll-target="#more-on-the-limitations-of-mathsfpa-">More on the limitations of <span class="math inline">\(\mathsf{PA}^-\)</span></a></li>
+  <li><a href="#number-theoretic-functions" id="toc-number-theoretic-functions" class="nav-link" data-scroll-target="#number-theoretic-functions">Number theoretic functions</a></li>
+  <li><a href="#gödels-lemma" id="toc-gödels-lemma" class="nav-link" data-scroll-target="#gödels-lemma">Gödel’s Lemma</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="011_Sep24_compactness.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="027_Nov7_PA-proofs.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 24</h1>
+<h1 class="title">Math 557 Nov 7</h1>
 </div>
 
 
@@ -376,16 +378,20 @@ window.Quarto = {
 </header>
 
 
-<section id="the-compactness-theorem" class="level1">
-<h1>The Compactness Theorem</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
+<section id="practice-on-mathsfpa-and-computability" class="level1">
+<h1>Practice on <span class="math inline">\(\mathsf{PA}\)</span> and Computability</h1>
+<section id="the-power-of-induction" class="level2">
+<h2 class="anchored" data-anchor-id="the-power-of-induction">The power of induction</h2>
+<p>Recall the axioms of <span class="math inline">\(\mathsf{PA}\)</span>:</p>
 <ul>
-<li><strong>Theorem:</strong> A theory <span class="math inline">\(T\)</span> has a model if and only if every finite subtheory <span class="math inline">\(T_0 \subseteq T\)</span> has a model.</li>
+<li><strong>P1</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(Sx \ne 0\)</span></li>
+<li><strong>P2</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(Sx=Sy \to x=y\)</span></li>
+<li><strong>P3</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(x+0 = x\)</span></li>
+<li><strong>P4</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(x+Sy =S(x+y)\)</span></li>
+<li><strong>P5</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(x \cdot 0 = 0\)</span></li>
+<li><strong>P6</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(x \cdot Sy = x \cdot y + x\)</span></li>
+<li><strong>Ind<span class="math inline">\({}_\varphi\)</span></strong> <span class="math inline">\(\;\)</span> <span class="math inline">\(\varphi(0) \, \wedge \, \forall x (\varphi(x) \to \varphi(Sx)) \to \forall x \; \varphi(x)\)</span></li>
 </ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -394,12 +400,16 @@ window.Quarto = {
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
-Let <span class="math inline">\(X\)</span> be the set of all maximally consistent <span class="math inline">\(\mathcal{L}\)</span>-theories. Recall that the sets <span class="math display">\[\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\} \quad (\sigma \text{ $\mathcal{L}$-sentence})\]</span> generate a Hausdorff topology on <span class="math inline">\(X\)</span>.</p>
-<p>Show that the topology is compact.</p>
+Show that <span class="math inline">\(\mathsf{PA} \vdash \forall x (Sx \neq x)\)</span></p>
 </div>
 </div>
 </div>
 </div>
+<p>But we need induction to prove this, even if we throw in another axiom:</p>
+<ul>
+<li><strong>P7</strong> <span class="math inline">\(\quad\)</span> <span class="math inline">\(\forall x \: (x \neq 0 \to \exists y (x = Sy))\)</span></li>
+</ul>
+<p>The system (P1)-(P7) is referred to as <strong>Robinson’s <span class="math inline">\(\mathsf{Q}\)</span></strong></p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -408,30 +418,140 @@ Let <span class="math inline">\(X\)</span> be the set of all maximally consisten
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-One can use the compactness theorem to construct non-standard models of arithmetic, i.e., models of <span class="math inline">\(\operatorname{Th}(\mathbb{N}, 0, 1, +, \cdot, &lt;)\)</span> not isomorphic to <span class="math inline">\(\mathbb{N}\)</span>.</p>
-<p>Use the same technique for <span class="math inline">\(\operatorname{Th}(\mathbb{R}, \{c_a : a \in \mathbb{R}\}, +, \cdot, &lt;)\)</span>, where for every <span class="math inline">\(a \in \mathbb{R}\)</span> we add a constant symbol <span class="math inline">\(c_a\)</span> to the language? What kind of structure do we obtain? Discuss.</p>
+Show that <span class="math inline">\(Q \nvdash \forall x (Sx \neq x)\)</span></p>
+<p>(<em>Construct a model of <span class="math inline">\(\mathsf{Q}\)</span> by adding a “point at infinity” to <span class="math inline">\(\mathbb{N}\)</span> and defining the operations <span class="math inline">\(S, +\)</span> accordingly.</em>)</p>
+<p>If we use induction in the <em>metatheory</em> (i.e.&nbsp;the theory we are using to reason about <span class="math inline">\(\mathsf{Q}\)</span>, <span class="math inline">\(\mathsf{PA}\)</span>, etc.), we can still show</p>
+<p><span class="math display">\[\text{for all } n \in \mathbb{N}, \quad \mathsf{Q} \vdash S\underline{n} \neq \underline{n}\]</span></p>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+</section>
+<section id="capturing-basic-arithmetic-of-mathbbn-in-mathsfpa-" class="level2">
+<h2 class="anchored" data-anchor-id="capturing-basic-arithmetic-of-mathbbn-in-mathsfpa-">Capturing basic arithmetic of <span class="math inline">\(\mathbb{N}\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span></h2>
+<p>We saw in class that <span class="math inline">\(\mathsf{PA}^-\)</span> proves all true <span class="math inline">\(\Sigma_1\)</span>-statements about <span class="math inline">\(\mathbb{N}\)</span>. This is due to two facts:</p>
+<ul>
+<li><span class="math inline">\(\Delta_0\)</span>-formulas are <strong>absolute between structures and end-extensions thereof</strong>.</li>
+<li>Any model <span class="math inline">\(\mathcal{M}\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span> is an end-extension of (an isomorphic copy of) <span class="math inline">\(\mathbb{N}\)</span>.</li>
+</ul>
+<p>To prove the second fact, we need to show two things:</p>
+<ol type="1">
+<li>The mapping <span class="math inline">\(\iota: n \mapsto \underline{n}^{\mathcal{M}}\)</span> is an embedding (so <span class="math inline">\(\iota(\mathbb{N})\)</span> is a substructure of <span class="math inline">\(\mathcal{M}\)</span> isomorphic to <span class="math inline">\(\mathbb{N}\)</span>).</li>
+<li>Any element <span class="math inline">\(y \in M\)</span> with <span class="math inline">\(y &lt;^{\mathcal{M}} \underline{n}^{\mathcal{M}}\)</span> is itself some <span class="math inline">\(\underline{m}^{\mathcal{M}}\)</span>.</li>
+</ol>
+<p>The first item is established in the next exercise.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Take-home Problem
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
+Show that for all natural numbers <span class="math inline">\(n,k,l\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+n = k+l &amp; \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k}+ \underline{l} \\
+n = k \cdot l &amp; \quad \Longrightarrow \quad \mathsf{PA}^- \vdash \underline{n}= \underline{k} \cdot \underline{l} \\
+n &lt; k&amp; \quad \Longrightarrow \quad  \mathsf{PA}^- \vdash \underline{n} &lt; \underline{k}\\
+\end{aligned}
+\]</span></p>
+<p>(<em>You prove this by induction in the metatheory. For example, for the first statement, the case <span class="math inline">\(k=0\)</span> follows from axiom (A6). For the inductive step, use axiom (A1).</em>)</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p><br>
-Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.</p>
-<p>Try to strengthen this to:</p>
-<blockquote class="blockquote">
-<p>Every partial order can be extended to a linear order.</p>
-</blockquote>
 </div>
 </div>
+<p>For the second item:</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
+Show that for all <span class="math inline">\(k \in \mathbb{N}\)</span>,</p>
+<p><span class="math display">\[
+\mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+\]</span></p>
+<p><em>Again, use (meta-) induction on <span class="math inline">\(k\)</span>. The case <span class="math inline">\(k=0\)</span> follows from (A15). For the inductive step, show</em></p>
+<p><span class="math display">\[
+\mathsf{PA}^- \vdash \forall x,y \: (y &gt; x \to y \geq x+1)
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-on-the-limitations-of-mathsfpa-" class="level2">
+<h2 class="anchored" data-anchor-id="more-on-the-limitations-of-mathsfpa-">More on the limitations of <span class="math inline">\(\mathsf{PA}^-\)</span></h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
+Let <span class="math inline">\(R\)</span> be the ring <span class="math inline">\(\mathbb{Z}[X,Y]/(X^2-2Y^2)\)</span>, i.e., <span class="math inline">\(R\)</span> is the polynomial ring <span class="math inline">\(mathbb{Z}[X,Y]\)</span> modulo the equivalence <span class="math display">\[
+p(X,Y) \sim q(X,Y) \quad :\iff \quad p-q = r (X^2-2Y^2).
+\]</span> Show that <span class="math inline">\(R\)</span> can be discretely ordered.</p>
+<p>Infer that <span class="math display">\[
+\mathsf{PA}^- \nvdash \forall x,y \: (x&gt; 1 \to x^2 \neq 2y^2)
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="number-theoretic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="number-theoretic-functions">Number theoretic functions</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> <br>
+Show that the following relations and functions are primitive recursive.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; x  \text{ divides }  y \\
+&amp; \operatorname{rem}(x,y) \text{ (remainder when $y$ is divided by $x$)} \\
+&amp; x  \text{ is prime}\\
+&amp; n \mapsto p_n, \text{ where $p_n$ is the $n$th prime}\\
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gödels-lemma" class="level2">
+<h2 class="anchored" data-anchor-id="gödels-lemma">Gödel’s Lemma</h2>
+<p>If you feel like it, try your hands at proving Gödel’s famous Lemma on the <span class="math inline">\(\beta\)</span> function:</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="lem-goedel" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Gödel’s Lemma)</strong></span> <br>
+There exists a primitive recursive function <span class="math inline">\(\beta\)</span> such that for every <span class="math inline">\(k\)</span> and for every finite sequence <span class="math inline">\(x_0,x_1,\ldots x_{k-1} \in \mathbb{N}\)</span>, there exists a natural number <span class="math inline">\(c\)</span> with <span class="math display">\[
+\text{for all} \;  i&lt;k: \;  \beta(c,i) = x_i.
+\]</span></p>
+<p>In fact, there exists a <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\theta(x,y,z)\)</span> such that <span class="math display">\[
+\mathbb{N} \models \forall x,y \;\exists ! z \, \theta(x,y,z),
+\]</span> and the formula <span class="math inline">\(\theta(x,y,z)\)</span> defines the function <span class="math inline">\(\beta\)</span> over the natural numbers.</p>
+</div>
+</div>
+</div>
+</div>
+<p><em>Hint:</em> To code a sequence <span class="math inline">\(x_0,x_1,\ldots x_{k-1}\)</span> of natural numbers, set <span class="math inline">\(m=b!\)</span> where <span class="math inline">\(b = \max(k,x_0,x_1,\ldots x_{k-1})\)</span>. Verify the numbers <span class="math display">\[
+m+1, 2m+1, \ldots k \cdot m+1
+\]</span> are pairwise coprime. Now try to apply the <em>Chinese Remainder Theorem</em>.</p>
 
 
 </section>
@@ -839,14 +959,11 @@ Use the compactness theorem to show (without using the Axiom of Choice) that eve
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./010_Sep22_model_existence.html" class="pagination-link" aria-label="September 22">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 22</span>
+      <a href="./026_Nov5_definability.html" class="pagination-link" aria-label="Nov 5">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nov 5</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./012_Sep26_midterm_review.html" class="pagination-link" aria-label="September 26">
-        <span class="nav-page-text">September 26</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

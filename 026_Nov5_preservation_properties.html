@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 24 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 5 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./012_Sep26_midterm_review.html" rel="next">
-<link href="./010_Sep22_model_existence.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,16 +73,8 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Lemma {
+.Definition {
   --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Problem {
-  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Theorem {
@@ -95,7 +85,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FF7E79;
   --color2: #EBEBEB;
 }
-.Definition {
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -143,7 +137,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./011_Sep24_compactness.html">September 24</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -230,7 +226,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./011_Sep24_compactness.html" class="sidebar-item-text sidebar-link active">
+  <a href="./011_Sep24_compactness.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">September 24</span></a>
   </div>
 </li>
@@ -324,18 +320,6 @@ window.Quarto = {
  <span class="menu-text">Nov 3</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./026_Nov5_definability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 5</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./027_Nov7_PA-proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 7</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -346,20 +330,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-compactness-theorem" id="toc-the-compactness-theorem" class="nav-link active" data-scroll-target="#the-compactness-theorem">The Compactness Theorem</a>
+  <li><a href="#preservation" id="toc-preservation" class="nav-link active" data-scroll-target="#preservation">Preservation Properties under End Extensions</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#corollary" id="toc-corollary" class="nav-link" data-scroll-target="#corollary">Corollary</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="011_Sep24_compactness.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="026_Nov5_preservation_properties.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 24</h1>
+<h1 class="title">Math 557 Nov 5</h1>
 </div>
 
 
@@ -376,62 +359,47 @@ window.Quarto = {
 </header>
 
 
-<section id="the-compactness-theorem" class="level1">
-<h1>The Compactness Theorem</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><strong>Theorem:</strong> A theory <span class="math inline">\(T\)</span> has a model if and only if every finite subtheory <span class="math inline">\(T_0 \subseteq T\)</span> has a model.</li>
-</ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<p>Of particular importance is that <span class="math inline">\(\Delta_0\)</span>-formulas mean the same thing in a structure as in all end extensions:</p>
+<section id="preservation" class="level1">
+<h1>Preservation Properties under End Extensions</h1>
+<div id="Theorem-1" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 1</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
+<ol type="1">
+<li><p>Every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>upward-persistent</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \Longrightarrow \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Pi_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>downward-persistent</strong>: <span class="math display">\[
+\mathcal{M}\models \varphi[\vec{a}] \Longrightarrow \mathcal{N}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Delta_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}].
+\]</span></p></li>
+</ol>
+</div></details>
 </div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
-Let <span class="math inline">\(X\)</span> be the set of all maximally consistent <span class="math inline">\(\mathcal{L}\)</span>-theories. Recall that the sets <span class="math display">\[\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\} \quad (\sigma \text{ $\mathcal{L}$-sentence})\]</span> generate a Hausdorff topology on <span class="math inline">\(X\)</span>.</p>
-<p>Show that the topology is compact.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We prove (i) by induction on the formula construction of <span class="math inline">\(\varphi(\vec{v})\)</span>, where only the case of a bounded quantifier is of interest. But since <span class="math inline">\(\mathcal{M}\)</span> is an end extension of <span class="math inline">\(\mathcal{N}\)</span>, <span class="math inline">\(M\)</span> does not insert any new elements below an element of <span class="math inline">\(N\)</span>, so that a bounded quantifier means the same thing in both structures.</p>
 </div>
+<p>Let <span class="math inline">\(\Sigma_1\)</span>-<span class="math inline">\(Th(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}\)</span>. Then we have:</p>
+<section id="corollary" class="level2">
+<h2 class="anchored" data-anchor-id="corollary">Corollary</h2>
+<p><span class="math display">\[
+\mathsf{PA}^- \models \Sigma_1\text{-}Th(\mathbb{N})
+\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By the previous theorem, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
 </div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-One can use the compactness theorem to construct non-standard models of arithmetic, i.e., models of <span class="math inline">\(\operatorname{Th}(\mathbb{N}, 0, 1, +, \cdot, &lt;)\)</span> not isomorphic to <span class="math inline">\(\mathbb{N}\)</span>.</p>
-<p>Use the same technique for <span class="math inline">\(\operatorname{Th}(\mathbb{R}, \{c_a : a \in \mathbb{R}\}, +, \cdot, &lt;)\)</span>, where for every <span class="math inline">\(a \in \mathbb{R}\)</span> we add a constant symbol <span class="math inline">\(c_a\)</span> to the language? What kind of structure do we obtain? Discuss.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Take-home Problem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><br>
-Use the compactness theorem to show (without using the Axiom of Choice) that every set can be linearly ordered.</p>
-<p>Try to strengthen this to:</p>
-<blockquote class="blockquote">
-<p>Every partial order can be extended to a linear order.</p>
-</blockquote>
-</div>
-</div>
+<p>Thus one can prove in the theory <span class="math inline">\(\mathsf{PA}^-\)</span> all <span class="math inline">\(\Sigma_1\)</span>-sentences that hold in the standard model, but not all true <span class="math inline">\(\Pi_1\)</span>-sentences anymore. For instance, the <span class="math inline">\(\Pi_1\)</span>-sentence stating that every number is even or odd: <span class="math display">\[
+(*) \quad \forall x \;  \exists y \le x \; (x = 2 \cdot y \vee x = 2 \cdot y +1)
+\]</span> is true in the standard model, but not in the <span class="math inline">\(\mathsf{PA}^-\)</span>-model <span class="math inline">\(\mathbb{Z}[X]^+\)</span>.</p>
+<p>Even true <span class="math inline">\(\forall\)</span>-sentences (i.e., sentences of the form <span class="math inline">\(\forall \vec{x} \; \psi\)</span> with <em>quantifier-free</em> <span class="math inline">\(\psi\)</span>) that hold in the standard model need not be provable in <span class="math inline">\(\mathsf{PA}^-\)</span>. For example, the <span class="math inline">\(\forall\)</span>-sentence <span class="math display">\[
+\forall x,y  (x^2 \ne 2 \cdot y^2)
+\]</span> is true in the standard model, but not provable in <span class="math inline">\(\mathsf{PA}^-\)</span> (<span class="math inline">\(\mathbb{Z}/(X^2 - 2Y^2)\)</span> is a counterexample).</p>
+<p>Thus the above sentence (*) is an example of a <span class="math inline">\(\Pi_1\)</span>-sentence that is not a <span class="math inline">\(\forall\)</span>-sentence, where one cannot omit the bounded quantifier! (By the way, one can easily show that <span class="math inline">\(\mathbb{Z}[X]^+\)</span> is at least a model of all <span class="math inline">\(\forall\)</span>-sentences that hold in the standard model.)</p>
 
 
 </section>
@@ -510,7 +478,7 @@ Use the compactness theorem to show (without using the Axiom of Choice) that eve
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -837,18 +805,6 @@ Use the compactness theorem to show (without using the Axiom of Choice) that eve
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./010_Sep22_model_existence.html" class="pagination-link" aria-label="September 22">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">September 22</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./012_Sep26_midterm_review.html" class="pagination-link" aria-label="September 26">
-        <span class="nav-page-text">September 26</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
