@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MATH 557 Oct 17 – Math 557 Fall 2025</title>
+<title>Representability in Arithmetic – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./midterm_2_preparation.html" rel="next">
-<link href="./019_Oct15_fraisse_limits.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,15 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Lemma {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -87,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FF7E79;
   --color2: #EBEBEB;
 }
-.Theorem {
+.Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -95,8 +85,16 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
+.Corollary {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Problem {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -143,7 +141,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./020_Oct17_random_graphs.html">Oct 17</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -284,7 +284,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./020_Oct17_random_graphs.html" class="sidebar-item-text sidebar-link active">
+  <a href="./020_Oct17_random_graphs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oct 17</span></a>
   </div>
 </li>
@@ -336,12 +336,6 @@ window.Quarto = {
  <span class="menu-text">Nov 7</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./028_Nov10_representability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 10</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -352,26 +346,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fraïssé-theory-of-random-graphs" id="toc-fraïssé-theory-of-random-graphs" class="nav-link active" data-scroll-target="#fraïssé-theory-of-random-graphs">Fraïssé Theory of Random Graphs</a>
-  <ul class="collapse">
-  <li><a href="#key-facts-from-fräissé-theory" id="toc-key-facts-from-fräissé-theory" class="nav-link" data-scroll-target="#key-facts-from-fräissé-theory">Key facts from Fräissé theory</a></li>
-  <li><a href="#simple-graphs" id="toc-simple-graphs" class="nav-link" data-scroll-target="#simple-graphs">Simple graphs</a></li>
-  <li><a href="#random-graphs" id="toc-random-graphs" class="nav-link" data-scroll-target="#random-graphs">Random graphs</a></li>
-  <li><a href="#further-explorations" id="toc-further-explorations" class="nav-link" data-scroll-target="#further-explorations">Further explorations</a>
-  <ul class="collapse">
-  <li><a href="#law-for-graphs" id="toc-law-for-graphs" class="nav-link" data-scroll-target="#law-for-graphs">0-1 law for graphs</a></li>
-  <li><a href="#other-fraïssé-classes" id="toc-other-fraïssé-classes" class="nav-link" data-scroll-target="#other-fraïssé-classes">Other Fraïssé classes</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#representability-of-functions" id="toc-representability-of-functions" class="nav-link active" data-scroll-target="#representability-of-functions">Representability of Functions</a></li>
+  <li><a href="#representability-of-sets" id="toc-representability-of-sets" class="nav-link" data-scroll-target="#representability-of-sets">Representability of Sets</a></li>
+  <li><a href="#main-theorem" id="toc-main-theorem" class="nav-link" data-scroll-target="#main-theorem">Main Theorem</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="020_Oct17_random_graphs.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="represent.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MATH 557 Oct 17</h1>
+<h1 class="title">Representability in Arithmetic</h1>
 </div>
 
 
@@ -388,148 +374,67 @@ window.Quarto = {
 </header>
 
 
-<section id="fraïssé-theory-of-random-graphs" class="level1">
-<h1>Fraïssé Theory of Random Graphs</h1>
-<section id="key-facts-from-fräissé-theory" class="level2">
-<h2 class="anchored" data-anchor-id="key-facts-from-fräissé-theory">Key facts from Fräissé theory</h2>
-<p>To simplify things, we state everything in the context of a <strong>finite language that contains only constants and relations</strong>. In this case <em>finitely generated</em> is equivalent to <em>finite</em>.</p>
+<section id="representability-of-functions" class="level2">
+<h2 class="anchored" data-anchor-id="representability-of-functions">Representability of Functions</h2>
+<p>Let <span class="math inline">\(T\)</span> be a theory in the language of arithmetic <span class="math inline">\(L\)</span> that extends <span class="math inline">\(PA^-\)</span>. A (total) function <span class="math inline">\(f: \mathbb{N}^k \to \mathbb{N}\)</span> is <strong>representable</strong> in <span class="math inline">\(T\)</span> iff there exists an <span class="math inline">\(L\)</span>-formula <span class="math inline">\(\theta(x_1,\ldots,x_k,y)\)</span> such that for all <span class="math inline">\(n_1,\ldots,n_k ,m \in \mathbb{N}\)</span>:</p>
 <ul>
-<li><span class="math inline">\(\mathcal{M}\)</span> is <strong>homogeneous</strong> if any isomorphism between finite substructures of <span class="math inline">\(\mathcal{M}\)</span> can be extended to an automorphism of <span class="math inline">\(\mathcal{M}\)</span>.</li>
-<li><span class="math inline">\(\mathrm{age}(\mathcal{M})\)</span> is the class of all finite <span class="math inline">\(\mathcal{L}\)</span>-structures isomorphic to a substructure of <span class="math inline">\(\mathcal{M}\)</span>.</li>
-<li>Any two countable homogeneous structures with the same age are isomorphic.</li>
-<li>A class of finite structures <span class="math inline">\(\overline{K}\)</span> is an <strong>amalgamation class</strong> if it satisfies (HP), (JEP), and (AP). In words, every substructure of a structure in <span class="math inline">\(\overline{K}\)</span> is in <span class="math inline">\(\overline{K}\)</span>, any two structures in <span class="math inline">\(\overline{K}\)</span> embed into another structure from <span class="math inline">\(\overline{K}\)</span>, and any two structures with a common substructure (up to isomorphism) amalgamate to another structure that preserves the common substructure.</li>
-<li><strong>Fraïssé’s Theorem:</strong> Suppose <span class="math inline">\(\overline{K}\)</span> is a class of finite <span class="math inline">\(\mathcal{L}\)</span>-structures such that there are only countably many isomorphism types in <span class="math inline">\(\overline{K}\)</span>. Then <span class="math inline">\(\overline{K}\)</span> is an amalgamation class iff <span class="math inline">\(\overline{K}\)</span> is the age of a countable homogeneous <span class="math inline">\(\mathcal{L}\)</span>-structure.</li>
+<li><ol type="a">
+<li><span class="math inline">\(T \vdash \exists! y \; \theta(\underline{n_1},\ldots,\underline{n_k},y)\)</span>, and</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li><span class="math inline">\(f(n_1,\ldots,n_k)= m \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k},\underline{m})\)</span>.</li>
+</ol></li>
 </ul>
 </section>
-<section id="simple-graphs" class="level2">
-<h2 class="anchored" data-anchor-id="simple-graphs">Simple graphs</h2>
-<p>We consider the theory of <em>undirected graphs without self-loops</em>, also called <strong>simple graphs</strong>. Let <span class="math inline">\(\mathcal{L}_G = \{E\}\)</span> be the language of graphs with one binary relation symbol <span class="math inline">\(E\)</span>.</p>
-<p>Simple graphs are formalized by the axioms</p>
+<section id="representability-of-sets" class="level2">
+<h2 class="anchored" data-anchor-id="representability-of-sets">Representability of Sets</h2>
+<p>Similarly, a set <span class="math inline">\(S \subseteq \mathbb{N}^k\)</span> is <strong>representable</strong> in the theory <span class="math inline">\(T\)</span> iff there exists an <span class="math inline">\(L\)</span>-formula <span class="math inline">\(\theta(x_1,\ldots,x_k)\)</span> such that for all <span class="math inline">\(n_1,\ldots,n_k \in \mathbb{N}\)</span>:</p>
 <ul>
-<li><span class="math inline">\(\forall x \neg E(x,x)\)</span></li>
-<li><span class="math inline">\(\forall x, y \: (E(x,y) \to E(y,x))\)</span></li>
+<li><ol start="3" type="a">
+<li><span class="math inline">\((n_1,\ldots,n_k) \in S \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k})\)</span>, and</li>
+</ol></li>
+<li><ol start="4" type="a">
+<li><span class="math inline">\((n_1,\ldots,n_k) \not \in S \Rightarrow T \vdash \neg \theta(\underline{n_1},\ldots,\underline{n_k})\)</span>.</li>
+</ol></li>
 </ul>
-<p>We denote the theory of simple graphs by <span class="math inline">\(T_{G}\)</span></p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> Verify that <span class="math display">\[
-\overline{K} = \{\mathcal{G} : \mathcal{G} \models T_G, \mathcal{G} \text{ finite}\}
-\]</span> is an amalgamation class with countably many isomorphism types.</p>
-</div>
-</div>
-</div>
-</div>
-<p>It follows that <span class="math inline">\(\overline{K}\)</span> has a Fraïssé limit. What does this limit look like?</p>
+<p>If the function <span class="math inline">\(f\)</span> (or the set <span class="math inline">\(S\)</span>) is representable by a <span class="math inline">\(\Sigma_1\)</span>-formula, then <span class="math inline">\(f\)</span> (or <span class="math inline">\(S\)</span>, respectively) is called <strong><span class="math inline">\(\Sigma_1\)</span>-representable</strong>.</p>
+<p>The definition of representability is chosen so that this property is preserved when the theory <span class="math inline">\(T\)</span> is extended.</p>
 </section>
-<section id="random-graphs" class="level2">
-<h2 class="anchored" data-anchor-id="random-graphs">Random graphs</h2>
-<p>We add the following <strong>extension axioms</strong>:</p>
-<p><span class="math display">\[
-\sigma_{n,m} \equiv \forall x_1, \dots, x_n \forall y_1, \dots, y_m \; \left ( \bigwedge_{i=1}^n \bigwedge_{j = 1}^m x_i \neq y_j \; \to \; \exists z \: \bigl ( \bigwedge_{i=1}^n (z \neq  x_i \land E(z,x_i) ) \land \bigwedge_{j = 1}^m (z \neq y_j \land \neg E(z, y_j)) \bigr ) \right )
-\]</span></p>
-<p>Let <span class="math display">\[
-T_{RG} = T_G \cup \{ \exists x,y \: (x \neq y) \} \cup \{ \sigma_{n,m} : n, m \geq 1 \}
-\]</span></p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Show that every countable model of <span class="math inline">\(T_{RG}\)</span> is homogeneous.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> Show that if <span class="math inline">\(\mathcal{R}\)</span> is a model of <span class="math inline">\(T_{RG}\)</span>, <span class="math inline">\(\operatorname{age}(\mathcal{R}) = \overline{K}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<p>It follows from Fraïssé’s Theorem that <span class="math inline">\(T_{RG}\)</span> has a countable model <span class="math inline">\(\mathcal{R}\)</span>, and that this model is unique up to isomorphism.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> Show that <span class="math inline">\(T_{RG}\)</span> is complete.</p>
-</div>
-</div>
-</div>
-</div>
-<p><span class="math inline">\(\mathcal{R}\)</span> is called the <strong>random graph</strong> and <span class="math inline">\(T_{RG}\)</span> the <em>theory of the random graph</em>. Why? Let <span class="math inline">\(G_N\)</span> be the set of all simple graphs on the vertex set <span class="math inline">\(\{1, \dots, N\}\)</span>. Put a probability distribution on <span class="math inline">\(G_N\)</span> by giving every graph the same probability. (Alternatively, we could independently assign edges to any vertex pair with probability <span class="math inline">\(1/2\)</span>. This is called the <strong>Erdös-Renyi model</strong>.) Given an <span class="math inline">\(\mathcal{L}_G\)</span>-sentence <span class="math inline">\(\sigma\)</span>, let <span class="math inline">\(\mathbb{P}_N(\sigma)\)</span> be the probability that <span class="math inline">\(\sigma\)</span> holds for a random graph in <span class="math inline">\(G_N\)</span>, i.e.</p>
-<p><span class="math display">\[
-\mathbb{P}_N(\sigma)=  \frac{|\{ \mathcal{G} \in G_N : \mathcal{G} \models \sigma\}|}{|G_N|}.
-\]</span></p>
-<p>It turns out, for large <span class="math inline">\(N\)</span>, graphs will satisfy the extension axioms with high probability.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-asextension" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> Show that for any <span class="math inline">\(n, m \geq 1\)</span>,</p>
-<p><span class="math display">\[
-\lim_{N \to \infty} \mathbb{P}_N(\sigma_{n,m}) = 1.
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<p>This justifies referring to <span class="math inline">\(\mathcal{R}\)</span> as <em>the random graph</em>, since it can be seen as the “limit” of finite random graphs.</p>
-</section>
-<section id="further-explorations" class="level2">
-<h2 class="anchored" data-anchor-id="further-explorations">Further explorations</h2>
-<section id="law-for-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="law-for-graphs">0-1 law for graphs</h3>
+<section id="main-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="main-theorem">Main Theorem</h2>
 <div class="callout callout-style-simple callout-caution no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="thm-zero-one" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1</strong></span> For any <span class="math inline">\(\mathcal{L}_G\)</span>-sentence <span class="math inline">\(\sigma\)</span>,</p>
+<div id="thm-representability" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> <br>
+(i) <em>Every recursive function</em> <span class="math inline">\(f: \mathbb{N}^k \to \mathbb{N}\)</span> <em>is <span class="math inline">\(\Sigma_1\)</span>-representable in</em> <span class="math inline">\(PA^-\)</span>.</p>
+<ol start="2" type="i">
+<li><em>Every recursive set</em> <span class="math inline">\(S \subseteq \mathbb{N}^k\)</span> <em>is <span class="math inline">\(\Sigma_1\)</span>-representable in</em> <span class="math inline">\(PA^-\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>Proof of (i):</strong></p>
+<p>Let <span class="math inline">\(f: \mathbb{N}^k \to \mathbb{N}\)</span> be a recursive function, so its graph <span class="math inline">\(\Gamma_f\)</span> is definable over the natural numbers by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists \vec{z} \; \varphi(\vec{x},y, \vec{z})\)</span>, where <span class="math inline">\(\varphi\)</span> contains only bounded quantifiers. Since every formula of the form <span class="math inline">\(\exists \vec{z} \; \varphi\)</span> is equivalent in <span class="math inline">\(PA^-\)</span> to <span class="math inline">\(\exists u \; \exists \vec{z} \; ( \vec{z} &lt; u \wedge \varphi)\)</span>, we may assume that <span class="math inline">\(\vec{z}\)</span> is just a single variable <span class="math inline">\(z\)</span>. We now form the <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\psi(\vec{x},y, z)\)</span>:</p>
 <p><span class="math display">\[
-\text{either } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 0 \text{ or } \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 1.
-\]</span> Moreover, <span class="math inline">\(T_{RG}\)</span> axiomatizes the theory <span class="math display">\[
-\{ \sigma : \lim_{N \to \infty} \mathbb{P}_N(\sigma) = 1 \}
-\]</span> and this theory is complete.</p>
+\varphi(\vec{x},y, z) \wedge \forall u,v \le y+z \; (u+v &lt; y+z \to \neg \varphi(\vec{x},u, v)).
+\]</span></p>
+<p>We now claim that the <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists z \; \psi(\vec{x},y, z)\)</span> represents the function <span class="math inline">\(f\)</span> in <span class="math inline">\(T\)</span>:</p>
+<p>First we show (b) and assume that <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> holds, thus <span class="math inline">\(\mathbb{N} \models \exists z \; \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},z)\)</span>. The number <span class="math inline">\(m\)</span> is uniquely determined as the function value. Choose <span class="math inline">\(l\)</span> as the smallest number such that <span class="math inline">\(\mathbb{N} \models \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span>. Then clearly <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> also holds, and thus <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span>. As a <span class="math inline">\(\Sigma_1\)</span>-sentence, this sentence is preserved under all end extensions of the standard model to a model of <span class="math inline">\(PA^-\)</span>, thus it holds in all models of <span class="math inline">\(PA^-\)</span>, and therefore <span class="math inline">\(PA^- \vdash \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span> by the Completeness Theorem.</p>
+<p>The proof of (a) uses a similar argument: Let <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> and let <span class="math inline">\(l\)</span> again be the smallest number such that <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> holds. Let <span class="math inline">\(\mathcal{M} \models PA^-\)</span>, then we need to show that <span class="math inline">\(m\)</span> is the only element of <span class="math inline">\(M\)</span> that satisfies the formula <span class="math inline">\(\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>. That it satisfies the formula in <span class="math inline">\(\mathcal{M}\)</span> at all is due to the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas. If <span class="math inline">\(a,b \in M\)</span> are two elements such that <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, then (by the definition of <span class="math inline">\(\psi\)</span>) we must have <span class="math inline">\(a,b \le m+l\)</span> and thus be in <span class="math inline">\(\mathbb{N}\)</span>. Thus, again by the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas, we have <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, from which <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)\)</span> follows, and therefore <span class="math inline">\(a = m\)</span>.</p>
+<p><strong>Proof of (ii):</strong></p>
+<p>Part (ii) now follows from this: If <span class="math inline">\(S\)</span> is recursive, then the characteristic function <span class="math inline">\(c_S\)</span> is computable, thus by (i) represented by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(\vec{x},y)\)</span> in <span class="math inline">\(PA^-\)</span>. Then <span class="math inline">\(S\)</span> is represented by the formula <span class="math inline">\(\theta(\vec{x},1)\)</span>, since we have:</p>
+<p><span class="math display">\[
+PA^- \vdash \neg \theta(\vec{x},1) \iff PA^- \vdash \theta(\vec{x},0).
+\]</span></p>
 </div>
-</div>
-</div>
-</div>
-<p><em>To prove the theorem, use that <span class="math inline">\(T_{RG}\)</span> is complete together with <a href="#exr-asextension" class="quarto-xref">Exercise&nbsp;5</a>. Give it a try!</em></p>
-</section>
-<section id="other-fraïssé-classes" class="level3">
-<h3 class="anchored" data-anchor-id="other-fraïssé-classes">Other Fraïssé classes</h3>
-<p>There are other classes of structures that are amalgamation classes, for example:</p>
-<ul>
-<li>finite fields of characteristic <span class="math inline">\(p\)</span></li>
-<li>finite groups</li>
-<li>(non-trivial) finite Boolean algebras</li>
-</ul>
-<p><em>What kind of object is the Fraïssé limit in each case?</em></p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -605,7 +510,7 @@ T_{RG} = T_G \cup \{ \exists x,y \: (x \neq y) \} \cup \{ \sigma_{n,m} : n, m \g
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -932,18 +837,6 @@ T_{RG} = T_G \cup \{ \exists x,y \: (x \neq y) \} \cup \{ \sigma_{n,m} : n, m \g
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./019_Oct15_fraisse_limits.html" class="pagination-link" aria-label="Oct 15">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oct 15</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./midterm_2_preparation.html" class="pagination-link" aria-label="Midterm 2 preparation">
-        <span class="nav-page-text">Midterm 2 preparation</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
