@@ -92,7 +92,7 @@ $$
 
 ::: {#exr-} 
 \
-Let $R$ be the ring $\mathbb{Z}[X,Y]/(X^2-2Y^2)$, i.e., $R$ is the polynomial ring $mathbb{Z}[X,Y]$ modulo the equivalence
+Let $R$ be the ring $\mathbb{Z}[X,Y]/(X^2-2Y^2)$, i.e., $R$ is the polynomial ring $\mathbb{Z}[X,Y]$ modulo the equivalence
 $$
 p(X,Y) \sim q(X,Y) \quad :\iff \quad p-q = r (X^2-2Y^2).
 $$
@@ -103,6 +103,8 @@ $$
 \mathsf{PA}^- \nvdash \forall x,y \: (x> 1 \to x^2 \neq 2y^2)
 $$
 :::
+
+(Is this fact provable in $\mathsf{PA}$?)
 
 
 ## Number theoretic functions
