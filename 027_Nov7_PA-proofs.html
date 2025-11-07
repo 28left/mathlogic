@@ -70,6 +70,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Corollary {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
 .Take-Home {
   --color1: #FF7E79;
   --color2: #EBEBEB;
@@ -78,24 +94,8 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
 .Lemma {
   --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Problem {
-  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -493,7 +493,7 @@ Show that for all <span class="math inline">\(k \in \mathbb{N}\)</span>,</p>
 <div class="callout-body-container">
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Let <span class="math inline">\(R\)</span> be the ring <span class="math inline">\(\mathbb{Z}[X,Y]/(X^2-2Y^2)\)</span>, i.e., <span class="math inline">\(R\)</span> is the polynomial ring <span class="math inline">\(mathbb{Z}[X,Y]\)</span> modulo the equivalence <span class="math display">\[
+Let <span class="math inline">\(R\)</span> be the ring <span class="math inline">\(\mathbb{Z}[X,Y]/(X^2-2Y^2)\)</span>, i.e., <span class="math inline">\(R\)</span> is the polynomial ring <span class="math inline">\(\mathbb{Z}[X,Y]\)</span> modulo the equivalence <span class="math display">\[
 p(X,Y) \sim q(X,Y) \quad :\iff \quad p-q = r (X^2-2Y^2).
 \]</span> Show that <span class="math inline">\(R\)</span> can be discretely ordered.</p>
 <p>Infer that <span class="math display">\[
@@ -503,6 +503,7 @@ p(X,Y) \sim q(X,Y) \quad :\iff \quad p-q = r (X^2-2Y^2).
 </div>
 </div>
 </div>
+<p>(Is this fact provable in <span class="math inline">\(\mathsf{PA}\)</span>?)</p>
 </section>
 <section id="number-theoretic-functions" class="level2">
 <h2 class="anchored" data-anchor-id="number-theoretic-functions">Number theoretic functions</h2>
