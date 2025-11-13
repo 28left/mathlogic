@@ -1,0 +1,68 @@
+---
+title: "Math 557 Nov 10"
+---
+
+
+# Gödel Numbers
+
+We can code formulas of the language of $\mathsf{PA}^-$ as natural numbers, the so-called *Gödel numbers*. They let us express syntactical properties of arithmetic formulas as number-theoretic properties in the language of arithmetic. This will be important for the self-referential argument at the heart of the first incompleteness theorem. **Below, "term" and "formula" always refer to the language $\mathcal{L} = \{0,1,+,*, <\}$**.
+
+## Gödel numbers of terms
+
+Using primitive recursion, we assign every term $t$ a Gödel-Nummer $\ulcorner t \urcorner$:
+
+$$
+\begin{aligned}
+\ulcorner 0 \urcorner \; \; &= \; \;  1\\
+\ulcorner 1 \urcorner \; \; &= \; \;  3\\
+\ulcorner v_i \urcorner \; \; &= \; \;  3^2 \cdot 5^i\\
+\ulcorner s+t \urcorner \; \; &= \; \;  3^3 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
+\ulcorner s \cdot t \urcorner \; \; &= \; \;  3^4 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}
+\end{aligned}
+$$
+
+
+::: {#exm-}
+$$\ulcorner v_3 + 1 \urcorner = 3^3 \cdot 5^{3^2 \cdot 5^3}  \cdot 7^3$$
+:::
+
+## Gödel numbers of formulas
+
+Using the Gödel numbers of terms, we can again recursively assign each formula $\varphi$ a Gödel number $\ulcorner \varphi \urcorner$:  
+
+$$
+\begin{aligned}
+\ulcorner s=t \urcorner \; \; &= \; \;  2 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
+\ulcorner s<t \urcorner \; \; &= \; \;  2 \cdot 3 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
+\ulcorner \neg \varphi \urcorner \; \; &= \; \;  2 \cdot 3^2 \cdot 5^{\ulcorner s \urcorner} \\
+\ulcorner \varphi \land \psi \urcorner \; \; &= \; \;  2 \cdot 3^3 \cdot 5^{\ulcorner \varphi \urcorner}  \cdot 7^{\ulcorner \psi \urcorner}\\
+\ulcorner \exists v_i \varphi \urcorner \; \; &= \; \;  2 \cdot 3^4 \cdot 5^i \cdot 7^{\ulcorner \varphi \urcorner}\\
+\end{aligned}
+$$
+
+The following is straightforward based on the simple recursive definition of $\ulcorner . \urcorner$
+
+::: {#prp-}
+\
+The following sets are primitive recursive:
+
+- $\{ m : m \text{ is the Gödel number of a term } t \}$
+- $\{ n : n \text{ is the Gödel number of a formula } \varphi \}$
+:::
+
+We can also effectively check for other syntactic properties. For example, the set 
+$$
+\{ k : k \text{ is the Gödel number of a sentence } \sigma \}
+$$
+is computable. This way we 
+
+::: {#def-}
+\
+A theory $T$ is **decidable** if the set
+$$
+\{ \ulcorner \sigma \urcorner : \sigma \in T \}
+$$
+is recursive.
+:::
+
+

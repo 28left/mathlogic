@@ -64,7 +64,9 @@ website:
       - href: 027_Nov7_PA-proofs.qmd
         text: Nov 7
       - href: 028_Nov10_representability.qmd
-        text: Nov 10
+        text: 11/12 - Representability
+      - href: 029_Nov14_Goedel_numbers.qmd
+        text: 11/14 - Gödel numbers
 
 
 
