@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 10 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 10 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./006_Sep12_completeness.html" rel="next">
-<link href="./004_Sep05_substitution.html" rel="prev">
+<link href="./028_Nov10_representability.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,11 +70,23 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Lemma {
+.Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -83,20 +94,8 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Exercise {
   --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -143,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./005_Sep10_implication.html">9/10 - Logical implication</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./029_Nov14_Goedel_numbers.html">11/14 - Gödel numbers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -194,7 +193,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link active">
+  <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9/10 - Logical implication</span></a>
   </div>
 </li>
@@ -344,7 +343,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./029_Nov14_Goedel_numbers.html" class="sidebar-item-text sidebar-link">
+  <a href="./029_Nov14_Goedel_numbers.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">11/14 - Gödel numbers</span></a>
   </div>
 </li>
@@ -358,20 +357,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logical-implication-and-proof" id="toc-logical-implication-and-proof" class="nav-link active" data-scroll-target="#logical-implication-and-proof">Logical Implication and Proof</a>
+  <li><a href="#gödel-numbers" id="toc-gödel-numbers" class="nav-link active" data-scroll-target="#gödel-numbers">Gödel Numbers</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#gödel-numbers-of-terms" id="toc-gödel-numbers-of-terms" class="nav-link" data-scroll-target="#gödel-numbers-of-terms">Gödel numbers of terms</a></li>
+  <li><a href="#gödel-numbers-of-formulas" id="toc-gödel-numbers-of-formulas" class="nav-link" data-scroll-target="#gödel-numbers-of-formulas">Gödel numbers of formulas</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="005_Sep10_implication.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="029_Nov14_Goedel_numbers.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 10</h1>
+<h1 class="title">Math 557 Nov 10</h1>
 </div>
 
 
@@ -388,113 +387,80 @@ window.Quarto = {
 </header>
 
 
-<section id="logical-implication-and-proof" class="level1">
-<h1>Logical Implication and Proof</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><p><strong>Logical consequence</strong>:</p>
-<ul>
-<li>This is the semantical implication we are often working with in mathematical practice. We say <span class="math inline">\(T\)</span> <strong>logically implies</strong> <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(T \models \varphi\)</span>, if for structure <span class="math inline">\(\mathcal{M}\)</span>, <span class="math inline">\(\mathcal{M} \models T\)</span> implies <span class="math inline">\(\mathcal{M} \models \varphi\)</span>.</li>
-</ul></li>
-<li><p><strong>Formal proof</strong>:</p>
-<ul>
-<li><span class="math inline">\(T \vdash \varphi\)</span> means there is a formal (i.e.&nbsp;<em>syntactical</em>) derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(T\)</span> using the formulas of <span class="math inline">\(T\)</span>, the three kinds of <em>logical axioms</em> (propositional tautologies, equality and quantifier axioms), and the <em>inference rules</em> Modus Ponens and Generalization.</li>
-</ul></li>
-</ul>
+<section id="gödel-numbers" class="level1">
+<h1>Gödel Numbers</h1>
+<p>We can code formulas of the language of <span class="math inline">\(\mathsf{PA}^-\)</span> as natural numbers, the so-called <em>Gödel numbers</em>. They let us express syntactical properties of arithmetic formulas as number-theoretic properties in the language of arithmetic. This will be important for the self-referential argument at the heart of the first incompleteness theorem. <strong>Below, “term” and “formula” always refer to the language <span class="math inline">\(\mathcal{L} = \{0,1,+,*, &lt;\}\)</span></strong>.</p>
+<section id="gödel-numbers-of-terms" class="level2">
+<h2 class="anchored" data-anchor-id="gödel-numbers-of-terms">Gödel numbers of terms</h2>
+<p>Using primitive recursion, we assign every term <span class="math inline">\(t\)</span> a Gödel-Nummer <span class="math inline">\(\ulcorner t \urcorner\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\ulcorner 0 \urcorner \; \; &amp;= \; \;  1\\
+\ulcorner 1 \urcorner \; \; &amp;= \; \;  3\\
+\ulcorner v_i \urcorner \; \; &amp;= \; \;  3^2 \cdot 5^i\\
+\ulcorner s+t \urcorner \; \; &amp;= \; \;  3^3 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
+\ulcorner s \cdot t \urcorner \; \; &amp;= \; \;  3^4 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}
+\end{aligned}
+\]</span></p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1</strong></span> <span class="math display">\[\ulcorner v_3 + 1 \urcorner = 3^3 \cdot 5^{3^2 \cdot 5^3}  \cdot 7^3\]</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<section id="gödel-numbers-of-formulas" class="level2">
+<h2 class="anchored" data-anchor-id="gödel-numbers-of-formulas">Gödel numbers of formulas</h2>
+<p>Using the Gödel numbers of terms, we can again recursively assign each formula <span class="math inline">\(\varphi\)</span> a Gödel number <span class="math inline">\(\ulcorner \varphi \urcorner\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\ulcorner s=t \urcorner \; \; &amp;= \; \;  2 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
+\ulcorner s&lt;t \urcorner \; \; &amp;= \; \;  2 \cdot 3 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
+\ulcorner \neg \varphi \urcorner \; \; &amp;= \; \;  2 \cdot 3^2 \cdot 5^{\ulcorner s \urcorner} \\
+\ulcorner \varphi \land \psi \urcorner \; \; &amp;= \; \;  2 \cdot 3^3 \cdot 5^{\ulcorner \varphi \urcorner}  \cdot 7^{\ulcorner \psi \urcorner}\\
+\ulcorner \exists v_i \varphi \urcorner \; \; &amp;= \; \;  2 \cdot 3^4 \cdot 5^i \cdot 7^{\ulcorner \varphi \urcorner}\\
+\end{aligned}
+\]</span></p>
+<p>The following is straightforward based on the simple recursive definition of <span class="math inline">\(\ulcorner . \urcorner\)</span></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="prp-" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1</strong></span> <br>
+The following sets are primitive recursive:</p>
+<ul>
+<li><span class="math inline">\(\{ m : m \text{ is the Gödel number of a term } t \}\)</span></li>
+<li><span class="math inline">\(\{ n : n \text{ is the Gödel number of a formula } \varphi \}\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>We can also effectively check for other syntactic properties. For example, the set <span class="math display">\[
+\{ k : k \text{ is the Gödel number of a sentence } \sigma \}
+\]</span> is computable.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 (Warmup - Logical Implication)</strong></span> <br>
-Let <span class="math inline">\(T\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-theory. We say a theory <span class="math inline">\(T'\)</span> is an <strong>axiomatization</strong> of <span class="math inline">\(T\)</span> if for any <span class="math inline">\(\mathcal{L}\)</span>-structure <span class="math inline">\(\mathcal{M}\)</span>,</p>
-<p><span class="math display">\[\mathcal{M} \models T \; \iff \; \mathcal{M} \models T'\]</span></p>
-<p>Show that for any axiomatization <span class="math inline">\(T'\)</span> of <span class="math inline">\(T\)</span>, for any <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\sigma\)</span>,</p>
-<p><span class="math display">\[T \models \sigma \; \iff \; T' \models \sigma\]</span></p>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
+A theory <span class="math inline">\(T\)</span> is <strong>decidable</strong> if the set <span class="math display">\[
+\{ \ulcorner \sigma \urcorner : T \vdash \sigma \}
+\]</span> is recursive.</p>
 </div>
 </div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2 (Warmup 2)</strong></span> <br>
-Recall that a <em>model</em> of a theory <span class="math inline">\(T\)</span> is a structure <span class="math inline">\(\mathcal{M}\)</span> such that for any sentence <span class="math inline">\(\sigma \in T\)</span>, <span class="math inline">\(\mathcal{M} \models \sigma\)</span>. In this case we write <span class="math inline">\(\mathcal{M} \models T\)</span>.</p>
-<p>Argue that if <span class="math inline">\(T\)</span> does not have a model, every sentence is a logical implication of <span class="math inline">\(T\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3 (Formal notion of proof – Warmup)</strong></span> <br>
-Verify that</p>
-<p><span class="math display">\[\{\varphi, \neg \psi\} \vdash \neg(\varphi \to \psi)\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Argue (semantically) that if <span class="math inline">\(x\)</span> is not free in <span class="math inline">\(\psi\)</span>,</p>
-<p><span class="math display">\[\{\varphi \to \psi\} \models \exists x \varphi \: \to \: \psi\]</span></p>
-<p>Then prove this <em>syntactically</em>, i.e.&nbsp;show (under the same assumption) that</p>
-<p><span class="math display">\[\{\varphi \to \psi\} \vdash \exists x \varphi \: \to \: \psi\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Prove the <em>Soundness Theorem</em>, i.e.&nbsp;show that</p>
-<p><span class="math display">\[T \vdash \varphi \; \Rightarrow \; T \models \varphi\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Take-home problem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><br>
-Show that</p>
-<p><span class="math display">\[\begin{aligned}
-\{\varphi \to \psi \} &amp; \vdash \exists x \varphi \: \to \: \exists x \psi \\
-\{\varphi \to \psi \} &amp; \vdash \forall x \varphi \: \to \: \forall x \psi \\
-\end{aligned}\]</span></p>
 </div>
 </div>
 
@@ -904,14 +870,11 @@ Show that</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./004_Sep05_substitution.html" class="pagination-link" aria-label="9/5 - Substitution">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9/5 - Substitution</span>
+      <a href="./028_Nov10_representability.html" class="pagination-link" aria-label="11/12 - Representability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">11/12 - Representability</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./006_Sep12_completeness.html" class="pagination-link" aria-label="9/12 - Complete theories">
-        <span class="nav-page-text">9/12 - Complete theories</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

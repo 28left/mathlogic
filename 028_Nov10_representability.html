@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./029_Nov14_Goedel_numbers.html" rel="next">
 <link href="./027_Nov7_PA-proofs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -70,31 +71,31 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Definition {
-  --color1: #F8FBD3;
+.Take-Home {
+  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
 .Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
 .Problem {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
+.Theorem {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Theorem {
+.Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -142,7 +143,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./028_Nov10_representability.html">Nov 10</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./028_Nov10_representability.html">11/12 - Representability</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -170,175 +171,181 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./001_Aug27_syntax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">August 27</span></a>
+ <span class="menu-text">8/27 - Syntax of first order logic</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./002_Aug29_semantics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">August 29</span></a>
+ <span class="menu-text">8/29 - Semantics of first order logic</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./003_Sep03_validities.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 3</span></a>
+ <span class="menu-text">9/3 - Validities</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./004_Sep05_substitution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 5</span></a>
+ <span class="menu-text">9/5 - Substitution</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 10</span></a>
+ <span class="menu-text">9/10 - Logical implication</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./006_Sep12_completeness.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 12</span></a>
+ <span class="menu-text">9/12 - Complete theories</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./007_Sep15_completeness_theorem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 15</span></a>
+ <span class="menu-text">9/15 - Completeness theorem</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./008_Sep17_completing_theories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 17</span></a>
+ <span class="menu-text">9/17 - Completing theories</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./009_Sep19_Henkin_theories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 19</span></a>
+ <span class="menu-text">9/19 - Henkin theories</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./010_Sep22_model_existence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 22</span></a>
+ <span class="menu-text">9/22 - Model existence theorem</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./011_Sep24_compactness.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 24</span></a>
+ <span class="menu-text">9/24 - Compactness theorem</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./012_Sep26_midterm_review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">September 26</span></a>
+ <span class="menu-text">9/26 - Midterm 1 review</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./013_Oct01_elementary_equivalence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 1</span></a>
+ <span class="menu-text">10/1 - Elementary equivalence</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./014_Oct03_elementary_substructures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 3</span></a>
+ <span class="menu-text">10/3 - Elementary substructures</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./015_Oct06_loewenheim_skolem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 6</span></a>
+ <span class="menu-text">10/6 - Löwenheim-Skolem Theorems</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./016_Oct08_ultraproducts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 8</span></a>
+ <span class="menu-text">10/8 - Ultraproducts</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./017_Oct10_week7_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 10</span></a>
+ <span class="menu-text">10/10 - Problems</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./018_Oct13_homogeneous_structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 13</span></a>
+ <span class="menu-text">10/13 - Homogeneous structures</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./019_Oct15_fraisse_limits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 15</span></a>
+ <span class="menu-text">10/15 - Fraïssé limits</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020_Oct17_random_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 17</span></a>
+ <span class="menu-text">10/17 - Random graphs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./midterm_2_preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Midterm 2 preparation</span></a>
+ <span class="menu-text">10/20 - Midterm 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./021_Oct22_computable_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 22</span></a>
+ <span class="menu-text">10/22 - Computable functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./022_Oct24_primitive_recursive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 24</span></a>
+ <span class="menu-text">10/24 - Primtive recursion</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./023_Oct29_peano_arithmetic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 29</span></a>
+ <span class="menu-text">10/29 - Peano Arithmetic</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./024_Oct31_arithmetical_formulas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oct 31</span></a>
+ <span class="menu-text">10/31 - Arithmetical formulas</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./025_Nov3_end_extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 3</span></a>
+ <span class="menu-text">11/3 - End extensions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./026_Nov5_definability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 5</span></a>
+ <span class="menu-text">11/5 - Definability of computable functions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./027_Nov7_PA-proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nov 7</span></a>
+ <span class="menu-text">11/7 - Practice on PA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./028_Nov10_representability.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Nov 10</span></a>
+ <span class="menu-text">11/12 - Representability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./029_Nov14_Goedel_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11/14 - Gödel numbers</span></a>
   </div>
 </li>
     </ul>
@@ -420,9 +427,9 @@ window.Quarto = {
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><strong>(i)</strong> Let <span class="math inline">\(f: \mathbb{N}^k \to \mathbb{N}\)</span> be a recursive function, so its graph <span class="math inline">\(\Gamma_f\)</span> is definable over the natural numbers by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists \vec{z} \; \varphi(\vec{x},y, \vec{z})\)</span>, where <span class="math inline">\(\varphi\)</span> has only bounded quantifiers. Since every formula of the form <span class="math inline">\(\exists \vec{z} \; \varphi\)</span> is equivalent in <span class="math inline">\(\mathsf{PA}^-\)</span> to <span class="math inline">\(\exists u \; \exists \vec{z} \; ( \vec{z} &lt; u \wedge \varphi)\)</span>, we may assume that <span class="math inline">\(\vec{z}\)</span> is just a single variable <span class="math inline">\(z\)</span>. We now form the <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\psi(\vec{x},y, z)\)</span>:</p>
 <p><span class="math display">\[
-\varphi(\vec{x},y, z) \wedge \forall u,v \le y+z \; (u+v &lt; y+z \to \neg \varphi(\vec{x},u, v)).
+\varphi(\vec{x},y, z) \wedge \forall u,v &lt; y+z \; (u+v &lt; y+z \to \neg \varphi(\vec{x},u, v)).
 \]</span></p>
-<p>We now claim that the <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists z \; \psi(\vec{x},y, z)\)</span> represents the function <span class="math inline">\(f\)</span> in <span class="math inline">\(T\)</span>:</p>
+<p>We now claim that the <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists z \; \psi(\vec{x},y, z)\)</span> represents the function <span class="math inline">\(f\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span>:</p>
 <p>First we show (b). Assume that <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> holds, thus <span class="math inline">\(\mathbb{N} \models \exists z \; \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},z)\)</span>. The number <span class="math inline">\(m\)</span> is uniquely determined since <span class="math inline">\(f\)</span> is a function. Choose <span class="math inline">\(l\)</span> as the smallest number such that <span class="math inline">\(\mathbb{N} \models \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span>. Then clearly <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> also holds, and thus <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span>. As a <span class="math inline">\(\Sigma_1\)</span>-sentence, this sentence is preserved under all end extensions of the standard model to a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, thus it holds in all models of <span class="math inline">\(\mathsf{PA}^-\)</span>, and therefore <span class="math inline">\(\mathsf{PA}^- \vdash \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span> by the Completeness Theorem.</p>
 <p>The proof of (a) uses a similar argument: Let <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> and let <span class="math inline">\(l\)</span> again be the smallest number such that <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> holds. Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. We claim that <span class="math inline">\(m\)</span> is the only element of <span class="math inline">\(M\)</span> that satisfies the formula <span class="math inline">\(\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>. <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> due to the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas. If <span class="math inline">\(a,b \in M\)</span> are two elements such that <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, then (by the definition of <span class="math inline">\(\psi\)</span>) we must have <span class="math inline">\(a,b \le m+l\)</span> and thus be in <span class="math inline">\(\mathbb{N}\)</span>. Thus, again by the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas, we have <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, from which <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)\)</span> follows, and therefore <span class="math inline">\(a = m\)</span>.</p>
 <p><strong>(ii)</strong> now follows easily: If <span class="math inline">\(S\)</span> is recursive, then the characteristic function <span class="math inline">\(c_S\)</span> is computable, thus by (i) represented by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(\vec{x},y)\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span>. Then <span class="math inline">\(S\)</span> is represented by the formula <span class="math inline">\(\theta(\vec{x},1)\)</span>, since we have:</p>
@@ -836,11 +843,14 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./027_Nov7_PA-proofs.html" class="pagination-link" aria-label="Nov 7">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nov 7</span>
+      <a href="./027_Nov7_PA-proofs.html" class="pagination-link" aria-label="11/7 - Practice on PA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">11/7 - Practice on PA</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./029_Nov14_Goedel_numbers.html" class="pagination-link" aria-label="11/14 - Gödel numbers">
+        <span class="nav-page-text">11/14 - Gödel numbers</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
