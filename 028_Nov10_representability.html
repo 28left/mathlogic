@@ -72,19 +72,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #F8FBD3;
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -92,12 +84,20 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
+.Lemma {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Problem {
-  --color1: #FFE6B4;
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Corollary {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
 </style>
@@ -427,11 +427,11 @@ window.Quarto = {
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><strong>(i)</strong> Let <span class="math inline">\(f: \mathbb{N}^k \to \mathbb{N}\)</span> be a recursive function, so its graph <span class="math inline">\(\Gamma_f\)</span> is definable over the natural numbers by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists \vec{z} \; \varphi(\vec{x},y, \vec{z})\)</span>, where <span class="math inline">\(\varphi\)</span> has only bounded quantifiers. Since every formula of the form <span class="math inline">\(\exists \vec{z} \; \varphi\)</span> is equivalent in <span class="math inline">\(\mathsf{PA}^-\)</span> to <span class="math inline">\(\exists u \; \exists \vec{z} \; ( \vec{z} &lt; u \wedge \varphi)\)</span>, we may assume that <span class="math inline">\(\vec{z}\)</span> is just a single variable <span class="math inline">\(z\)</span>. We now form the <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\psi(\vec{x},y, z)\)</span>:</p>
 <p><span class="math display">\[
-\varphi(\vec{x},y, z) \wedge \forall u,v &lt; y+z \; (u+v &lt; y+z \to \neg \varphi(\vec{x},u, v)).
+\varphi(\vec{x},y, z) \wedge \forall u,v \leq y+z \; (u+v &lt; y+z \to \neg \varphi(\vec{x},u, v)).
 \]</span></p>
 <p>We now claim that the <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists z \; \psi(\vec{x},y, z)\)</span> represents the function <span class="math inline">\(f\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span>:</p>
 <p>First we show (b). Assume that <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> holds, thus <span class="math inline">\(\mathbb{N} \models \exists z \; \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},z)\)</span>. The number <span class="math inline">\(m\)</span> is uniquely determined since <span class="math inline">\(f\)</span> is a function. Choose <span class="math inline">\(l\)</span> as the smallest number such that <span class="math inline">\(\mathbb{N} \models \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span>. Then clearly <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> also holds, and thus <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span>. As a <span class="math inline">\(\Sigma_1\)</span>-sentence, this sentence is preserved under all end extensions of the standard model to a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, thus it holds in all models of <span class="math inline">\(\mathsf{PA}^-\)</span>, and therefore <span class="math inline">\(\mathsf{PA}^- \vdash \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span> by the Completeness Theorem.</p>
-<p>The proof of (a) uses a similar argument: Let <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> and let <span class="math inline">\(l\)</span> again be the smallest number such that <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> holds. Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. We claim that <span class="math inline">\(m\)</span> is the only element of <span class="math inline">\(M\)</span> that satisfies the formula <span class="math inline">\(\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>. <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> due to the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas. If <span class="math inline">\(a,b \in M\)</span> are two elements such that <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, then (by the definition of <span class="math inline">\(\psi\)</span>) we must have <span class="math inline">\(a,b \le m+l\)</span> and thus be in <span class="math inline">\(\mathbb{N}\)</span>. Thus, again by the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas, we have <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, from which <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)\)</span> follows, and therefore <span class="math inline">\(a = m\)</span>.</p>
+<p>The proof of (a) uses a similar argument: Let <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> and let <span class="math inline">\(l\)</span> again be the smallest number such that <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> holds. Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. We claim that <span class="math inline">\(m\)</span> is the only element of <span class="math inline">\(M\)</span> that satisfies the formula <span class="math inline">\(\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>. <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> due to the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas. If <span class="math inline">\(a,b \in M\)</span> are two elements such that <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, then we must have <span class="math inline">\(a,b \le m+l\)</span>: If one of them were greater than <span class="math inline">\(m+l\)</span>, we would have <span class="math inline">\(a+b &gt; m+l\)</span>, and by the definition of <span class="math inline">\(\psi\)</span> this would imply <span class="math inline">\(\neg \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>, contradiction. <span class="math inline">\(\mathcal{M}\)</span> is an end-extension of <span class="math inline">\(\mathbb{N}\)</span>, hence <span class="math inline">\(a,b \le m+l\)</span> implies <span class="math inline">\(a, b \in \mathbb{N}\)</span>. Thus, again by the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas, we have <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, from which <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)\)</span> follows, and therefore <span class="math inline">\(a = m\)</span>.</p>
 <p><strong>(ii)</strong> now follows easily: If <span class="math inline">\(S\)</span> is recursive, then the characteristic function <span class="math inline">\(c_S\)</span> is computable, thus by (i) represented by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(\vec{x},y)\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span>. Then <span class="math inline">\(S\)</span> is represented by the formula <span class="math inline">\(\theta(\vec{x},1)\)</span>, since we have:</p>
 <p><span class="math display">\[
 \mathsf{PA}^- \vdash \neg \theta(\vec{x},1) \iff \mathsf{PA}^- \vdash \theta(\vec{x},0).
