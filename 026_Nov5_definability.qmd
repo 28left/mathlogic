@@ -159,3 +159,4 @@ If we call a set $A \subseteq \mathbb{N}^k$ that is definable by a formula in $\
 3. *The $\Delta_1$-sets are precisely the recursive relations $R \subseteq \mathbb{N}^k$.*
 :::
 
+We leave the short proof of (1) as an exercise. (2) follows from (1) by using negation, and for (3) use the fact that a set is computable if and only if the st and its complement are r.e.
