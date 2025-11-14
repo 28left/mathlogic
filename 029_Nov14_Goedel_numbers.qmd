@@ -54,13 +54,14 @@ We can also effectively check for other syntactic properties. For example, the s
 $$
 \{ k : k \text{ is the Gödel number of a sentence } \sigma \}
 $$
-is computable. This way we 
+is computable. 
+
 
 ::: {#def-}
 \
 A theory $T$ is **decidable** if the set
 $$
-\{ \ulcorner \sigma \urcorner : \sigma \in T \}
+\{ \ulcorner \sigma \urcorner : T \vdash \sigma \}
 $$
 is recursive.
 :::

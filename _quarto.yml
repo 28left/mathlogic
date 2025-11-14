@@ -8,61 +8,61 @@ website:
     search: true
     contents:
       - href: 001_Aug27_syntax.qmd
-        text: August 27
+        text: 8/27 - Syntax of first order logic
       - href: 002_Aug29_semantics.qmd
-        text: August 29
+        text: 8/29 - Semantics of first order logic
       - href: 003_Sep03_validities.qmd
-        text: September 3
+        text: 9/3 - Validities
       - href: 004_Sep05_substitution.qmd
-        text: September 5
+        text: 9/5 - Substitution
       - href: 005_Sep10_implication.qmd
-        text: September 10
+        text: 9/10 - Logical implication
       - href: 006_Sep12_completeness.qmd
-        text: September 12
+        text: 9/12 - Complete theories
       - href: 007_Sep15_completeness_theorem.qmd
-        text: September 15
+        text: 9/15 - Completeness theorem
       - href: 008_Sep17_completing_theories.qmd
-        text: September 17
+        text: 9/17 - Completing theories
       - href: 009_Sep19_Henkin_theories.qmd
-        text: September 19
+        text: 9/19 - Henkin theories
       - href: 010_Sep22_model_existence.qmd
-        text: September 22
+        text: 9/22 - Model existence theorem
       - href: 011_Sep24_compactness.qmd
-        text: September 24
+        text: 9/24 - Compactness theorem
       - href: 012_Sep26_midterm_review.qmd
-        text: September 26
+        text: 9/26 - Midterm 1 review
       - href: 013_Oct01_elementary_equivalence.qmd
-        text: Oct 1
+        text: 10/1 - Elementary equivalence
       - href: 014_Oct03_elementary_substructures.qmd
-        text: Oct 3
+        text: 10/3 - Elementary substructures
       - href: 015_Oct06_loewenheim_skolem.qmd
-        text: Oct 6
+        text: 10/6 - Löwenheim-Skolem Theorems
       - href: 016_Oct08_ultraproducts.qmd
-        text: Oct 8
+        text: 10/8 - Ultraproducts
       - href: 017_Oct10_week7_problems.qmd
-        text: Oct 10
+        text: 10/10 - Problems
       - href: 018_Oct13_homogeneous_structures.qmd
-        text: Oct 13
+        text: 10/13 - Homogeneous structures
       - href: 019_Oct15_fraisse_limits.qmd
-        text: Oct 15
+        text: 10/15 - Fraïssé limits
       - href: 020_Oct17_random_graphs.qmd
-        text: Oct 17
+        text: 10/17 - Random graphs
       - href: midterm_2_preparation.qmd
-        text: Midterm 2 preparation
+        text: 10/20 - Midterm 2 
       - href: 021_Oct22_computable_functions.qmd
-        text: Oct 22
+        text: 10/22 - Computable functions
       - href: 022_Oct24_primitive_recursive.qmd
-        text: Oct 24
+        text: 10/24 - Primtive recursion
       - href: 023_Oct29_peano_arithmetic.qmd
-        text: Oct 29
+        text: 10/29 - Peano Arithmetic
       - href: 024_Oct31_arithmetical_formulas.qmd
-        text: Oct 31
+        text: 10/31 - Arithmetical formulas
       - href: 025_Nov3_end_extensions.qmd
-        text: Nov 3
+        text: 11/3 - End extensions
       - href: 026_Nov5_definability.qmd
-        text: Nov 5
+        text: 11/5 - Definability of computable functions
       - href: 027_Nov7_PA-proofs.qmd
-        text: Nov 7
+        text: 11/7 - Practice on PA
       - href: 028_Nov10_representability.qmd
         text: 11/12 - Representability
       - href: 029_Nov14_Goedel_numbers.qmd
@@ -138,7 +138,12 @@ callouty-theorem:
   lem:
     override-title: false
     callout:
-      type: tip
+      type: note
+      appearance: simple
+  prp:
+    override-title: false
+    callout:
+      type: note
       appearance: simple
   cor:
     override-title: false
