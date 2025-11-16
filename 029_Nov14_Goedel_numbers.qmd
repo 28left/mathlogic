@@ -3,7 +3,7 @@ title: "Math 557 Nov 14"
 ---
 
 
-# Gödel Numbers
+# Gödelization
 
 We can code formulas of the language of $\mathsf{PA}^-$ as natural numbers, the so-called *Gödel numbers*. They let us express syntactical properties of arithmetic formulas as number-theoretic properties in the language of arithmetic. This will be important for the self-referential argument at the heart of the first incompleteness theorem. **Below, "term" and "formula" always refer to the language $\mathcal{L} = \{0,1,+,*, <\}$**.
 
@@ -35,20 +35,29 @@ $$
 \ulcorner s=t \urcorner \; \; &= \; \;  2 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
 \ulcorner s<t \urcorner \; \; &= \; \;  2 \cdot 3 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
 \ulcorner \neg \varphi \urcorner \; \; &= \; \;  2 \cdot 3^2 \cdot 5^{\ulcorner s \urcorner} \\
-\ulcorner \varphi \land \psi \urcorner \; \; &= \; \;  2 \cdot 3^3 \cdot 5^{\ulcorner \varphi \urcorner}  \cdot 7^{\ulcorner \psi \urcorner}\\
+\ulcorner (\varphi \land \psi \urcorner) \; \; &= \; \;  2 \cdot 3^3 \cdot 5^{\ulcorner \varphi \urcorner}  \cdot 7^{\ulcorner \psi \urcorner}\\
 \ulcorner \exists v_i \varphi \urcorner \; \; &= \; \;  2 \cdot 3^4 \cdot 5^i \cdot 7^{\ulcorner \varphi \urcorner}\\
 \end{aligned}
 $$
 
-The following is straightforward based on the simple recursive definition of $\ulcorner . \urcorner$
+There are, of course, other coding schemes for formulas that work equally well. The crucial property of any suitable numbering is that we are able to effectively recognize Gödel numbers of basic syntactical objects.
+
+Based on the simple recursive definition of $\ulcorner . \urcorner$, we have
 
 ::: {#prp-}
 \
-The following sets are primitive recursive:
+The following sets are recursive, in fact, primitve recursive:
 
 - $\{ m : m \text{ is the Gödel number of a term } t \}$
-- $\{ n : n \text{ is the Gödel number of a formula } \varphi \}$
+- $\{ m : m \text{ is the Gödel number of a formula } \varphi \}$
+- $\{ \langle m,n \rangle : m \text{ is the Gödel number of a formula } \varphi \text{ in which } n \text{ variables occur}   \}$
+- $\{ m : m \text{ is the Gödel number of a formula } \varphi \}$
+
 :::
+
+   
+The following is straightforward 
+
 
 We can also effectively check for other syntactic properties. For example, the set 
 $$
