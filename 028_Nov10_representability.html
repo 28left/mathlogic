@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./027_Nov7_PA-proofs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -72,32 +71,32 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
 .Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Theorem {
-  --color1: #F8FBD3;
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Take-Home {
   --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -116,7 +115,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -158,8 +157,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Math 557 Fall 2025</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -345,7 +345,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./029_Nov14_Goedel_numbers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/14 - Gödel numbers</span></a>
+ <span class="menu-text">11/14 - Gödelization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030_Nov17_diagonal_lemma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11/17 - Diagonal Lemma</span></a>
   </div>
 </li>
     </ul>
@@ -387,7 +393,7 @@ window.Quarto = {
 <section id="representability" class="level1">
 <h1>Representability</h1>
 <p>We have established a closed connection between computability and definability over <span class="math inline">\(\mathbb{N}\)</span>, but how much of that can <span class="math inline">\(\mathsf{PA}^-\)</span> actually prove? We need to make sure it can <em>represent</em> sufficiently simple (i.e., computable) functions and sets faithfully.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -408,7 +414,7 @@ window.Quarto = {
 </div>
 <p>If the function <span class="math inline">\(f\)</span> (or the set <span class="math inline">\(S\)</span>) is representable by a <span class="math inline">\(\Sigma_1\)</span>-formula, then <span class="math inline">\(f\)</span> (or <span class="math inline">\(S\)</span>, respectively) is called <strong><span class="math inline">\(\Sigma_1\)</span>-representable</strong>.</p>
 <p>Note that by definition, representability is preserved when we pass to a theory <span class="math inline">\(T' \supseteq T\)</span>.</p>
-<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -493,14 +499,13 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -849,8 +854,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./029_Nov14_Goedel_numbers.html" class="pagination-link" aria-label="11/14 - Gödel numbers">
-        <span class="nav-page-text">11/14 - Gödel numbers</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./029_Nov14_Goedel_numbers.html" class="pagination-link" aria-label="11/14 - Gödelization">
+        <span class="nav-page-text">11/14 - Gödelization</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

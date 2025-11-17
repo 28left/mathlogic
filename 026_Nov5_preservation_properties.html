@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Oct 3 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 5 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./015_Oct06_loewenheim_skolem.html" rel="next">
-<link href="./013_Oct01_elementary_equivalence.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,23 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Lemma {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Problem {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
@@ -95,8 +77,20 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
+.Theorem {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
 .Take-Home {
   --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -143,7 +137,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./014_Oct03_elementary_substructures.html">10/3 - Elementary substructures</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Math 557 Fall 2025
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -171,187 +167,157 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./001_Aug27_syntax.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8/27 - Syntax of first order logic</span></a>
+ <span class="menu-text">August 27</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./002_Aug29_semantics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8/29 - Semantics of first order logic</span></a>
+ <span class="menu-text">August 29</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./003_Sep03_validities.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/3 - Validities</span></a>
+ <span class="menu-text">September 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./004_Sep05_substitution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/5 - Substitution</span></a>
+ <span class="menu-text">September 5</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./005_Sep10_implication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/10 - Logical implication</span></a>
+ <span class="menu-text">September 10</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./006_Sep12_completeness.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/12 - Complete theories</span></a>
+ <span class="menu-text">September 12</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./007_Sep15_completeness_theorem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/15 - Completeness theorem</span></a>
+ <span class="menu-text">September 15</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./008_Sep17_completing_theories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/17 - Completing theories</span></a>
+ <span class="menu-text">September 17</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./009_Sep19_Henkin_theories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/19 - Henkin theories</span></a>
+ <span class="menu-text">September 19</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./010_Sep22_model_existence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/22 - Model existence theorem</span></a>
+ <span class="menu-text">September 22</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./011_Sep24_compactness.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/24 - Compactness theorem</span></a>
+ <span class="menu-text">September 24</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./012_Sep26_midterm_review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/26 - Midterm 1 review</span></a>
+ <span class="menu-text">September 26</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./013_Oct01_elementary_equivalence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/1 - Elementary equivalence</span></a>
+ <span class="menu-text">Oct 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./014_Oct03_elementary_substructures.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">10/3 - Elementary substructures</span></a>
+  <a href="./014_Oct03_elementary_substructures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oct 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./015_Oct06_loewenheim_skolem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/6 - Löwenheim-Skolem Theorems</span></a>
+ <span class="menu-text">Oct 6</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./016_Oct08_ultraproducts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/8 - Ultraproducts</span></a>
+ <span class="menu-text">Oct 8</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./017_Oct10_week7_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/10 - Problems</span></a>
+ <span class="menu-text">Oct 10</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./018_Oct13_homogeneous_structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/13 - Homogeneous structures</span></a>
+ <span class="menu-text">Oct 13</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./019_Oct15_fraisse_limits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/15 - Fraïssé limits</span></a>
+ <span class="menu-text">Oct 15</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020_Oct17_random_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/17 - Random graphs</span></a>
+ <span class="menu-text">Oct 17</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./midterm_2_preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/20 - Midterm 2</span></a>
+ <span class="menu-text">Midterm 2 preparation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./021_Oct22_computable_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/22 - Computable functions</span></a>
+ <span class="menu-text">Oct 22</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./022_Oct24_primitive_recursive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/24 - Primtive recursion</span></a>
+ <span class="menu-text">Oct 24</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./023_Oct29_peano_arithmetic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/29 - Peano Arithmetic</span></a>
+ <span class="menu-text">Oct 29</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./024_Oct31_arithmetical_formulas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/31 - Arithmetical formulas</span></a>
+ <span class="menu-text">Oct 31</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./025_Nov3_end_extensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/3 - End extensions</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./026_Nov5_definability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/5 - Definability of computable functions</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./027_Nov7_PA-proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/7 - Practice on PA</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./028_Nov10_representability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/12 - Representability</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./029_Nov14_Goedel_numbers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/14 - Gödelization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./030_Nov17_diagonal_lemma.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11/17 - Diagonal Lemma</span></a>
+ <span class="menu-text">Nov 3</span></a>
   </div>
 </li>
     </ul>
@@ -364,24 +330,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#elementary-substructures" id="toc-elementary-substructures" class="nav-link active" data-scroll-target="#elementary-substructures">Elementary Substructures</a>
+  <li><a href="#preservation" id="toc-preservation" class="nav-link active" data-scroll-target="#preservation">Preservation Properties under End Extensions</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a>
-  <ul class="collapse">
-  <li><a href="#tarski-vaught-test" id="toc-tarski-vaught-test" class="nav-link" data-scroll-target="#tarski-vaught-test">Tarski-Vaught test</a></li>
-  <li><a href="#more-on-dlos" id="toc-more-on-dlos" class="nav-link" data-scroll-target="#more-on-dlos">More on DLOs</a></li>
-  </ul></li>
+  <li><a href="#corollary" id="toc-corollary" class="nav-link" data-scroll-target="#corollary">Corollary</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="014_Oct03_elementary_substructures.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="026_Nov5_preservation_properties.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Oct 3</h1>
+<h1 class="title">Math 557 Nov 5</h1>
 </div>
 
 
@@ -398,115 +359,49 @@ window.Quarto = {
 </header>
 
 
-<section id="elementary-substructures" class="level1">
-<h1>Elementary Substructures</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><p><strong>Substrucure:</strong> <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span> if <span class="math inline">\(M \subseteq N\)</span>, <span class="math inline">\(c^{\mathcal{M}} = c^{\mathcal{N}}\)</span> for all <span class="math inline">\(c \in \mathcal{L}\)</span>, <span class="math inline">\(f^{\mathcal{M}} = f^{\mathcal{N}}\upharpoonright_{\mathcal{M}}\)</span> for all <span class="math inline">\(f \in \mathcal{L}\)</span>, and <span class="math inline">\(R^{\mathcal{M}} = R^{\mathcal{N}}\upharpoonright_{\mathcal{M}}\)</span> for all <span class="math inline">\(R \in \mathcal{L}\)</span>.</p></li>
-<li><p><strong>Elementary substructure:</strong> <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span> if for all <span class="math inline">\(\mathcal{L}\)</span>-formulas <span class="math inline">\(\psi(\vec{x})\)</span> and all <span class="math inline">\(\vec{a} \in M\)</span>, <span class="math display">\[
-\mathcal{M} \models \psi[\vec{a}] \iff \mathcal{N} \models \psi[\vec{a}]
+<p>Of particular importance is that <span class="math inline">\(\Delta_0\)</span>-formulas mean the same thing in a structure as in all end extensions:</p>
+<section id="preservation" class="level1">
+<h1>Preservation Properties under End Extensions</h1>
+<div id="Theorem-1" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 1</strong></summary><div>
+<p>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be structures of the language <span class="math inline">\(L\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span>, with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then:</p>
+<ol type="1">
+<li><p>Every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
 \]</span></p></li>
-</ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<li><p>Every <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>upward-persistent</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \Longrightarrow \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Pi_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>downward-persistent</strong>: <span class="math display">\[
+\mathcal{M}\models \varphi[\vec{a}] \Longrightarrow \mathcal{N}\models \varphi[\vec{a}],
+\]</span></p></li>
+<li><p>Every <span class="math inline">\(\Delta_1\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span> is <strong>absolute</strong>: <span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}].
+\]</span></p></li>
+</ol>
+</div></details>
 </div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
-We have the following relations between structures <span class="math inline">\(\mathcal{M}, \mathcal{N}\)</span>:</p>
-<p><span class="math display">\[\subseteq, \; \preceq, \;\equiv, \;\cong\]</span></p>
-<p>Draw a diagram indicating implications between these relations, giving counterexamples if one relation does not imply another.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We prove (i) by induction on the formula construction of <span class="math inline">\(\varphi(\vec{v})\)</span>, where only the case of a bounded quantifier is of interest. But since <span class="math inline">\(\mathcal{M}\)</span> is an end extension of <span class="math inline">\(\mathcal{N}\)</span>, <span class="math inline">\(M\)</span> does not insert any new elements below an element of <span class="math inline">\(N\)</span>, so that a bounded quantifier means the same thing in both structures.</p>
 </div>
-</div>
-</div>
-</div>
-<!-- elementary embedding
-Cantor-Schröder-Bernstein for structures?   -Hard questions -->
-<section id="tarski-vaught-test" class="level3">
-<h3 class="anchored" data-anchor-id="tarski-vaught-test">Tarski-Vaught test</h3>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-<strong>THM</strong>: <em>Suppose <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span> and that for any formula <span class="math inline">\(\psi(x, \vec{y})\)</span> and any <span class="math inline">\(\vec{a} \in M\)</span>, if there exists <span class="math inline">\(b \in N\)</span> such that <span class="math inline">\(\mathcal{N} \models \psi[b, \vec{a}]\)</span>, then there also exists <span class="math inline">\(c \in M\)</span> such that <span class="math inline">\(\mathcal{N} \models \psi[c, \vec{a}]\)</span>. Then we have <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span>.</em></p>
-<p>Prove this theorem by induction in <span class="math inline">\(\operatorname{ht}(\psi)\)</span>.</p>
-<p><em>Before you start, which inductive case do you think will require the most work?</em></p>
-</div>
-</div>
-</div>
-</div>
-<p>As an application of the Tarski-Vaught test, we get another criterion for <span class="math inline">\(\preceq\)</span> using automorphisms of the bigger structure.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Suppose <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span> and that for any finite subset <span class="math inline">\(A \subseteq M\)</span> and <span class="math inline">\(b \in N\)</span>, there exists an automorphism of <span class="math inline">\(\mathcal{N}\)</span> that fixes <span class="math inline">\(A\)</span> pointwise and maps <span class="math inline">\(b\)</span> into <span class="math inline">\(M\)</span>. Show that <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Use the previous criterion to show that <span class="math display">\[
-(\mathbb{Q}, &lt;) \preceq (\mathbb{R}, &lt;)
+<p>Let <span class="math inline">\(\Sigma_1\)</span>-<span class="math inline">\(Th(\mathbb{N}):= \{\sigma \mid \sigma \text{ is a } \Sigma_1\text{-sentence with } \mathbb{N} \models \sigma \}\)</span>. Then we have:</p>
+<section id="corollary" class="level2">
+<h2 class="anchored" data-anchor-id="corollary">Corollary</h2>
+<p><span class="math display">\[
+\mathsf{PA}^- \models \Sigma_1\text{-}Th(\mathbb{N})
 \]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{N} \models \mathsf{PA}^-\)</span>. By the previous theorem, we may assume that <span class="math inline">\(\mathbb{N} \subseteq_{end} \mathcal{N}\)</span>, and the claim then follows from part (ii) above.</p>
 </div>
-</div>
-</div>
-</div>
-</section>
-<section id="more-on-dlos" class="level3">
-<h3 class="anchored" data-anchor-id="more-on-dlos">More on DLOs</h3>
-<p>We have seen previously that the theory <span class="math inline">\(\operatorname{DLO}\)</span> is <em><span class="math inline">\(\aleph_0\)</span>-categorical</em>, i.e., there is only one countable model up to isomorphism.</p>
-<p>We will now see that this actually implies <span class="math inline">\(\operatorname{DLO}\)</span> is complete.</p>
-<p>We need the following theorem which we will be an easy consequence of the Löwenheim-SKolem Theorems we will prove next week.</p>
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="thm-" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1</strong></span> Let <span class="math inline">\(T\)</span> be an <span class="math inline">\(\mathcal{L}\)</span>-theory that has an infinite model. If <span class="math inline">\(\kappa\)</span> is an infinite cardinal and <span class="math inline">\(\kappa \geq |\mathcal{L}|\)</span>, then there is a model of <span class="math inline">\(T\)</span> of cardinality <span class="math inline">\(\kappa\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5 (Vaught’s test)</strong></span> Suppose <span class="math inline">\(T\)</span> is a consistent <span class="math inline">\(\mathcal{L}\)</span>-theory with no finite models. If <span class="math inline">\(T\)</span> is <span class="math inline">\(\kappa\)</span>-categorical for some <span class="math inline">\(\kappa \geq |\mathcal{L}|\)</span>, then <span class="math inline">\(T\)</span> is complete.</p>
-</div>
-</div>
-</div>
-</div>
+<p>Thus one can prove in the theory <span class="math inline">\(\mathsf{PA}^-\)</span> all <span class="math inline">\(\Sigma_1\)</span>-sentences that hold in the standard model, but not all true <span class="math inline">\(\Pi_1\)</span>-sentences anymore. For instance, the <span class="math inline">\(\Pi_1\)</span>-sentence stating that every number is even or odd: <span class="math display">\[
+(*) \quad \forall x \;  \exists y \le x \; (x = 2 \cdot y \vee x = 2 \cdot y +1)
+\]</span> is true in the standard model, but not in the <span class="math inline">\(\mathsf{PA}^-\)</span>-model <span class="math inline">\(\mathbb{Z}[X]^+\)</span>.</p>
+<p>Even true <span class="math inline">\(\forall\)</span>-sentences (i.e., sentences of the form <span class="math inline">\(\forall \vec{x} \; \psi\)</span> with <em>quantifier-free</em> <span class="math inline">\(\psi\)</span>) that hold in the standard model need not be provable in <span class="math inline">\(\mathsf{PA}^-\)</span>. For example, the <span class="math inline">\(\forall\)</span>-sentence <span class="math display">\[
+\forall x,y  (x^2 \ne 2 \cdot y^2)
+\]</span> is true in the standard model, but not provable in <span class="math inline">\(\mathsf{PA}^-\)</span> (<span class="math inline">\(\mathbb{Z}/(X^2 - 2Y^2)\)</span> is a counterexample).</p>
+<p>Thus the above sentence (*) is an example of a <span class="math inline">\(\Pi_1\)</span>-sentence that is not a <span class="math inline">\(\forall\)</span>-sentence, where one cannot omit the bounded quantifier! (By the way, one can easily show that <span class="math inline">\(\mathbb{Z}[X]^+\)</span> is at least a model of all <span class="math inline">\(\forall\)</span>-sentences that hold in the standard model.)</p>
 
 
-</section>
 </section>
 </section>
 
@@ -583,7 +478,7 @@ Use the previous criterion to show that <span class="math display">\[
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/28left\.github\.io\/mathlogic\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -910,18 +805,6 @@ Use the previous criterion to show that <span class="math display">\[
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./013_Oct01_elementary_equivalence.html" class="pagination-link" aria-label="10/1 - Elementary equivalence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">10/1 - Elementary equivalence</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./015_Oct06_loewenheim_skolem.html" class="pagination-link" aria-label="10/6 - Löwenheim-Skolem Theorems">
-        <span class="nav-page-text">10/6 - Löwenheim-Skolem Theorems</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

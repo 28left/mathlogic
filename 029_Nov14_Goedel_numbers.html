@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,18 +30,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./030_Nov17_diagonal_lemma.html" rel="next">
 <link href="./028_Nov10_representability.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-42ed7287b56c5c583e2c2463c9cf4916.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2c493fdd487b110f6b1348dfd6a5174.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -71,20 +71,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
 .Take-Home {
   --color1: #FF7E79;
   --color2: #EBEBEB;
 }
-.Theorem {
-  --color1: #F8FBD3;
+.Exercise {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Lemma {
   --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Corollary {
@@ -95,8 +95,8 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Problem {
-  --color1: #FFE6B4;
+.Theorem {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -115,7 +115,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -143,7 +143,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./029_Nov14_Goedel_numbers.html">11/14 - Gödel numbers</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./029_Nov14_Goedel_numbers.html">11/14 - Gödelization</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -157,8 +157,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Math 557 Fall 2025</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -344,7 +345,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./029_Nov14_Goedel_numbers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">11/14 - Gödel numbers</span></a>
+ <span class="menu-text">11/14 - Gödelization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030_Nov17_diagonal_lemma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11/17 - Diagonal Lemma</span></a>
   </div>
 </li>
     </ul>
@@ -357,10 +364,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gödel-numbers" id="toc-gödel-numbers" class="nav-link active" data-scroll-target="#gödel-numbers">Gödel Numbers</a>
+  <li><a href="#gödelization" id="toc-gödelization" class="nav-link active" data-scroll-target="#gödelization">Gödelization</a>
   <ul class="collapse">
-  <li><a href="#gödel-numbers-of-terms" id="toc-gödel-numbers-of-terms" class="nav-link" data-scroll-target="#gödel-numbers-of-terms">Gödel numbers of terms</a></li>
-  <li><a href="#gödel-numbers-of-formulas" id="toc-gödel-numbers-of-formulas" class="nav-link" data-scroll-target="#gödel-numbers-of-formulas">Gödel numbers of formulas</a></li>
+  <li><a href="#gödel-numbers" id="toc-gödel-numbers" class="nav-link" data-scroll-target="#gödel-numbers">Gödel numbers</a></li>
+  <li><a href="#computability-of-syntactic-properties" id="toc-computability-of-syntactic-properties" class="nav-link" data-scroll-target="#computability-of-syntactic-properties">Computability of syntactic properties</a></li>
+  <li><a href="#decidable-theories" id="toc-decidable-theories" class="nav-link" data-scroll-target="#decidable-theories">Decidable theories</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="029_Nov14_Goedel_numbers.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -387,11 +395,11 @@ window.Quarto = {
 </header>
 
 
-<section id="gödel-numbers" class="level1">
-<h1>Gödel Numbers</h1>
+<section id="gödelization" class="level1">
+<h1>Gödelization</h1>
 <p>We can code formulas of the language of <span class="math inline">\(\mathsf{PA}^-\)</span> as natural numbers, the so-called <em>Gödel numbers</em>. They let us express syntactical properties of arithmetic formulas as number-theoretic properties in the language of arithmetic. This will be important for the self-referential argument at the heart of the first incompleteness theorem. <strong>Below, “term” and “formula” always refer to the language <span class="math inline">\(\mathcal{L} = \{0,1,+,*, &lt;\}\)</span></strong>.</p>
-<section id="gödel-numbers-of-terms" class="level2">
-<h2 class="anchored" data-anchor-id="gödel-numbers-of-terms">Gödel numbers of terms</h2>
+<section id="gödel-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="gödel-numbers">Gödel numbers</h2>
 <p>Using primitive recursion, we assign every term <span class="math inline">\(t\)</span> a Gödel-Nummer <span class="math inline">\(\ulcorner t \urcorner\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -414,41 +422,112 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section>
-<section id="gödel-numbers-of-formulas" class="level2">
-<h2 class="anchored" data-anchor-id="gödel-numbers-of-formulas">Gödel numbers of formulas</h2>
 <p>Using the Gödel numbers of terms, we can again recursively assign each formula <span class="math inline">\(\varphi\)</span> a Gödel number <span class="math inline">\(\ulcorner \varphi \urcorner\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \ulcorner s=t \urcorner \; \; &amp;= \; \;  2 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
 \ulcorner s&lt;t \urcorner \; \; &amp;= \; \;  2 \cdot 3 \cdot 5^{\ulcorner s \urcorner}  \cdot 7^{\ulcorner t \urcorner}\\
 \ulcorner \neg \varphi \urcorner \; \; &amp;= \; \;  2 \cdot 3^2 \cdot 5^{\ulcorner s \urcorner} \\
-\ulcorner \varphi \land \psi \urcorner \; \; &amp;= \; \;  2 \cdot 3^3 \cdot 5^{\ulcorner \varphi \urcorner}  \cdot 7^{\ulcorner \psi \urcorner}\\
+\ulcorner (\varphi \land \psi \urcorner) \; \; &amp;= \; \;  2 \cdot 3^3 \cdot 5^{\ulcorner \varphi \urcorner}  \cdot 7^{\ulcorner \psi \urcorner}\\
 \ulcorner \exists v_i \varphi \urcorner \; \; &amp;= \; \;  2 \cdot 3^4 \cdot 5^i \cdot 7^{\ulcorner \varphi \urcorner}\\
 \end{aligned}
 \]</span></p>
-<p>The following is straightforward based on the simple recursive definition of <span class="math inline">\(\ulcorner . \urcorner\)</span></p>
+<p>There are, of course, other coding schemes for formulas that work equally well. The crucial property of any suitable numbering is that we are able to effectively recognize Gödel numbers of basic syntactical objects.</p>
+</section>
+<section id="computability-of-syntactic-properties" class="level2">
+<h2 class="anchored" data-anchor-id="computability-of-syntactic-properties">Computability of syntactic properties</h2>
+<p>Based on the simple recursive definition of <span class="math inline">\(\ulcorner . \urcorner\)</span>, we have</p>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="prp-gn-syntax" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1</strong></span> <br>
+The following sets are recursive, in fact, primitve recursive:</p>
+<ul>
+<li><span class="math inline">\(\{ m : m \text{ is the Gödel number of a term } t \}\)</span></li>
+<li><span class="math inline">\(\{ m : m \text{ is the Gödel number of a formula } \varphi \}\)</span></li>
+<li><span class="math inline">\(\{ \langle m,n \rangle : m \text{ is the Gödel number of a formula } \varphi \text{ in which } n \text{ variables occur}   \}\)</span></li>
+<li><span class="math inline">\(\{ \langle m,k \rangle : m \text{ is the Gödel number of a formula } \varphi \text{ in which } k \text{ variables occur free}   \}\)</span></li>
+<li><span class="math inline">\(\{ m : m \text{ is the Gödel number of a sentence } \sigma \}\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>We can appeal to the Church-Turing Thesis to prove this (you should think of informal algorithms to compute these sets). To show the sets are actually primitive recursive, you can use recursion and bounded search - the Gödel numbers of subformulas (subterms) are smaller than the Gödel number of the overall formula (term). Work by induction on height – show that the properties for all formulas (terms) of a fixed height are primitive recursive. Finally, note that the height is always bounded by the length of a formula (term). We leave the details as an exercise.</p>
+<p>We can also show that the set of Gödel numbers of logical axioms is primitive recursive. This is relatively straightforward for the equality and quantifier axioms, as these are defined according to a syntactic scheme. The set of tautologies is a little trickier, since this is defined semantically.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> Show that the set</p>
+<p><span class="math display">\[
+\operatorname{Taut} = \{ \ulcorner \varphi \urcorner : \: \varphi \text{ is a tautology} \}
+\]</span></p>
+<p>is (primitive) recursive.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-ax-recursive" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> The set</p>
+<p><span class="math display">\[
+\operatorname{Ax} = \{ \ulcorner \varphi \urcorner : \: \varphi \text{ is a logical axiom} \}
+\]</span></p>
+<p>is (primitive) recursive.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Given a finite sequence of Gödel numbers of formulas,</p>
+<p><span class="math display">\[
+\ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner
+\]</span></p>
+<p>we can use the usual sequence coding to code this as a single number denoted as</p>
+<p><span class="math display">\[
+\langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle.
+\]</span></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="prp-" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1</strong></span> <br>
-The following sets are primitive recursive:</p>
-<ul>
-<li><span class="math inline">\(\{ m : m \text{ is the Gödel number of a term } t \}\)</span></li>
-<li><span class="math inline">\(\{ n : n \text{ is the Gödel number of a formula } \varphi \}\)</span></li>
-</ul>
+<div id="lem-prf-recursive" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1</strong></span> The relation</p>
+<p><span class="math display">\[
+\operatorname{Prf}(x,y) :\ \iff x = \ulcorner \psi \urcorner, y = \langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle, \varphi_1, \dots, \varphi_n \text{ is a proof of } \psi
+\]</span></p>
+<p>is (primitive) recursive.</p>
 </div>
 </div>
 </div>
 </div>
-<p>We can also effectively check for other syntactic properties. For example, the set <span class="math display">\[
-\{ k : k \text{ is the Gödel number of a sentence } \sigma \}
-\]</span> is computable.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (sketch). </span>Given <span class="math inline">\((x,y)\)</span>, one first checks if <span class="math inline">\(x\)</span> is the Gödel number of a formula <span class="math inline">\(\psi\)</span>. If yes, it suffices to decode and to test whether all components of <span class="math inline">\(y\)</span> are Gödel numbers of formulas <span class="math inline">\(\varphi_i\)</span>, the last one being equal to <span class="math inline">\(\psi\)</span>, and whether for every <span class="math inline">\(i\)</span>, either <span class="math inline">\(\varphi_i\)</span> is a logical axiom (which is primitive recursive by <a href="#thm-ax-recursive" class="quarto-xref">Theorem&nbsp;1</a>) or whether it can be obtained using deduction rules from previous formulas.</p>
+</div>
+</section>
+<section id="decidable-theories" class="level2">
+<h2 class="anchored" data-anchor-id="decidable-theories">Decidable theories</h2>
+<p>Recall that given a theory <span class="math inline">\(T\)</span>, its <em>deductive closure</em> is defined as <span class="math display">\[
+T^\vdash = \{ \sigma : T \vdash \sigma \}.
+\]</span></p>
+<p>For any set of formulas <span class="math inline">\(S\)</span>, let <span class="math display">\[
+\ulcorner S \urcorner = \{ \ulcorner \varphi \urcorner : \varphi \in S \}.
+\]</span></p>
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -456,12 +535,66 @@ The following sets are primitive recursive:</p>
 <div class="callout-body-container">
 <div id="def-" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
-A theory <span class="math inline">\(T\)</span> is <strong>decidable</strong> if the set <span class="math display">\[
-\{ \ulcorner \sigma \urcorner : T \vdash \sigma \}
-\]</span> is recursive.</p>
+Let <span class="math inline">\(T\)</span> be a theory in the language of <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
+<ul>
+<li><span class="math inline">\(T\)</span> is <strong>recursive</strong> if <span class="math inline">\(\{ \ulcorner \sigma \urcorner : \sigma \in T \}\)</span> is a recursive set.</li>
+<li><span class="math inline">\(T\)</span> is <strong>recursively axiomatizable</strong> if there exists a recursive <span class="math inline">\(\widetilde{T}\)</span> with <span class="math inline">\((\widetilde{T})^\vdash = T^\vdash\)</span>.</li>
+<li><span class="math inline">\(T\)</span> is <strong>decidable</strong> if the set <span class="math inline">\(\{ \ulcorner \sigma \urcorner : T \vdash \sigma \}\)</span> is recursive.</li>
+</ul>
 </div>
 </div>
 </div>
+</div>
+<p>Similarly to <a href="#lem-prf-recursive" class="quarto-xref">Lemma&nbsp;1</a>, one can show</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="lem-T-prf-recursive" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2</strong></span> <br>
+If <span class="math inline">\(T\)</span> is a recursive theory, then the relation</p>
+<p><span class="math display">\[
+\operatorname{Prf}_T(x,y) :\ \iff x = \ulcorner \psi \urcorner, y = \langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle, \varphi_1, \dots, \varphi_n \text{ is a $T$-proof of } \psi
+\]</span></p>
+<p>is recursive.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-thms-re" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> <br>
+If <span class="math inline">\(T\)</span> is recursively axiomatizable, then <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> is recursively enumerable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(\widetilde{T}\)</span> be a recursive theory such that <span class="math inline">\((\widetilde{T})^\vdash = T^\vdash\)</span>. We have <span class="math inline">\(\varphi \in T^\vdash\)</span> if and only if <span class="math inline">\(\varphi\)</span> is a sentence and there exists a proof of <span class="math inline">\(\varphi\)</span> in <span class="math inline">\(\widetilde{T}\)</span>. Hence, by <a href="#prp-gn-syntax" class="quarto-xref">Proposition&nbsp;1</a> and <a href="#lem-T-prf-recursive" class="quarto-xref">Lemma&nbsp;2</a>, <span class="math inline">\(\varphi \in T^\vdash\)</span> can be expressed via an existential quantifier over a recursive property, which implies it is recursively enumerable.</p>
+</div>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-complete-T-decidable" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3</strong></span> <br>
+If <span class="math inline">\(T\)</span> is recursively axiomatizable and complete, then <span class="math inline">\(T\)</span> is decidable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Since by <a href="#thm-thms-re" class="quarto-xref">Theorem&nbsp;2</a>, <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> is r.e., it suffices to show that <span class="math inline">\(\mathbb{N} \setminus \ulcorner T^\vdash \urcorner\)</span> is r.e.</p>
+<p>Since <span class="math inline">\(T\)</span> is complete, <span class="math inline">\(\mathbb{N} \setminus \ulcorner T^\vdash \urcorner\)</span> is the union of <span class="math inline">\(A= \{ \ulcorner \varphi \urcorner : \neg \varphi \in T^\vdash\}\)</span> and <span class="math inline">\(B= \{ x : x \text{ is not the Gödel number of a sentence} \}\)</span>. <span class="math inline">\(B\)</span> is primitive recursive, while <span class="math inline">\(A\)</span> is r.e.: simply enumerate <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span>, and whenever a sentence of the form <span class="math inline">\(\neg \varphi\)</span> is listed, enumerate <span class="math inline">\(\varphi\)</span> into <span class="math inline">\(A\)</span>.</p>
 </div>
 
 
@@ -520,14 +653,13 @@ A theory <span class="math inline">\(T\)</span> is <strong>decidable</strong> if
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -876,6 +1008,9 @@ A theory <span class="math inline">\(T\)</span> is <strong>decidable</strong> if
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./030_Nov17_diagonal_lemma.html" class="pagination-link" aria-label="11/17 - Diagonal Lemma">
+        <span class="nav-page-text">11/17 - Diagonal Lemma</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
