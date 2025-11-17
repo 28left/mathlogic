@@ -1,0 +1,71 @@
+---
+title: "Math 557 Nov 17"
+---
+
+# The Diagonal Lemma
+
+In the following, we consider the **diagonal function** $d$, defined by
+
+$$
+d(n)= \begin{cases}
+  \ulcorner \forall y\, (y = \underline{n} \to \sigma(y)) \urcorner    & \text{if} \; n = \ulcorner \sigma(v_0)  \urcorner \; \text{for an $L$-formula} \; \sigma(v_0)\\
+    0  & \text{otherwise}.
+    \end{cases}
+$$
+
+
+::: {#lem-diagonal}
+\
+Let $T$ be an $L$-theory, $\theta(v_0)$ an $L$-formula with the single free variable $v_0$. If the diagonal function $d$ is representable in $T$, then there exists an $L$-sentence $G$ with the property
+
+$$
+T \vdash G \leftrightarrow \theta(\underline{\ulcorner G \urcorner}).
+$$
+
+If $\theta(v_0)$ is a $\Pi_1$-formula, then $G$ can also be chosen as a $\Pi_1$-sentence.
+:::
+
+::: {.proof}
+If $d$ is represented in $T$ by the formula $\delta(x,y)$, then define
+
+$$
+\psi(v_0):= \forall y \,(\delta(v_0,y) \to \theta(y)),
+$$
+
+and set $n:= \ulcorner \psi(v_0) \urcorner$. 
+
+_**Note:** $n$ is actually a number in which the variable $v_0$ does not occur; however, the Gödel number of $v_0$ does enter into the calculation of $n$._
+
+For $G$, we now choose the sentence
+
+$$
+G:= \forall y \, (y = \underline{n} \to \psi(y)).
+$$
+
+Then $G$ has Gödel number $d(\ulcorner \psi(v_0) \urcorner)$. If $\delta(x,y)$ is a $\Sigma_1$-formula and $\theta(v)$ is a $\Pi_1$-formula, then $\psi$ and $G$ are (equivalent to) $\Pi_1$-formulas. Thus it remains to show that $T \vdash G \leftrightarrow \theta(\underline{\ulcorner G \urcorner})$:
+
+It is clear that
+
+$$
+\begin{aligned}
+&T \vdash G \leftrightarrow  \psi(\underline{n}), && \text{i.e., by the definition of } \psi\\
+\text{(1)} \quad &T \vdash G \leftrightarrow  \forall y (\delta(\underline{n},y) \to \theta(y)).
+\end{aligned}
+$$
+
+But the fact that $d$ is represented in $T$ by $\delta(x,y)$ means
+
+$$
+d(n)= \ulcorner G \urcorner \Rightarrow T \vdash \delta(\underline{n},\underline{\ulcorner G \urcorner}) \quad \text{ and }  \quad T  \vdash \exists! y \; \delta(\underline{n},y).
+$$
+
+Thus in particular
+
+$$
+\begin{aligned}
+\text{(2)} \quad &T \vdash \forall y \; ( \delta(\underline{n},y) \leftrightarrow y = \underline{\ulcorner G \urcorner}) && \text{and together with (1) it follows}\\
+&T \vdash G \leftrightarrow \forall y \; ( y = \underline{\ulcorner G \urcorner} \to \theta(y)), && \text{hence}\\
+&T \vdash G \leftrightarrow \theta(\underline{\ulcorner G \urcorner}).
+\end{aligned}
+$$
+:::

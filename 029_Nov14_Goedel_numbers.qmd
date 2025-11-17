@@ -7,7 +7,7 @@ title: "Math 557 Nov 14"
 
 We can code formulas of the language of $\mathsf{PA}^-$ as natural numbers, the so-called *Gödel numbers*. They let us express syntactical properties of arithmetic formulas as number-theoretic properties in the language of arithmetic. This will be important for the self-referential argument at the heart of the first incompleteness theorem. **Below, "term" and "formula" always refer to the language $\mathcal{L} = \{0,1,+,*, <\}$**.
 
-## Gödel numbers of terms
+## Gödel numbers 
 
 Using primitive recursion, we assign every term $t$ a Gödel-Nummer $\ulcorner t \urcorner$:
 
@@ -22,11 +22,11 @@ $$
 $$
 
 
+
 ::: {#exm-}
 $$\ulcorner v_3 + 1 \urcorner = 3^3 \cdot 5^{3^2 \cdot 5^3}  \cdot 7^3$$
 :::
 
-## Gödel numbers of formulas
 
 Using the Gödel numbers of terms, we can again recursively assign each formula $\varphi$ a Gödel number $\ulcorner \varphi \urcorner$:  
 
@@ -42,37 +42,136 @@ $$
 
 There are, of course, other coding schemes for formulas that work equally well. The crucial property of any suitable numbering is that we are able to effectively recognize Gödel numbers of basic syntactical objects.
 
+
+## Computability of syntactic properties
+
 Based on the simple recursive definition of $\ulcorner . \urcorner$, we have
 
-::: {#prp-}
+::: {#prp-gn-syntax}
 \
 The following sets are recursive, in fact, primitve recursive:
 
 - $\{ m : m \text{ is the Gödel number of a term } t \}$
 - $\{ m : m \text{ is the Gödel number of a formula } \varphi \}$
 - $\{ \langle m,n \rangle : m \text{ is the Gödel number of a formula } \varphi \text{ in which } n \text{ variables occur}   \}$
-- $\{ m : m \text{ is the Gödel number of a formula } \varphi \}$
-
+- $\{ \langle m,k \rangle : m \text{ is the Gödel number of a formula } \varphi \text{ in which } k \text{ variables occur free}   \}$
+- $\{ m : m \text{ is the Gödel number of a sentence } \sigma \}$
 :::
 
-   
-The following is straightforward 
+We can appeal to the Church-Turing Thesis to prove this (you should think of informal algorithms to compute these sets). To show the sets are actually primitive recursive, you can use recursion and bounded search  - the Gödel numbers of subformulas (subterms) are smaller than the Gödel number of the overall formula (term). Work by induction on height – show that the properties for all formulas (terms) of a fixed height are primitive recursive. Finally, note that the height is always bounded by the length of a formula (term). We leave the details as an exercise. 
 
+We can also show that the set of Gödel numbers of logical axioms is primitive recursive.
+This is relatively straightforward for the equality and quantifier axioms, as these are defined according to a syntactic scheme. The set of tautologies is a little trickier, since this is defined semantically.
 
-We can also effectively check for other syntactic properties. For example, the set 
+::: {#exr-}
+Show that the set
+
 $$
-\{ k : k \text{ is the Gödel number of a sentence } \sigma \}
+\operatorname{Taut} = \{ \ulcorner \varphi \urcorner : \: \varphi \text{ is a tautology} \}
 $$
-is computable. 
 
+is (primitive) recursive.
+:::
+
+
+::: {#thm-ax-recursive}
+The set
+
+$$
+\operatorname{Ax} = \{ \ulcorner \varphi \urcorner : \: \varphi \text{ is a logical axiom} \}
+$$
+
+is (primitive) recursive.
+:::
+
+Given a finite sequence of Gödel numbers of formulas,
+
+$$
+\ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner
+$$
+
+we can use the usual sequence coding to code this as a single number denoted as
+
+$$
+\langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle.
+$$
+
+::: {#lem-prf-recursive}
+The relation
+
+$$
+\operatorname{Prf}(x,y) :\ \iff x = \ulcorner \psi \urcorner, y = \langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle, \varphi_1, \dots, \varphi_n \text{ is a proof of } \psi
+$$
+
+is (primitive) recursive.
+:::
+
+::: {.proof}
+## sketch
+Given $(x,y)$, one first checks if $x$ is the Gödel number of a formula $\psi$. If yes, it suffices to decode and to test whether all
+components of $y$ are Gödel numbers of formulas $\varphi_i$, the last one being equal to
+$\psi$, and whether for every $i$, either $\varphi_i$ is a logical axiom (which is primitive recursive by @thm-ax-recursive) or whether it can be obtained using
+deduction rules from previous formulas.
+:::
+
+
+
+
+## Decidable theories
+
+Recall that given a theory $T$, its *deductive closure* is defined as
+$$
+T^\vdash = \{ \sigma : T \vdash \sigma \}.
+$$
+
+For any set of formulas $S$, let
+$$
+\ulcorner S \urcorner = \{ \ulcorner \varphi \urcorner : \varphi \in S \}.
+$$
 
 ::: {#def-}
 \
-A theory $T$ is **decidable** if the set
-$$
-\{ \ulcorner \sigma \urcorner : T \vdash \sigma \}
-$$
+Let $T$ be a theory in the language of $\mathsf{PA}^-$.
+
+- $T$ is **recursive** if $\{ \ulcorner \sigma \urcorner : \sigma \in T \}$ is a recursive set. 
+- $T$ is **recursively axiomatizable** if there exists a recursive $\widetilde{T}$ with $(\widetilde{T})^\vdash = T^\vdash$.
+- $T$ is **decidable** if the set $\{ \ulcorner \sigma \urcorner : T \vdash \sigma \}$
 is recursive.
 :::
 
+
+Similarly to @lem-prf-recursive, one can show
+
+::: {#lem-T-prf-recursive}
+\
+If $T$ is a recursive theory, then the relation
+
+$$
+\operatorname{Prf}_T(x,y) :\ \iff x = \ulcorner \psi \urcorner, y = \langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle, \varphi_1, \dots, \varphi_n \text{ is a $T$-proof of } \psi
+$$
+
+is recursive.
+:::
+
+::: {#thm-thms-re}
+\
+If $T$ is recursively axiomatizable, then $\ulcorner T^\vdash \urcorner$ is recursively enumerable.
+:::
+
+::: {.proof}
+Let $\widetilde{T}$ be a recursive theory such that $(\widetilde{T})^\vdash = T^\vdash$.
+We have $\varphi \in T^\vdash$ if and only if $\varphi$ is a sentence and there exists a proof of $\varphi$ in $\widetilde{T}$. Hence, by @prp-gn-syntax and @lem-T-prf-recursive, $\varphi \in T^\vdash$ can be expressed via an existential quantifier over a recursive property, which implies it is recursively enumerable.
+:::
+
+
+::: {#thm-complete-T-decidable}
+\
+If $T$ is recursively axiomatizable and complete, then $T$ is decidable.
+:::
+
+::: {.proof}
+Since by @thm-thms-re, $\ulcorner T^\vdash \urcorner$ is r.e., it suffices to show that $\mathbb{N} \setminus \ulcorner T^\vdash \urcorner$ is r.e.
+
+Since $T$ is complete, $\mathbb{N} \setminus \ulcorner T^\vdash \urcorner$ is the union of $A= \{ \ulcorner \varphi \urcorner : \neg \varphi \in T^\vdash\}$ and $B= \{ x : x \text{ is not the Gödel number of a sentence} \}$. $B$ is primitive recursive, while $A$ is r.e.: simply enumerate $\ulcorner T^\vdash \urcorner$, and whenever a sentence of the form $\neg \varphi$ is listed, enumerate $\varphi$ into $A$. 
+:::
 

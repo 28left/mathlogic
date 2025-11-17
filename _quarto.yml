@@ -67,6 +67,8 @@ website:
         text: 11/12 - Representability
       - href: 029_Nov14_Goedel_numbers.qmd
         text: 11/14 - Gödelization
+      - href: 030_Nov17_diagonal_lemma.qmd
+        text: 11/17 - Diagonal Lemma
 
 
 
@@ -133,7 +135,7 @@ callouty-theorem:
   thm:
     override-title: false
     callout:
-      type: caution
+      type: important
       appearance: simple
   lem:
     override-title: false
@@ -143,7 +145,7 @@ callouty-theorem:
   prp:
     override-title: false
     callout:
-      type: note
+      type: warning
       appearance: simple
   cor:
     override-title: false
@@ -153,7 +155,7 @@ callouty-theorem:
   def:
     override-title: false
     callout:
-      type: tip
+      type: note
       appearance: simple
   exm:
     override-title: false
