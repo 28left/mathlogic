@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 15 – Math 557 Fall 2025</title>
+<title>Math 557 Nov 19 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./008_Sep17_completing_theories.html" rel="next">
-<link href="./006_Sep12_completeness.html" rel="prev">
+<link href="./030_Nov17_diagonal_lemma.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +70,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Exercise {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
 .Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
@@ -79,20 +90,8 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
 .Corollary {
   --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Problem {
-  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Take-Home {
@@ -143,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./007_Sep15_completeness_theorem.html">9/15 - Completeness theorem</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./031_Nov19_first_incompleteness.html">11/19 - First Incompleteness Theorem</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -206,7 +205,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./007_Sep15_completeness_theorem.html" class="sidebar-item-text sidebar-link active">
+  <a href="./007_Sep15_completeness_theorem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9/15 - Completeness theorem</span></a>
   </div>
 </li>
@@ -356,7 +355,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./031_Nov19_first_incompleteness.html" class="sidebar-item-text sidebar-link">
+  <a href="./031_Nov19_first_incompleteness.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">11/19 - First Incompleteness Theorem</span></a>
   </div>
 </li>
@@ -370,20 +369,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-completeness-theorem" id="toc-the-completeness-theorem" class="nav-link active" data-scroll-target="#the-completeness-theorem">The Completeness Theorem</a>
+  <li><a href="#the-first-incompleteness-theorem" id="toc-the-first-incompleteness-theorem" class="nav-link active" data-scroll-target="#the-first-incompleteness-theorem">The First Incompleteness Theorem</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#the-paris-harrington-theorem" id="toc-the-paris-harrington-theorem" class="nav-link" data-scroll-target="#the-paris-harrington-theorem">The Paris-Harrington Theorem</a>
+  <ul class="collapse">
+  <li><a href="#pigeonhole-principles" id="toc-pigeonhole-principles" class="nav-link" data-scroll-target="#pigeonhole-principles">Pigeonhole Principles</a></li>
+  </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="007_Sep15_completeness_theorem.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="031_Nov19_first_incompleteness.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 557 Sep 15</h1>
+<h1 class="title">Math 557 Nov 19</h1>
 </div>
 
 
@@ -400,83 +401,150 @@ window.Quarto = {
 </header>
 
 
-<section id="the-completeness-theorem" class="level1">
-<h1>The Completeness Theorem</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li>The <strong>Completeness Theorem</strong> states that</li>
-</ul>
-<p><span class="math display">\[T \vdash_{\mathcal{L}} \varphi  \; \iff \; T \models \varphi\]</span></p>
-<ul>
-<li><p>The <span class="math inline">\(\Rightarrow\)</span>-direction is <strong>Soundness</strong>, which we already proved.</p></li>
-<li><p>The <span class="math inline">\(\Leftarrow\)</span>-direction is usually proved in the following form:</p></li>
-</ul>
+<section id="the-first-incompleteness-theorem" class="level1">
+<h1>The First Incompleteness Theorem</h1>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-goedel-rosser" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Gödel-Rosser Theorem)</strong></span> <br>
+Let <span class="math inline">\(T\)</span> be a recursive set of (Gödel numbers of) <span class="math inline">\(\mathcal{L}\)</span>-sentences such that:</p>
+<ol type="1">
+<li><p><span class="math inline">\(T\)</span> is consistent, i.e., there is no <span class="math inline">\(L\)</span>-sentence <span class="math inline">\(\sigma\)</span> with <span class="math inline">\(\ulcorner \sigma \urcorner \in T\)</span> and at the same time <span class="math inline">\(\ulcorner \neg \sigma \urcorner \in T\)</span>,</p></li>
+<li><p><span class="math inline">\(T\)</span> contains all <span class="math inline">\(\Sigma_1\)</span> and <span class="math inline">\(\Pi_1\)</span>-sentences that hold in <span class="math inline">\(\mathsf{PA}^-\)</span>:</p></li>
+</ol>
+<p><span class="math display">\[
+\{\ulcorner \sigma \urcorner : \sigma \in \Sigma_1 \cup \Pi_1, \sigma \text{ sentence },  \mathsf{PA}^- \vdash \sigma \} \subseteq T.
+\]</span></p>
+<p>Then <span class="math inline">\(T\)</span> is <span class="math inline">\(\Pi_1\)</span>-incomplete, i.e., there exists a <span class="math inline">\(\Pi_1\)</span>-sentence <span class="math inline">\(\tau\)</span> with</p>
+<p><span class="math display">\[
+\ulcorner  \tau \urcorner  \not \in T \text{ and } \ulcorner \neg \tau \urcorner  \not \in T.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Since <span class="math inline">\(T\)</span> is recursive, there exists a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(v)\)</span> such that for all <span class="math inline">\(n \in \mathbb{N}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+n \in T &amp; \Longrightarrow  \mathsf{PA}^- \vdash \theta(\underline{n}),\\
+n \not \in T &amp; \Longrightarrow  \mathsf{PA}^- \vdash \neg \theta(\underline{n}).
+\end{aligned}
+\]</span></p>
+<p>By the Diagonal Lemma, there exists a <span class="math inline">\(\Pi_1\)</span>-sentence <span class="math inline">\(\tau\)</span> with</p>
+<p><span class="math display">\[
+\mathsf{PA}^- \vdash \tau \leftrightarrow \neg \theta(\underline{\ulcorner  \tau \urcorner}).
+\]</span></p>
+<p>From assumption (2) it follows that</p>
+<p><span class="math display">\[
+\ulcorner  \tau \urcorner  \in T \Rightarrow \mathsf{PA}^- \vdash \theta(\underline{\ulcorner  \tau \urcorner}) \Rightarrow \mathsf{PA}^- \vdash \neg \tau \Rightarrow \ulcorner \neg \tau \urcorner  \in T
+\]</span></p>
+<p>and likewise, using (1),</p>
+<p><span class="math display">\[
+\ulcorner \neg \tau \urcorner  \in T \Rightarrow \ulcorner  \tau \urcorner \not  \in T \Rightarrow \mathsf{PA}^- \vdash \neg  \theta(\underline{\ulcorner  \tau \urcorner}) \Rightarrow \mathsf{PA}^- \vdash \tau \Rightarrow \ulcorner \tau \urcorner  \in T,
+\]</span></p>
+<p>so that neither <span class="math inline">\(\ulcorner \tau \urcorner\)</span> nor <span class="math inline">\(\ulcorner \neg \tau \urcorner\)</span> can be in <span class="math inline">\(T\)</span>.</p>
+</div>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-first-incompleteness" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (First Gödel Incompleteness Theorem)</strong></span> <br>
+Let <span class="math inline">\(T\)</span> be a consistent<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and recursively axiomatizable theory in language <span class="math inline">\(L\)</span> which extends the theory <span class="math inline">\(\mathsf{PA}^-\)</span>. Then <span class="math inline">\(T\)</span> is incomplete. In particular, there exists a <span class="math inline">\(\Pi_1\)</span>-sentence <span class="math inline">\(\tau\)</span> with</p>
+<p><span class="math display">\[
+T\not \vdash \tau \text{ and } T \not \vdash \neg \tau.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We assume that <span class="math inline">\(T\)</span> is recursively axiomatizable as well as complete (which implies that it is consistent, by definition), and derive a contradiction. As we proved in a previous lecture, the assumption implies that the set</p>
+<p><span class="math display">\[
+S:= \{\ulcorner \sigma \urcorner : \sigma \text{ sentence },  T \vdash \sigma \} = \ulcorner (T^\vdash) \urcorner
+\]</span></p>
+<p>is recursive. Thus the hypothesis of the Gödel-Rosser Theorem is met, which implies <span class="math inline">\(S\)</span> is <span class="math inline">\(\Pi_1\)</span>-incomplete—a contradiction!</p>
+</div>
+<p>Every consistent extension <span class="math inline">\(T\)</span> of <span class="math inline">\(\mathsf{PA}^-\)</span> has, by Lindenbaum’s Lemma, a complete and consistent extension, none of which, by the above theorem, can be recursive.</p>
+<section id="the-paris-harrington-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="the-paris-harrington-theorem">The Paris-Harrington Theorem</h2>
+<p>The use of the Diagonal Lemma yields rather “artificial” witnesses of incompleteness. Are there “natural” mathematical theorems that <span class="math inline">\(\mathsf{PA}\)</span> cannot decide? In 1982, Paris and Harrington<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> found an example, based on <em>Ramsey theory</em>.</p>
+<section id="pigeonhole-principles" class="level3">
+<h3 class="anchored" data-anchor-id="pigeonhole-principles">Pigeonhole Principles</h3>
+<p>In its simplest form, the <strong>pigeonhole principle</strong> states:</p>
 <blockquote class="blockquote">
-<p>   If <span class="math inline">\(T\)</span> is consistent, then <span class="math inline">\(T\)</span> has a model.</p>
+<p>If <span class="math inline">\(n\)</span> elements are distributed into <span class="math inline">\(m &lt; n\)</span> many pigeonholes, then one of the pigeonholes must contain at least 2 elements.</p>
 </blockquote>
-<ul>
-<li><p>To construct a model of a consistent theory, we consider the <strong>constant terms</strong> <span class="math display">\[K := \{ t \colon t \; \mathcal{L}\text{-term without variables}\}\]</span> and <strong>identify provably equal terms</strong>: <span class="math display">\[s \sim t \; :\iff \; T \vdash_{\mathcal{L}} s = t\]</span></p></li>
-<li><p>The <strong>canonical term structure</strong> <span class="math inline">\(\mathcal{A}\)</span> of <span class="math inline">\(T\)</span> has universe <span class="math inline">\(A = K/\sim\)</span>.</p></li>
-<li><p>Moreover, we put</p>
-<ul>
-<li><span class="math inline">\(c^{\mathcal{A}} := [c]\)</span></li>
-<li><span class="math inline">\(f^{\mathcal{A}}([t_1], \dots, [t_n]) := [ft_1\dots t_n]\)</span></li>
-<li><span class="math inline">\(R^{\mathcal{A}}([t_1], \dots, [t_n]) \; : \iff \; T \vdash_{\mathcal{L}} Rt_1\dots t_n\)</span></li>
-</ul></li>
-<li><p>It holds that for any <em>atomic</em> sentence <span class="math inline">\(\sigma\)</span>, <span class="math display">\[\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma\]</span></p></li>
-</ul>
-</section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Discuss
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We all believe (I think) that <span class="math inline">\((\mathbb{Z}, +, 0)\)</span> is a model of the group axioms. To what extent does this prove that the group axioms are consistent?</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>The generalization to infinite sets is:</p>
+<blockquote class="blockquote">
+<p>If an infinite set is partitioned into finitely many sets, then at least one of these sets must be infinite: <span class="math display">\[
+A = A_0 \mathop{\dot{\cup}} \ldots \mathop{\dot{\cup}} A_k \text{ infinite } \Rightarrow \exists i \leq k \, (A_i \text{ infinite}).
+\]</span></p>
+</blockquote>
+<p>For further generalization, we set <span class="math display">\[
+[A]^n := \{x \subseteq A \mid |x| = n\} \text{ the set of $n$-element subsets of } A.
+\]</span></p>
+<p>A partition of the <span class="math inline">\(n\)</span>-element subsets of <span class="math inline">\(A\)</span> into <span class="math inline">\(k\)</span> parts can also be represented by a function <span class="math display">\[
+f : [A]^n \to k
+\]</span> (where <span class="math inline">\(A_i = \{x \in A \mid f(x) = i\}\)</span> are then the partition sets), and such an <span class="math inline">\(f\)</span> is more intuitively called a <strong>coloring</strong> (of <span class="math inline">\([A]^n\)</span>) with <span class="math inline">\(k\)</span> colors. A subset <span class="math inline">\(X \subseteq A\)</span> with <span class="math inline">\([X]^n \subseteq A_i\)</span> for some <span class="math inline">\(i &lt; k\)</span> (whose <span class="math inline">\(n\)</span>-tuples are thus monochromatic) is called <strong>homogeneous</strong> for the partition <span class="math inline">\(f\)</span>.</p>
+<div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
-Verify that <span class="math inline">\(\sim\)</span> is an equivalence relation.</p>
+<div id="thm-ramsey" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Ramsey’s Theorem)</strong></span> <br>
+For every coloring <span class="math inline">\(f : [\mathbb{N}]^n \to k\)</span> of the <span class="math inline">\(n\)</span>-element subsets of natural numbers with <span class="math inline">\(k\)</span> colors, there exists an infinite subset <span class="math inline">\(X \subseteq \mathbb{N}\)</span> such that all <span class="math inline">\(n\)</span>-element subsets of <span class="math inline">\(X\)</span> have the same color: <span class="math display">\[
+f : [\mathbb{N}]^n \to k \Rightarrow \exists X \subseteq \mathbb{N} \, (X \text{ infinite } \land \forall u,v \in [X]^n \, f(u) = f(v)).
+\]</span></p>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>This states that every coloring of the <span class="math inline">\(n\)</span>-element subsets of natural numbers with finitely many colors has an infinite homogeneous subset. This theorem is provable in set theory with a weak form of the axiom of choice (see, e.g., D. Marker: <em>Model Theory: An Introduction</em>, § 5.1).</p>
+<div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-Verify that the definition of <span class="math inline">\(c^{\mathcal{A}}, f^{\mathcal{A}}, R^{\mathcal{A}}\)</span> does not depend on the choice of representative for <span class="math inline">\([c]\)</span> and <span class="math inline">\([t_i]\)</span>.</p>
+<div id="def-relatively-large" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Relatively Large Sets)</strong></span> <br>
+A (finite) set <span class="math inline">\(H\)</span> of ordinal numbers is called <strong>relatively large</strong> if and only if <span class="math display">\[
+\mathrm{card}(H) \geq \min(H).
+\]</span></p>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip no-icon">
+<p>If <span class="math inline">\(n,k \in \mathbb{N}\)</span>, <span class="math inline">\(\alpha, \gamma \in \mathrm{On}\)</span>, then let <span class="math display">\[
+\gamma \longrightarrow (\alpha)^n_k \quad \text{resp.} \quad \gamma \stackrel{\min}{\longrightarrow} (\alpha)^n_k
+\]</span> mean that for every coloring <span class="math inline">\(f\)</span> of the <span class="math inline">\(n\)</span>-element subsets of <span class="math inline">\(\gamma\)</span> with <span class="math inline">\(k\)</span> colors, there exists a (relatively large) subset <span class="math inline">\(H \subseteq \gamma\)</span> of order type <span class="math inline">\(\alpha\)</span> that is homogeneous for <span class="math inline">\(f\)</span>.</p>
+<p><a href="#thm-ramsey" class="quarto-xref">Theorem&nbsp;3</a> above thus states: <span class="math inline">\(\forall n,k, \; \omega \to (\omega)^n_k\)</span>. From this follows the <strong>finitary Ramsey theorem</strong> (using a compactness argument): <span class="math display">\[
+\forall m,n,k \; \exists r \;\; r \to (m)^n_k.
+\]</span></p>
+<p>This is a theorem about natural numbers and can be expressed in the language of Peano arithmetic and proven in <span class="math inline">\(\mathsf{PA}\)</span>.However, an (apparently) slight strengthening cannot:</p>
+<div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Verify the claim that for atomic sentences, <span class="math display">\[\mathcal{A}_T \models \sigma \quad \iff \quad T \vdash \sigma\]</span></p>
+<div id="thm-ph" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (Paris-Harrington Theorem)</strong></span> <br>
+The statement <span class="math display">\[
+\forall m,n,k \, \exists r \, r \stackrel{\min}{\longrightarrow} (m)^n_k
+\]</span> is provable in set theory, but not in <span class="math inline">\(\mathsf{PA}\)</span> (provided <span class="math inline">\(\mathsf{PA}\)</span> is consistent). The existence of these numbers <span class="math inline">\(r\)</span> can no longer be shown generally in <span class="math inline">\(\mathsf{PA}\)</span>; in fact, they lead to very large numbers: If <span class="math display">\[
+\sigma(n) = \text{the smallest } r \text{ with } r \stackrel{\min}{\longrightarrow} (n+1)^n_n,
+\]</span> then the function <span class="math inline">\(\sigma\)</span> eventually dominates every recursive function <span class="math inline">\(f\)</span> (i.e., for every recursive function <span class="math inline">\(f\)</span> there exists a <span class="math inline">\(p\)</span> such that <span class="math inline">\(f(n) &lt; \sigma(n)\)</span> for all <span class="math inline">\(n \geq p\)</span>).</p>
 </div>
 </div>
 </div>
@@ -485,8 +553,16 @@ Verify the claim that for atomic sentences, <span class="math display">\[\mathca
 
 </section>
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The original version of Gödel’s theorem had the stronger assumption of <span class="math inline">\(\omega\)</span>-consistency of <span class="math inline">\(T\)</span> (i.e., for all <span class="math inline">\(L\)</span>-formulas <span class="math inline">\(\theta(v)\)</span> with <span class="math inline">\(T \vdash \theta(\underline{n})\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>, the theory <span class="math inline">\(T \cup \{\forall v \, \theta(v)\}\)</span> is consistent). Rosser proved this stronger version in 1936.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><em>A mathematical Incompleteness in Peano Arithmetic</em>. In: Handbook of Mathematical Logic, ed.&nbsp;Barwise, Elsevier 1982<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -888,14 +964,11 @@ Verify the claim that for atomic sentences, <span class="math display">\[\mathca
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./006_Sep12_completeness.html" class="pagination-link" aria-label="9/12 - Complete theories">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9/12 - Complete theories</span>
+      <a href="./030_Nov17_diagonal_lemma.html" class="pagination-link" aria-label="11/17 - Diagonal Lemma">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">11/17 - Diagonal Lemma</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./008_Sep17_completing_theories.html" class="pagination-link" aria-label="9/17 - Completing theories">
-        <span class="nav-page-text">9/17 - Completing theories</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
