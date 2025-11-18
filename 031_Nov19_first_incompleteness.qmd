@@ -1,0 +1,162 @@
+---
+title: "Math 557 Nov 19"
+---
+
+# The First Incompleteness Theorem
+
+
+::: {#thm-goedel-rosser}
+## Gödel-Rosser Theorem
+\
+Let $T$ be a recursive set of (Gödel numbers of) $\mathcal{L}$-sentences such that:
+
+1. $T$ is consistent, i.e., there is no $L$-sentence $\sigma$ with $\ulcorner \sigma \urcorner \in T$ and at the same time $\ulcorner \neg \sigma \urcorner \in T$,
+
+2. $T$ contains all $\Sigma_1$ and $\Pi_1$-sentences that hold in $\mathsf{PA}^-$:
+
+$$
+\{\ulcorner \sigma \urcorner : \sigma \in \Sigma_1 \cup \Pi_1, \sigma \text{ sentence },  \mathsf{PA}^- \vdash \sigma \} \subseteq T.
+$$
+
+Then $T$ is $\Pi_1$-incomplete, i.e., there exists a $\Pi_1$-sentence $\tau$ with
+
+$$
+\ulcorner  \tau \urcorner  \not \in T \text{ and } \ulcorner \neg \tau \urcorner  \not \in T.
+$$
+:::
+
+::: {.proof}
+Since $T$ is recursive, there exists a $\Sigma_1$-formula $\theta(v)$ such that for all $n \in \mathbb{N}$
+
+$$
+\begin{aligned}
+n \in T & \Longrightarrow  \mathsf{PA}^- \vdash \theta(\underline{n}),\\
+n \not \in T & \Longrightarrow  \mathsf{PA}^- \vdash \neg \theta(\underline{n}).
+\end{aligned}
+$$
+
+By the Diagonal Lemma, there exists a $\Pi_1$-sentence $\tau$ with
+
+$$
+\mathsf{PA}^- \vdash \tau \leftrightarrow \neg \theta(\underline{\ulcorner  \tau \urcorner}).
+$$
+
+From assumption (2) it follows that
+
+$$
+\ulcorner  \tau \urcorner  \in T \Rightarrow \mathsf{PA}^- \vdash \theta(\underline{\ulcorner  \tau \urcorner}) \Rightarrow \mathsf{PA}^- \vdash \neg \tau \Rightarrow \ulcorner \neg \tau \urcorner  \in T
+$$
+
+and likewise, using (1),
+
+$$
+\ulcorner \neg \tau \urcorner  \in T \Rightarrow \ulcorner  \tau \urcorner \not  \in T \Rightarrow \mathsf{PA}^- \vdash \neg  \theta(\underline{\ulcorner  \tau \urcorner}) \Rightarrow \mathsf{PA}^- \vdash \tau \Rightarrow \ulcorner \tau \urcorner  \in T,
+$$
+
+so that neither $\ulcorner \tau \urcorner$ nor $\ulcorner \neg \tau \urcorner$ can be in $T$.
+:::
+
+
+::: {#thm-first-incompleteness}
+## First Gödel Incompleteness Theorem
+\
+Let $T$ be a consistent^[The original version of Gödel's theorem had the stronger assumption of $\omega$-consistency of $T$ (i.e., for all $L$-formulas $\theta(v)$ with $T \vdash \theta(\underline{n})$ for all $n \in \mathbb{N}$, the theory $T \cup \{\forall v \, \theta(v)\}$ is consistent). Rosser proved this stronger version in 1936.] and recursively axiomatizable theory in language $L$ which extends the theory $\mathsf{PA}^-$. Then $T$ is incomplete. In particular, there exists a $\Pi_1$-sentence $\tau$ with
+
+$$
+T\not \vdash \tau \text{ and } T \not \vdash \neg \tau.
+$$
+:::
+
+::: {.proof}
+We assume that $T$ is recursively axiomatizable as well as complete (which implies that it is consistent, by definition), and derive a contradiction. As we proved in a previous lecture, the assumption implies that the set
+
+$$
+S:= \{\ulcorner \sigma \urcorner : \sigma \text{ sentence },  T \vdash \sigma \} = \ulcorner (T^\vdash) \urcorner
+$$
+
+is recursive. Thus the hypothesis of the Gödel-Rosser Theorem is met, which implies $S$ is $\Pi_1$-incomplete—a contradiction!
+:::
+
+
+Every consistent extension $T$ of $\mathsf{PA}^-$ has, by Lindenbaum's Lemma, a complete and consistent extension, none of which, by the above theorem, can be recursive.
+
+
+
+## The Paris-Harrington Theorem
+
+The use of the Diagonal Lemma yields rather "artificial" witnesses of incompleteness. Are there "natural" mathematical theorems that $\mathsf{PA}$ cannot decide? In 1982, Paris and Harrington^[*A mathematical Incompleteness in Peano Arithmetic*. In: Handbook of Mathematical Logic, ed. Barwise, Elsevier 1982] found an example, based on *Ramsey theory*.
+
+### Pigeonhole Principles
+
+In its simplest form, the **pigeonhole principle** states:
+
+> If $n$ elements are distributed into $m < n$ many pigeonholes, then one of the pigeonholes must contain at least 2 elements.
+
+The generalization to infinite sets is:
+
+> If an infinite set is partitioned into finitely many sets, then at least one of these sets must be infinite:
+$$
+A = A_0 \mathop{\dot{\cup}} \ldots \mathop{\dot{\cup}} A_k \text{ infinite } \Rightarrow \exists i \leq k \, (A_i \text{ infinite}).
+$$
+
+For further generalization, we set
+$$
+[A]^n := \{x \subseteq A \mid |x| = n\} \text{ the set of $n$-element subsets of } A.
+$$
+
+A partition of the $n$-element subsets of $A$ into $k$ parts can also be represented by a function
+$$
+f : [A]^n \to k
+$$
+(where $A_i = \{x \in A \mid f(x) = i\}$ are then the partition sets), and such an $f$ is more intuitively called a **coloring** (of $[A]^n$) with $k$ colors. A subset $X \subseteq A$ with $[X]^n \subseteq A_i$ for some $i < k$ (whose $n$-tuples are thus monochromatic) is called **homogeneous** for the partition $f$.
+
+
+
+
+::: {#thm-ramsey}
+## Ramsey's Theorem
+\
+For every coloring $f : [\mathbb{N}]^n \to k$ of the $n$-element subsets of natural numbers with $k$ colors, there exists an infinite subset $X \subseteq \mathbb{N}$ such that all $n$-element subsets of $X$ have the same color:
+$$
+f : [\mathbb{N}]^n \to k \Rightarrow \exists X \subseteq \mathbb{N} \, (X \text{ infinite } \land \forall u,v \in [X]^n \, f(u) = f(v)).
+$$
+:::
+
+This states that every coloring of the $n$-element subsets of natural numbers with finitely many colors has an infinite homogeneous subset. This theorem is provable in set theory with a weak form of the axiom of choice (see, e.g., D. Marker: *Model Theory: An Introduction*, § 5.1).
+
+
+::: {#def-relatively-large}
+## Relatively Large Sets
+\
+A (finite) set $H$ of ordinal numbers is called **relatively large** if and only if
+$$
+\mathrm{card}(H) \geq \min(H).
+$$
+:::
+
+If $n,k \in \mathbb{N}$, $\alpha, \gamma \in \mathrm{On}$, then let
+$$
+\gamma \longrightarrow (\alpha)^n_k \quad \text{resp.} \quad \gamma \stackrel{\min}{\longrightarrow} (\alpha)^n_k
+$$
+mean that for every coloring $f$ of the $n$-element subsets of $\gamma$ with $k$ colors, there exists a (relatively large) subset $H \subseteq \gamma$ of order type $\alpha$ that is homogeneous for $f$.
+
+@thm-ramsey above thus states: $\forall n,k, \; \omega \to (\omega)^n_k$. From this follows the **finitary Ramsey theorem** (using a compactness argument):
+$$
+\forall m,n,k \; \exists r \;\; r \to (m)^n_k.
+$$
+
+This is a theorem about natural numbers and can be expressed in the language of Peano arithmetic and proven in $\mathsf{PA}$.However, an (apparently) slight strengthening cannot: 
+
+::: {#thm-ph}
+## Paris-Harrington Theorem
+\
+The statement
+$$
+\forall m,n,k \, \exists r \, r \stackrel{\min}{\longrightarrow} (m)^n_k
+$$
+is provable in set theory, but not in $\mathsf{PA}$ (provided $\mathsf{PA}$ is consistent). The existence of these numbers $r$ can no longer be shown generally in $\mathsf{PA}$; in fact, they lead to very large numbers: If
+$$
+\sigma(n) = \text{the smallest } r \text{ with } r \stackrel{\min}{\longrightarrow} (n+1)^n_n,
+$$
+then the function $\sigma$ eventually dominates every recursive function $f$ (i.e., for every recursive function $f$ there exists a $p$ such that $f(n) < \sigma(n)$ for all $n \geq p$).
+:::

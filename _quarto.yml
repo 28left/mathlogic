@@ -69,6 +69,8 @@ website:
         text: 11/14 - Gödelization
       - href: 030_Nov17_diagonal_lemma.qmd
         text: 11/17 - Diagonal Lemma
+      - href: 031_Nov19_first_incompleteness.qmd
+        text: 11/19 - First Incompleteness Theorem
 
 
 
