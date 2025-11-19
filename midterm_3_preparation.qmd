@@ -91,14 +91,23 @@ y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \oper
 $$
 are primitive recursive. 
 
-You may can use that the functions
+You can use that the functions
 $x+y$, $x\cdot y$, $\max(x,y)$, $\min(x,y)$, $|x-y|$, $x \dot{-} y$, $\operatorname{sg}(x)$, $\bar{\operatorname{sg}}(x)$ are primitive recursive. 
 :::
 
 
 In the following, $\mathcal{L}_A = \{0,1,+,\cdot, <\}$ denotes the language of $\mathsf{PA}^-$.
 
+::: Problem
 
+Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathcal{M}$ is a set $I \subsetneq M$ that is an initial segment of $M$ and closed under successor, e.g.\ the standard model $\mathbb{N}$.
+
+1. Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \varphi(x,\vec{a})$.
+	
+2. Show that if $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and satisfies the conclusion of (1.), then $\mathcal{M} \models \mathsf{PA}$.
+
+(*Hint: For (2.), it suffices to show $\mathcal{M}$ satisfies the induction scheme.*)
+::: 
 
 ::: Problem
 
@@ -124,7 +133,7 @@ Let $\mathcal{L}$ be the empty language, i.e. the atomic formulas are of the for
 Let $T$ be the theory that says that there are at most two distinct elements:
 
 $$
-\exist x, y \forall z ( z = x \lor z = x)
+\exists x, y \forall z ( z = x \lor z = x)
 $$
 
 Show that $T$ is incomplete but decidable. For decidability, it suffices to give an informal argument and invoke the Church-Turing Thesis.
@@ -137,4 +146,3 @@ Show that $T$ is incomplete but decidable. For decidability, it suffices to give
 
 An $\mathcal{L}_A$-structure $\mathcal{A}$ is *strongly undecidable* if every $\mathcal{L}_A$-theory $T$ with $\mathcal{A} \models T$ is undecidable. 
 :::
-
