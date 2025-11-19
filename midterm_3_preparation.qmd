@@ -1,0 +1,140 @@
+---
+title: "MATH 557 Midterm 3 Preparation"
+---
+
+The third midterm will have two parts:
+
+1. Reproduce a proof (in sufficient detail) of one the theorems below we covered in class.
+2. Present a proof to one of the exercises (or a closely related problem) listed on this page.
+
+## Theorems
+
+::: Theorem
+
+Any two countable models of $\operatorname{DLO}$ are isomorphic.
+:::
+
+::: Theorem
+
+Suppose for $\mathcal{L}$-theories $\mathcal{M}, \mathcal{N}$, $\mathcal{M} \subseteq \mathcal{N}$ and for any formula $\psi(x, \vec{y})$ and any $\vec{a} \in M$, if there exists $b \in N$ such that $\mathcal{N} \models \psi[b, \vec{a}]$, then there also exists $c \in M$ such that $\mathcal{N} \models \psi[c, \vec{a}]$. Then $\mathcal{M} \preceq \mathcal{N}$.
+:::
+
+
+::: Theorem
+
+Let $\mathcal{A}$ be an $\mathcal{L}$-structure, $\kappa$ an infinite cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\kappa \le \operatorname{card}(A)$. Then there exists a structure $\mathcal{B}$ with
+$$
+\mathcal{B} \preceq  \mathcal{A} \; , \; \operatorname{card}(B) = \kappa.
+$$
+:::
+
+
+::: Theorem
+
+Let $\mathcal{A}$ be an infinite $\mathcal{L}$-structure, $\kappa$ a cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\operatorname{card}(A) \le \kappa$. Then there exists a structure $\mathcal{B}$ with
+$$
+\mathcal{A} \preceq  \mathcal{B} \; , \;  \operatorname{card}(B) = \kappa.
+$$
+:::
+
+::: Theorem 
+
+Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ is $\kappa$-categorical for some $\kappa \geq |\mathcal{L}|$, then $T$ is complete.
+:::
+
+
+::: Theorem
+
+Let $\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}$ be an ultraproduct.
+For every $\mathcal{L}$-formula $\varphi(x_1,\dots,x_n)$ and tuples  
+$\vec a \in \prod_{i \in I} M_i$,
+$$
+\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
+\iff
+\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
+$$
+:::
+
+
+::: Theorem
+
+Any two countable homogeneous structures with the same age are isomorphic.
+:::
+
+<!-- ::: Theorem
+
+Let $\mathcal{L}$ be a finite language with only relation symbols. Let $\overline{K}$ be a class of finite $\mathcal{L}$-structures such that there are only countably many isomorphism types in $\overline{K}$.
+
+Then $\overline{K}$ is an amalgamation class if and only if $\overline{K}$ is the age of a countable homogeneous $\mathcal{L}$-structure.
+:::
+ -->
+
+
+## Problems
+
+
+::: Problem
+
+Show that the functions 
+$$
+\operatorname{rem}(x,y) = \text{remainder when $y$ is divided by $x$}
+$$
+(put $\operatorname{rem}(0,y) = y$ to  make it total) and 
+$$
+\operatorname{qt}(x,y) = \text{quotient when $y$ is divided by $x$}
+$$
+(put $\operatorname{qt}(0,y) = 0$) are primitive recursive.
+
+In other words, show that the uniquely determined functions (for $x \geq 1$) satisfying
+$$
+y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \operatorname{rem}(x,y) < x
+$$
+are primitive recursive. 
+
+You may can use that the functions
+$x+y$, $x\cdot y$, $\max(x,y)$, $\min(x,y)$, $|x-y|$, $x \dot{-} y$, $\operatorname{sg}(x)$, $\bar{\operatorname{sg}}(x)$ are primitive recursive. 
+:::
+
+
+In the following, $\mathcal{L}_A = \{0,1,+,\cdot, <\}$ denotes the language of $\mathsf{PA}^-$.
+
+
+
+::: Problem
+
+A model $\mathcal{M}$ of an $\mathcal{L}$-theory $T$ is **prime** if for every $\mathcal{N} \models T$, there exists an elementary embedding of $\mathcal{M}$ into $\mathcal{N}$.
+
+- Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
+- Show that if $T$ is an $\omega$-categorical theory over a countable language and has no finite models, $T$ has a prime model.
+:::
+
+
+::: Problem
+
+ We say an $\mathcal{L}_A$-theory $T'$ is a *finite extension* of an $\mathcal{L}_A$-theory $T$ if $T' \supseteq T$ and $T' \setminus T$ is finite.
+
+Show that if $T$ is decidable and $T'$ is a finite extension of $T$, then $T'$ is decidable.
+:::
+
+
+
+::: Problem
+
+Let $\mathcal{L}$ be the empty language, i.e. the atomic formulas are of the form $x=y$, where $x,y$ are variables.
+Let $T$ be the theory that says that there are at most two distinct elements:
+
+$$
+\exist x, y \forall z ( z = x \lor z = x)
+$$
+
+Show that $T$ is incomplete but decidable. For decidability, it suffices to give an informal argument and invoke the Church-Turing Thesis.
+
+(*Hint: There are, up to isomorphism, just two models of $T$. Show that for each of the two models, you can decide whether an $\mathcal{L}$-sentence holds in it.*)
+:::
+
+
+::: Problem
+
+An $\mathcal{L}_A$-structure $\mathcal{A}$ is *strongly undecidable* if every $\mathcal{L}_A$-theory $T$ with $\mathcal{A} \models T$ is undecidable. 
+:::
+
