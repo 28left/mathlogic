@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./032_Nov21_second_incompleteness.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,23 +70,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Corollary {
+.Theorem {
   --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Take-Home {
-  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
 .Lemma {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Exercise {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -93,8 +82,20 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Theorem {
+.Corollary {
   --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Exercise {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 </style>
@@ -141,9 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Math 557 Fall 2025
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./midterm_3_preparation.html">Midterm 3 Prep</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -237,7 +236,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./012_Sep26_midterm_review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9/26 - Midterm 1 review</span></a>
+ <span class="menu-text">Midterm 1 review</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -291,7 +290,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./midterm_2_preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10/20 - Midterm 2</span></a>
+ <span class="menu-text">Midterm 2 Prep</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -366,6 +365,12 @@ window.Quarto = {
  <span class="menu-text">11/19 - Consistency and Decidability</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./midterm_3_preparation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Midterm 3 Prep</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -376,7 +381,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#theorems" id="toc-theorems" class="nav-link active" data-scroll-target="#theorems">Theorems</a></li>
+  <li><a href="#notations-axioms" id="toc-notations-axioms" class="nav-link active" data-scroll-target="#notations-axioms">Notations, Axioms</a></li>
+  <li><a href="#theorems" id="toc-theorems" class="nav-link" data-scroll-target="#theorems">Theorems</a></li>
   <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="midterm_3_preparation.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -408,6 +414,34 @@ window.Quarto = {
 <li>Reproduce a proof (in sufficient detail) of one the theorems below we covered in class.</li>
 <li>Present a proof to one of the exercises (or a closely related problem) listed on this page.</li>
 </ol>
+<section id="notations-axioms" class="level2">
+<h2 class="anchored" data-anchor-id="notations-axioms">Notations, Axioms</h2>
+<p>In the following, <span class="math inline">\(\mathcal{L}_A = \{0,1,+,\cdot, &lt;\}\)</span> denotes the language of <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
+<hr>
+<p>The axioms of <span class="math inline">\(\mathsf{PA}^-\)</span> are:</p>
+<ul>
+<li><strong>A1:</strong> <span class="math inline">\(\quad (x +y)+z= x + (y+z)\)</span></li>
+<li><strong>A2:</strong> <span class="math inline">\(\quad (x \cdot y) \cdot z= x \cdot (y \cdot z)\)</span></li>
+<li><strong>A3:</strong> <span class="math inline">\(\quad x + y= y + x\)</span></li>
+<li><strong>A4:</strong> <span class="math inline">\(\quad x \cdot y = y \cdot x\)</span></li>
+<li><strong>A5:</strong> <span class="math inline">\(\quad x \cdot (y+z) = x \cdot y + x \cdot z\)</span></li>
+<li><strong>A6:</strong> <span class="math inline">\(\quad x+0=x \wedge x \cdot 0 = 0\)</span></li>
+<li><strong>A7:</strong> <span class="math inline">\(\quad x \cdot 1 = x\)</span></li>
+<li><strong>A8:</strong> <span class="math inline">\(\quad \neg  \; x &lt; x\)</span></li>
+<li><strong>A9:</strong> <span class="math inline">\(\quad x &lt; y \wedge  y &lt; z \to x &lt; z\)</span></li>
+<li><strong>A10:</strong> <span class="math inline">\(\quad x &lt; y \vee x = y \vee y &lt; x\)</span></li>
+<li><strong>A11:</strong> <span class="math inline">\(\quad x &lt; y \to x+z &lt; y+z\)</span></li>
+<li><strong>A12:</strong> <span class="math inline">\(\quad 0 &lt; z \wedge x &lt; y \to x \cdot z &lt;  y \cdot z\)</span></li>
+<li><strong>A13:</strong> <span class="math inline">\(\quad x &lt; y \to \exists z \; (x+z = y)\)</span></li>
+<li><strong>A14:</strong> <span class="math inline">\(\quad 0&lt;1 \wedge \forall x \; (0 &lt; x \to 1 \le x)\)</span></li>
+<li><strong>A15:</strong> <span class="math inline">\(\quad \forall x \; (0 \le x)\)</span></li>
+</ul>
+<p>If we add the <strong>induction scheme</strong></p>
+<ul>
+<li><strong>Ind:</strong> <span class="math inline">\(\quad \forall \vec{y} \: ( \varphi(0,\vec{y}) \, \wedge \, \forall x (\varphi(x,\vec{y}) \to \varphi(x+1,,\vec{y})) \to \forall x \; \varphi(x,\vec{y})\)</span></li>
+</ul>
+<p>we obtain (a theory equivalent to) <strong>full <span class="math inline">\(\mathsf{PA}\)</span></strong>.</p>
+</section>
 <section id="theorems" class="level2">
 <h2 class="anchored" data-anchor-id="theorems">Theorems</h2>
 <div id="Theorem-1" class="Theorem">
@@ -417,10 +451,11 @@ R(\vec{a}) :\iff \mathbb{N} \models \theta(\vec{a})
 </div></details>
 </div>
 <div id="Theorem-2" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2</strong></summary><div>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be <span class="math inline">\(\mathcal{L}_A\)</span>-structures $ with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then for every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span>,<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2</strong></summary><div>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be <span class="math inline">\(\mathcal{L}_A\)</span>-structures with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then for every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span>,<p></p>
 <p><span class="math display">\[
 \mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
 \]</span></p>
+<p>(<em>This is one part of the Representability Theorem.</em>)</p>
 </div></details>
 </div>
 <div id="Theorem-3" class="Theorem">
@@ -444,11 +479,7 @@ f(n) = m \quad \Rightarrow \quad \mathsf{PA}^- \vdash \theta(\underline{n}, \und
 </div></details>
 </div>
 <div id="Theorem-5" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5</strong></summary><div>Suppose <span class="math inline">\(T\)</span> is a consistent <span class="math inline">\(\mathcal{L}\)</span>-theory with no finite models. If <span class="math inline">\(T\)</span> is <span class="math inline">\(\kappa\)</span>-categorical for some <span class="math inline">\(\kappa \geq |\mathcal{L}|\)</span>, then <span class="math inline">\(T\)</span> is complete.<p></p>
-</div></details>
-</div>
-<div id="Theorem-6" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 6</strong></summary><div>Any two countable homogeneous structures with the same age are isomorphic.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5</strong></summary><div>If <span class="math inline">\(T\)</span> is a consistent theory in the language <span class="math inline">\(\mathcal{L}_A\)</span>, then not both the diagonal function <span class="math inline">\(d\)</span> and the set <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> are representable in <span class="math inline">\(T\)</span>.<p></p>
 </div></details>
 </div>
 </section>
@@ -467,31 +498,13 @@ y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \oper
 </div></details>
 </div>
 <hr>
-<p>In the following, <span class="math inline">\(\mathcal{L}_A = \{0,1,+,\cdot, &lt;\}\)</span> denotes the language of <span class="math inline">\(\mathsf{PA}^-\)</span>. The axioms of <span class="math inline">\(\mathsf{PA}^-\)</span> are:</p>
-<ul>
-<li><strong>A1:</strong> <span class="math inline">\((x +y)+z= x + (y+z)\)</span></li>
-<li><strong>A2:</strong> <span class="math inline">\((x \cdot y) \cdot z= x \cdot (y \cdot z)\)</span></li>
-<li><strong>A3:</strong> <span class="math inline">\(x + y= y + x\)</span></li>
-<li><strong>A4:</strong> <span class="math inline">\(x \cdot y = y \cdot x\)</span></li>
-<li><strong>A5:</strong> <span class="math inline">\(x \cdot (y+z) = x \cdot y + x \cdot z\)</span></li>
-<li><strong>A6:</strong> <span class="math inline">\(x+0=x \wedge x \cdot 0 = 0\)</span></li>
-<li><strong>A7:</strong> <span class="math inline">\(x \cdot 1 = x\)</span></li>
-<li><strong>A8:</strong> <span class="math inline">\(\neg  \; x &lt; x\)</span></li>
-<li><strong>A9:</strong> <span class="math inline">\(x &lt; y \wedge  y &lt; z \to x &lt; z\)</span></li>
-<li><strong>A10:</strong> <span class="math inline">\(x &lt; y \vee x = y \vee y &lt; x\)</span></li>
-<li><strong>A11:</strong> <span class="math inline">\(x &lt; y \to x+z &lt; y+z\)</span></li>
-<li><strong>A12:</strong> <span class="math inline">\(0 &lt; z \wedge x &lt; y \to x \cdot z &lt;  y \cdot z\)</span></li>
-<li><strong>A13:</strong> <span class="math inline">\(x &lt; y \to \exists z \; (x+z = y)\)</span></li>
-<li><strong>A14:</strong> <span class="math inline">\(0&lt;1 \wedge \forall x \; (0 &lt; x \to 1 \le x)\)</span></li>
-<li><strong>A15:</strong> <span class="math inline">\(\forall x \; (0 \le x)\)</span></li>
-</ul>
 <hr>
 <div id="Problem-2" class="Problem">
 <p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 2</strong></summary><div>Show that for all <span class="math inline">\(k \in \mathbb{N}\)</span>,<p></p>
 <p><span class="math display">\[
 \mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
 \]</span></p>
-<p>(<em>Hint: use (meta-)induction on <span class="math inline">\(k\)</span>. For the inductive step, show</em></p>
+<p>(<em>Hint: use (meta-)induction on <span class="math inline">\(k\)</span>. For the inductive step, show first that</em></p>
 <p><span class="math display">\[
 \mathsf{PA}^- \vdash \forall x,y \: (y &gt; x \to y \geq x+1)
 \]</span></p>
@@ -501,7 +514,7 @@ y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \oper
 <p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 3</strong></summary><div>Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}\)</span> be non-standard. A <em>proper cut</em> in <span class="math inline">\(\mathcal{M}\)</span> is a set <span class="math inline">\(I \subsetneq M\)</span> that is an initial segment of <span class="math inline">\(M\)</span> and closed under successor, e.g.&nbsp;the standard model <span class="math inline">\(\mathbb{N}\)</span>.<p></p>
 <ol type="1">
 <li><p>Show that if <span class="math inline">\(\vec{a} \in M\)</span> and <span class="math inline">\(\mathcal{M} \models \varphi(b,\vec{a})\)</span> for all <span class="math inline">\(b \in I\)</span>, then there is <span class="math inline">\(c &gt; I\)</span> in <span class="math inline">\(M\)</span> such that <span class="math inline">\(\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})\)</span>.</p></li>
-<li><p>Show that if <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^{-}\)</span> is non-standard and satisfies the conclusion of (1.), then <span class="math inline">\(\mathcal{M} \models \mathsf{PA}\)</span>.</p></li>
+<li><p>Show that if <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^{-}\)</span> is non-standard and has the property that for any proper cut <span class="math inline">\(I\)</span> there is <span class="math inline">\(c &gt; I\)</span> in <span class="math inline">\(M\)</span> such that <span class="math inline">\(\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})\)</span> (i.e., <span class="math inline">\(\mathcal{M}\)</span> satisfies the conclusion of (1.)), then <span class="math inline">\(\mathcal{M} \models \mathsf{PA}\)</span>.</p></li>
 </ol>
 <p>(<em>Hint: For (2.), it suffices to show <span class="math inline">\(\mathcal{M}\)</span> satisfies the induction scheme.</em>)</p>
 </div></details>
@@ -920,6 +933,15 @@ y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \oper
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./032_Nov21_second_incompleteness.html" class="pagination-link" aria-label="11/19 - Consistency and Decidability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">11/19 - Consistency and Decidability</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
