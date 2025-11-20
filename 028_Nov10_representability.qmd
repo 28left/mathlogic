@@ -35,7 +35,7 @@ Note that by definition, representability is preserved when we pass to a theory 
 :::
 
 ::: {.proof}
-**(i)** 
+**(i)**
 Let $f: \mathbb{N}^k \to \mathbb{N}$ be a recursive function, so its graph $\Gamma_f$ is definable over the natural numbers by a $\Sigma_1$-formula $\exists \vec{z} \; \varphi(\vec{x},y, \vec{z})$, where $\varphi$ has only bounded quantifiers. Since every formula of the form $\exists \vec{z} \; \varphi$ is equivalent in $\mathsf{PA}^-$ to $\exists u \; \exists \vec{z} \; ( \vec{z} < u \wedge \varphi)$, we may assume that $\vec{z}$ is just a single variable $z$. We now form the $\Delta_0$-formula $\psi(\vec{x},y, z)$:
 
 $$

@@ -11,30 +11,48 @@ The third midterm will again have two parts:
 
 ::: Theorem
 
-Any two countable models of $\operatorname{DLO}$ are isomorphic.
+For every $\Delta_0$-formula $\theta(\vec{v})$, the relation
+$$
+R(\vec{a}) :\iff \mathbb{N} \models \theta(\vec{a})
+$$
+is primitive recursive.
 :::
 
 ::: Theorem
 
-Suppose for $\mathcal{L}$-theories $\mathcal{M}, \mathcal{N}$, $\mathcal{M} \subseteq \mathcal{N}$ and for any formula $\psi(x, \vec{y})$ and any $\vec{a} \in M$, if there exists $b \in N$ such that $\mathcal{N} \models \psi[b, \vec{a}]$, then there also exists $c \in M$ such that $\mathcal{N} \models \psi[c, \vec{a}]$. Then $\mathcal{M} \preceq \mathcal{N}$.
-:::
+Let $\mathcal{N}, \mathcal{M}$ be $\mathcal{L}_A$-structures $ with $\mathcal{N} \subseteq_{end} \mathcal{M}$, and let $\vec{a} \in N$. Then for every $\Delta_0$-formula $\varphi(\vec{v})$,
 
-
-::: Theorem
-
-Let $\mathcal{A}$ be an $\mathcal{L}$-structure, $\kappa$ an infinite cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\kappa \le \operatorname{card}(A)$. Then there exists a structure $\mathcal{B}$ with
 $$
-\mathcal{B} \preceq  \mathcal{A} \; , \; \operatorname{card}(B) = \kappa.
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
 $$
 :::
 
 
 ::: Theorem
 
-Let $\mathcal{A}$ be an infinite $\mathcal{L}$-structure, $\kappa$ a cardinal with $\operatorname{card}(\mathcal{L}) \le \kappa$ and $\operatorname{card}(A) \le \kappa$. Then there exists a structure $\mathcal{B}$ with
+If $f:\mathbb{N} \to \mathbb{N}$ is recursive, then there exists a $\Sigma_1$-formula $\theta(x,y)$ such that for all $m,n \in \mathbb{N}$,
+
 $$
-\mathcal{A} \preceq  \mathcal{B} \; , \;  \operatorname{card}(B) = \kappa.
+f(n) = m \quad \Rightarrow \quad \mathsf{PA}^- \vdash \theta(\underline{n}, \underline{m})
 $$
+:::
+
+
+::: Theorem
+
+Let $T$ be a recursive set of (Gödel numbers of) $\mathcal{L}_A$-sentences such that:
+
+1. $T$ is consistent, i.e., there is no $L$-sentence $\sigma$ with $\ulcorner \sigma \urcorner \in T$ and at the same time $\ulcorner \neg \sigma \urcorner \in T$,
+
+2. $T$ contains the deductive closure of $\mathsf{PA}^-$, $\ulcorner (\mathsf{PA}^-)^\vdash \urcorner \subseteq T$.
+
+Then $T$ is incomplete, i.e., there exists a sentence $\tau$ with
+
+$$
+\ulcorner  \tau \urcorner  \not \in T \text{ and } \ulcorner \neg \tau \urcorner  \not \in T.
+$$
+
+(*You can use the _Representability Theorem_ as well as the _Diagonal Lemma_.*)
 :::
 
 ::: Theorem
@@ -43,17 +61,7 @@ Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ i
 :::
 
 
-::: Theorem
 
-Let $\mathcal{M}/\mathcal{U} = \prod_{i \in I} \mathcal{M}_i / \mathcal{U}$ be an ultraproduct.
-For every $\mathcal{L}$-formula $\varphi(x_1,\dots,x_n)$ and tuples
-$\vec a \in \prod_{i \in I} M_i$,
-$$
-\mathcal{M}/\mathcal{U} \models \varphi[\vec a_{\mathcal{U}}]
-\iff
-\{\, i \in I : \mathcal{M}_i \models \varphi[\vec a_i]\,\} \in \mathcal{U}.
-$$
-:::
 
 
 ::: Theorem
@@ -88,14 +96,50 @@ You can use that the functions
 $x+y$, $x\cdot y$, $\max(x,y)$, $\min(x,y)$, $|x-y|$, $x \dot{-} y$, $\operatorname{sg}(x)$, $\bar{\operatorname{sg}}(x)$ are primitive recursive.
 :::
 
+----
 
-In the following, $\mathcal{L}_A = \{0,1,+,\cdot, <\}$ denotes the language of $\mathsf{PA}^-$.
+In the following, $\mathcal{L}_A = \{0,1,+,\cdot, <\}$ denotes the language of $\mathsf{PA}^-$. The axioms of $\mathsf{PA}^-$ are:
+
+- **A1:** $(x +y)+z= x + (y+z)$
+- **A2:** $(x \cdot y) \cdot z= x \cdot (y \cdot z)$
+- **A3:** $x + y= y + x$
+- **A4:** $x \cdot y = y \cdot x$
+- **A5:** $x \cdot (y+z) = x \cdot y + x \cdot z$
+- **A6:** $x+0=x \wedge x \cdot 0 = 0$
+- **A7:** $x \cdot 1 = x$
+- **A8:** $\neg  \; x < x$
+- **A9:** $x < y \wedge  y < z \to x < z$
+- **A10:** $x < y \vee x = y \vee y < x$
+- **A11:** $x < y \to x+z < y+z$
+- **A12:** $0 < z \wedge x < y \to x \cdot z <  y \cdot z$
+- **A13:** $x < y \to \exists z \; (x+z = y)$
+- **A14:** $0<1 \wedge \forall x \; (0 < x \to 1 \le x)$
+- **A15:** $\forall x \; (0 \le x)$
+
+---
+::: Problem
+Show that for all $k \in \mathbb{N}$,
+
+$$
+\mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+$$
+
+(*Hint: use (meta-)induction on $k$. For the inductive step, show*
+
+$$
+\mathsf{PA}^- \vdash \forall x,y \: (y > x \to y \geq x+1)
+$$
+:::
+
+
+
+
 
 ::: Problem
 
 Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathcal{M}$ is a set $I \subsetneq M$ that is an initial segment of $M$ and closed under successor, e.g.\ the standard model $\mathbb{N}$.
 
-1. Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \varphi(x,\vec{a})$.
+1. Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$.
 
 2. Show that if $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and satisfies the conclusion of (1.), then $\mathcal{M} \models \mathsf{PA}$.
 
@@ -104,38 +148,16 @@ Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathc
 
 ::: Problem
 
-A model $\mathcal{M}$ of an $\mathcal{L}$-theory $T$ is **prime** if for every $\mathcal{N} \models T$, there exists an elementary embedding of $\mathcal{M}$ into $\mathcal{N}$.
+Show that, for all functions $f : \mathbb{N}^k \to \mathbb{N}$ (where $k\geq 1$), if $f$ is representable in $\mathsf{PA}^-$ then $f$ is computable.
 
-- Show that $\mathbb{N}$ is a prime model of $\operatorname{Th}(\mathbb{N},+,\cdot, 0, 1)$.
-- Show that if $T$ is an $\omega$-categorical theory over a countable language and has no finite models, $T$ has a prime model.
+(*You can argue by Church-Turing Thesis.*)
 :::
 
 
 ::: Problem
 
- We say an $\mathcal{L}_A$-theory $T'$ is a *finite extension* of an $\mathcal{L}_A$-theory $T$ if $T' \supseteq T$ and $T' \setminus T$ is finite.
-
+**(a)** We say an $\mathcal{L}_A$-theory $T'$ is a *finite extension* of an $\mathcal{L}_A$-theory $T$ if $T' \supseteq T$ and $T' \setminus T$ is finite.
 Show that if $T$ is decidable and $T'$ is a finite extension of $T$, then $T'$ is decidable.
-:::
 
-
-
-::: Problem
-
-Let $\mathcal{L}$ be the empty language, i.e. the atomic formulas are of the form $x=y$, where $x,y$ are variables.
-Let $T$ be the theory that says that there are at most two distinct elements:
-
-$$
-\exists x, y \forall z ( z = x \lor z = x)
-$$
-
-Show that $T$ is incomplete but decidable. For decidability, it suffices to give an informal argument and invoke the Church-Turing Thesis.
-
-(*Hint: There are, up to isomorphism, just two models of $T$. Show that for each of the two models, you can decide whether an $\mathcal{L}$-sentence holds in it.*)
-:::
-
-
-::: Problem
-
-An $\mathcal{L}_A$-structure $\mathcal{A}$ is *strongly undecidable* if every $\mathcal{L}_A$-theory $T$ with $\mathcal{A} \models T$ is undecidable.
+**(b)** An $\mathcal{L}_A$-structure $\mathcal{A}$ is *strongly undecidable* if every $\mathcal{L}_A$-theory $T$ with $\mathcal{A} \models T$ is undecidable. Show that the standard model $\mathbb{N}$ is strongly undecidable.
 :::
