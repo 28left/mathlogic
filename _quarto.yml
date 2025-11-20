@@ -30,7 +30,7 @@ website:
       - href: 011_Sep24_compactness.qmd
         text: 9/24 - Compactness theorem
       - href: 012_Sep26_midterm_review.qmd
-        text: 9/26 - Midterm 1 review
+        text: Midterm 1 review
       - href: 013_Oct01_elementary_equivalence.qmd
         text: 10/1 - Elementary equivalence
       - href: 014_Oct03_elementary_substructures.qmd
@@ -48,7 +48,7 @@ website:
       - href: 020_Oct17_random_graphs.qmd
         text: 10/17 - Random graphs
       - href: midterm_2_preparation.qmd
-        text: 10/20 - Midterm 2
+        text: Midterm 2 Prep
       - href: 021_Oct22_computable_functions.qmd
         text: 10/22 - Computable functions
       - href: 022_Oct24_primitive_recursive.qmd
@@ -73,7 +73,8 @@ website:
         text: 11/19 - First Incompleteness Theorem
       - href: 032_Nov21_second_incompleteness.qmd
         text: 11/19 - Consistency and Decidability
-
+      - href: midterm_3_preparation.qmd
+        text: Midterm 3 Prep
 format:
   html:
     page-navigation: true

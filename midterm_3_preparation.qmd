@@ -7,6 +7,39 @@ The third midterm will again have two parts:
 1. Reproduce a proof (in sufficient detail) of one the theorems below we covered in class.
 2. Present a proof to one of the exercises (or a closely related problem) listed on this page.
 
+
+## Notations, Axioms
+
+In the following, $\mathcal{L}_A = \{0,1,+,\cdot, <\}$ denotes the language of $\mathsf{PA}^-$.
+
+---
+
+The axioms of $\mathsf{PA}^-$ are:
+
+- **A1:** $\quad (x +y)+z= x + (y+z)$
+- **A2:** $\quad (x \cdot y) \cdot z= x \cdot (y \cdot z)$
+- **A3:** $\quad x + y= y + x$
+- **A4:** $\quad x \cdot y = y \cdot x$
+- **A5:** $\quad x \cdot (y+z) = x \cdot y + x \cdot z$
+- **A6:** $\quad x+0=x \wedge x \cdot 0 = 0$
+- **A7:** $\quad x \cdot 1 = x$
+- **A8:** $\quad \neg  \; x < x$
+- **A9:** $\quad x < y \wedge  y < z \to x < z$
+- **A10:** $\quad x < y \vee x = y \vee y < x$
+- **A11:** $\quad x < y \to x+z < y+z$
+- **A12:** $\quad 0 < z \wedge x < y \to x \cdot z <  y \cdot z$
+- **A13:** $\quad x < y \to \exists z \; (x+z = y)$
+- **A14:** $\quad 0<1 \wedge \forall x \; (0 < x \to 1 \le x)$
+- **A15:** $\quad \forall x \; (0 \le x)$
+
+If we add the **induction scheme**
+
+- **Ind:** $\quad \forall \vec{y} \: ( \varphi(0,\vec{y}) \, \wedge \, \forall x (\varphi(x,\vec{y}) \to \varphi(x+1,,\vec{y})) \to \forall x \; \varphi(x,\vec{y})$
+
+we obtain (a theory equivalent to) **full $\mathsf{PA}$**.
+
+
+
 ## Theorems
 
 ::: Theorem
@@ -20,11 +53,13 @@ is primitive recursive.
 
 ::: Theorem
 
-Let $\mathcal{N}, \mathcal{M}$ be $\mathcal{L}_A$-structures $ with $\mathcal{N} \subseteq_{end} \mathcal{M}$, and let $\vec{a} \in N$. Then for every $\Delta_0$-formula $\varphi(\vec{v})$,
+Let $\mathcal{N}, \mathcal{M}$ be $\mathcal{L}_A$-structures  with $\mathcal{N} \subseteq_{end} \mathcal{M}$, and let $\vec{a} \in N$. Then for every $\Delta_0$-formula $\varphi(\vec{v})$,
 
 $$
 \mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
 $$
+
+(*This is one part of the Representability Theorem.*)
 :::
 
 
@@ -57,17 +92,9 @@ $$
 
 ::: Theorem
 
-Suppose $T$ is a consistent $\mathcal{L}$-theory with no finite models. If $T$ is $\kappa$-categorical for some $\kappa \geq |\mathcal{L}|$, then $T$ is complete.
+If $T$ is a consistent theory in the language $\mathcal{L}_A$, then not both the diagonal function $d$ and the set $\ulcorner T^\vdash \urcorner$ are representable in $T$.
 :::
 
-
-
-
-
-::: Theorem
-
-Any two countable homogeneous structures with the same age are isomorphic.
-:::
 
 
 
@@ -98,23 +125,7 @@ $x+y$, $x\cdot y$, $\max(x,y)$, $\min(x,y)$, $|x-y|$, $x \dot{-} y$, $\operatorn
 
 ----
 
-In the following, $\mathcal{L}_A = \{0,1,+,\cdot, <\}$ denotes the language of $\mathsf{PA}^-$. The axioms of $\mathsf{PA}^-$ are:
 
-- **A1:** $(x +y)+z= x + (y+z)$
-- **A2:** $(x \cdot y) \cdot z= x \cdot (y \cdot z)$
-- **A3:** $x + y= y + x$
-- **A4:** $x \cdot y = y \cdot x$
-- **A5:** $x \cdot (y+z) = x \cdot y + x \cdot z$
-- **A6:** $x+0=x \wedge x \cdot 0 = 0$
-- **A7:** $x \cdot 1 = x$
-- **A8:** $\neg  \; x < x$
-- **A9:** $x < y \wedge  y < z \to x < z$
-- **A10:** $x < y \vee x = y \vee y < x$
-- **A11:** $x < y \to x+z < y+z$
-- **A12:** $0 < z \wedge x < y \to x \cdot z <  y \cdot z$
-- **A13:** $x < y \to \exists z \; (x+z = y)$
-- **A14:** $0<1 \wedge \forall x \; (0 < x \to 1 \le x)$
-- **A15:** $\forall x \; (0 \le x)$
 
 ---
 ::: Problem
@@ -124,7 +135,7 @@ $$
 \mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
 $$
 
-(*Hint: use (meta-)induction on $k$. For the inductive step, show*
+(*Hint: use (meta-)induction on $k$. For the inductive step, show first that*
 
 $$
 \mathsf{PA}^- \vdash \forall x,y \: (y > x \to y \geq x+1)
@@ -141,7 +152,7 @@ Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathc
 
 1. Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$.
 
-2. Show that if $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and satisfies the conclusion of (1.), then $\mathcal{M} \models \mathsf{PA}$.
+2. Show that if $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and has the property that for any proper cut $I$ there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$ (i.e., $\mathcal{M}$ satisfies the conclusion of (1.)), then $\mathcal{M} \models \mathsf{PA}$.
 
 (*Hint: For (2.), it suffices to show $\mathcal{M}$ satisfies the induction scheme.*)
 :::
