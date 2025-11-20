@@ -120,7 +120,7 @@ $$
 are primitive recursive.
 
 You can use that the functions
-$x+y$, $x\cdot y$, $\max(x,y)$, $\min(x,y)$, $|x-y|$, $x \dot{-} y$, $\operatorname{sg}(x)$, $\bar{\operatorname{sg}}(x)$ are primitive recursive.
+$x+y$, $x\cdot y$, $\max(x,y)$, $\min(x,y)$, $|x-y|$, $x \dot{-} y$, $\operatorname{sg}(x)$, $\overline{\operatorname{sg}}(x)$ are primitive recursive.
 :::
 
 ----
