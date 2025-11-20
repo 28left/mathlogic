@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Math 557 Fall 2025</title>
+<title>MATH 557 Midterm 3 Preparation – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
@@ -77,23 +93,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
-.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -366,14 +366,21 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="about.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#theorems" id="toc-theorems" class="nav-link active" data-scroll-target="#theorems">Theorems</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="midterm_3_preparation.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">MATH 557 Midterm 3 Preparation</h1>
 </div>
 
 
@@ -390,9 +397,122 @@ window.Quarto = {
 </header>
 
 
-<p>About this site</p>
+<p>The third midterm will again have two parts:</p>
+<ol type="1">
+<li>Reproduce a proof (in sufficient detail) of one the theorems below we covered in class.</li>
+<li>Present a proof to one of the exercises (or a closely related problem) listed on this page.</li>
+</ol>
+<section id="theorems" class="level2">
+<h2 class="anchored" data-anchor-id="theorems">Theorems</h2>
+<div id="Theorem-1" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 1</strong></summary><div>For every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\theta(\vec{v})\)</span>, the relation <span class="math display">\[
+R(\vec{a}) :\iff \mathbb{N} \models \theta(\vec{a})
+\]</span> is primitive recursive.<p></p>
+</div></details>
+</div>
+<div id="Theorem-2" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2</strong></summary><div>Let <span class="math inline">\(\mathcal{N}, \mathcal{M}\)</span> be <span class="math inline">\(\mathcal{L}_A\)</span>-structures $ with <span class="math inline">\(\mathcal{N} \subseteq_{end} \mathcal{M}\)</span>, and let <span class="math inline">\(\vec{a} \in N\)</span>. Then for every <span class="math inline">\(\Delta_0\)</span>-formula <span class="math inline">\(\varphi(\vec{v})\)</span>,<p></p>
+<p><span class="math display">\[
+\mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
+\]</span></p>
+</div></details>
+</div>
+<div id="Theorem-3" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3</strong></summary><div>If <span class="math inline">\(f:\mathbb{N} \to \mathbb{N}\)</span> is recursive, then there exists a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(x,y)\)</span> such that for all <span class="math inline">\(m,n \in \mathbb{N}\)</span>,<p></p>
+<p><span class="math display">\[
+f(n) = m \quad \Rightarrow \quad \mathsf{PA}^- \vdash \theta(\underline{n}, \underline{m})
+\]</span></p>
+</div></details>
+</div>
+<div id="Theorem-4" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 4</strong></summary><div>Let <span class="math inline">\(T\)</span> be a recursive set of (Gödel numbers of) <span class="math inline">\(\mathcal{L}_A\)</span>-sentences such that:<p></p>
+<ol type="1">
+<li><p><span class="math inline">\(T\)</span> is consistent, i.e., there is no <span class="math inline">\(L\)</span>-sentence <span class="math inline">\(\sigma\)</span> with <span class="math inline">\(\ulcorner \sigma \urcorner \in T\)</span> and at the same time <span class="math inline">\(\ulcorner \neg \sigma \urcorner \in T\)</span>,</p></li>
+<li><p><span class="math inline">\(T\)</span> contains the deductive closure of <span class="math inline">\(\mathsf{PA}^-\)</span>, <span class="math inline">\(\ulcorner (\mathsf{PA}^-)^\vdash \urcorner \subseteq T\)</span>.</p></li>
+</ol>
+<p>Then <span class="math inline">\(T\)</span> is incomplete, i.e., there exists a sentence <span class="math inline">\(\tau\)</span> with</p>
+<p><span class="math display">\[
+\ulcorner  \tau \urcorner  \not \in T \text{ and } \ulcorner \neg \tau \urcorner  \not \in T.
+\]</span></p>
+<p>(<em>You can use the <em>Representability Theorem</em> as well as the <em>Diagonal Lemma</em>.</em>)</p>
+</div></details>
+</div>
+<div id="Theorem-5" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5</strong></summary><div>Suppose <span class="math inline">\(T\)</span> is a consistent <span class="math inline">\(\mathcal{L}\)</span>-theory with no finite models. If <span class="math inline">\(T\)</span> is <span class="math inline">\(\kappa\)</span>-categorical for some <span class="math inline">\(\kappa \geq |\mathcal{L}|\)</span>, then <span class="math inline">\(T\)</span> is complete.<p></p>
+</div></details>
+</div>
+<div id="Theorem-6" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 6</strong></summary><div>Any two countable homogeneous structures with the same age are isomorphic.<p></p>
+</div></details>
+</div>
+</section>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<div id="Problem-1" class="Problem">
+<p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 1</strong></summary><div>Show that the functions <span class="math display">\[
+\operatorname{rem}(x,y) = \text{remainder when $y$ is divided by $x$}
+\]</span> (put <span class="math inline">\(\operatorname{rem}(0,y) = y\)</span> to make it total) and <span class="math display">\[
+\operatorname{qt}(x,y) = \text{quotient when $y$ is divided by $x$}
+\]</span> (put <span class="math inline">\(\operatorname{qt}(0,y) = 0\)</span>) are primitive recursive.<p></p>
+<p>In other words, show that the uniquely determined functions (for <span class="math inline">\(x \geq 1\)</span>) satisfying <span class="math display">\[
+y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \operatorname{rem}(x,y) &lt; x
+\]</span> are primitive recursive.</p>
+<p>You can use that the functions <span class="math inline">\(x+y\)</span>, <span class="math inline">\(x\cdot y\)</span>, <span class="math inline">\(\max(x,y)\)</span>, <span class="math inline">\(\min(x,y)\)</span>, <span class="math inline">\(|x-y|\)</span>, <span class="math inline">\(x \dot{-} y\)</span>, <span class="math inline">\(\operatorname{sg}(x)\)</span>, <span class="math inline">\(\bar{\operatorname{sg}}(x)\)</span> are primitive recursive.</p>
+</div></details>
+</div>
+<hr>
+<p>In the following, <span class="math inline">\(\mathcal{L}_A = \{0,1,+,\cdot, &lt;\}\)</span> denotes the language of <span class="math inline">\(\mathsf{PA}^-\)</span>. The axioms of <span class="math inline">\(\mathsf{PA}^-\)</span> are:</p>
+<ul>
+<li><strong>A1:</strong> <span class="math inline">\((x +y)+z= x + (y+z)\)</span></li>
+<li><strong>A2:</strong> <span class="math inline">\((x \cdot y) \cdot z= x \cdot (y \cdot z)\)</span></li>
+<li><strong>A3:</strong> <span class="math inline">\(x + y= y + x\)</span></li>
+<li><strong>A4:</strong> <span class="math inline">\(x \cdot y = y \cdot x\)</span></li>
+<li><strong>A5:</strong> <span class="math inline">\(x \cdot (y+z) = x \cdot y + x \cdot z\)</span></li>
+<li><strong>A6:</strong> <span class="math inline">\(x+0=x \wedge x \cdot 0 = 0\)</span></li>
+<li><strong>A7:</strong> <span class="math inline">\(x \cdot 1 = x\)</span></li>
+<li><strong>A8:</strong> <span class="math inline">\(\neg  \; x &lt; x\)</span></li>
+<li><strong>A9:</strong> <span class="math inline">\(x &lt; y \wedge  y &lt; z \to x &lt; z\)</span></li>
+<li><strong>A10:</strong> <span class="math inline">\(x &lt; y \vee x = y \vee y &lt; x\)</span></li>
+<li><strong>A11:</strong> <span class="math inline">\(x &lt; y \to x+z &lt; y+z\)</span></li>
+<li><strong>A12:</strong> <span class="math inline">\(0 &lt; z \wedge x &lt; y \to x \cdot z &lt;  y \cdot z\)</span></li>
+<li><strong>A13:</strong> <span class="math inline">\(x &lt; y \to \exists z \; (x+z = y)\)</span></li>
+<li><strong>A14:</strong> <span class="math inline">\(0&lt;1 \wedge \forall x \; (0 &lt; x \to 1 \le x)\)</span></li>
+<li><strong>A15:</strong> <span class="math inline">\(\forall x \; (0 \le x)\)</span></li>
+</ul>
+<hr>
+<div id="Problem-2" class="Problem">
+<p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 2</strong></summary><div>Show that for all <span class="math inline">\(k \in \mathbb{N}\)</span>,<p></p>
+<p><span class="math display">\[
+\mathsf{PA}^- \vdash \forall x \:(x \le  \underline{k} \to  (x = \underline{0} \; \vee \ldots \vee \; x = \underline{k})
+\]</span></p>
+<p>(<em>Hint: use (meta-)induction on <span class="math inline">\(k\)</span>. For the inductive step, show</em></p>
+<p><span class="math display">\[
+\mathsf{PA}^- \vdash \forall x,y \: (y &gt; x \to y \geq x+1)
+\]</span></p>
+</div></details>
+</div>
+<div id="Problem-3" class="Problem">
+<p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 3</strong></summary><div>Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}\)</span> be non-standard. A <em>proper cut</em> in <span class="math inline">\(\mathcal{M}\)</span> is a set <span class="math inline">\(I \subsetneq M\)</span> that is an initial segment of <span class="math inline">\(M\)</span> and closed under successor, e.g.&nbsp;the standard model <span class="math inline">\(\mathbb{N}\)</span>.<p></p>
+<ol type="1">
+<li><p>Show that if <span class="math inline">\(\vec{a} \in M\)</span> and <span class="math inline">\(\mathcal{M} \models \varphi(b,\vec{a})\)</span> for all <span class="math inline">\(b \in I\)</span>, then there is <span class="math inline">\(c &gt; I\)</span> in <span class="math inline">\(M\)</span> such that <span class="math inline">\(\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})\)</span>.</p></li>
+<li><p>Show that if <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^{-}\)</span> is non-standard and satisfies the conclusion of (1.), then <span class="math inline">\(\mathcal{M} \models \mathsf{PA}\)</span>.</p></li>
+</ol>
+<p>(<em>Hint: For (2.), it suffices to show <span class="math inline">\(\mathcal{M}\)</span> satisfies the induction scheme.</em>)</p>
+</div></details>
+</div>
+<div id="Problem-4" class="Problem">
+<p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 4</strong></summary><div>Show that, for all functions <span class="math inline">\(f : \mathbb{N}^k \to \mathbb{N}\)</span> (where <span class="math inline">\(k\geq 1\)</span>), if <span class="math inline">\(f\)</span> is representable in <span class="math inline">\(\mathsf{PA}^-\)</span> then <span class="math inline">\(f\)</span> is computable.<p></p>
+<p>(<em>You can argue by Church-Turing Thesis.</em>)</p>
+</div></details>
+</div>
+<div id="Problem-5" class="Problem">
+<p></p><details class="Problem fbx-simplebox fbx-default" open=""><summary><strong>Problem 5</strong></summary><div><strong>(a)</strong> We say an <span class="math inline">\(\mathcal{L}_A\)</span>-theory <span class="math inline">\(T'\)</span> is a <em>finite extension</em> of an <span class="math inline">\(\mathcal{L}_A\)</span>-theory <span class="math inline">\(T\)</span> if <span class="math inline">\(T' \supseteq T\)</span> and <span class="math inline">\(T' \setminus T\)</span> is finite. Show that if <span class="math inline">\(T\)</span> is decidable and <span class="math inline">\(T'\)</span> is a finite extension of <span class="math inline">\(T\)</span>, then <span class="math inline">\(T'\)</span> is decidable.<p></p>
+<p><strong>(b)</strong> An <span class="math inline">\(\mathcal{L}_A\)</span>-structure <span class="math inline">\(\mathcal{A}\)</span> is <em>strongly undecidable</em> if every <span class="math inline">\(\mathcal{L}_A\)</span>-theory <span class="math inline">\(T\)</span> with <span class="math inline">\(\mathcal{A} \models T\)</span> is undecidable. Show that the standard model <span class="math inline">\(\mathbb{N}\)</span> is strongly undecidable.</p>
+</div></details>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

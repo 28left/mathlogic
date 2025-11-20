@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Math 557 Fall 2025</title>
+<title>Math 557 Nov 21 – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,31 +69,31 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Exercise {
-  --color1: #FFE6B4;
+.Corollary {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Take-Home {
-  --color1: #FF7E79;
+.Exercise {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
 .Problem {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Lemma {
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -366,14 +366,25 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="about.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#consistency-and-undecidability" id="toc-consistency-and-undecidability" class="nav-link active" data-scroll-target="#consistency-and-undecidability">Consistency and Undecidability</a>
+  <ul class="collapse">
+  <li><a href="#the-second-incompleteness-theorem" id="toc-the-second-incompleteness-theorem" class="nav-link" data-scroll-target="#the-second-incompleteness-theorem">The Second Incompleteness Theorem</a></li>
+  <li><a href="#truth-is-not-definable" id="toc-truth-is-not-definable" class="nav-link" data-scroll-target="#truth-is-not-definable">Truth is Not Definable</a></li>
+  <li><a href="#undecidability" id="toc-undecidability" class="nav-link" data-scroll-target="#undecidability">Undecidability</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="032_Nov21_second_incompleteness.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Math 557 Nov 21</h1>
 </div>
 
 
@@ -390,11 +401,181 @@ window.Quarto = {
 </header>
 
 
-<p>About this site</p>
+<section id="consistency-and-undecidability" class="level1">
+<h1>Consistency and Undecidability</h1>
+<section id="the-second-incompleteness-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="the-second-incompleteness-theorem">The Second Incompleteness Theorem</h2>
+<p>As we saw previously, for a recursivley axiomatizable theory <span class="math inline">\(T\)</span>, the relation</p>
+<p><span class="math display">\[
+\operatorname{Prf}(x,y) :\ \iff x = \ulcorner \psi \urcorner, y = \langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle, \varphi_1, \dots, \varphi_n \text{ is a $T$-proof of } \psi
+\]</span></p>
+<p>is recursive. It follows that for such <span class="math inline">\(T\)</span>, the relation</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{prov}_T(v) &amp; : \Leftrightarrow \text{"v is the Gödel number of a formula $\varphi$ and $\varphi$ is provable in $T$"} \\
+&amp; \;\; \Leftrightarrow \exists y \; \operatorname{Prf}(x,y)
+\end{aligned}
+\]</span></p>
+<p>is r.e. and thus definable by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(v)\)</span>.</p>
+<p>In <span class="math inline">\(\mathsf{PA}\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> one can verify the following <strong>derivability conditions</strong>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(D1)&amp; \quad  T  \vdash \sigma \;  \Rightarrow \;  T \vdash \theta(\ulcorner \sigma \urcorner) \\
+(D2)&amp; \quad T  \vdash \; \theta(\ulcorner \sigma \to \tau \urcorner)  \to (\theta( \ulcorner \sigma \urcorner) \to \theta( \ulcorner \tau \urcorner))\\
+(D3) &amp; \quad T \vdash \; \theta(\ulcorner \sigma \urcorner)  \to \theta(\ulcorner \theta(\ulcorner \sigma \urcorner) \urcorner)
+\end{aligned}
+\]</span></p>
+<p>Here <span class="math inline">\(\sigma, \tau\)</span> are arbitrary sentences of the language <span class="math inline">\(\mathcal{L}_A\)</span>, and the Gödel numbers <span class="math inline">\(n\)</span> should be replaced in these formulas by the corresponding terms <span class="math inline">\(\underline{n}\)</span>.</p>
+<p>Using such a proof predicate, one can also formalize the <strong>consistency</strong> of a theory, for example: <span class="math display">\[
+\mathrm{Con}_T \quad : \Leftrightarrow \quad \neg \theta( \ulcorner 0=1 \urcorner).
+\]</span></p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-second-incompleteness" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Second Gödel Incompleteness Theorem)</strong></span> <br>
+Let <span class="math inline">\(T\)</span> be a theory in the language <span class="math inline">\(L\)</span> for which there exists a formal proof predicate <span class="math inline">\(\theta\)</span> as defined above (e.g., <span class="math inline">\(T = \mathsf{PA}\)</span>). Then:</p>
+<p><span class="math display">\[
+T \text{ consistent} \quad \Longrightarrow \quad T \nvdash \mathrm{Con}_T.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (Sketch). </span>By the Diagonalization Lemma, there exists a sentence <span class="math inline">\(\tau\)</span> such that</p>
+<p><span id="eq-1"><span class="math display">\[
+T \vdash \tau \; \leftrightarrow \; \neg \theta(\underline{\ulcorner \tau \urcorner})
+\tag{1}\]</span></span></p>
+<p>If <span class="math inline">\(T \vdash \tau\)</span>, it follows from <span class="math inline">\((D1)\)</span> that <span class="math display">\[
+T \vdash \theta(\underline{\ulcorner \tau \urcorner})
+\]</span></p>
+<p>By (1), this implies <span class="math inline">\(T\)</span> is inconsistent. This yields</p>
+<p><span id="eq-2"><span class="math display">\[
+T \text{ consistent } \; \; \Rightarrow \; \;  T \nvdash \tau.
+\tag{2}\]</span></span></p>
+<p>One can show that this proof can be formalized and represented in <span class="math inline">\(T\)</span> using the proof predicate <span class="math inline">\(\theta\)</span>, thus</p>
+<p><span id="eq-3"><span class="math display">\[
+T  \vdash \mathrm{Con}_T  \to \neg \theta(\underline{\ulcorner \tau \urcorner}).
+\tag{3}\]</span></span></p>
+<p>If <span class="math inline">\(T\)</span> is consitent, by (2), <span class="math inline">\(T\nvdash \tau\)</span>. Using (1), this implies <span class="math inline">\(\neg \theta(\underline{\ulcorner \tau \urcorner})\)</span>. Thus, by (3), <span class="math inline">\(T  \nvdash \mathrm{Con}_T\)</span>.</p>
+</div>
+</section>
+<section id="truth-is-not-definable" class="level2">
+<h2 class="anchored" data-anchor-id="truth-is-not-definable">Truth is Not Definable</h2>
+<p>While the usual syntactic concepts formed for a formal language <span class="math inline">\(\mathcal{L}\)</span> can be defined in the language of number theory and their essential properties can be proven in <span class="math inline">\(\mathsf{PA}\)</span>, this is not possible for the semantic notion of truth:</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-tarski" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Tarski’s Undefinability Theorem)</strong></span> <br>
+Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. Then there is no <span class="math inline">\(\mathcal{L}_A\)</span>-formula <span class="math inline">\(\theta(v)\)</span> such that for all natural numbers <span class="math inline">\(n\)</span></p>
+<p><span class="math display">\[
+\mathcal{M} \models \theta(\underline{n}) \iff n = \ulcorner \sigma \urcorner \text{ for an sentence } \sigma \text{ with } \mathcal{M} \models \sigma.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>If there were such a truth definition <span class="math inline">\(\theta\)</span>, then by the Diagonal Lemma we could find a sentence <span class="math inline">\(G\)</span> such that <span class="math display">\[
+\mathsf{PA}^- \vdash G  \leftrightarrow \neg \theta(\underline{\ulcorner G \urcorner}),
+\]</span> in particular,</p>
+<p><span class="math display">\[
+\mathcal{M} \models G \; \iff \;  \mathcal{M} \models \neg \theta(\underline{ \ulcorner G \urcorner}).
+\]</span></p>
+<p>On the other hand, for the truth definition we would need: <span class="math display">\[
+\mathcal{M} \models G \iff \mathcal{M} \models  \theta(\underline{ \ulcorner G \urcorner}),
+\]</span> which yields a contradiction.</p>
+</div>
+</section>
+<section id="undecidability" class="level2">
+<h2 class="anchored" data-anchor-id="undecidability">Undecidability</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-undecidable" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Theorem)</strong></span> <br>
+If <span class="math inline">\(T\)</span> is a consistent theory in the language <span class="math inline">\(\mathcal{L}_A\)</span>, then not both the diagonal function <span class="math inline">\(d\)</span> and the set <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> are representable in <span class="math inline">\(T\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We assume that both <span class="math inline">\(d\)</span> is represented by a formula <span class="math inline">\(\delta(x,y)\)</span> and the set <span class="math inline">\(\ulcorner T \urcorner\)</span> is represented by a formula <span class="math inline">\(\varphi_T(v_0)\)</span> in <span class="math inline">\(T\)</span>, and we choose <span class="math inline">\(\theta = \neg \varphi_T\)</span>, so that from the Diagonal Lemma we obtain the existence of a formula <span class="math inline">\(G\)</span> such that <span id="eq-4"><span class="math display">\[
+T \vdash G \leftrightarrow \neg \varphi_T(\underline{\ulcorner G \urcorner}).
+\tag{4}\]</span></span></p>
+<p><strong>Case 1:</strong> <span class="math inline">\(T \vdash G\)</span>, thus <span class="math inline">\(\ulcorner G \urcorner \in \ulcorner T^\vdash \urcorner\)</span>. Then by representability, <span class="math inline">\(T \vdash \varphi_T(\underline{\ulcorner G \urcorner})\)</span> and with (4) also <span class="math inline">\(T  \vdash \neg G\)</span>, i.e., <span class="math inline">\(T\)</span> would be inconsistent.</p>
+<p><strong>Case 2:</strong> <span class="math inline">\(T \not \vdash G\)</span>, thus <span class="math inline">\(\ulcorner G \urcorner \not \in \ulcorner T^\vdash \urcorner\)</span>. Then again by representability, <span class="math inline">\(T \vdash \neg \varphi_T(\underline{\ulcorner G \urcorner})\)</span>, and with (4) <span class="math inline">\(T  \vdash G\)</span>, contradiction!</p>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-undecidability-arith" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (Church)</strong></span> <br>
+If <span class="math inline">\(T\)</span> is a consistent theory in the language <span class="math inline">\(\mathcal{L}_A\)</span> which extends <span class="math inline">\(\mathsf{PA}^-\)</span>, then <span class="math inline">\(T\)</span> is undecidable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>If <span class="math inline">\(T\)</span> extends <span class="math inline">\(\mathsf{PA}^-\)</span>, every recursive function, including <span class="math inline">\(d\)</span>, is representable in <span class="math inline">\(T\)</span>. Hence, by <a href="#thm-undecidable" class="quarto-xref">Theorem&nbsp;3</a>, <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> is not representable. It follows that <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> is not recursive (since all recursive sets are representable in any consistent extension of <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-undecidable-valid" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2 (Church)</strong></span> <br>
+The set</p>
+<p><span class="math display">\[
+\operatorname{VAL} := \{\ulcorner \sigma \urcorner : \sigma \;\; \mathcal{L}_A\text{-sentence with } \vdash \sigma\}
+\]</span> (i.e.&nbsp;the set of all sentences that are validities) is not recursive.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-finite-extensions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> We say an <span class="math inline">\(\mathcal{L}_A\)</span>-theory <span class="math inline">\(T'\)</span> is a <em>finite extension</em> of an <span class="math inline">\(\mathcal{L}_A\)</span>-theory <span class="math inline">\(T\)</span> if <span class="math inline">\(T' \supseteq T\)</span> and <span class="math inline">\(T' \setminus T\)</span> is finite. Show that if <span class="math inline">\(T\)</span> is decidable and <span class="math inline">\(T'\)</span> is a finite extension of <span class="math inline">\(T\)</span>, then <span class="math inline">\(T'\)</span> is decidable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (<a href="#cor-undecidable-valid" class="quarto-xref">Corollary&nbsp;2</a>). </span>Since <span class="math inline">\(\mathsf{PA}^-\)</span> is finite, it is a finite extension of the empty theory <span class="math inline">\(T = \emptyset\)</span>. Since <span class="math inline">\(\operatorname{VAL} = \emptyset^\vdash\)</span>, by <a href="#exr-finite-extensions" class="quarto-xref">Exercise&nbsp;1</a>, if <span class="math inline">\(\operatorname{VAL}\)</span> were recursive so would be <span class="math inline">\((\mathsf{PA}^-)^\vdash\)</span>, contradicting <a href="#cor-undecidability-arith" class="quarto-xref">Corollary&nbsp;1</a>.</p>
+</div>
 
 
+</section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><span class="math inline">\(\mathsf{PA}^-\)</span> is not strong enough for this<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
