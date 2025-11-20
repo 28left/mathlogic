@@ -1,6 +1,6 @@
 project:
   type: website
-  
+
 website:
   title: "Math 557 Fall 2025"
   sidebar:
@@ -48,7 +48,7 @@ website:
       - href: 020_Oct17_random_graphs.qmd
         text: 10/17 - Random graphs
       - href: midterm_2_preparation.qmd
-        text: 10/20 - Midterm 2 
+        text: 10/20 - Midterm 2
       - href: 021_Oct22_computable_functions.qmd
         text: 10/22 - Computable functions
       - href: 022_Oct24_primitive_recursive.qmd
@@ -71,9 +71,8 @@ website:
         text: 11/17 - Diagonal Lemma
       - href: 031_Nov19_first_incompleteness.qmd
         text: 11/19 - First Incompleteness Theorem
-
-
-
+      - href: 032_Nov21_second_incompleteness.qmd
+        text: 11/19 - Consistency and Decidability
 
 format:
   html:
@@ -91,7 +90,7 @@ format:
       - brand
     css: styles.css
     toc: true
-  pdf: 
+  pdf:
     documentclass: article
     geometry: "margin=0.8in"
     filters:
@@ -166,5 +165,5 @@ callouty-theorem:
       appearance: simple
 
 search-replace:
-  +L : $\mathcal{L}$
-  +PA : \mathsf{PA}
+  +L: $\mathcal{L}$
+  +PA: \mathsf{PA}
