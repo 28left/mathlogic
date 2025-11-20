@@ -1,0 +1,169 @@
+---
+title: "Math 557 Nov 21"
+---
+
+# Consistency and Undecidability
+
+## The Second Incompleteness Theorem
+
+As we saw previously, for a recursivley axiomatizable theory $T$, the relation
+
+$$
+\operatorname{Prf}(x,y) :\ \iff x = \ulcorner \psi \urcorner, y = \langle \ulcorner \varphi_1 \urcorner, \dots, \ulcorner \varphi_n \urcorner \rangle, \varphi_1, \dots, \varphi_n \text{ is a $T$-proof of } \psi
+$$
+
+is recursive. It follows that for such $T$, the relation
+
+$$
+\begin{aligned}
+\operatorname{prov}_T(v) & : \Leftrightarrow \text{"v is the Gödel number of a formula $\varphi$ and $\varphi$ is provable in $T$"} \\
+& \;\; \Leftrightarrow \exists y \; \operatorname{Prf}(x,y)
+\end{aligned}
+$$
+
+is r.e. and thus definable by a $\Sigma_1$-formula $\theta(v)$.
+
+In $\mathsf{PA}$^[$\mathsf{PA}^-$ is not strong enough for this] one can verify the following **derivability conditions**:
+
+$$
+\begin{aligned}
+(D1)& \quad  T  \vdash \sigma \;  \Rightarrow \;  T \vdash \theta(\ulcorner \sigma \urcorner) \\
+(D2)& \quad T  \vdash \; \theta(\ulcorner \sigma \to \tau \urcorner)  \to (\theta( \ulcorner \sigma \urcorner) \to \theta( \ulcorner \tau \urcorner))\\
+(D3) & \quad T \vdash \; \theta(\ulcorner \sigma \urcorner)  \to \theta(\ulcorner \theta(\ulcorner \sigma \urcorner) \urcorner)
+\end{aligned}
+$$
+
+Here $\sigma, \tau$ are arbitrary sentences of the language $\mathcal{L}_A$, and the Gödel numbers $n$ should be replaced in these formulas by the corresponding terms $\underline{n}$.
+
+Using such a proof predicate, one can also formalize the **consistency** of a theory, for example:
+$$
+\mathrm{Con}_T \quad : \Leftrightarrow \quad \neg \theta( \ulcorner 0=1 \urcorner).
+$$
+
+
+::: {#thm-second-incompleteness}
+## Second Gödel Incompleteness Theorem
+\
+Let $T$ be a theory in the language $L$ for which there exists a formal proof predicate $\theta$ as defined above (e.g., $T = \mathsf{PA}$). Then:
+
+$$
+T \text{ consistent} \quad \Longrightarrow \quad T \nvdash \mathrm{Con}_T.
+$$
+:::
+
+::: {.proof}
+## Sketch
+
+By the Diagonalization Lemma, there exists a sentence $\tau$ such that
+
+$$
+T \vdash \tau \; \leftrightarrow \; \neg \theta(\underline{\ulcorner \tau \urcorner})
+$$ {#eq-1}
+
+If $T \vdash \tau$, it follows from $(D1)$ that
+$$
+T \vdash \theta(\underline{\ulcorner \tau \urcorner})
+$$
+
+By (1), this implies $T$ is inconsistent. This yields
+
+$$
+T \text{ consistent } \; \; \Rightarrow \; \;  T \nvdash \tau.
+$$ {#eq-2}
+
+One can show that this proof can be formalized and represented in $T$ using the proof predicate $\theta$, thus
+
+$$
+T  \vdash \mathrm{Con}_T  \to \neg \theta(\underline{\ulcorner \tau \urcorner}).
+$$ {#eq-3}
+
+If $T$ is consitent, by (2), $T\nvdash \tau$. Using (1), this implies $\neg \theta(\underline{\ulcorner \tau \urcorner})$. Thus, by (3), $T  \nvdash \mathrm{Con}_T$.
+:::
+
+
+
+## Truth is Not Definable
+
+While the usual syntactic concepts formed for a formal language $\mathcal{L}$ can be defined in the language of number theory and their essential properties can be proven in $\mathsf{PA}$, this is not possible for the semantic notion of truth:
+
+::: {#thm-tarski}
+## Tarski's Undefinability Theorem
+\
+Let $\mathcal{M} \models \mathsf{PA}^-$. Then there is no $\mathcal{L}_A$-formula $\theta(v)$ such that for all natural numbers $n$
+
+$$
+\mathcal{M} \models \theta(\underline{n}) \iff n = \ulcorner \sigma \urcorner \text{ for an sentence } \sigma \text{ with } \mathcal{M} \models \sigma.
+$$
+:::
+
+::: {.proof}
+If there were such a truth definition $\theta$, then by the Diagonal Lemma we could find a sentence $G$ such that
+$$
+\mathsf{PA}^- \vdash G  \leftrightarrow \neg \theta(\underline{\ulcorner G \urcorner}),
+$$
+in particular,
+
+$$
+\mathcal{M} \models G \; \iff \;  \mathcal{M} \models \neg \theta(\underline{ \ulcorner G \urcorner}).
+$$
+
+On the other hand, for the truth definition we would need:
+$$
+\mathcal{M} \models G \iff \mathcal{M} \models  \theta(\underline{ \ulcorner G \urcorner}),
+$$
+which yields a contradiction.
+:::
+
+
+## Undecidability
+
+::: {#thm-undecidable}
+## Theorem
+\
+If $T$ is a consistent theory in the language $\mathcal{L}_A$, then not both the diagonal function $d$ and the set $\ulcorner T^\vdash \urcorner$ are representable in $T$.
+:::
+
+::: {.proof}
+We assume that both $d$ is represented by a formula $\delta(x,y)$ and the set $\ulcorner T \urcorner$ is represented by a formula $\varphi_T(v_0)$ in $T$, and we choose $\theta = \neg \varphi_T$, so that from the Diagonal Lemma we obtain the existence of a formula $G$ such that
+$$
+T \vdash G \leftrightarrow \neg \varphi_T(\underline{\ulcorner G \urcorner}).
+$$ {#eq-4}
+
+**Case 1:** $T \vdash G$, thus $\ulcorner G \urcorner \in \ulcorner T^\vdash \urcorner$.  Then by representability, $T \vdash \varphi_T(\underline{\ulcorner G \urcorner})$ and with (4) also $T  \vdash \neg G$, i.e., $T$ would be inconsistent.
+
+**Case 2:** $T \not \vdash G$, thus $\ulcorner G \urcorner \not \in \ulcorner T^\vdash \urcorner$.  Then again by representability, $T \vdash \neg \varphi_T(\underline{\ulcorner G \urcorner})$, and with (4) $T  \vdash G$, contradiction!
+:::
+
+
+::: {#cor-undecidability-arith}
+## Church
+\
+If $T$ is a consistent theory in the language $\mathcal{L}_A$ which extends $\mathsf{PA}^-$, then $T$ is undecidable.
+:::
+
+::: {.proof}
+If $T$ extends $\mathsf{PA}^-$, every recursive function, including $d$, is representable in $T$. Hence, by @thm-undecidable, $\ulcorner T^\vdash \urcorner$ is not representable. It follows that $\ulcorner T^\vdash \urcorner$ is not recursive (since all recursive sets are representable in any consistent extension of $\mathsf{PA}^-$.
+:::
+
+
+::: {#cor-undecidable-valid}
+## Church
+\
+The set
+
+$$
+\operatorname{VAL} := \{\ulcorner \sigma \urcorner : \sigma \;\; \mathcal{L}_A\text{-sentence with } \vdash \sigma\}
+$$
+(i.e.\ the set of all sentences that are validities) is not recursive.
+:::
+
+::: {#exr-finite-extensions}
+We say an $\mathcal{L}_A$-theory $T'$ is a *finite extension* of an $\mathcal{L}_A$-theory $T$ if $T' \supseteq T$ and $T' \setminus T$ is finite.
+Show that if $T$ is decidable and $T'$ is a finite extension of $T$, then $T'$ is decidable.
+:::
+
+::: {.proof}
+## @cor-undecidable-valid
+
+Since $\mathsf{PA}^-$ is finite, it is a finite extension of the empty theory $T = \emptyset$. Since $\operatorname{VAL} = \emptyset^\vdash$, by @exr-finite-extensions, if $\operatorname{VAL}$ were recursive so would be $(\mathsf{PA}^-)^\vdash$, contradicting @cor-undecidability-arith.
+:::
