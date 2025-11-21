@@ -65,7 +65,7 @@ $$
 T \vdash \theta(\underline{\ulcorner \tau \urcorner})
 $$
 
-By (1), this implies $T$ is inconsistent. This yields
+By (1), this implies $T \vdash \neg \tau$, hence $T$ is inconsistent. This yields
 
 $$
 T \text{ consistent } \; \; \Rightarrow \; \;  T \nvdash \tau.
@@ -77,7 +77,7 @@ $$
 T  \vdash \mathrm{Con}_T  \to \neg \theta(\underline{\ulcorner \tau \urcorner}).
 $$ {#eq-3}
 
-If $T$ is consitent, by (2), $T\nvdash \tau$. Using (1), this implies $\neg \theta(\underline{\ulcorner \tau \urcorner})$. Thus, by (3), $T  \nvdash \mathrm{Con}_T$.
+If $T$ is consistent, by (2), $T\nvdash \tau$. Using (1), this implies $T \nvdash \neg \theta(\underline{\ulcorner \tau \urcorner})$. Thus, by (3), $T  \nvdash \mathrm{Con}_T$.
 :::
 
 
@@ -118,13 +118,12 @@ which yields a contradiction.
 ## Undecidability
 
 ::: {#thm-undecidable}
-## Theorem
 \
 If $T$ is a consistent theory in the language $\mathcal{L}_A$, then not both the diagonal function $d$ and the set $\ulcorner T^\vdash \urcorner$ are representable in $T$.
 :::
 
 ::: {.proof}
-We assume that both $d$ is represented by a formula $\delta(x,y)$ and the set $\ulcorner T \urcorner$ is represented by a formula $\varphi_T(v_0)$ in $T$, and we choose $\theta = \neg \varphi_T$, so that from the Diagonal Lemma we obtain the existence of a formula $G$ such that
+We assume that $d$ is represented by a formula $\delta(x,y)$ and the set $\ulcorner T \urcorner$ is represented by a formula $\varphi_T(v_0)$ in $T$, and we choose $\theta = \neg \varphi_T$, so that from the Diagonal Lemma we obtain the existence of a formula $G$ such that
 $$
 T \vdash G \leftrightarrow \neg \varphi_T(\underline{\ulcorner G \urcorner}).
 $$ {#eq-4}
