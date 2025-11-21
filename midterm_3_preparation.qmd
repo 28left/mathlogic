@@ -34,7 +34,7 @@ The axioms of $\mathsf{PA}^-$ are:
 
 If we add the **induction scheme**
 
-- **Ind:** $\quad \forall \vec{y} \: ( \varphi(0,\vec{y}) \, \wedge \, \forall x (\varphi(x,\vec{y}) \to \varphi(x+1,,\vec{y})) \to \forall x \; \varphi(x,\vec{y})$
+- **Ind:** $\quad ( \varphi(0,\vec{y}) \, \wedge \, \forall x (\varphi(x,\vec{y}) \to \varphi(x+1,\vec{y})) \to \forall x \; \varphi(x,\vec{y})$
 
 we obtain (a theory equivalent to) **full $\mathsf{PA}$**.
 
