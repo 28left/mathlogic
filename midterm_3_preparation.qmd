@@ -58,8 +58,6 @@ Let $\mathcal{N}, \mathcal{M}$ be $\mathcal{L}_A$-structures  with $\mathcal{N} 
 $$
 \mathcal{N}\models \varphi[\vec{a}] \iff \mathcal{M}\models \varphi[\vec{a}],
 $$
-
-(*This is one part of the Representability Theorem.*)
 :::
 
 
@@ -70,6 +68,8 @@ If $f:\mathbb{N} \to \mathbb{N}$ is recursive, then there exists a $\Sigma_1$-fo
 $$
 f(n) = m \quad \Rightarrow \quad \mathsf{PA}^- \vdash \theta(\underline{n}, \underline{m})
 $$
+
+(*This is one part of the Representability Theorem.*)
 :::
 
 
