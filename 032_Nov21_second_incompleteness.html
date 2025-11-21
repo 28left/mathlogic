@@ -71,15 +71,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Exercise {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Lemma {
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
+.Definition {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -87,16 +91,12 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
 .Problem {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Lemma {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -465,7 +465,7 @@ T \vdash \tau \; \leftrightarrow \; \neg \theta(\underline{\ulcorner \tau \urcor
 <p>If <span class="math inline">\(T \vdash \tau\)</span>, it follows from <span class="math inline">\((D1)\)</span> that <span class="math display">\[
 T \vdash \theta(\underline{\ulcorner \tau \urcorner})
 \]</span></p>
-<p>By (1), this implies <span class="math inline">\(T\)</span> is inconsistent. This yields</p>
+<p>By (1), this implies <span class="math inline">\(T \vdash \neg \tau\)</span>, hence <span class="math inline">\(T\)</span> is inconsistent. This yields</p>
 <p><span id="eq-2"><span class="math display">\[
 T \text{ consistent } \; \; \Rightarrow \; \;  T \nvdash \tau.
 \tag{2}\]</span></span></p>
@@ -473,7 +473,7 @@ T \text{ consistent } \; \; \Rightarrow \; \;  T \nvdash \tau.
 <p><span id="eq-3"><span class="math display">\[
 T  \vdash \mathrm{Con}_T  \to \neg \theta(\underline{\ulcorner \tau \urcorner}).
 \tag{3}\]</span></span></p>
-<p>If <span class="math inline">\(T\)</span> is consitent, by (2), <span class="math inline">\(T\nvdash \tau\)</span>. Using (1), this implies <span class="math inline">\(\neg \theta(\underline{\ulcorner \tau \urcorner})\)</span>. Thus, by (3), <span class="math inline">\(T  \nvdash \mathrm{Con}_T\)</span>.</p>
+<p>If <span class="math inline">\(T\)</span> is consistent, by (2), <span class="math inline">\(T\nvdash \tau\)</span>. Using (1), this implies <span class="math inline">\(T \nvdash \neg \theta(\underline{\ulcorner \tau \urcorner})\)</span>. Thus, by (3), <span class="math inline">\(T  \nvdash \mathrm{Con}_T\)</span>.</p>
 </div>
 </section>
 <section id="truth-is-not-definable" class="level2">
@@ -516,14 +516,14 @@ Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. Then
 </div>
 <div class="callout-body-container">
 <div id="thm-undecidable" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Theorem)</strong></span> <br>
+<p><span class="theorem-title"><strong>Theorem 3</strong></span> <br>
 If <span class="math inline">\(T\)</span> is a consistent theory in the language <span class="math inline">\(\mathcal{L}_A\)</span>, then not both the diagonal function <span class="math inline">\(d\)</span> and the set <span class="math inline">\(\ulcorner T^\vdash \urcorner\)</span> are representable in <span class="math inline">\(T\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>We assume that both <span class="math inline">\(d\)</span> is represented by a formula <span class="math inline">\(\delta(x,y)\)</span> and the set <span class="math inline">\(\ulcorner T \urcorner\)</span> is represented by a formula <span class="math inline">\(\varphi_T(v_0)\)</span> in <span class="math inline">\(T\)</span>, and we choose <span class="math inline">\(\theta = \neg \varphi_T\)</span>, so that from the Diagonal Lemma we obtain the existence of a formula <span class="math inline">\(G\)</span> such that <span id="eq-4"><span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span>We assume that <span class="math inline">\(d\)</span> is represented by a formula <span class="math inline">\(\delta(x,y)\)</span> and the set <span class="math inline">\(\ulcorner T \urcorner\)</span> is represented by a formula <span class="math inline">\(\varphi_T(v_0)\)</span> in <span class="math inline">\(T\)</span>, and we choose <span class="math inline">\(\theta = \neg \varphi_T\)</span>, so that from the Diagonal Lemma we obtain the existence of a formula <span class="math inline">\(G\)</span> such that <span id="eq-4"><span class="math display">\[
 T \vdash G \leftrightarrow \neg \varphi_T(\underline{\ulcorner G \urcorner}).
 \tag{4}\]</span></span></p>
 <p><strong>Case 1:</strong> <span class="math inline">\(T \vdash G\)</span>, thus <span class="math inline">\(\ulcorner G \urcorner \in \ulcorner T^\vdash \urcorner\)</span>. Then by representability, <span class="math inline">\(T \vdash \varphi_T(\underline{\ulcorner G \urcorner})\)</span> and with (4) also <span class="math inline">\(T  \vdash \neg G\)</span>, i.e., <span class="math inline">\(T\)</span> would be inconsistent.</p>
