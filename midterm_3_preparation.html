@@ -70,23 +70,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
-  --color2: #EBEBEB;
-}
 .Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
 .Definition {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -94,8 +82,20 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
+.Take-Home {
+  --color1: #FF7E79;
+  --color2: #EBEBEB;
+}
 .Exercise {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Corollary {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 </style>
@@ -438,7 +438,7 @@ window.Quarto = {
 </ul>
 <p>If we add the <strong>induction scheme</strong></p>
 <ul>
-<li><strong>Ind:</strong> <span class="math inline">\(\quad \forall \vec{y} \: ( \varphi(0,\vec{y}) \, \wedge \, \forall x (\varphi(x,\vec{y}) \to \varphi(x+1,,\vec{y})) \to \forall x \; \varphi(x,\vec{y})\)</span></li>
+<li><strong>Ind:</strong> <span class="math inline">\(\quad ( \varphi(0,\vec{y}) \, \wedge \, \forall x (\varphi(x,\vec{y}) \to \varphi(x+1,\vec{y})) \to \forall x \; \varphi(x,\vec{y})\)</span></li>
 </ul>
 <p>we obtain (a theory equivalent to) <strong>full <span class="math inline">\(\mathsf{PA}\)</span></strong>.</p>
 </section>
