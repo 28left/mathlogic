@@ -75,8 +75,12 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
+.Corollary {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Theorem {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Lemma {
@@ -87,16 +91,12 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Corollary {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Theorem {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
 .Problem {
   --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Take-Home {
+  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
 </style>
@@ -419,13 +419,15 @@ window.Quarto = {
 <div class="callout-body-container">
 <div id="def-represent" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1</strong></span> Let <span class="math inline">\(T\)</span> be a theory in the language of arithmetic <span class="math inline">\(L\)</span> that extends <span class="math inline">\(\mathsf{PA}^-\)</span>. A (total) function <span class="math inline">\(f: \mathbb{N}^k \to \mathbb{N}\)</span> is <strong>representable</strong> in <span class="math inline">\(T\)</span> iff there exists an <span class="math inline">\(L\)</span>-formula <span class="math inline">\(\theta(x_1,\ldots,x_k,y)\)</span> such that for all <span class="math inline">\(n_1,\ldots,n_k ,m \in \mathbb{N}\)</span>:</p>
-<blockquote class="blockquote">
-<p><strong>(a)</strong> <span class="math inline">\(T \vdash \exists! y \; \theta(\underline{n_1},\ldots,\underline{n_k},y)\)</span>, and <br> <strong>(b)</strong> <span class="math inline">\(f(n_1,\ldots,n_k)= m \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k},\underline{m})\)</span>.</p>
-</blockquote>
+<ul>
+<li><strong>(a)</strong> <span class="math inline">\(T \vdash \exists! y \; \theta(\underline{n_1},\ldots,\underline{n_k},y)\)</span>, and</li>
+<li><strong>(b)</strong> <span class="math inline">\(f(n_1,\ldots,n_k)= m \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k},\underline{m})\)</span>.</li>
+</ul>
 <p>Similarly, a set <span class="math inline">\(S \subseteq \mathbb{N}^k\)</span> is <strong>representable</strong> in the theory <span class="math inline">\(T\)</span> iff there exists an <span class="math inline">\(L\)</span>-formula <span class="math inline">\(\theta(x_1,\ldots,x_k)\)</span> such that for all <span class="math inline">\(n_1,\ldots,n_k \in \mathbb{N}\)</span>:</p>
-<blockquote class="blockquote">
-<p><strong>(c)</strong> <span class="math inline">\((n_1,\ldots,n_k) \in S \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k})\)</span>, and <br> <strong>(d)</strong> <span class="math inline">\((n_1,\ldots,n_k) \not \in S \Rightarrow T \vdash \neg \theta(\underline{n_1},\ldots,\underline{n_k})\)</span>.</p>
-</blockquote>
+<ul>
+<li><strong>(c)</strong> <span class="math inline">\((n_1,\ldots,n_k) \in S \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k})\)</span>, and</li>
+<li><strong>(d)</strong> <span class="math inline">\((n_1,\ldots,n_k) \not \in S \Rightarrow T \vdash \neg \theta(\underline{n_1},\ldots,\underline{n_k})\)</span>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -455,7 +457,14 @@ window.Quarto = {
 \]</span></p>
 <p>We now claim that the <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\exists z \; \psi(\vec{x},y, z)\)</span> represents the function <span class="math inline">\(f\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span>:</p>
 <p>First we show (b). Assume that <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> holds, thus <span class="math inline">\(\mathbb{N} \models \exists z \; \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},z)\)</span>. The number <span class="math inline">\(m\)</span> is uniquely determined since <span class="math inline">\(f\)</span> is a function. Choose <span class="math inline">\(l\)</span> as the smallest number such that <span class="math inline">\(\mathbb{N} \models \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span>. Then clearly <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> also holds, and thus <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span>. As a <span class="math inline">\(\Sigma_1\)</span>-sentence, this sentence is preserved under all end extensions of the standard model to a model of <span class="math inline">\(\mathsf{PA}^-\)</span>, thus it holds in all models of <span class="math inline">\(\mathsf{PA}^-\)</span>, and therefore <span class="math inline">\(\mathsf{PA}^- \vdash \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})\)</span> by the Completeness Theorem.</p>
-<p>The proof of (a) uses a similar argument: Let <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> and let <span class="math inline">\(l\)</span> again be the smallest number such that <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> holds. Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. We claim that <span class="math inline">\(m\)</span> is the only element of <span class="math inline">\(M\)</span> that satisfies the formula <span class="math inline">\(\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>. <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> due to the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas. If <span class="math inline">\(a,b \in M\)</span> are two elements such that <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, then we must have <span class="math inline">\(a,b \le m+l\)</span>: If one of them were greater than <span class="math inline">\(m+l\)</span>, we would have <span class="math inline">\(a+b &gt; m+l\)</span>, and by the definition of <span class="math inline">\(\psi\)</span> this would imply <span class="math inline">\(\neg \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>, contradiction. <span class="math inline">\(\mathcal{M}\)</span> is an end-extension of <span class="math inline">\(\mathbb{N}\)</span>, hence <span class="math inline">\(a,b \le m+l\)</span> implies <span class="math inline">\(a, b \in \mathbb{N}\)</span>. Thus, again by the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas, we have <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, from which <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)\)</span> follows, and therefore <span class="math inline">\(a = m\)</span>.</p>
+<p>The proof of (a) uses a similar argument: Let <span class="math inline">\(f(n_1,\ldots,n_k)= m\)</span> and let <span class="math inline">\(l\)</span> again be the smallest number such that <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> holds. Let <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^-\)</span>. We claim that <span class="math inline">\(m\)</span> is the only element of <span class="math inline">\(M\)</span> that satisfies the formula <span class="math inline">\(\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>. <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> due to the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas. If <span class="math inline">\(a,b \in M\)</span> are two elements such that <span class="math inline">\(\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, then we must have <span class="math inline">\(a,b \le m+l\)</span>: For if one of them were greater than <span class="math inline">\(m+l\)</span>, we would also have <span class="math inline">\(a+b &gt; m+l\)</span>. We assumed</p>
+<p><span class="math display">\[\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b),\]</span></p>
+<p>so by definition of <span class="math inline">\(\psi\)</span> we have</p>
+<p><span class="math display">\[
+\mathcal{M} \models \varphi(\underline{n_1},\ldots,\underline{n_k},a,b) \wedge \forall u,v \leq a+b \; (u+v &lt; a+b \to \neg \varphi(\underline{n_1},\ldots,\underline{n_k},u, v)).
+\]</span></p>
+<p>But since <span class="math inline">\(m+l &lt; a+b\)</span>, this would imply <span class="math inline">\(\neg \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})\)</span> in <span class="math inline">\(\mathcal{M}\)</span>, contradicting the choice of <span class="math inline">\(m\)</span> and <span class="math inline">\(l\)</span>.</p>
+<p>As <span class="math inline">\(\mathcal{M}\)</span> is an end-extension of <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(a,b \le m+l\)</span> implies <span class="math inline">\(a, b \in \mathbb{N}\)</span>. Thus, again by the absoluteness of <span class="math inline">\(\Delta_0\)</span>-formulas, we have <span class="math inline">\(\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)\)</span>, from which <span class="math inline">\(\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)\)</span> follows, and therefore <span class="math inline">\(a = m\)</span>.</p>
 <p><strong>(ii)</strong> now follows easily: If <span class="math inline">\(S\)</span> is recursive, then the characteristic function <span class="math inline">\(c_S\)</span> is computable, thus by (i) represented by a <span class="math inline">\(\Sigma_1\)</span>-formula <span class="math inline">\(\theta(\vec{x},y)\)</span> in <span class="math inline">\(\mathsf{PA}^-\)</span>. Then <span class="math inline">\(S\)</span> is represented by the formula <span class="math inline">\(\theta(\vec{x},1)\)</span>, since we have:</p>
 <p><span class="math display">\[
 \mathsf{PA}^- \vdash \neg \theta(\vec{x},1) \iff \mathsf{PA}^- \vdash \theta(\vec{x},0).
