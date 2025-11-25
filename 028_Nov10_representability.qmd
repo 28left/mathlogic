@@ -11,13 +11,13 @@ We have established a closed connection between computability and definability o
 ::: {#def-represent}
 Let $T$ be a theory in the language of arithmetic $L$ that extends $\mathsf{PA}^-$. A (total) function $f: \mathbb{N}^k \to \mathbb{N}$ is **representable** in $T$ iff there exists an $L$-formula $\theta(x_1,\ldots,x_k,y)$ such that for all $n_1,\ldots,n_k ,m \in \mathbb{N}$:
 
-> **(a)** $T \vdash \exists! y \; \theta(\underline{n_1},\ldots,\underline{n_k},y)$, and <br>
-> **(b)** $f(n_1,\ldots,n_k)= m \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k},\underline{m})$.
+- **(a)** $T \vdash \exists! y \; \theta(\underline{n_1},\ldots,\underline{n_k},y)$, and
+- **(b)** $f(n_1,\ldots,n_k)= m \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k},\underline{m})$.
 
 Similarly, a set $S \subseteq \mathbb{N}^k$ is **representable** in the theory $T$ iff there exists an $L$-formula $\theta(x_1,\ldots,x_k)$ such that for all $n_1,\ldots,n_k \in \mathbb{N}$:
 
-> **(c)** $(n_1,\ldots,n_k) \in S \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k})$, and <br>
-> **(d)** $(n_1,\ldots,n_k) \not \in S \Rightarrow T \vdash \neg \theta(\underline{n_1},\ldots,\underline{n_k})$.
+- **(c)** $(n_1,\ldots,n_k) \in S \Rightarrow T \vdash \theta(\underline{n_1},\ldots,\underline{n_k})$, and
+- **(d)** $(n_1,\ldots,n_k) \not \in S \Rightarrow T \vdash \neg \theta(\underline{n_1},\ldots,\underline{n_k})$.
 :::
 
 If the function $f$ (or the set $S$) is representable by a $\Sigma_1$-formula, then $f$ (or $S$, respectively) is called **$\Sigma_1$-representable**.
@@ -46,7 +46,21 @@ We now claim that the $\Sigma_1$-formula $\exists z \; \psi(\vec{x},y, z)$ repre
 
 First we show (b). Assume that $f(n_1,\ldots,n_k)= m$ holds, thus $\mathbb{N} \models \exists z \; \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},z)$. The number $m$ is uniquely determined since $f$ is a function. Choose $l$ as the smallest number such that $\mathbb{N} \models \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$. Then clearly $\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ also holds, and thus $\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})$. As a $\Sigma_1$-sentence, this sentence is preserved under all end extensions of the standard model to a model of $\mathsf{PA}^-$, thus it holds in all models of $\mathsf{PA}^-$, and therefore $\mathsf{PA}^- \vdash \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{z})$ by the Completeness Theorem.
 
-The proof of (a) uses a similar argument: Let $f(n_1,\ldots,n_k)= m$ and let $l$ again be the smallest number such that $\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ holds. Let $\mathcal{M} \models \mathsf{PA}^-$. We claim that $m$ is the only element of $M$ that satisfies the formula $\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})$ in $\mathcal{M}$.  $\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ due to the absoluteness of $\Delta_0$-formulas. If $a,b \in M$ are two elements such that $\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)$, then we must have $a,b \le m+l$:  If one of them were greater than $m+l$, we would have $a+b > m+l$, and by the definition of $\psi$ this would imply $\neg \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ in $\mathcal{M}$, contradiction.  $\mathcal{M}$ is an end-extension of $\mathbb{N}$, hence $a,b \le m+l$ implies $a, b \in \mathbb{N}$. Thus, again by the absoluteness of $\Delta_0$-formulas, we have $\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)$, from which $\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)$ follows, and therefore $a = m$.
+The proof of (a) uses a similar argument: Let $f(n_1,\ldots,n_k)= m$ and let $l$ again be the smallest number such that $\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ holds. Let $\mathcal{M} \models \mathsf{PA}^-$.
+We claim that $m$ is the only element of $M$ that satisfies the formula $\psi(\underline{n_1},\ldots,\underline{n_k},x,\underline{l})$ in $\mathcal{M}$.  $\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ due to the absoluteness of $\Delta_0$-formulas.
+If $a,b \in M$ are two elements such that $\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)$, then we must have $a,b \le m+l$:  For if one of them were greater than $m+l$, we would also have $a+b > m+l$. We assumed
+
+$$\mathcal{M} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b),$$
+
+so by definition of $\psi$ we have
+
+$$
+\mathcal{M} \models \varphi(\underline{n_1},\ldots,\underline{n_k},a,b) \wedge \forall u,v \leq a+b \; (u+v < a+b \to \neg \varphi(\underline{n_1},\ldots,\underline{n_k},u, v)).
+$$
+
+But since $m+l < a+b$, this would imply $\neg \varphi(\underline{n_1},\ldots,\underline{n_k},\underline{m},\underline{l})$ in $\mathcal{M}$, contradicting the choice of $m$ and $l$.
+
+As $\mathcal{M}$ is an end-extension of $\mathbb{N}$, $a,b \le m+l$ implies $a, b \in \mathbb{N}$. Thus, again by the absoluteness of $\Delta_0$-formulas, we have $\mathbb{N} \models \psi(\underline{n_1},\ldots,\underline{n_k},a,b)$, from which $\mathbb{N} \models \exists z \; \psi(\underline{n_1},\ldots,\underline{n_k},a,z)$ follows, and therefore $a = m$.
 
 **(ii)**
 now follows easily: If $S$ is recursive, then the characteristic function $c_S$ is computable, thus by (i) represented by a $\Sigma_1$-formula $\theta(\vec{x},y)$ in $\mathsf{PA}^-$. Then $S$ is represented by the formula $\theta(\vec{x},1)$, since we have:
