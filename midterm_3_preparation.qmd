@@ -154,7 +154,7 @@ Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathc
 
 2. Suppose $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and has the property that for any proper cut $I$, if $\varphi(x,y)$ is a formula and $\vec{a} \in M$ such that
 $$
-\mathcal{M} \models \varphi(0, \vec{a}) \; \land \; \forall x (\varphi(x,\vec{a}) \to \varphi(x+1, \vec{a})),
+\mathcal{M} \models \varphi(b, \vec{a}) \quad \text{for all } b \in I,
 $$
 then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$ (in other words, $\mathcal{M}$ satisfies the conclusion of 1.). Show that then $\mathcal{M} \models \mathsf{PA}$.
 
