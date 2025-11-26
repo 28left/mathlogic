@@ -3,25 +3,18 @@ title: "Math 557 Nov 3"
 ---
 
 
-# End Extensions of the Standard Model{#end-extensions}
+# End Extensions {#end-extensions}
 
+The standard model can be embedded into every model $\mathcal{M}$ of $\mathsf{PA}$ as an initial segment.
+It turns out this already holds for models of the theory $\mathsf{PA}^-$.
 
-::: {#def-end-ext-ord}
+::: {#def-end-ext}
 \
-Let $(A,<^A)$ and $(B,<)$ be linearly ordered sets. We say $(A,<)$ is an **initial segment** of $(B,<^B)$ (and $(B,<)$ is an **end extension** of $(A,<)$) if $A \subseteq B$ and
+Let $L$ be a language containing a 2-ary symbol $<$, and let $\mathcal{M}$ and $\mathcal{N}$ be $L$-structures with $\mathcal{M} \subseteq \mathcal{N}$. Then $\mathcal{N}$ is called an **end extension** of $\mathcal{M}$ (and correspondingly $\mathcal{M}$ is an **initial segment** of $\mathcal{N}$) if and only if the larger set $N$ does not add any further elements below an element of $M$:
 $$
-\text{for all} \; x \in A,y \in B: (y<^B x \Rightarrow y \in A),
+\mathcal{M} \subseteq_{end} \mathcal{N}: \iff \text{for all} \; x \in M,y \in N: (y<^N x \Rightarrow y \in M).
 $$
-i.e., $B$ does not add elements below any element of $A$.
 :::
-
-We use the notation
-$$
-(A, <) \subseteq_{\operatorname{end}} (B,<)
-$$
-to indicate that $(A,<)$ is an initial segment of $(B,<)$.
-
-Every model of $\mathsf{PA}^-$ is a linearly ordered set. So we can speak of one model being an initial segment (or end extension) of another, meaning their respective linear orders have this property.
 
 Each natural number $n$ is represented in the standard model, which we also simply denote by $\mathbb{N}$ here, by the constant term
 $$
@@ -68,7 +61,7 @@ In the previous lecture, we introduced *arithmetical formulas*. $\Delta_0$-formu
 
 ::: {#thm-pa-absoluteness}
 \
-Let $\mathcal{N}, \mathcal{M}$ be structures of the language $L$ of $\mathsf{PA}^-$, with $\mathcal{N} \subseteq_{end} \mathcal{M}$, and let $\vec{a} \in N$. Then:
+Let $\mathcal{N}, \mathcal{M}$ be structures of the language $\mathcal{L}_A$ of $\mathsf{PA}^-$, with $\mathcal{N} \subseteq_{end} \mathcal{M}$, and let $\vec{a} \in N$. Then:
 
 1. Every $\Delta_0$-formula $\varphi(\vec{v})$ is **absolute**:
 $$
