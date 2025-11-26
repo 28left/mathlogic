@@ -152,9 +152,13 @@ Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathc
 
 1. Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$.
 
-2. Show that if $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and has the property that for any proper cut $I$ there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$ (i.e., $\mathcal{M}$ satisfies the conclusion of (1.)), then $\mathcal{M} \models \mathsf{PA}$.
+2. Suppose $\mathcal{M} \models \mathsf{PA}^{-}$ is non-standard and has the property that for any proper cut $I$, if $\varphi(x,y)$ is a formula and $\vec{a} \in M$ such that
+$$
+\mathcal{M} \models \varphi(0, \vec{a}) \; \land \; \forall x (\varphi(x,\vec{a}) \to \varphi(x+1, \vec{a})),
+$$
+then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$ (in other words, $\mathcal{M}$ satisfies the conclusion of 1.). Show that then $\mathcal{M} \models \mathsf{PA}$.
 
-(*Hint: For (2.), it suffices to show $\mathcal{M}$ satisfies the induction scheme.*)
+(*Note: For (2.), it suffices to show $\mathcal{M}$ satisfies the induction scheme.*)
 :::
 
 ::: Problem
