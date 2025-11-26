@@ -75,11 +75,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Problem {
-  --color1: #FFE6B4;
+.Take-Home {
+  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
-.Corollary {
+.Lemma {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -87,12 +87,12 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Lemma {
-  --color1: #F8FBD3;
+.Problem {
+  --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
+.Corollary {
+  --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
 .Theorem {
@@ -382,7 +382,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#end-extensions" id="toc-end-extensions" class="nav-link active" data-scroll-target="#end-extensions">End Extensions</a>
+  <li><a href="#end-extensions" id="toc-end-extensions" class="nav-link active" data-scroll-target="#end-extensions">End Extensions of the Standard Model</a>
   <ul class="collapse">
   <li><a href="#remark" id="toc-remark" class="nav-link" data-scroll-target="#remark">Remark</a></li>
   <li><a href="#preservation-properties-of-end-extensions" id="toc-preservation-properties-of-end-extensions" class="nav-link" data-scroll-target="#preservation-properties-of-end-extensions">Preservation Properties of End Extensions</a></li>
@@ -413,23 +413,26 @@ window.Quarto = {
 
 
 <section id="end-extensions" class="level1">
-<h1>End Extensions</h1>
-<p>The standard model can be embedded into every model <span class="math inline">\(\mathcal{M}\)</span> of <span class="math inline">\(\mathsf{PA}\)</span> as an initial segment. It turns out this already holds for models of the theory <span class="math inline">\(\mathsf{PA}^-\)</span>.</p>
+<h1>End Extensions of the Standard Model</h1>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-end-ext" class="theorem definition">
+<div id="def-end-ext-ord" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1</strong></span> <br>
-Let <span class="math inline">\(L\)</span> be a language containing a 2-ary symbol <span class="math inline">\(&lt;\)</span>, and let <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{N}\)</span> be <span class="math inline">\(L\)</span>-structures with <span class="math inline">\(\mathcal{M} \subseteq \mathcal{N}\)</span>. Then <span class="math inline">\(\mathcal{N}\)</span> is called an <strong>end extension</strong> of <span class="math inline">\(\mathcal{M}\)</span> (and correspondingly <span class="math inline">\(\mathcal{M}\)</span> is an <strong>initial segment</strong> of <span class="math inline">\(\mathcal{N}\)</span>) if and only if the larger set <span class="math inline">\(N\)</span> does not add any further elements below an element of <span class="math inline">\(M\)</span>: <span class="math display">\[
-\mathcal{M} \subseteq_{end} \mathcal{N}: \iff \text{for all} \; x \in M,y \in N: (y&lt;^N x \Rightarrow y \in M).
-\]</span></p>
+Let <span class="math inline">\((A,&lt;^A)\)</span> and <span class="math inline">\((B,&lt;)\)</span> be linearly ordered sets. We say <span class="math inline">\((A,&lt;)\)</span> is an <strong>initial segment</strong> of <span class="math inline">\((B,&lt;^B)\)</span> (and <span class="math inline">\((B,&lt;)\)</span> is an <strong>end extension</strong> of <span class="math inline">\((A,&lt;)\)</span>) if <span class="math inline">\(A \subseteq B\)</span> and <span class="math display">\[
+\text{for all} \; x \in A,y \in B: (y&lt;^B x \Rightarrow y \in A),
+\]</span> i.e., <span class="math inline">\(B\)</span> does not add elements below any element of <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
+<p>We use the notation <span class="math display">\[
+(A, &lt;) \subseteq_{\operatorname{end}} (B,&lt;)
+\]</span> to indicate that <span class="math inline">\((A,&lt;)\)</span> is an initial segment of <span class="math inline">\((B,&lt;)\)</span>.</p>
+<p>Every model of <span class="math inline">\(\mathsf{PA}^-\)</span> is a linearly ordered set. So we can speak of one model being an initial segment (or end extension) of another, meaning their respective linear orders have this property.</p>
 <p>Each natural number <span class="math inline">\(n\)</span> is represented in the standard model, which we also simply denote by <span class="math inline">\(\mathbb{N}\)</span> here, by the constant term <span class="math display">\[
 \underline{n} = 1+ \ldots + 1 \quad \text{($n$ times)}
 \]</span> where <span class="math inline">\(\underline{0}\)</span> is the constant <span class="math inline">\(0\)</span>.</p>
