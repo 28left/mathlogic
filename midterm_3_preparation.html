@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Corollary {
+.Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Definition {
+.Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -515,7 +515,7 @@ y = \operatorname{qt}(x,y) \cdot x + \operatorname{rem}(x,y) \qquad 0 \leq \oper
 <ol type="1">
 <li><p>Show that if <span class="math inline">\(\vec{a} \in M\)</span> and <span class="math inline">\(\mathcal{M} \models \varphi(b,\vec{a})\)</span> for all <span class="math inline">\(b \in I\)</span>, then there is <span class="math inline">\(c &gt; I\)</span> in <span class="math inline">\(M\)</span> such that <span class="math inline">\(\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})\)</span>.</p></li>
 <li><p>Suppose <span class="math inline">\(\mathcal{M} \models \mathsf{PA}^{-}\)</span> is non-standard and has the property that for any proper cut <span class="math inline">\(I\)</span>, if <span class="math inline">\(\varphi(x,y)\)</span> is a formula and <span class="math inline">\(\vec{a} \in M\)</span> such that <span class="math display">\[
-\mathcal{M} \models \varphi(0, \vec{a}) \; \land \; \forall x (\varphi(x,\vec{a}) \to \varphi(x+1, \vec{a})),
+\mathcal{M} \models \varphi(b, \vec{a}) \quad \text{for all } b \in I,
 \]</span> then there is <span class="math inline">\(c &gt; I\)</span> in <span class="math inline">\(M\)</span> such that <span class="math inline">\(\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})\)</span> (in other words, <span class="math inline">\(\mathcal{M}\)</span> satisfies the conclusion of 1.). Show that then <span class="math inline">\(\mathcal{M} \models \mathsf{PA}\)</span>.</p></li>
 </ol>
 <p>(<em>Note: For (2.), it suffices to show <span class="math inline">\(\mathcal{M}\)</span> satisfies the induction scheme.</em>)</p>
