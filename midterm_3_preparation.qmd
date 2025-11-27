@@ -148,7 +148,7 @@ $$
 
 ::: Problem
 
-Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathcal{M}$ is a set $I \subsetneq M$ that is an initial segment of $M$ and closed under successor, e.g.\ the standard model $\mathbb{N}$.
+Let $\mathcal{M} \models \mathsf{PA}$ be non-standard. A *proper cut* in $\mathcal{M}$ is a set $I \subsetneq M$ that is closed downward under $<$ (the order of $\mathcal{M}$) and closed under successor. For example, the (copy of the) standard model $\mathbb{N}$ in $\mathcal{M}$ is a proper cut.
 
 1. Show that if $\vec{a} \in M$ and $\mathcal{M} \models \varphi(b,\vec{a})$ for all $b \in I$, then there is $c > I$ in $M$ such that $\mathcal{M} \models \forall x \leq c \: \varphi(x,\vec{a})$.
 
