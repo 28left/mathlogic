@@ -29,9 +29,9 @@ Note that by definition, representability is preserved when we pass to a theory 
 ::: {#thm-representability}
 ## Represetation Theorem
 
-(i) *Every recursive function* $f: \mathbb{N}^k \to \mathbb{N}$ *is $\Sigma_1$-representable in* $\mathsf{PA}^-$.
+**(i)** Every recursive function $f: \mathbb{N}^k \to \mathbb{N}$ is $\Sigma_1$-representable in $\mathsf{PA}^-$.
 
-(ii) *Every recursive set* $S \subseteq \mathbb{N}^k$ *is $\Sigma_1$-representable in* $\mathsf{PA}^-$.
+**(ii)** Every recursive set $S \subseteq \mathbb{N}^k$ is $\Sigma_1$-representable in $\mathsf{PA}^-$.
 :::
 
 ::: {.proof}
