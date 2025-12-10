@@ -75,6 +75,9 @@ website:
         text: 11/19 - Consistency and Decidability
       - href: midterm_3_preparation.qmd
         text: Midterm 3 Prep
+      - href: lecture_summary.md
+        text: Course Summary
+
 format:
   html:
     page-navigation: true
