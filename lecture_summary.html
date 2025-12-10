@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 557 Sep 17 – Math 557 Fall 2025</title>
+<title>lecture_summary – Math 557 Fall 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./009_Sep19_Henkin_theories.html" rel="next">
-<link href="./007_Sep15_completeness_theorem.html" rel="prev">
+<link href="./midterm_3_preparation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,15 +70,23 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Problem {
-  --color1: #FFE6B4;
+.Take-Home {
+  --color1: #FF7E79;
   --color2: #EBEBEB;
 }
 .Corollary {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
-.Theorem {
+.Lemma {
+  --color1: #F8FBD3;
+  --color2: #EBEBEB;
+}
+.Problem {
+  --color1: #FFE6B4;
+  --color2: #EBEBEB;
+}
+.Definition {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -87,15 +94,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #FFE6B4;
   --color2: #EBEBEB;
 }
-.Take-Home {
-  --color1: #FF7E79;
-  --color2: #EBEBEB;
-}
-.Lemma {
-  --color1: #F8FBD3;
-  --color2: #EBEBEB;
-}
-.Definition {
+.Theorem {
   --color1: #F8FBD3;
   --color2: #EBEBEB;
 }
@@ -143,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./008_Sep17_completing_theories.html">9/17 - Completing theories</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lecture_summary.html">Course Summary</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -212,7 +211,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./008_Sep17_completing_theories.html" class="sidebar-item-text sidebar-link active">
+  <a href="./008_Sep17_completing_theories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9/17 - Completing theories</span></a>
   </div>
 </li>
@@ -374,7 +373,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lecture_summary.html" class="sidebar-item-text sidebar-link">
+  <a href="./lecture_summary.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Course Summary</span></a>
   </div>
 </li>
@@ -388,154 +387,119 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#completing-theories" id="toc-completing-theories" class="nav-link active" data-scroll-target="#completing-theories">Completing Theories</a>
+  <li><a href="#mathematical-logic-course-summary-the-big-picture" id="toc-mathematical-logic-course-summary-the-big-picture" class="nav-link active" data-scroll-target="#mathematical-logic-course-summary-the-big-picture">Mathematical Logic Course Summary: The Big Picture</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
-  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#part-i-foundations---building-the-language-of-logic-lectures-1-5" id="toc-part-i-foundations---building-the-language-of-logic-lectures-1-5" class="nav-link" data-scroll-target="#part-i-foundations---building-the-language-of-logic-lectures-1-5">Part I: Foundations - Building the Language of Logic (Lectures 1-5)</a></li>
+  <li><a href="#part-ii-proof-and-completeness---bridging-syntax-and-semantics-lectures-5-11" id="toc-part-ii-proof-and-completeness---bridging-syntax-and-semantics-lectures-5-11" class="nav-link" data-scroll-target="#part-ii-proof-and-completeness---bridging-syntax-and-semantics-lectures-5-11">Part II: Proof and Completeness - Bridging Syntax and Semantics (Lectures 5-11)</a></li>
+  <li><a href="#part-iii-model-theory---understanding-mathematical-structures-lectures-12-17" id="toc-part-iii-model-theory---understanding-mathematical-structures-lectures-12-17" class="nav-link" data-scroll-target="#part-iii-model-theory---understanding-mathematical-structures-lectures-12-17">Part III: Model Theory - Understanding Mathematical Structures (Lectures 12-17)</a></li>
+  <li><a href="#part-iv-homogeneous-structures-and-fraïssé-theory-lectures-18-20" id="toc-part-iv-homogeneous-structures-and-fraïssé-theory-lectures-18-20" class="nav-link" data-scroll-target="#part-iv-homogeneous-structures-and-fraïssé-theory-lectures-18-20">Part IV: Homogeneous Structures and Fraïssé Theory (Lectures 18-20)</a></li>
+  <li><a href="#part-v-computability---formalizing-effective-procedures-lectures-21-22-24-26" id="toc-part-v-computability---formalizing-effective-procedures-lectures-21-22-24-26" class="nav-link" data-scroll-target="#part-v-computability---formalizing-effective-procedures-lectures-21-22-24-26">Part V: Computability - Formalizing Effective Procedures (Lectures 21-22, 24-26)</a></li>
+  <li><a href="#part-vi-arithmetic-and-peano-arithmetic-lectures-23-28" id="toc-part-vi-arithmetic-and-peano-arithmetic-lectures-23-28" class="nav-link" data-scroll-target="#part-vi-arithmetic-and-peano-arithmetic-lectures-23-28">Part VI: Arithmetic and Peano Arithmetic (Lectures 23-28)</a></li>
+  <li><a href="#part-vii-gödels-incompleteness-theorems---the-limits-of-formalization-lectures-29-32" id="toc-part-vii-gödels-incompleteness-theorems---the-limits-of-formalization-lectures-29-32" class="nav-link" data-scroll-target="#part-vii-gödels-incompleteness-theorems---the-limits-of-formalization-lectures-29-32">Part VII: Gödel’s Incompleteness Theorems - The Limits of Formalization (Lectures 29-32)</a></li>
+  <li><a href="#the-big-picture-three-perspectives-unite" id="toc-the-big-picture-three-perspectives-unite" class="nav-link" data-scroll-target="#the-big-picture-three-perspectives-unite">The Big Picture: Three Perspectives Unite</a></li>
+  <li><a href="#key-conceptual-threads" id="toc-key-conceptual-threads" class="nav-link" data-scroll-target="#key-conceptual-threads">Key Conceptual Threads</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="008_Sep17_completing_theories.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture_summary.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Math 557 Sep 17</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="completing-theories" class="level1">
-<h1>Completing Theories</h1>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li><p>We previously defined the <em>term model</em> <span class="math inline">\(\mathcal{A}\)</span>. It holds that for any <em>atomic</em> sentence <span class="math inline">\(\sigma\)</span>, <span class="math display">\[\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma\]</span></p></li>
-<li><p>Trying to extend this to arbitrary sentence via induction, the <em>negation case</em> looks like <span class="math display">\[\mathcal{A} \models \neg\sigma \; \iff \;  \mathcal{A} \nvDash \sigma \; \overset{\text{ind hyp}}{\iff} \; T \nvdash \sigma\]</span> We would like to show that this is equivalent to <span class="math inline">\(T \vdash \neg\sigma\)</span>.</p></li>
-<li><p>One direction follows from <span class="math inline">\(T\)</span> being consistent, but for the other direction, <span class="math inline">\(T\)</span> may not be strong enough to prove this.</p></li>
-<li><p>We therefore need to <em>extend</em> <span class="math inline">\(T\)</span> to a complete theory.</p></li>
-</ul>
+<section id="mathematical-logic-course-summary-the-big-picture" class="level1">
+<h1>Mathematical Logic Course Summary: The Big Picture</h1>
+<p><em>Math 557, Fall 2025 - A Comprehensive Overview</em></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This course presents a journey through mathematical logic, weaving together three fundamental perspectives that give us deep insight into the nature of mathematical reasoning itself. The lectures progress from basic syntax and semantics through profound meta-mathematical results that reveal both the power and the inherent limitations of formal systems. What emerges is a unified picture connecting proof theory, model theory, computability theory, and their stunning intersection in Gödel’s incompleteness theorems.</p>
 </section>
-<section id="problems" class="level2">
-<h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> <br>
-Verify that indeed for all atomic sentences <span class="math inline">\(\sigma\)</span>, <span class="math display">\[\mathcal{A} \models \sigma \quad \iff \quad T \vdash \sigma\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> <br>
-Recall that a theory <span class="math inline">\(T\)</span> is <em>maximally consistent</em> if it is consistent but does not have any consistent proper extensions. <span class="math inline">\(T\)</span> is called <em>deductively closed</em> if the deductive closure of <span class="math inline">\(T\)</span>, <span class="math display">\[T^{\vdash} = \{ \sigma : T \vdash \sigma \}\]</span> is equal to <span class="math inline">\(T\)</span>.</p>
-<ul>
-<li>Show that a maximally consistent theory is complete and deductively closed.</li>
-<li>Show that if <span class="math inline">\(T\)</span> is complete, then <span class="math inline">\(T^{\vdash}\)</span> is maximally consistent.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> <br>
-Is every consistent, deductively closed theory complete?</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> <br>
-Show that the union of an increasing sequence of consistent theories is consistent.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> <br>
-Extend Lindebaum’s theorem on the existence of maximally consistent extension from countable to arbitrary languages.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> <br>
-Fix a language <span class="math inline">\(\mathcal{L}\)</span>. Let <span class="math inline">\(X\)</span> be the set of all maximally consistent <span class="math inline">\(\mathcal{L}\)</span>-theories. For an <span class="math inline">\(\mathcal{L}\)</span>-sentence <span class="math inline">\(\sigma\)</span>, let <span class="math display">\[\langle \sigma \rangle = \{ T \in X \colon \sigma \in T\}\]</span></p>
-<p>Show that</p>
-<ul>
-<li><span class="math inline">\(\langle \sigma \land \tau \rangle = \langle \sigma \rangle \cap \langle \tau \rangle\)</span></li>
-<li><span class="math inline">\(\langle \neg\sigma \rangle = X \setminus \langle \sigma \rangle\)</span></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7</strong></span> <br>
-Continuing the previous exercise, let <span class="math inline">\(\mathcal{O}\)</span> be the topology generated by the sets <span class="math inline">\(\langle \sigma \rangle\)</span>. Show that</p>
-<ul>
-<li>each <span class="math inline">\(\langle \sigma \rangle\)</span> is clopen,</li>
-<li>the <span class="math inline">\(\langle \sigma \rangle\)</span> form a basis for <span class="math inline">\(\mathcal{O}\)</span>,</li>
-<li><span class="math inline">\(\mathcal{O}\)</span> is Hausdorff.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+<section id="part-i-foundations---building-the-language-of-logic-lectures-1-5" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-foundations---building-the-language-of-logic-lectures-1-5">Part I: Foundations - Building the Language of Logic (Lectures 1-5)</h2>
+<p>The course begins by establishing the formal apparatus needed to reason rigorously about logic itself. We start with <strong>syntax</strong> - the formal rules for constructing well-formed terms and formulas in a first-order language. The readability and unique readability lemmas ensure that formulas have unambiguous structure, which is essential for everything that follows.</p>
+<p>The semantic side introduces <strong>structures</strong> (models) that give meaning to syntactic objects. A structure <span class="math inline">\(\mathcal{M}\)</span> consists of a universe <span class="math inline">\(M\)</span> together with interpretations of constants, functions, and relations. The <strong>satisfaction relation</strong> <span class="math inline">\(\mathcal{M} \models \varphi[\alpha]\)</span> recursively defines when a formula <span class="math inline">\(\varphi\)</span> is true in structure <span class="math inline">\(\mathcal{M}\)</span> under assignment <span class="math inline">\(\alpha\)</span>.</p>
+<p>The <strong>substitution lemma</strong> bridges syntax and semantics, showing that syntactic substitution corresponds semantically to changing the assignment. This seemingly technical result is crucial for connecting formal manipulations with their semantic meaning.</p>
+<p><strong>Validities</strong> - formulas true in all structures under all assignments - emerge as the semantic counterpart to syntactic proof. The fundamental question arises: <em>Can we characterize validities syntactically?</em> This question drives much of the first half of the course.</p>
+</section>
+<section id="part-ii-proof-and-completeness---bridging-syntax-and-semantics-lectures-5-11" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-proof-and-completeness---bridging-syntax-and-semantics-lectures-5-11">Part II: Proof and Completeness - Bridging Syntax and Semantics (Lectures 5-11)</h2>
+<p>The course introduces <strong>formal proof systems</strong> with logical axioms (propositional tautologies, equality axioms, quantifier axioms) and inference rules (Modus Ponens, Generalization). We write <span class="math inline">\(T \vdash \varphi\)</span> when <span class="math inline">\(\varphi\)</span> has a formal proof from theory <span class="math inline">\(T\)</span>, contrasting with the semantic notion <span class="math inline">\(T \models \varphi\)</span> (logical consequence).</p>
+<p>The <strong>Soundness Theorem</strong> (<span class="math inline">\(T \vdash \varphi \Rightarrow T \models \varphi\)</span>) is relatively straightforward, but the converse is far more subtle. The <strong>Completeness Theorem</strong> - stating that <span class="math inline">\(T \vdash \varphi \iff T \models \varphi\)</span> - is one of the crowning achievements of mathematical logic.</p>
+<p>The proof strategy for completeness is constructive and beautiful: Given a consistent theory <span class="math inline">\(T\)</span>, we build a model by:</p>
+<ol type="1">
+<li>Extending <span class="math inline">\(T\)</span> to a <strong>Henkin theory</strong> <span class="math inline">\(T_H\)</span> by adding witnesses for existential statements</li>
+<li>Further extending to a complete theory <span class="math inline">\(T'\)</span> using Lindenbaum’s lemma</li>
+<li>Constructing the <strong>term model</strong> <span class="math inline">\(\mathcal{A}_{T'}\)</span> where constant terms are identified under provable equality</li>
+<li>Showing <span class="math inline">\(\mathcal{A}_{T'} \models T'\)</span> and hence <span class="math inline">\(\mathcal{A}_{T'} \models T\)</span></li>
+</ol>
+<p>This construction reveals deep connections: every consistent theory has a model, and if the language is countable, so is the model.</p>
+<p>The <strong>Compactness Theorem</strong> - a theory has a model iff every finite subtheory has a model - emerges as a key consequence. Compactness has remarkable applications, from constructing non-standard models of arithmetic to proving that every set can be linearly ordered (without choice!).</p>
+</section>
+<section id="part-iii-model-theory---understanding-mathematical-structures-lectures-12-17" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-model-theory---understanding-mathematical-structures-lectures-12-17">Part III: Model Theory - Understanding Mathematical Structures (Lectures 12-17)</h2>
+<p>The course shifts focus to studying structures themselves and relationships between them. Two structures are <strong>elementarily equivalent</strong> (<span class="math inline">\(\mathcal{M} \equiv \mathcal{N}\)</span>) if they satisfy the same sentences. This is weaker than isomorphism but captures the idea that structures are “logically indistinguishable.”</p>
+<p><strong>Elementary substructures</strong> (<span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span>) strengthen ordinary substructures by requiring that formulas with parameters from <span class="math inline">\(M\)</span> have the same truth value in both structures. The <strong>Tarski-Vaught test</strong> provides a practical criterion: <span class="math inline">\(\mathcal{M} \preceq \mathcal{N}\)</span> iff whenever <span class="math inline">\(\mathcal{N}\)</span> satisfies <span class="math inline">\(\exists x \psi(x, \vec{a})\)</span> for <span class="math inline">\(\vec{a} \in M\)</span>, there exists a witness in <span class="math inline">\(M\)</span>.</p>
+<p>The <strong>Löwenheim-Skolem theorems</strong> reveal striking cardinality phenomena: - <strong>Downward</strong>: Every infinite structure has elementary substructures of every smaller infinite cardinality - <strong>Upward</strong>: Every infinite structure has elementary extensions of every larger cardinality</p>
+<p>These theorems show that first-order logic cannot pin down infinite cardinalities - a significant limitation. For instance, the complete ordered field <span class="math inline">\(\mathbb{R}\)</span> has countable elementary substructures (like the algebraic numbers), so completeness isn’t first-order expressible in the language of ordered rings.</p>
+<p><strong>Ultraproducts</strong> provide a powerful algebraic tool for constructing models. Given structures <span class="math inline">\(\mathcal{M}_i\)</span> and an ultrafilter <span class="math inline">\(\mathcal{U}\)</span> on index set <span class="math inline">\(I\)</span>, the ultraproduct <span class="math inline">\(\prod_i \mathcal{M}_i / \mathcal{U}\)</span> satisfies a formula iff “most” (in the sense of <span class="math inline">\(\mathcal{U}\)</span>) of the <span class="math inline">\(\mathcal{M}_i\)</span> do. <strong>Łoś’s Theorem</strong> makes this precise, and gives a new proof of compactness.</p>
+</section>
+<section id="part-iv-homogeneous-structures-and-fraïssé-theory-lectures-18-20" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-homogeneous-structures-and-fraïssé-theory-lectures-18-20">Part IV: Homogeneous Structures and Fraïssé Theory (Lectures 18-20)</h2>
+<p>This section studies structures with maximal symmetry. A structure <span class="math inline">\(\mathcal{M}\)</span> is <strong>homogeneous</strong> if every isomorphism between finitely generated substructures extends to an automorphism of <span class="math inline">\(\mathcal{M}\)</span>. The quintessential example is <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> - the rationals are homogeneous as a linear order.</p>
+<p>The <strong>age</strong> of <span class="math inline">\(\mathcal{M}\)</span> consists of all finitely generated structures isomorphic to substructures of <span class="math inline">\(\mathcal{M}\)</span>. Two countable homogeneous structures with the same age are isomorphic (proved via back-and-forth).</p>
+<p><strong>Fraïssé’s Theorem</strong> characterizes which classes of finite structures arise as ages of homogeneous structures: a countable class <span class="math inline">\(\overline{K}\)</span> is the age of a countable homogeneous structure iff it’s an <strong>amalgamation class</strong> (satisfying hereditary, joint embedding, and amalgamation properties). The proof constructs the homogeneous structure by iteratively ensuring all required properties.</p>
+<p>The <strong>random graph</strong> emerges as a beautiful example: adding extension axioms to the theory of simple graphs yields a complete theory whose unique countable model is homogeneous. Remarkably, this structure captures the asymptotic behavior of finite random graphs (the <strong>0-1 law</strong>).</p>
+</section>
+<section id="part-v-computability---formalizing-effective-procedures-lectures-21-22-24-26" class="level2">
+<h2 class="anchored" data-anchor-id="part-v-computability---formalizing-effective-procedures-lectures-21-22-24-26">Part V: Computability - Formalizing Effective Procedures (Lectures 21-22, 24-26)</h2>
+<p>The course takes a computational turn, formalizing “effective computation” via <strong>Turing machines</strong> and <strong>register machines</strong>. These turn out to be equivalent (supporting the <strong>Church-Turing Thesis</strong>: the intuitive notion of computability coincides with formal computability).</p>
+<p><strong>Primitive recursive functions</strong> are built from initial functions (zero, successor, projections) via composition and primitive recursion. They include all standard arithmetic operations and many number-theoretic functions. The <strong>Ackermann function</strong> shows that computable functions can transcend primitive recursion.</p>
+<p><strong>Recursive functions</strong> add the <span class="math inline">\(\mu\)</span>-operator (unbounded search), yielding the full class of computable functions. Key results: - Not all computable functions are total (halting problem) - There exist non-computable functions (diagonal argument) - Various problems are <strong>undecidable</strong> (e.g., determining if a program halts)</p>
+<p>The <strong>arithmetical hierarchy</strong> classifies formulas by quantifier complexity: - <span class="math inline">\(\Delta_0\)</span> (bounded quantifiers): primitive recursive relations - <span class="math inline">\(\Sigma_1\)</span> (<span class="math inline">\(\exists\)</span> followed by <span class="math inline">\(\Delta_0\)</span>): recursively enumerable sets - <span class="math inline">\(\Pi_1\)</span> (<span class="math inline">\(\forall\)</span> followed by <span class="math inline">\(\Delta_0\)</span>): complements of r.e. sets - <span class="math inline">\(\Delta_1 = \Sigma_1 \cap \Pi_1\)</span>: recursive sets</p>
+<p>The <strong>Definability Theorem</strong> establishes that recursive functions are precisely those whose graphs are <span class="math inline">\(\Sigma_1\)</span>-definable in <span class="math inline">\(\mathbb{N}\)</span>. The proof requires <strong>Gödel’s <span class="math inline">\(\beta\)</span>-function lemma</strong>, a clever encoding using the Chinese Remainder Theorem that allows sequences to be coded without exponentiation (crucial since we work in <span class="math inline">\(\mathsf{PA}^-\)</span>).</p>
+</section>
+<section id="part-vi-arithmetic-and-peano-arithmetic-lectures-23-28" class="level2">
+<h2 class="anchored" data-anchor-id="part-vi-arithmetic-and-peano-arithmetic-lectures-23-28">Part VI: Arithmetic and Peano Arithmetic (Lectures 23-28)</h2>
+<p>The course focuses on <strong>Peano Arithmetic</strong> (<span class="math inline">\(\mathsf{PA}\)</span>) - the induction axioms plus basic axioms for successor, addition, and multiplication. While <span class="math inline">\(\mathsf{PA}\)</span> captures much of arithmetic, the compactness theorem guarantees <strong>non-standard models</strong> with “infinitely large” numbers.</p>
+<p><strong><span class="math inline">\(\mathsf{PA}^-\)</span></strong> (Peano arithmetic without induction) is a finitely axiomatized subtheory corresponding to discretely ordered rings. Though weaker than <span class="math inline">\(\mathsf{PA}\)</span>, it’s strong enough to prove all true <span class="math inline">\(\Sigma_1\)</span>-sentences of arithmetic. This follows from two facts: 1. <span class="math inline">\(\Delta_0\)</span>-formulas are <strong>absolute</strong> for end extensions 2. Every model of <span class="math inline">\(\mathsf{PA}^-\)</span> is an end extension of <span class="math inline">\(\mathbb{N}\)</span></p>
+<p>The <strong>Representation Theorem</strong> shows that every recursive function is <span class="math inline">\(\Sigma_1\)</span>-representable in <span class="math inline">\(\mathsf{PA}^-\)</span>: there exists a formula <span class="math inline">\(\theta(x,y)\)</span> such that <span class="math inline">\(f(n) = m\)</span> implies both <span class="math inline">\(\mathsf{PA}^- \vdash \theta(\underline{n}, \underline{m})\)</span> and <span class="math inline">\(\mathsf{PA}^- \vdash \exists! y \theta(\underline{n}, y)\)</span>. This bridges computation and logic: what’s computable is logically representable.</p>
+<p><strong>Gödelization</strong> assigns natural numbers to formulas, making syntax an object of arithmetic study. The key insight: syntactic properties (being a term, being a formula, being a proof) are primitive recursive, hence <span class="math inline">\(\Delta_0\)</span>-definable.</p>
+</section>
+<section id="part-vii-gödels-incompleteness-theorems---the-limits-of-formalization-lectures-29-32" class="level2">
+<h2 class="anchored" data-anchor-id="part-vii-gödels-incompleteness-theorems---the-limits-of-formalization-lectures-29-32">Part VII: Gödel’s Incompleteness Theorems - The Limits of Formalization (Lectures 29-32)</h2>
+<p>The course culminates in Gödel’s profound limitations results. The <strong>Diagonal Lemma</strong> provides the key self-referential mechanism: for any formula <span class="math inline">\(\theta(v)\)</span>, there exists a sentence <span class="math inline">\(G\)</span> with <span class="math inline">\(T \vdash G \leftrightarrow \theta(\ulcorner G \urcorner)\)</span>. The sentence <span class="math inline">\(G\)</span> “says of itself” that <span class="math inline">\(\theta\)</span> holds of its Gödel number.</p>
+<p>The <strong>First Incompleteness Theorem</strong>: Any consistent, recursively axiomatizable theory extending <span class="math inline">\(\mathsf{PA}^-\)</span> is incomplete. The proof constructs a <span class="math inline">\(\Pi_1\)</span>-sentence <span class="math inline">\(G\)</span> that “says” (via Gödelization) “<span class="math inline">\(G\)</span> is not provable in <span class="math inline">\(T\)</span>.” If <span class="math inline">\(T \vdash G\)</span>, then <span class="math inline">\(G\)</span> is false (since it says it’s unprovable), contradicting soundness. If <span class="math inline">\(T \vdash \neg G\)</span>, then <span class="math inline">\(G\)</span> is true but unprovable. For consistent <span class="math inline">\(T\)</span>, neither <span class="math inline">\(G\)</span> nor <span class="math inline">\(\neg G\)</span> is provable.</p>
+<p>The theorem has philosophical depth: no consistent formal system extending basic arithmetic can be both complete and recursively axiomatizable. Mathematics transcends any particular formalization.</p>
+<p>The <strong>Second Incompleteness Theorem</strong> strengthens this: no consistent theory extending <span class="math inline">\(\mathsf{PA}\)</span> can prove its own consistency. The consistency statement <span class="math inline">\(\mathrm{Con}_T\)</span> asserts “<span class="math inline">\(0=1\)</span> is not provable.” Using derivability conditions, one shows that if <span class="math inline">\(T \vdash \mathrm{Con}_T\)</span>, then <span class="math inline">\(T\)</span> is inconsistent. This means: - <span class="math inline">\(\mathsf{PA}\)</span> cannot prove <span class="math inline">\(\mathrm{Con}_{\mathsf{PA}}\)</span> (assuming <span class="math inline">\(\mathsf{PA}\)</span> is consistent) - Hilbert’s program for proving consistency of mathematics within mathematics is impossible</p>
+<p><strong>Tarski’s Undefinability Theorem</strong> completes the picture: truth is not definable in arithmetic. There’s no formula <span class="math inline">\(\theta(v)\)</span> such that <span class="math inline">\(\mathbb{N} \models \theta(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\)</span>. Syntax (provability) can be arithmetized, but semantics (truth) cannot.</p>
+<p>Finally, <strong>Church’s Theorem</strong> shows that the set of valid sentences is undecidable: no algorithm can determine whether an arbitrary first-order sentence is a validity. This follows from the undecidability of <span class="math inline">\(\mathsf{PA}\)</span> (or any consistent extension of <span class="math inline">\(\mathsf{PA}^-\)</span>).</p>
+</section>
+<section id="the-big-picture-three-perspectives-unite" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-picture-three-perspectives-unite">The Big Picture: Three Perspectives Unite</h2>
+<p>The course reveals a stunning convergence of three perspectives on logic:</p>
+<p><strong>1. Syntactic (Proof-Theoretic)</strong>: What can be formally proved? - Formal systems with axioms and inference rules - Deductive closure: <span class="math inline">\(T^\vdash = \{\sigma : T \vdash \sigma\}\)</span> - Gödel shows this is recursively enumerable but (for rich enough theories) undecidable</p>
+<p><strong>2. Semantic (Model-Theoretic)</strong>: What is true in structures? - Structures and satisfaction - Logical consequence: <span class="math inline">\(T \models \sigma\)</span> - Compactness, Löwenheim-Skolem, elementary equivalence reveal the power and limitations of first-order logic</p>
+<p><strong>3. Computational</strong>: What can be effectively computed? - Turing machines, recursive functions - Representability in arithmetic - The arithmetical hierarchy classifies formulas by computational complexity</p>
+<p>The <strong>Completeness Theorem</strong> unifies syntax and semantics: provability = semantic consequence. <strong>Gödel’s Theorems</strong> use computability to show limits of syntax and semantics: undecidability enters through Gödelization, connecting the three perspectives.</p>
+<p>The course’s genius lies in showing these aren’t separate subjects but facets of one coherent story. Syntax studies what we can write down and prove. Semantics studies what’s true in mathematical structures. Computation studies what’s effectively calculable. Logic reveals they’re intimately connected, and meta-mathematics - reasoning about logic itself - uncovers profound limitations: incompleteness, undecidability, indefinability.</p>
+</section>
+<section id="key-conceptual-threads" class="level2">
+<h2 class="anchored" data-anchor-id="key-conceptual-threads">Key Conceptual Threads</h2>
+<p>Several themes weave throughout:</p>
+<p><strong>Expressiveness and Limitation</strong>: First-order logic is powerful (Completeness Theorem, expressiveness for many theories) yet limited (can’t pin down infinite cardinalities, can’t express completeness of ordered fields). Second-order logic is more expressive but loses completeness.</p>
+<p><strong>Construction and Existence</strong>: The course repeatedly constructs objects proving existence: term models for completeness, Henkin extensions for witnesses, Fraïssé limits for homogeneous structures, non-standard models via compactness and ultraproducts.</p>
+<p><strong>Countability Phenomena</strong>: Countable models play a special role (Löwenheim-Skolem, <span class="math inline">\(\omega\)</span>-categoricity, back-and-forth arguments). The transition from finite to infinite is crucial.</p>
+<p><strong>Self-Reference</strong>: The Diagonal Lemma enables sentences to “talk about themselves” through Gödelization, leading to incompleteness and undefinability. Self-reference reveals deep limits.</p>
+<p><strong>Hierarchy and Classification</strong>: Structures classified by elementary equivalence; formulas by quantifier complexity (arithmetical hierarchy); functions by computability (primitive recursive, recursive). Classification reveals structure in apparent chaos.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This course presents mathematical logic not as a collection of techniques but as a unified investigation into the nature of mathematical reasoning. We begin with basic formal languages and build to the incompleteness theorems - arguably the most philosophically significant mathematical results of the 20th century.</p>
+<p>The journey reveals both power and humility: Logic gives us formal languages to express mathematics, proof systems to derive theorems, and model theory to understand structures. But it also shows inherent limitations: incompleteness and undecidability. These aren’t defects but deep truths about the nature of formal systems.</p>
+<p>The synthesis of proof theory, model theory, and computability theory into a coherent whole represents one of mathematics’ great intellectual achievements. Understanding this synthesis - seeing how syntax, semantics, and computation interweave - is the true goal and lasting gift of this course.</p>
 
 
 </section>
@@ -943,14 +907,11 @@ Continuing the previous exercise, let <span class="math inline">\(\mathcal{O}\)<
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./007_Sep15_completeness_theorem.html" class="pagination-link" aria-label="9/15 - Completeness theorem">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9/15 - Completeness theorem</span>
+      <a href="./midterm_3_preparation.html" class="pagination-link" aria-label="Midterm 3 Prep">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Midterm 3 Prep</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./009_Sep19_Henkin_theories.html" class="pagination-link" aria-label="9/19 - Henkin theories">
-        <span class="nav-page-text">9/19 - Henkin theories</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
